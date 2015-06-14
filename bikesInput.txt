@@ -1,0 +1,397 @@
+Specialized_Diverge 7
+A1
+Sport A1
+Comp carbon
+Elite A1
+Comp smartweld
+Expert carbon
+Carbon DI2
+1100
+1250
+3500
+1400
+2700
+4000
+8500
+fork
+fork
+all
+fork
+fork
+all
+all
+
+Specialized_Secteur 4
+Double
+Triple
+Sport double
+Elite double
+850
+900
+1050
+1250
+fork
+fork
+fork
+fork
+
+Specialized_Roubiax 13
+sl4 double
+sl4 disc
+sl4 sport
+sl4 elite
+sl4 elite disc
+sl4 comp
+sl4 comp disc
+sl4 export
+sl4 pro race
+sl4 pro disc race
+sl4 pro disc race udi2
+S-work sl4 dura-ace
+S-works sl4 disc di2
+1800
+1950
+2100
+2500
+2800
+3000
+3300
+3500
+5500
+6000
+7500
+8000
+9500
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+
+Specialized_Allez 9
+allez
+elite
+650
+sport
+comp
+expert
+comp race
+pro
+As-works di2
+770
+1250
+770
+970
+1600
+2400
+2900
+3500
+8000
+none
+fork
+none
+fork
+fork
+fork
+fork
+fork
+fork
+
+Specialized_Tarmac 10
+sport
+elite
+comp
+expert
+pro race
+pro disc race
+pro disc race udi2
+S-works dura-ace
+S-works tarmac red
+S-works tarmac di2 disc
+2100
+2500
+3000
+4000
+5600
+6200
+7600
+8250
+8250
+9500
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+
+Trek_CrossRip 4
+crosrip
+comp
+elite
+LTD
+990
+1100
+1270
+1760
+none
+fork
+fork
+fork
+
+Trek_Domane 15
+2.0
+2.3
+4.0 disc
+4.1
+4.3
+4.3 disc
+4.5
+4.5 disc
+5.2
+5.9 dura-ace
+5.9
+6.2
+6.2 disc
+6.9
+6.9 disc
+1430
+1870
+2100
+2100
+2300
+2730
+2670
+3260
+3670
+5150
+5150
+4730
+5250
+7600
+8300
+fork
+fork
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+
+Trek_1_Series 3
+1.1
+1.2
+1.5
+770
+930
+1100
+fork
+fork
+fork
+
+Trek_Madone 5
+2.1
+2.5
+7.7
+7.9 WSD
+7.9 WSD
+1320
+1980
+7880
+11550
+11550
+fork
+fork
+all
+all
+all
+
+Trek_Emonda_ALR 2
+5
+6
+1760
+2250
+fork
+fork
+
+Trek_Emonda 16
+S 4
+S 5 wsd
+S 5
+S 6
+Sl 5 wsd
+Sl 5
+Sl 6 wsd
+Sl 6 wsd
+Sl 8 wsd
+Sl 8 red
+Sl 8
+Slr 6
+Slr 8
+Slr 9 wsd
+Slr 9
+Slr 10
+1650
+2100
+2100
+2630
+2730
+2730
+3150
+3150
+4730
+4730
+4730
+5780
+7870
+12080
+12080
+15750
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+
+Cannondale_CAAD10 5
+105 5
+Ultegra 3
+force, racing
+sram rival disc
+black inc disc
+1680
+2270
+2830
+2170
+4330
+fork
+fork
+fork
+fork
+fork
+
+Cannondale_CAAD8 4
+Claris 8
+Sora 7
+Tiagara 6
+105 5
+870
+980
+1250
+1410
+fork
+fork
+fork
+fork
+
+Cannondale_supersix_evo 11
+carbon 105 5
+carbon sram rival
+carbon ultegra
+carbon force racing
+carbon sram red
+carbon ultegra di2
+high-mod dura ace 2
+high-mod red racing
+high-mod dura ace di2
+high-mod team
+black inc
+2270
+2710
+3250
+3790
+4440
+4870
+5420
+6500
+8120
+9210
+11920
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+all
+
+Cannondale_Synapse 5
+Claris 8
+Sora 7
+tiagra disc 6
+105 5 disc
+sram rival disc
+920
+1030
+1300
+1570
+2170
+fork
+fork
+fork
+fork
+fork
+
+Cannondale_Synapse_Carbon 9
+105 6
+105 5
+sram rival disc
+ultegra
+ultegra disc
+ultegra di2 disc
+Hi-mod ultegra disc
+Hi-mod sram red disc
+Hi-mod black inc disc
+2060
+2380
+2920
+3140
+3790
+4870
+5420
+7040
+9120
+all
+all
+all
+all
+all
+all
+all
+all
+all

@@ -165,7 +165,7 @@ public class Main_vector {
     private static void init() {
 
         try {
-            scanFile = new Scanner(new File("C:/Users/Peter Froud/Documents/bikesInput.txt"));
+            scanFile = new Scanner(new File("bikesInput.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
