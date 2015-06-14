@@ -94,7 +94,7 @@ public class Main_vector {
                 // draw cost and model name
                 g.setColor(Color.black);
                 g.drawString("$" + currentCost, x, y - 3);
-                g.drawString(currentBike.names.get(j), x, y + 30); // change
+                g.drawString(currentBike.versions.get(j), x, y + 30); // change
                 // cost
                 // alignment
                 // here
@@ -107,7 +107,7 @@ public class Main_vector {
             // draw model name
             g.setColor(getColor(i));
             g.setFont(new Font("Arial", Font.BOLD, 14));
-            g.drawString(currentBike.lineName, 10, verticalPosition + rectHeight - 6); // change
+            g.drawString(currentBike.modelName, 10, verticalPosition + rectHeight - 6); // change
             // name
             // alignment
             // here
@@ -180,7 +180,7 @@ public class Main_vector {
                 e.printStackTrace();
                 System.exit(1);
             }
-            // System.out.println(current.lineName);
+            // System.out.println(current.modelName);
             allBikes.add(current);
 
             // System.out.println();
@@ -212,7 +212,7 @@ public class Main_vector {
 
         // add name
         for (int i = 0; i < numModels; i++) {
-            bike.names.add(scanFile.nextLine());
+            bike.versions.add(scanFile.nextLine());
         }
 
         // add cost
