@@ -15,9 +15,13 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
  */
 public class Main_vector {
 
+    static final String FILE_INPUT = "bikesInput.txt";
+    static final String FILE_OUTPUT = "bikes.pdf";
     static Scanner fileScan; //Scanner to read input text file
+
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
     static int globalMaxCost = 0;//cost of the most expensive bike in the input file
+    static float globalCostRange;
 
     static final int WIDTH = 1900; //width of the output PDF file. Units unknown.
     static final int HEIGHT = 940; //width of the output PDF file. Units unknown.
@@ -28,35 +32,136 @@ public class Main_vector {
     static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between colored bars
     static final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
-
-    static final int GRID_STEP = 500; //horizontal spacing of
-    static float globalCostRange;
+    static final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
 
     static Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
+
     /**
-     * @param args
-     * @throws IOException
+     * Program entry point.
      */
     public static void main(String[] args) throws IOException {
+
+        //PDFGraphics2D extends Graphics2D so has the same interface.
         PDFGraphics2D g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
 
-
         init();
-        draw(g);
+        drawBikes(g);
 
-        try (FileOutputStream file = new FileOutputStream("bikes.pdf")) {
+        //write to PDF file
+        try (FileOutputStream file = new FileOutputStream(FILE_OUTPUT)) {
             file.write(g.getBytes());
         }
-
-        // System.out.println("globalCostRange is " + (int) globalCostRange);
-
     }
 
+
     /**
-     * @param g
+     * Opens the input file and reads all bikes in the file.
      */
-    private static void draw(Graphics2D g) {
+    private static void init() {
+
+        //open the file
+        try {
+            fileScan = new Scanner(new File(FILE_INPUT));
+        } catch (FileNotFoundException e) {
+            System.err.println("File " + FILE_INPUT + " not found.");
+            System.exit(1);
+        }
+
+        //go through file
+        while (fileScan.hasNextLine()) {
+            allBikes.add(readBikes());
+
+            fileScan.nextLine(); //skip a blank line
+
+            //this works but if terrible
+            if (fileScan.hasNextLine()) {
+                fileScan.nextLine();
+            } else {
+                break;
+            }
+        }
+
+		/*globalMaxCost = 3500;
+        globalMinCost = 500;*/
+
+        //set the cost range
+        globalCostRange = globalMaxCost - globalMinCost;
+    }
+
+
+    /**
+     * Reads a bike model and its versions, then returns a Bike object.
+     *
+     * (1) reads the header, which contains the model name and number of versions.
+     *     Example: "Specialized_Diverge 7"
+     *
+     * (2) Does three for loops to read:
+     *     (a) version names
+     *     (b) version costs
+     *     (c) version materials
+     *
+     * @return Bike object containing all of the version names, costs, and materials
+     */
+    private static Bike readBikes() {
+
+
+        Scanner sc = new Scanner(fileScan.nextLine());
+        Bike bike = new Bike(sc.next());
+        int numModels = sc.nextInt();
+        String carb;
+
+        // add version names
+        for (int i = 0; i < numModels; i++) {
+            bike.versions.add(fileScan.nextLine());
+        }
+
+        // add version costs
+        int cst;
+        for (int i = 0; i < numModels; i++) {
+            cst = fileScan.nextInt();
+
+            //update global min and max cost
+            if (cst > globalMaxCost) {
+                globalMaxCost = cst;
+            }
+            if (cst < globalMinCost) {
+                globalMinCost = cst;
+            }
+
+            bike.addCost(cst);
+        }
+
+        // add version materials
+        for (int i = 0; i < numModels; i++) {
+            carb = fileScan.next();
+
+            switch (carb) {
+                case "all":
+                    bike.carbons.add(Carbon.ALL);
+                    break;
+                case "fork":
+                    bike.carbons.add(Carbon.FORK);
+                    break;
+                case "none":
+                    bike.carbons.add(Carbon.NONE);
+                    break;
+                default:
+                    System.err.println("unrecognized carbon value \"" + carb + "\"");
+            }
+        }
+
+        sc.close();
+        return bike;
+    }
+
+
+    /**
+     * Draws
+     *
+     * @param g graphics context
+     */
+    private static void drawBikes(Graphics2D g) {
         drawGrid(g);
 
         Bike currentBike;
@@ -121,10 +226,7 @@ public class Main_vector {
             // draw model name
             g.setColor(getColor(i));
             g.setFont(new Font("Arial", Font.BOLD, 14));
-            g.drawString(currentBike.modelName, 10, verticalPosition + RECT_HEIGHT - 6); // change
-            // name
-            // alignment
-            // here
+            g.drawString(currentBike.modelName, 10, verticalPosition + RECT_HEIGHT - 6);
 
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
@@ -132,29 +234,31 @@ public class Main_vector {
 
 
     /**
-     * @param g
+     * Draws the horizontal axis, vertical grid, and labels.
+     *
+     * @param g graphics context
      */
     private static void drawGrid(Graphics2D g) {
-        // bottom line
-        g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN);
+        g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN); // bottom axis
 
-        // min and max labels
+        // min and max labels for bottom axis
         g.setFont(new Font("Arial", Font.BOLD, 22));
         g.drawString("$" + globalMinCost, MARGIN, HEIGHT - MARGIN + 20);
         g.drawString("$" + globalMaxCost, WIDTH - MARGIN - 60, HEIGHT - MARGIN + 20);
 
+        //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14));
-        int x;
+        g.setColor(Color.decode("0xbbbbbb"));
+        int xPos;
 
-        // draw vertical lines
+        //draw vertical lines
         for (int cost = globalMinCost; cost <= globalMaxCost; cost += GRID_STEP) {
-            x = posFromCost(cost);
-            g.setColor(Color.decode("0xbbbbbb"));
-            g.drawLine(x, 0, x, HEIGHT - MARGIN + 60);
+            xPos = posFromCost(cost);
+            g.drawLine(xPos, 0, xPos, HEIGHT - MARGIN + 60);
 
-            // skip labels at min and max, already drawn in bigger font
+            // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
             if (globalMinCost != cost && globalMaxCost != cost) {
-                g.drawString("$" + cost, x, HEIGHT - MARGIN + 15);
+                g.drawString("$" + cost, xPos, HEIGHT - MARGIN + 15);
             }
 
         }
@@ -162,8 +266,10 @@ public class Main_vector {
     }
 
     /**
-     * @param c
-     * @return
+     * Given the cost of a model version, returns the x position to draw it at.
+     *
+     * @param c cost in dollars
+     * @return x position for that cost
      */
     private static int posFromCost(int c) {
         float cost = c; // to get floating-point division
@@ -171,8 +277,11 @@ public class Main_vector {
     }
 
     /**
-     * @param index
-     * @return
+     * Given the index of a bike model in allBikes, return the color to draw the bar.
+     * This is just to look pretty.
+     *
+     * @param index sequential index
+     * @return the color for that bar
      */
     private static Color getColor(int index) {
         switch (index % 4) {
@@ -188,100 +297,5 @@ public class Main_vector {
         return null;
     }
 
-
-    /**
-     *
-     */
-    private static void init() {
-
-        try {
-            fileScan = new Scanner(new File("bikesInput.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-
-        Bike current = null;
-
-        while (fileScan.hasNextLine()) {
-            try {
-                current = readBike();
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.exit(1);
-            }
-            // System.out.println(current.modelName);
-            allBikes.add(current);
-
-            // System.out.println();
-            fileScan.nextLine();
-            if (fileScan.hasNextLine()) {
-                fileScan.nextLine();
-            } else {
-                break;
-            }
-        }
-
-		/*globalMaxCost = 3500;
-        globalMinCost = 500;*/
-
-        globalCostRange = globalMaxCost - globalMinCost;
-        // System.out.println("min is " + globalMinCost + " and max is " +
-        // globalMaxCost);
-    }
-
-
-    /**
-     * @return
-     * @throws Exception
-     */
-    private static Bike readBike() throws Exception {
-        String bikeHeader = fileScan.nextLine();
-        // System.out.println(">\"" + bikeHeader + "\":");
-
-        Scanner sc = new Scanner(bikeHeader);
-        Bike bike = new Bike(sc.next());
-        int numModels = sc.nextInt();
-        int c;
-        String carb;
-
-        // add name
-        for (int i = 0; i < numModels; i++) {
-            bike.versions.add(fileScan.nextLine());
-        }
-
-        // add cost
-        for (int i = 0; i < numModels; i++) {
-            c = fileScan.nextInt();
-            if (c > globalMaxCost) {
-                globalMaxCost = c;
-            }
-            if (c < globalMinCost) {
-                globalMinCost = c;
-            }
-            bike.addCost(c);
-        }
-
-        // add carbon
-        for (int i = 0; i < numModels; i++) {
-            carb = fileScan.next();
-            switch (carb) {
-                case "all":
-                    bike.carbons.add(Carbon.ALL);
-                    break;
-                case "fork":
-                    bike.carbons.add(Carbon.FORK);
-                    break;
-                case "none":
-                    bike.carbons.add(Carbon.NONE);
-                    break;
-                default:
-                    sc.close();
-                    throw new Exception("unknown carbon value \"" + carb + "\"");
-            }
-        }
-        sc.close();
-        return bike;
-    }
 
 }

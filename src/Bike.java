@@ -47,6 +47,7 @@ class Bike {
     /**
      * Used to add a cost to the vector of costs.
      * Costs isn't private but you should still use this.
+     *
      * @param c the cost of the version to add.
      */
     public void addCost(int c) {
