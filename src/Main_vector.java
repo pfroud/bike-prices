@@ -16,7 +16,7 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
 public class Main_vector {
 
     static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
-    static final String FILE_OUTPUT = "bikes.pdf"; //location of PDF file to write diagram to
+    static final String FILE_OUTPUT = "Sample output/bikes $500 - $3,500.pdf"; //location of PDF file to write diagram to
     static Scanner fileScan; //Scanner to read input text file
 
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
