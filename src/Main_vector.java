@@ -23,9 +23,13 @@ public class Main_vector {
     static int globalMaxCost = 0;//cost of the most expensive bike in the input file
     static float globalCostRange;
 
+    static final boolean doRangeOverride = true; //whether or not to override the cost range
+    static final int globalMin_override = 500; //custom cost range start
+    static final int globalMax_override = 3500; //custom cost range end
+
     static final int WIDTH = 1900; //width of the output PDF file. Units unknown.
     static final int HEIGHT = 940; //width of the output PDF file. Units unknown.
-    static final int MARGIN = 100; //space between content and edges of page
+    static final int MARGIN = 100; //space between content and edges of page. Units unknown.
     static final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
 
     static final int RECT_HEIGHT = 20; //height of all the colored bars
@@ -77,7 +81,7 @@ public class Main_vector {
 
             fileScan.nextLine(); //skip a blank line
 
-            //this works but if terrible
+            //this works but is terrible
             if (fileScan.hasNextLine()) {
                 fileScan.nextLine();
             } else {
@@ -85,14 +89,18 @@ public class Main_vector {
             }
         }
 
-		/*globalMaxCost = 3500;
-        globalMinCost = 500;*/
+        //change the cost range, if needed
+        if (doRangeOverride) {
+            globalMaxCost = globalMax_override;
+            globalMinCost = globalMin_override;
+        }
 
         //set the cost range
         globalCostRange = globalMaxCost - globalMinCost;
     }
 
 
+    //@formatter:off
     /**
      * Reads a bike model and its versions, then returns a Bike object.
      * Called by readAllBikes().
@@ -107,6 +115,7 @@ public class Main_vector {
      *
      * @return Bike object containing all of the version names, costs, and materials
      */
+    //@formatter:on
     private static Bike readOneBike() {
 
 
@@ -186,8 +195,7 @@ public class Main_vector {
 
 
             // draw dots for each version
-            int currentCost, dotX, dotY, smallerSize;
-            Carbon carb;
+            int currentCost, dotX, dotY;
             for (int j = 0; j < currentBike.costs.size(); j++) {
                 currentCost = currentBike.costs.get(j);
 
@@ -196,24 +204,7 @@ public class Main_vector {
                 dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
                 // draw dot with carbon color
-                carb = currentBike.carbons.get(j);
-                switch (carb) {
-                    case ALL:
-                        g.setColor(Color.black);
-                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                        break;
-                    case FORK:
-                        g.setColor(Color.lightGray);
-                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                        g.setColor(Color.black);
-                        smallerSize = (int) (MARKER_SIZE / 1.5);
-                        g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
-                        break;
-                    case NONE:
-                        g.setColor(Color.lightGray);
-                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                        break;
-                }
+                addDot(g, currentBike.carbons.get(j), dotX, dotY);
 
                 // draw cost and model name
                 g.setColor(Color.black);
@@ -233,6 +224,28 @@ public class Main_vector {
             //reset font?
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
+    }
+
+    private static void addDot(Graphics2D g, Carbon carb, int dotX, int dotY) {
+        int smallerSize;
+        switch (carb) {
+            case ALL:
+                g.setColor(Color.black);
+                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+                break;
+            case FORK:
+                g.setColor(Color.lightGray);
+                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+                g.setColor(Color.black);
+                smallerSize = (int) (MARKER_SIZE / 1.5);
+                g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
+                break;
+            case NONE:
+                g.setColor(Color.lightGray);
+                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+                break;
+        }
+
     }
 
 
