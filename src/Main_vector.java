@@ -204,7 +204,7 @@ public class Main_vector {
                 dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
                 // draw dot with carbon color
-                addDot(g, currentBike.carbons.get(j), dotX, dotY);
+                addMaterialDot(g, currentBike.carbons.get(j), dotX, dotY);
 
                 // draw cost and model name
                 g.setColor(Color.black);
@@ -226,8 +226,21 @@ public class Main_vector {
         }
     }
 
-    private static void addDot(Graphics2D g, Carbon carb, int dotX, int dotY) {
-        int smallerSize;
+    /**
+     * Adds a dot in the colored bar showing the cost.
+     *
+     * A bike with an all-carbon frame gets a black dot.
+     * A bike with a carbon fork only gets a small black dot on a gray dot.
+     * A bike with an aluminum frame gets a gray dot.
+     *
+     * Called by drawBikes().
+     *
+     * @param g    graphics context
+     * @param carb Carbon enum describing material
+     * @param dotX x location of the dot
+     * @param dotY y location of the dot
+     */
+    private static void addMaterialDot(Graphics2D g, Carbon carb, int dotX, int dotY) {
         switch (carb) {
             case ALL:
                 g.setColor(Color.black);
@@ -237,7 +250,7 @@ public class Main_vector {
                 g.setColor(Color.lightGray);
                 g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                 g.setColor(Color.black);
-                smallerSize = (int) (MARKER_SIZE / 1.5);
+                int smallerSize = (int) (MARKER_SIZE / 1.5);
                 g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
                 break;
             case NONE:
@@ -245,7 +258,6 @@ public class Main_vector {
                 g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                 break;
         }
-
     }
 
 
@@ -290,8 +302,7 @@ public class Main_vector {
      * @return x position for that cost
      */
     private static int getPosition(int c) {
-        float cost = c; // to get floating-point division
-        return (int) (((cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
+        return (int) ((((float)c - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
     }
 
 
