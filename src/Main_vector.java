@@ -15,8 +15,8 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
  */
 public class Main_vector {
 
-    static final String FILE_INPUT = "bikesInput.txt";
-    static final String FILE_OUTPUT = "bikes.pdf";
+    static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
+    static final String FILE_OUTPUT = "bikes.pdf"; //location of PDF file to write diagram to
     static Scanner fileScan; //Scanner to read input text file
 
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
@@ -39,13 +39,15 @@ public class Main_vector {
 
     /**
      * Program entry point.
+     * Opens a text file with information about and writes a PDF file showing range and gradiation of prices.
      */
     public static void main(String[] args) throws IOException {
 
         //PDFGraphics2D extends Graphics2D so has the same interface.
         PDFGraphics2D g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
 
-        init();
+        readAllBikes();
+        drawGrid(g);
         drawBikes(g);
 
         //write to PDF file
@@ -57,8 +59,9 @@ public class Main_vector {
 
     /**
      * Opens the input file and reads all bikes in the file.
+     * Called by main().
      */
-    private static void init() {
+    private static void readAllBikes() {
 
         //open the file
         try {
@@ -70,7 +73,7 @@ public class Main_vector {
 
         //go through file
         while (fileScan.hasNextLine()) {
-            allBikes.add(readBikes());
+            allBikes.add(readOneBike());
 
             fileScan.nextLine(); //skip a blank line
 
@@ -92,6 +95,7 @@ public class Main_vector {
 
     /**
      * Reads a bike model and its versions, then returns a Bike object.
+     * Called by readAllBikes().
      *
      * (1) reads the header, which contains the model name and number of versions.
      *     Example: "Specialized_Diverge 7"
@@ -103,7 +107,7 @@ public class Main_vector {
      *
      * @return Bike object containing all of the version names, costs, and materials
      */
-    private static Bike readBikes() {
+    private static Bike readOneBike() {
 
 
         Scanner sc = new Scanner(fileScan.nextLine());
@@ -158,76 +162,75 @@ public class Main_vector {
 
     /**
      * Draws
+     * Called by main().
      *
      * @param g graphics context
      */
     private static void drawBikes(Graphics2D g) {
-        drawGrid(g);
 
         Bike currentBike;
-        int verticalPosition, rectWidth;
-        float startX, endX;
+        int barVertPos, barWidth;
+        float barXStart, barXEnd;
 
-        // iterate over major bike models
+        // iterate over all the bike models
         for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
 
-            // background rectangle bar
+            // colored rectangle bar
             g.setColor(getColor(i));
-            verticalPosition = i * VERTICAL_SPACING + 20;
-            startX = posFromCost(currentBike.minCost);
-            endX = posFromCost(currentBike.maxCost);
-            rectWidth = (int) (endX - startX);
-            g.fillRoundRect((int) startX, verticalPosition, rectWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
+            barVertPos = i * VERTICAL_SPACING + 20;
+            barXStart = getPosition(currentBike.minCost);
+            barXEnd = getPosition(currentBike.maxCost);
+            barWidth = (int) (barXEnd - barXStart);
+            g.fillRoundRect((int) barXStart, barVertPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
-            int currentCost, x, y, smallerSize;
+
+            // draw dots for each version
+            int currentCost, dotX, dotY, smallerSize;
             Carbon carb;
-            // iterate over sub-models
             for (int j = 0; j < currentBike.costs.size(); j++) {
                 currentCost = currentBike.costs.get(j);
 
                 // get position for the cost dot
-                x = posFromCost(currentCost);
-                y = verticalPosition + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
+                dotX = getPosition(currentCost);
+                dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
                 // draw dot with carbon color
                 carb = currentBike.carbons.get(j);
                 switch (carb) {
                     case ALL:
                         g.setColor(Color.black);
-                        g.fillOval(x, y, MARKER_SIZE, MARKER_SIZE);
+                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                         break;
                     case FORK:
                         g.setColor(Color.lightGray);
-                        g.fillOval(x, y, MARKER_SIZE, MARKER_SIZE);
+                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                         g.setColor(Color.black);
                         smallerSize = (int) (MARKER_SIZE / 1.5);
-                        g.fillOval(x + (MARKER_SIZE - smallerSize) / 2, y + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
+                        g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
                         break;
                     case NONE:
                         g.setColor(Color.lightGray);
-                        g.fillOval(x, y, MARKER_SIZE, MARKER_SIZE);
+                        g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                         break;
                 }
 
                 // draw cost and model name
                 g.setColor(Color.black);
-                g.drawString("$" + currentCost, x, y - 3);
-                g.drawString(currentBike.versions.get(j), x, y + 30); // change
-                // cost
-                // alignment
-                // here
+                g.drawString("$" + currentCost, dotX, dotY - 3);
+                g.drawString(currentBike.versions.get(j), dotX, dotY + 30);
             }
 
-            // black background for model name
+            // black background for model name on left of page
             g.setColor(Color.black);
-            g.fillRoundRect(8, verticalPosition + RECT_HEIGHT - 25, 150, 30, 3, 3);
+            g.fillRoundRect(8, barVertPos + RECT_HEIGHT - 25, 150, 30, 3, 3);
 
-            // draw model name
+            // draw model name over black background
             g.setColor(getColor(i));
             g.setFont(new Font("Arial", Font.BOLD, 14));
-            g.drawString(currentBike.modelName, 10, verticalPosition + RECT_HEIGHT - 6);
+            g.drawString(currentBike.modelName, 10, barVertPos + RECT_HEIGHT - 6);
 
+            //reset font?
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
     }
@@ -235,6 +238,7 @@ public class Main_vector {
 
     /**
      * Draws the horizontal axis, vertical grid, and labels.
+     * Called by main().
      *
      * @param g graphics context
      */
@@ -253,7 +257,7 @@ public class Main_vector {
 
         //draw vertical lines
         for (int cost = globalMinCost; cost <= globalMaxCost; cost += GRID_STEP) {
-            xPos = posFromCost(cost);
+            xPos = getPosition(cost);
             g.drawLine(xPos, 0, xPos, HEIGHT - MARGIN + 60);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
@@ -267,18 +271,21 @@ public class Main_vector {
 
     /**
      * Given the cost of a model version, returns the x position to draw it at.
+     * Called by drawBikes() and drawGrid().
      *
      * @param c cost in dollars
      * @return x position for that cost
      */
-    private static int posFromCost(int c) {
+    private static int getPosition(int c) {
         float cost = c; // to get floating-point division
         return (int) (((cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
     }
 
+
     /**
-     * Given the index of a bike model in allBikes, return the color to draw the bar.
+     * Given the index of a bike model in the vector allBikes, return the color to draw the bar.
      * This is just to look pretty.
+     * Called by drawBikes().
      *
      * @param index sequential index
      * @return the color for that bar
