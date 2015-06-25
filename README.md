@@ -2,6 +2,8 @@
 
 Reads plaintext bicycle cost information and generates a PDF showing cost range and distribution.
 
+Used more reasonable software to do this: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices
+
 ## Motivation
 
 I'm considering purchasing a road bicycle.
