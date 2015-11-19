@@ -15,8 +15,8 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
  */
 public class Main_vector {
 
-    static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
-    static final String FILE_OUTPUT = "Sample output/bikes $500 - $3,500.pdf"; //location of PDF file to write diagram to
+    static final String FILE_INPUT = "bikesInput_enduranceOnly.txt"; //location of text file containing bike information
+    static final String FILE_OUTPUT = "endurance only.pdf"; //location of PDF file to write diagram to
     static Scanner fileScan; //Scanner to read input text file
 
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
@@ -33,7 +33,7 @@ public class Main_vector {
     static final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
 
     static final int RECT_HEIGHT = 20; //height of all the colored bars
-    static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between colored bars
+    static final int VERTICAL_SPACING = RECT_HEIGHT + 100; //spacing between colored bars
     static final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     static final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
