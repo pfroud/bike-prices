@@ -1,0 +1,42 @@
+digraph G {
+	rankdir=LR;
+	node[shape=box]
+	
+	subgraph manus{
+		node[style=filled, fillcolor="#ffcccc"];
+		
+		specialized; trek; cannondale;
+	}
+
+	subgraph models {
+		node[style=filled, fillcolor="#ddddff"];
+		
+		specialized -> {diverge; secteur; roubiax; allez; tarmac}
+		trek -> {crossrip; domane; one_series; madole; emonda_alr; emonda}
+		cannondale -> {caad10; caad8; supersix_evo; synape_carbon; synapse}
+	}
+
+	subgraph versions {
+		node[style=filled, fillcolor="#ddffdd"];
+
+		diverge -> {A1; Sport_A1; Comp_carbon; Elite_A1; Comp_smartweld; Expert_carbon; Carbon_DI2; }
+		secteur -> {Double; Triple; Sport_double; Elite_double; }
+		roubiax -> {sl4_double; sl4_disc; sl4_sport; sl4_elite; sl4_elite_disc; sl4_comp; sl4_comp_disc; sl4_export; sl4_pro_race; sl4_pro_disc_race; sl4_pro_disc_race_udi2; S_work_sl4_dura_ace; S_works_sl4_disc_di2; }
+		allez -> {base; elite; 650; sport; comp; expert; comp_race; pro; s_works_di2; }
+		tarmac -> {sport_tarmac; elite_tarmac; comp_tarmac; expert_tarmac; pro_race; pro_disc_race; pro_disc_race_udi2; S_works_dura_ace; s_works_tarmac_red; s_works_tarmac_di2_disc; }
+		
+		crossrip -> {crosrip; comp_crossrip; elite_crossrip; LTD; }
+		domane -> {2.0; 2.3; "4.0_disc"; 4.1; 4.3; "4.3_disc"; 4.5; "4.5_disc"; 5.2; "5.9_dura_ace"; 5.9; 6.2; "6.2_disc"; 6.9; "6.9_disc"; }
+		one_series -> {1.1; 1.2; 1.5; }
+		madole -> {2.1; 2.5; 7.7; "7.9_WSD"; "7.9_WSD"; }
+		emonda_alr -> {5; 6; }
+		emonda -> {S_4; S_5_wsd; S_5; S_6; Sl_5_wsd; Sl_5; Sl_6_wsd; Sl_6_wsd; Sl_8_wsd; Sl_8_red; Sl_8; Slr_6; Slr_8; Slr_9_wsd; Slr_9; Slr_10; }
+
+		caad10 -> {"105_5_caad10"; Ultegra_3; force,_racing; sram_rival_disc_caad10; black_inc_disc; }
+		caad8 -> {Claris_8; Sora_7; Tiagara_6; "105_5_caad8"; }
+		supersix_evo -> {"105_5_supersix"; sram_rival; ultegra_supersix; force_racing; sram_red; ultegra_di2; dura_ace_2; red_racing; dura_ace_di2; team; black_inc; }
+		synape_carbon -> {"105_6"; "105_5_synapse"; sram_rival_disc_snapse; ultegra; ultegra_disc; ultegra_di2_disc; hi_mod_ultegra_disc; hi_mod_sram_red_disc; hi_mod_black_inc_disc; }
+		synapse -> {Claris_8_synapse; Sora_7_synapse; tiagra_disc_6; "105_5_disc"; sram_rival_disc; }
+	}
+
+}
