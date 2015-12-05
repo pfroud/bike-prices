@@ -15,8 +15,8 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
  */
 public class Main_vector {
 
-    static final String FILE_INPUT = "bikesInput_enduranceOnly.txt"; //location of text file containing bike information
-    static final String FILE_OUTPUT = "endurance only.pdf"; //location of PDF file to write diagram to
+    static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
+    static final String FILE_OUTPUT = "testing.pdf"; //location of PDF file to write diagram to
     static Scanner fileScan; //Scanner to read input text file
 
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
@@ -25,7 +25,7 @@ public class Main_vector {
 
     static final boolean doRangeOverride = true; //whether or not to override the cost range
     static final int globalMin_override = 500; //custom cost range start
-    static final int globalMax_override = 3500; //custom cost range end
+    static final int globalMax_override = 10000; //custom cost range end
 
     static final int WIDTH = 1900; //width of the output PDF file. Units unknown.
     static final int HEIGHT = 940; //width of the output PDF file. Units unknown.
@@ -33,7 +33,7 @@ public class Main_vector {
     static final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
 
     static final int RECT_HEIGHT = 20; //height of all the colored bars
-    static final int VERTICAL_SPACING = RECT_HEIGHT + 100; //spacing between colored bars
+    static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between colored bars
     static final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     static final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
@@ -51,6 +51,10 @@ public class Main_vector {
         PDFGraphics2D g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
 
         readAllBikes();
+
+        //printAnalysis();
+        //System.exit(0);
+
         drawGrid(g);
         drawBikes(g);
 
@@ -58,6 +62,54 @@ public class Main_vector {
         try (FileOutputStream file = new FileOutputStream(FILE_OUTPUT)) {
             file.write(g.getBytes());
         }
+    }
+
+    private static void printAnalysis() {
+
+
+        //System.out.println("model\tabsolute range\tfactor");
+        int min, max, range;
+
+        int numBins = 3;
+        Vector<Integer> bins;
+
+        for (Bike currentBike : allBikes) {
+            min = currentBike.minCost;
+            max = currentBike.maxCost;
+            range = max - min;
+//            System.out.println("currentBike is " + currentBike.modelName + ", range is " + range);
+
+            //System.out.printf("%s\t$%d\t%.2f\n", currentBike.modelName, range, (double) (max) / min);
+
+            bins = new Vector<>(numBins);
+            for (int i = 0; i < numBins; i++) {
+                bins.add(i, 0);
+            }
+
+            double binWidth = (double) range / numBins;
+//            System.out.printf("range is %d, numBins is %d, so binWidth is %f\n", range, numBins, binWidth);
+            double cutoff;
+
+            for (Integer cost : currentBike.costs) {
+//                System.out.println("cost=" + cost);
+
+                for (int testBin = 1; testBin <= numBins; testBin++) {
+                    cutoff = min + (binWidth * testBin);
+//                    System.out.println("   testBin=" + testBin + ", cutoff =" + cutoff);
+
+                    if (cost <= cutoff) {
+                        bins.set(testBin - 1, bins.get(testBin - 1) + 1);
+//                        System.out.println("      cost is in bin, bin " + (testBin-1) + " inc'd, bins is now " + bins);
+                        break;
+                    }
+                }
+
+            }
+            System.out.println(currentBike.modelName + ": " + bins);
+
+        }
+
+
     }
 
 
@@ -101,17 +153,18 @@ public class Main_vector {
 
 
     //@formatter:off
+
     /**
      * Reads a bike model and its versions, then returns a Bike object.
      * Called by readAllBikes().
-     *
+     * <p>
      * (1) reads the header, which contains the model name and number of versions.
-     *     Example: "Specialized_Diverge 7"
-     *
+     * Example: "Specialized_Diverge 7"
+     * <p>
      * (2) Does three for loops to read:
-     *     (a) version names
-     *     (b) version costs
-     *     (c) version materials
+     * (a) version names
+     * (b) version costs
+     * (c) version materials
      *
      * @return Bike object containing all of the version names, costs, and materials
      */
@@ -191,6 +244,7 @@ public class Main_vector {
             barXStart = getPosition(currentBike.minCost);
             barXEnd = getPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
+
             g.fillRoundRect((int) barXStart, barVertPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
 
@@ -214,7 +268,7 @@ public class Main_vector {
 
             // black background for model name on left of page
             g.setColor(Color.black);
-            g.fillRoundRect(8, barVertPos + RECT_HEIGHT - 25, 150, 30, 3, 3);
+           // g.fillRoundRect(8, barVertPos + RECT_HEIGHT - 25, 150, 30, 3, 3);
 
             // draw model name over black background
             g.setColor(getColor(i));
@@ -228,11 +282,11 @@ public class Main_vector {
 
     /**
      * Adds a dot in the colored bar showing the cost.
-     *
+     * <p>
      * A bike with an all-carbon frame gets a black dot.
      * A bike with a carbon fork only gets a small black dot on a gray dot.
      * A bike with an aluminum frame gets a gray dot.
-     *
+     * <p>
      * Called by drawBikes().
      *
      * @param g    graphics context
@@ -243,18 +297,20 @@ public class Main_vector {
     private static void addMaterialDot(Graphics2D g, Carbon carb, int dotX, int dotY) {
         switch (carb) {
             case ALL:
-                g.setColor(Color.black);
+                g.setColor(Color.cyan);
                 g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                 break;
             case FORK:
-                g.setColor(Color.lightGray);
+                g.setColor(Color.yellow);
+                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+                /*g.setColor(Color.lightGray);
                 g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                 g.setColor(Color.black);
                 int smallerSize = (int) (MARKER_SIZE / 1.5);
-                g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);
+                g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);*/
                 break;
             case NONE:
-                g.setColor(Color.lightGray);
+                g.setColor(Color.red);
                 g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
                 break;
         }
@@ -302,7 +358,7 @@ public class Main_vector {
      * @return x position for that cost
      */
     private static int getPosition(int c) {
-        return (int) ((((float)c - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
+        return (int) ((((float) c - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
     }
 
 
@@ -315,7 +371,9 @@ public class Main_vector {
      * @return the color for that bar
      */
     private static Color getColor(int index) {
-        switch (index % 4) {
+        return Color.gray;
+
+/*        switch (index % 4) {
             case 0:
                 return Color.decode("0x65B870"); // green
             case 1:
@@ -325,7 +383,7 @@ public class Main_vector {
             case 3:
                 return Color.decode("0xDBA2B2"); // purple
         }
-        return null;
+        return null;*/
     }
 
 
