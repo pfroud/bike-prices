@@ -8,10 +8,10 @@ import java.util.Vector;
 class Bike {
     String modelName; //name of the model
 
-    //yay, everything is default privacy!
-    Vector<String> versions = new Vector<>(); //list of versions of the model
-    Vector<Integer> costs = new Vector<>(); //list of prices of the versions
-    Vector<Carbon> carbons = new Vector<>(); //list of materials of the versions
+    //yay, everything is default privacy! - sort of
+    Vector<String> versionNames = new Vector<>(); //list of versions of the model
+    Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
+    Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
 
     int minCost = 999999, maxCost = 0; //tracks the cost of the most and least expensive version of the model
 
@@ -33,8 +33,8 @@ class Bike {
      * @return a human-readable representation of the bike model.
      */
     public String toString() {
-        ListIterator<String> n = versions.listIterator();
-        ListIterator<Integer> c = costs.listIterator();
+        ListIterator<String> n = versionNames.listIterator();
+        ListIterator<Integer> c = versionCosts.listIterator();
         String out = modelName + "\n-----------------------\n";
 
         while (n.hasNext()) {
@@ -51,9 +51,9 @@ class Bike {
      * @param c the cost of the version to add.
      */
     public void addCost(int c) {
-        costs.add(c); //add to vector
+        versionCosts.add(c); //add to vector
 
-        //update min and max costs
+        //update min and max versionCosts
         if (c > maxCost) {
             maxCost = c;
         }
@@ -63,4 +63,36 @@ class Bike {
     }
 
 
+    public void printRangeAndFactor() {
+        //System.out.println("model\tabsolute range\tfactor");
+        System.out.printf("%s\t$%d\t%.2f\n", modelName, maxCost - minCost, (double) (maxCost) / minCost);
+    }
+
+    public void printHistogram(int numBins) {
+        Vector<Integer> bins = new Vector<>(numBins);
+        for (int i = 0; i < numBins; i++) {
+            bins.add(i, 0);
+        }
+
+        double binWidth = (double) (maxCost - minCost) / numBins;
+        double costCutoff;
+
+        for (Integer currentVersionCost : versionCosts) {
+
+            for (int currentBin = 1; currentBin <= numBins; currentBin++) {
+                costCutoff = minCost + (binWidth * currentBin);
+
+                if (currentVersionCost <= costCutoff) {
+                    bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); //need currentBin-1 bc index starts at 0
+                    break;
+                }
+            }
+
+        }
+        System.out.println(modelName + ": " + bins);
+
+    }
+
+
 }
+

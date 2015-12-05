@@ -52,8 +52,12 @@ public class Main_vector {
 
         readAllBikes();
 
+        for (Bike bike : allBikes) {
+            bike.printHistogram(3);
+        }
+
         //printAnalysis();
-        //System.exit(0);
+        System.exit(0);
 
         drawGrid(g);
         drawBikes(g);
@@ -62,54 +66,6 @@ public class Main_vector {
         try (FileOutputStream file = new FileOutputStream(FILE_OUTPUT)) {
             file.write(g.getBytes());
         }
-    }
-
-    private static void printAnalysis() {
-
-
-        //System.out.println("model\tabsolute range\tfactor");
-        int min, max, range;
-
-        int numBins = 3;
-        Vector<Integer> bins;
-
-        for (Bike currentBike : allBikes) {
-            min = currentBike.minCost;
-            max = currentBike.maxCost;
-            range = max - min;
-//            System.out.println("currentBike is " + currentBike.modelName + ", range is " + range);
-
-            //System.out.printf("%s\t$%d\t%.2f\n", currentBike.modelName, range, (double) (max) / min);
-
-            bins = new Vector<>(numBins);
-            for (int i = 0; i < numBins; i++) {
-                bins.add(i, 0);
-            }
-
-            double binWidth = (double) range / numBins;
-//            System.out.printf("range is %d, numBins is %d, so binWidth is %f\n", range, numBins, binWidth);
-            double cutoff;
-
-            for (Integer cost : currentBike.costs) {
-//                System.out.println("cost=" + cost);
-
-                for (int testBin = 1; testBin <= numBins; testBin++) {
-                    cutoff = min + (binWidth * testBin);
-//                    System.out.println("   testBin=" + testBin + ", cutoff =" + cutoff);
-
-                    if (cost <= cutoff) {
-                        bins.set(testBin - 1, bins.get(testBin - 1) + 1);
-//                        System.out.println("      cost is in bin, bin " + (testBin-1) + " inc'd, bins is now " + bins);
-                        break;
-                    }
-                }
-
-            }
-            System.out.println(currentBike.modelName + ": " + bins);
-
-        }
-
-
     }
 
 
@@ -179,10 +135,10 @@ public class Main_vector {
 
         // add version names
         for (int i = 0; i < numModels; i++) {
-            bike.versions.add(fileScan.nextLine());
+            bike.versionNames.add(fileScan.nextLine());
         }
 
-        // add version costs
+        // add version versionCosts
         int cst;
         for (int i = 0; i < numModels; i++) {
             cst = fileScan.nextInt();
@@ -204,13 +160,13 @@ public class Main_vector {
 
             switch (carb) {
                 case "all":
-                    bike.carbons.add(Carbon.ALL);
+                    bike.versionCarbons.add(Carbon.ALL);
                     break;
                 case "fork":
-                    bike.carbons.add(Carbon.FORK);
+                    bike.versionCarbons.add(Carbon.FORK);
                     break;
                 case "none":
-                    bike.carbons.add(Carbon.NONE);
+                    bike.versionCarbons.add(Carbon.NONE);
                     break;
                 default:
                     System.err.println("unrecognized carbon value \"" + carb + "\"");
@@ -245,25 +201,27 @@ public class Main_vector {
             barXEnd = getPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
 
+
+
             g.fillRoundRect((int) barXStart, barVertPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
 
             // draw dots for each version
             int currentCost, dotX, dotY;
-            for (int j = 0; j < currentBike.costs.size(); j++) {
-                currentCost = currentBike.costs.get(j);
+            for (int j = 0; j < currentBike.versionCosts.size(); j++) {
+                currentCost = currentBike.versionCosts.get(j);
 
                 // get position for the cost dot
                 dotX = getPosition(currentCost);
                 dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
                 // draw dot with carbon color
-                addMaterialDot(g, currentBike.carbons.get(j), dotX, dotY);
+                addMaterialDot(g, currentBike.versionCarbons.get(j), dotX, dotY);
 
                 // draw cost and model name
                 g.setColor(Color.black);
                 g.drawString("$" + currentCost, dotX, dotY - 3);
-                g.drawString(currentBike.versions.get(j), dotX, dotY + 30);
+                g.drawString(currentBike.versionNames.get(j), dotX, dotY + 30);
             }
 
             // black background for model name on left of page
