@@ -55,7 +55,7 @@ public class Main_vector {
 
         readAllBikes();
 
-//        Bike.numHistogramBins = 3;
+        Bike.numHistogramBins = 3;
 //        printHistograms();
 //        System.exit(0); //stop here for testing
 
@@ -252,9 +252,12 @@ public class Main_vector {
             barXEnd = getXPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
 
-            //HISTOGRAM STUFF - binWidth is in dollars
-            //double binWidth = (double) (currentBike.maxCost - currentBike.minCost) / Bike.numHistogramBins;
-
+            //binWidth is in dollars
+//            double binWidth = (double) (currentBike.maxCost - currentBike.minCost) / Bike.numHistogramBins;
+//
+//            for(int j=0; i<Bike.numHistogramBins; i++){
+//
+//            }
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
             drawAllDots(g, currentBike, barYPos);
@@ -270,10 +273,9 @@ public class Main_vector {
     }
 
     /**
-     *
-     * @param g graphics context
+     * @param g           graphics context
      * @param currentBike the bike object from the main loop
-     * @param barVertPos vertical position of that bike's bar
+     * @param barVertPos  vertical position of that bike's bar
      */
     private static void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
@@ -284,49 +286,23 @@ public class Main_vector {
             dotX = getXPosition(currentCost);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
-            // draw dot with carbon color
-            addMaterialDot(g, currentBike.versionCarbons.get(j), dotX, dotY);
+            switch (currentBike.versionCarbons.get(j)) {
+                case ALL:
+                    g.setColor(Color.cyan);
+                    break;
+                case FORK:
+                    g.setColor(Color.yellow);
+                    break;
+                case NONE:
+                    g.setColor(Color.red);
+                    break;
+            }
+            g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
 
             // draw cost and model name
             g.setColor(Color.black);
             g.drawString("$" + currentCost, dotX, dotY - 3);
             g.drawString(currentBike.versionNames.get(j), dotX, dotY + 30);
-        }
-    }
-
-    /**
-     * Adds a dot in the colored bar showing the cost.
-     *
-     * A bike with an all-carbon frame gets a black dot.
-     * A bike with a carbon fork only gets a small black dot on a gray dot.
-     * A bike with an aluminum frame gets a gray dot.
-     *
-     * Called by drawBikes().
-     *
-     * @param g    graphics context
-     * @param carb Carbon enum describing material
-     * @param dotX x location of the dot
-     * @param dotY y location of the dot
-     */
-    private static void addMaterialDot(Graphics2D g, Carbon carb, int dotX, int dotY) {
-        switch (carb) {
-            case ALL:
-                g.setColor(Color.cyan);
-                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                break;
-            case FORK:
-                g.setColor(Color.yellow);
-                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                /*g.setColor(Color.lightGray);
-                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                g.setColor(Color.black);
-                int smallerSize = (int) (MARKER_SIZE / 1.5);
-                g.fillOval(dotX + (MARKER_SIZE - smallerSize) / 2, dotY + (MARKER_SIZE - smallerSize) / 2, smallerSize, smallerSize);*/
-                break;
-            case NONE:
-                g.setColor(Color.red);
-                g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-                break;
         }
     }
 
@@ -341,10 +317,6 @@ public class Main_vector {
     private static int getXPosition(int cost) {
         return (int) ((((float) cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
     }
-
-
-
-
 
 
 }
