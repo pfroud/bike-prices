@@ -1,14 +1,12 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
+
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
-
-import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
 
 /**
  * Makes a PDF of bikes from input file.
@@ -40,6 +38,7 @@ public class Main_vector {
 
     static final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
     static final Color BAR_BACKGROUND_COLOR = Color.gray;
+    static final int RECT_RADIUS = 10;
 
     static Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
@@ -250,15 +249,17 @@ public class Main_vector {
             barYPos = i * VERTICAL_SPACING + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
-            barWidth = (int) (barXEnd - barXStart);
+            barWidth = (int) ((barXEnd - barXStart) / Bike.numHistogramBins);
 
-            //binWidth is in dollars
-//            double binWidth = (double) (currentBike.maxCost - currentBike.minCost) / Bike.numHistogramBins;
-//
-//            for(int j=0; i<Bike.numHistogramBins; i++){
-//
-//            }
-            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
+            int xStartHist = (int) barXStart;
+            for (int j = 0; j < Bike.numHistogramBins; j++) {
+                g.setColor(getColor(j));
+                g.fillRoundRect(xStartHist, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
+                xStartHist += barWidth;
+            }
+
+
+//            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
             drawAllDots(g, currentBike, barYPos);
 
@@ -270,6 +271,19 @@ public class Main_vector {
             //reset font - might not be needed - should not call new every time
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
+    }
+
+
+    public static Color getColor(int index) {
+        switch (index) {
+            case 0:
+                return Color.gray;
+            case 1:
+                return Color.green;
+            case 2:
+                return Color.pink;
+        }
+        return Color.black;
     }
 
     /**
