@@ -6,9 +6,10 @@ import java.util.Vector;
  * For example, a model is "Specialized Diverge" and a version is "Elite A1".
  */
 class Bike {
+    public static int numHistogramBins = -1; // gets set in Main
     String modelName; //name of the model
 
-    //yay, everything is default privacy! - sort of
+    //yay, everything is default privacy!
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
@@ -62,24 +63,40 @@ class Bike {
         }
     }
 
-
-    public void printRangeAndFactor() {
-        //System.out.println("model\tabsolute range\tfactor");
-        System.out.printf("%s\t$%d\t%.2f\n", modelName, maxCost - minCost, (double) (maxCost) / minCost);
+    /**
+     * Prints the cost range, both in absolute cost and multiples of least price.
+     * Called by printRanges() in Main_vector.
+     *
+     * Example: "Specialized_Diverge	$7400	7.73x"
+     */
+    public void printRange() {
+        System.out.printf("%s\t$%d\t%.2fx\n", modelName, maxCost - minCost, (double) (maxCost) / minCost);
     }
 
-    public void printHistogram(int numBins) {
-        Vector<Integer> bins = new Vector<>(numBins);
-        for (int i = 0; i < numBins; i++) {
+    /**
+     * Divides the bikes by cost into numHistogramBins bins, and prints the result.
+     * Not actually a histogram, just data for a histogram.
+     * Called by printHistograms() in Main_vector.
+     *
+     * Example: "Specialized_Diverge: [5, 1, 1]"
+     */
+    public void printHistogram() {
+        // each int is the number of versions in that price range
+        Vector<Integer> bins = new Vector<>(numHistogramBins);
+
+        //init vector
+        for (int i = 0; i < numHistogramBins; i++) {
             bins.add(i, 0);
         }
 
-        double binWidth = (double) (maxCost - minCost) / numBins;
-        double costCutoff;
+        double binWidth = (double) (maxCost - minCost) / numHistogramBins; // size in cost of each bin
+        double costCutoff; //max cost for a version to be in a bin
 
+        //iterate over versions
         for (Integer currentVersionCost : versionCosts) {
 
-            for (int currentBin = 1; currentBin <= numBins; currentBin++) {
+            //iterate over bins
+            for (int currentBin = 1; currentBin <= numHistogramBins; currentBin++) {
                 costCutoff = minCost + (binWidth * currentBin);
 
                 if (currentVersionCost <= costCutoff) {

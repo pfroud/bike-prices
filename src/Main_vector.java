@@ -21,7 +21,7 @@ public class Main_vector {
 
     static int globalMinCost = 999999; //cost of the least expensive bike in the input file
     static int globalMaxCost = 0;//cost of the most expensive bike in the input file
-    static float globalCostRange;
+    static float globalCostRange; //difference between least and most expensive bike in input file
 
     static final boolean doRangeOverride = true; //whether or not to override the cost range
     static final int globalMin_override = 500; //custom cost range start
@@ -32,11 +32,14 @@ public class Main_vector {
     static final int MARGIN = 100; //space between content and edges of page. Units unknown.
     static final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
 
-    static final int RECT_HEIGHT = 20; //height of all the colored bars
-    static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between colored bars
+    static final int RECT_HEIGHT = 20; //height of each horizontal bar
+    static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between each horizontal bar
     static final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     static final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
+
+    static final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
+    static final Color BAR_BACKGROUND_COLOR = Color.gray;
 
     static Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
@@ -52,12 +55,9 @@ public class Main_vector {
 
         readAllBikes();
 
-        for (Bike bike : allBikes) {
-            bike.printHistogram(3);
-        }
-
-        //printAnalysis();
-        System.exit(0);
+//        Bike.numHistogramBins = 3;
+//        printHistograms();
+//        System.exit(0); //stop here for testing
 
         drawGrid(g);
         drawBikes(g);
@@ -68,6 +68,24 @@ public class Main_vector {
         }
     }
 
+    /**
+     * Prints histogram info for each bike.
+     */
+    public static void printHistograms() {
+        for (Bike bike : allBikes) {
+            bike.printHistogram();
+        }
+    }
+
+    /**
+     * Prints range info for each bike.
+     */
+    public static void printRanges() {
+        System.out.println("model\tabsolute range\tfactor"); //header for use in csv file
+        for (Bike bike : allBikes) {
+            bike.printRange();
+        }
+    }
 
     /**
      * Opens the input file and reads all bikes in the file.
@@ -97,7 +115,7 @@ public class Main_vector {
             }
         }
 
-        //change the cost range, if needed
+        //optionally set a custom min and max cost to display
         if (doRangeOverride) {
             globalMaxCost = globalMax_override;
             globalMinCost = globalMin_override;
@@ -108,30 +126,29 @@ public class Main_vector {
     }
 
 
-    //@formatter:off
-
+    //@formatter:off (formatter kills indentation in this doc comment)
     /**
      * Reads a bike model and its versions, then returns a Bike object.
      * Called by readAllBikes().
-     * <p>
-     * (1) reads the header, which contains the model name and number of versions.
-     * Example: "Specialized_Diverge 7"
-     * <p>
+     * Steps:
+     *
+     * (1) Reads the header, which contains the model name and number of versions.
+     *     Example: "Specialized_Diverge 7"
+     *
      * (2) Does three for loops to read:
-     * (a) version names
-     * (b) version costs
-     * (c) version materials
+     *     (a) version names
+     *     (b) version costs
+     *     (c) version materials
      *
      * @return Bike object containing all of the version names, costs, and materials
      */
     //@formatter:on
     private static Bike readOneBike() {
 
-
-        Scanner sc = new Scanner(fileScan.nextLine());
-        Bike bike = new Bike(sc.next());
-        int numModels = sc.nextInt();
-        String carb;
+        Scanner headerScan = new Scanner(fileScan.nextLine());
+        Bike bike = new Bike(headerScan.next()); //read model name
+        int numModels = headerScan.nextInt();
+        headerScan.close();
 
         // add version names
         for (int i = 0; i < numModels; i++) {
@@ -139,26 +156,27 @@ public class Main_vector {
         }
 
         // add version versionCosts
-        int cst;
+        int currentCost;
         for (int i = 0; i < numModels; i++) {
-            cst = fileScan.nextInt();
+            currentCost = fileScan.nextInt();
 
             //update global min and max cost
-            if (cst > globalMaxCost) {
-                globalMaxCost = cst;
+            if (currentCost > globalMaxCost) {
+                globalMaxCost = currentCost;
             }
-            if (cst < globalMinCost) {
-                globalMinCost = cst;
+            if (currentCost < globalMinCost) {
+                globalMinCost = currentCost;
             }
 
-            bike.addCost(cst);
+            bike.addCost(currentCost);
         }
 
         // add version materials
+        String currentCarbon;
         for (int i = 0; i < numModels; i++) {
-            carb = fileScan.next();
+            currentCarbon = fileScan.next();
 
-            switch (carb) {
+            switch (currentCarbon) {
                 case "all":
                     bike.versionCarbons.add(Carbon.ALL);
                     break;
@@ -169,82 +187,120 @@ public class Main_vector {
                     bike.versionCarbons.add(Carbon.NONE);
                     break;
                 default:
-                    System.err.println("unrecognized carbon value \"" + carb + "\"");
+                    System.err.println("unrecognized carbon value \"" + currentCarbon + "\"");
             }
         }
 
-        sc.close();
         return bike;
     }
 
 
     /**
-     * Draws
+     * Draws the horizontal axis on the bottom, vertical grid lines, and labels on the left.
+     * Called by main().
+     *
+     * @param g graphics context
+     */
+    private static void drawGrid(Graphics2D g) {
+        //          x1   ,  y1            , x2            , y2
+        g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN); // bottom axis
+
+        // min and max labels for bottom axis
+        g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
+        g.drawString("$" + globalMinCost, MARGIN, HEIGHT - MARGIN + 20);
+        g.drawString("$" + globalMaxCost, WIDTH - MARGIN - 60, HEIGHT - MARGIN + 20);
+
+        //setup for vertical lines
+        g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
+        g.setColor(GRID_VERTICAL_COLOR);
+        int xPos;
+
+        //draw vertical lines
+        for (int cost = globalMinCost; cost <= globalMaxCost; cost += GRID_STEP) {
+            xPos = getXPosition(cost);
+            g.drawLine(xPos, 0, xPos, HEIGHT - MARGIN + 60);
+
+            // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
+            if (globalMinCost != cost && globalMaxCost != cost) {
+                g.drawString("$" + cost, xPos, HEIGHT - MARGIN + 15);
+            }
+
+        }
+
+    }
+
+    /**
+     * Draws the PDF.
      * Called by main().
      *
      * @param g graphics context
      */
     private static void drawBikes(Graphics2D g) {
-
         Bike currentBike;
-        int barVertPos, barWidth;
-        float barXStart, barXEnd;
+        int barYPos, barWidth;
+        float barXStart, barXEnd; // x positions of start and end of a bar
+        Font fontModelName = new Font("Arial", Font.BOLD, 14);
 
         // iterate over all the bike models
         for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
 
             // colored rectangle bar
-            g.setColor(getColor(i));
-            barVertPos = i * VERTICAL_SPACING + 20;
-            barXStart = getPosition(currentBike.minCost);
-            barXEnd = getPosition(currentBike.maxCost);
+            g.setColor(BAR_BACKGROUND_COLOR);
+            barYPos = i * VERTICAL_SPACING + 20;
+            barXStart = getXPosition(currentBike.minCost);
+            barXEnd = getXPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
 
+            //HISTOGRAM STUFF - binWidth is in dollars
+            //double binWidth = (double) (currentBike.maxCost - currentBike.minCost) / Bike.numHistogramBins;
 
+            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
-            g.fillRoundRect((int) barXStart, barVertPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
+            drawAllDots(g, currentBike, barYPos);
 
-
-            // draw dots for each version
-            int currentCost, dotX, dotY;
-            for (int j = 0; j < currentBike.versionCosts.size(); j++) {
-                currentCost = currentBike.versionCosts.get(j);
-
-                // get position for the cost dot
-                dotX = getPosition(currentCost);
-                dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-
-                // draw dot with carbon color
-                addMaterialDot(g, currentBike.versionCarbons.get(j), dotX, dotY);
-
-                // draw cost and model name
-                g.setColor(Color.black);
-                g.drawString("$" + currentCost, dotX, dotY - 3);
-                g.drawString(currentBike.versionNames.get(j), dotX, dotY + 30);
-            }
-
-            // black background for model name on left of page
+            // draw model name on the left
             g.setColor(Color.black);
-           // g.fillRoundRect(8, barVertPos + RECT_HEIGHT - 25, 150, 30, 3, 3);
+            g.setFont(fontModelName);
+            g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
-            // draw model name over black background
-            g.setColor(getColor(i));
-            g.setFont(new Font("Arial", Font.BOLD, 14));
-            g.drawString(currentBike.modelName, 10, barVertPos + RECT_HEIGHT - 6);
-
-            //reset font?
+            //reset font - might not be needed - should not call new every time
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
     }
 
     /**
+     *
+     * @param g graphics context
+     * @param currentBike the bike object from the main loop
+     * @param barVertPos vertical position of that bike's bar
+     */
+    private static void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
+        int currentCost, dotX, dotY;
+        for (int j = 0; j < currentBike.versionCosts.size(); j++) {
+            currentCost = currentBike.versionCosts.get(j);
+
+            // get position for the cost dot
+            dotX = getXPosition(currentCost);
+            dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
+
+            // draw dot with carbon color
+            addMaterialDot(g, currentBike.versionCarbons.get(j), dotX, dotY);
+
+            // draw cost and model name
+            g.setColor(Color.black);
+            g.drawString("$" + currentCost, dotX, dotY - 3);
+            g.drawString(currentBike.versionNames.get(j), dotX, dotY + 30);
+        }
+    }
+
+    /**
      * Adds a dot in the colored bar showing the cost.
-     * <p>
+     *
      * A bike with an all-carbon frame gets a black dot.
      * A bike with a carbon fork only gets a small black dot on a gray dot.
      * A bike with an aluminum frame gets a gray dot.
-     * <p>
+     *
      * Called by drawBikes().
      *
      * @param g    graphics context
@@ -276,73 +332,19 @@ public class Main_vector {
 
 
     /**
-     * Draws the horizontal axis, vertical grid, and labels.
-     * Called by main().
-     *
-     * @param g graphics context
-     */
-    private static void drawGrid(Graphics2D g) {
-        g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN); // bottom axis
-
-        // min and max labels for bottom axis
-        g.setFont(new Font("Arial", Font.BOLD, 22));
-        g.drawString("$" + globalMinCost, MARGIN, HEIGHT - MARGIN + 20);
-        g.drawString("$" + globalMaxCost, WIDTH - MARGIN - 60, HEIGHT - MARGIN + 20);
-
-        //setup for vertical lines
-        g.setFont(new Font("Arial", Font.PLAIN, 14));
-        g.setColor(Color.decode("0xbbbbbb"));
-        int xPos;
-
-        //draw vertical lines
-        for (int cost = globalMinCost; cost <= globalMaxCost; cost += GRID_STEP) {
-            xPos = getPosition(cost);
-            g.drawLine(xPos, 0, xPos, HEIGHT - MARGIN + 60);
-
-            // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
-            if (globalMinCost != cost && globalMaxCost != cost) {
-                g.drawString("$" + cost, xPos, HEIGHT - MARGIN + 15);
-            }
-
-        }
-
-    }
-
-    /**
      * Given the cost of a model version, returns the x position to draw it at.
      * Called by drawBikes() and drawGrid().
      *
-     * @param c cost in dollars
+     * @param cost cost in dollars
      * @return x position for that cost
      */
-    private static int getPosition(int c) {
-        return (int) ((((float) c - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
+    private static int getXPosition(int cost) {
+        return (int) ((((float) cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
     }
 
 
-    /**
-     * Given the index of a bike model in the vector allBikes, return the color to draw the bar.
-     * This is just to look pretty.
-     * Called by drawBikes().
-     *
-     * @param index sequential index
-     * @return the color for that bar
-     */
-    private static Color getColor(int index) {
-        return Color.gray;
 
-/*        switch (index % 4) {
-            case 0:
-                return Color.decode("0x65B870"); // green
-            case 1:
-                return Color.decode("0x41AEF2"); // blue
-            case 2:
-                return Color.decode("0xF2BD41"); // orange
-            case 3:
-                return Color.decode("0xDBA2B2"); // purple
-        }
-        return null;*/
-    }
+
 
 
 }
