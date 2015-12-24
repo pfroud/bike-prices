@@ -6,7 +6,6 @@ import java.util.Vector;
  * For example, a model is "Specialized Diverge" and a version is "Elite A1".
  */
 class Bike {
-    public static int numHistogramBins = -1; // gets set in Main
     String modelName; //name of the model
 
     //yay, everything is default privacy!
@@ -80,7 +79,7 @@ class Bike {
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
-    public void printHistogram() {
+    public void printHistogram(int numHistogramBins) {
         // each int is the number of versions in that price range
         Vector<Integer> bins = new Vector<>(numHistogramBins);
 

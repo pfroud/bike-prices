@@ -38,10 +38,10 @@ public class Main_vector {
 
     static final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
     static final Color BAR_BACKGROUND_COLOR = Color.gray;
-    static final int RECT_RADIUS = 10;
+    static final int RECT_RADIUS = 0;
 
     static Vector<Bike> allBikes = new Vector<>(); //holds every bike model
-
+    static int numHistogramBins;
 
     /**
      * Program entry point.
@@ -54,8 +54,10 @@ public class Main_vector {
 
         readAllBikes();
 
-        Bike.numHistogramBins = 3;
-//        printHistograms();
+        numHistogramBins = 3;
+//        printHistograms(numHistogramBins);
+//        System.out.println("----------------");
+//        printRanges();
 //        System.exit(0); //stop here for testing
 
         drawGrid(g);
@@ -70,9 +72,9 @@ public class Main_vector {
     /**
      * Prints histogram info for each bike.
      */
-    public static void printHistograms() {
+    public static void printHistograms(int numHistogramBins) {
         for (Bike bike : allBikes) {
-            bike.printHistogram();
+            bike.printHistogram(numHistogramBins);
         }
     }
 
@@ -239,6 +241,7 @@ public class Main_vector {
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
         Font fontModelName = new Font("Arial", Font.BOLD, 14);
+        initColors(numHistogramBins);
 
         // iterate over all the bike models
         for (int i = 0; i < allBikes.size(); i++) {
@@ -249,17 +252,16 @@ public class Main_vector {
             barYPos = i * VERTICAL_SPACING + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
-            barWidth = (int) ((barXEnd - barXStart) / Bike.numHistogramBins);
+            barWidth = (int) ((barXEnd - barXStart) / numHistogramBins);
 
             int xStartHist = (int) barXStart;
-            for (int j = 0; j < Bike.numHistogramBins; j++) {
-                g.setColor(getColor(j));
-                g.fillRoundRect(xStartHist, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
+            int extraWidth = 0;
+            for (int j = 0; j < numHistogramBins; j++) {
+                g.setColor(colors[j]);
+                if (j == numHistogramBins - 1) extraWidth = MARKER_SIZE;
+                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
                 xStartHist += barWidth;
             }
-
-
-//            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
             drawAllDots(g, currentBike, barYPos);
 
@@ -273,18 +275,17 @@ public class Main_vector {
         }
     }
 
+    private static Color[] colors;
 
-    public static Color getColor(int index) {
-        switch (index) {
-            case 0:
-                return Color.gray;
-            case 1:
-                return Color.green;
-            case 2:
-                return Color.pink;
+    private static void initColors(int numHistogramBins) {
+        colors = new Color[numHistogramBins];
+        float n = 0.4f;
+        colors[0] = new Color(n, n, n);
+        for (int i = 1; i < numHistogramBins; i++) {
+            colors[i] = colors[i - 1].brighter();
         }
-        return Color.black;
     }
+
 
     /**
      * @param g           graphics context
