@@ -8,51 +8,45 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-/**
- * Makes a PDF of bikes from input file.
- */
-public class Main_vector {
 
-    static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
-    static final String FILE_OUTPUT = "testing.pdf"; //location of PDF file to write diagram to
-    static Scanner fileScan; //Scanner to read input text file
+public class Diagram {
 
-    static int globalMinCost = 999999; //cost of the least expensive bike in the input file
-    static int globalMaxCost = 0;//cost of the most expensive bike in the input file
-    static float globalCostRange; //difference between least and most expensive bike in input file
+    Scanner fileScan; //Scanner to read input text file
 
-    static final boolean doRangeOverride = true; //whether or not to override the cost range
-    static final int globalMin_override = 500; //custom cost range start
-    static final int globalMax_override = 10000; //custom cost range end
+    int globalMinCost = 999999; //cost of the least expensive bike in the input file
+    int globalMaxCost = 0;//cost of the most expensive bike in the input file
+    float globalCostRange; //difference between least and most expensive bike in input file
 
-    static final int WIDTH = 1900; //width of the output PDF file. Units unknown.
-    static final int HEIGHT = 940; //width of the output PDF file. Units unknown.
-    static final int MARGIN = 100; //space between content and edges of page. Units unknown.
-    static final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
+    final boolean doRangeOverride = true; //whether or not to override the cost range
+    final int globalMin_override = 500; //custom cost range start
+    final int globalMax_override = 10000; //custom cost range end
 
-    static final int RECT_HEIGHT = 20; //height of each horizontal bar
-    static final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between each horizontal bar
-    static final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
+    final int WIDTH = 1900; //width of the output PDF file. Units unknown.
+    final int HEIGHT = 940; //width of the output PDF file. Units unknown.
+    final int MARGIN = 100; //space between content and edges of page. Units unknown.
+    final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
 
-    static final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
+    final int RECT_HEIGHT = 20; //height of each horizontal bar
+    final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between each horizontal bar
+    final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
-    static final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
-    static final Color BAR_BACKGROUND_COLOR = Color.gray;
-    static final int RECT_RADIUS = 0;
+    final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
 
-    static Vector<Bike> allBikes = new Vector<>(); //holds every bike model
-    static int numHistogramBins;
+    final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
+    final Color BAR_BACKGROUND_COLOR = Color.gray;
+    final int RECT_RADIUS = 0;
 
-    /**
-     * Program entry point.
-     * Opens a text file with information about and writes a PDF file showing range and gradiation of prices.
-     */
-    public static void main(String[] args) throws IOException {
+    Vector<Bike> allBikes = new Vector<>(); //holds every bike model
+    int numHistogramBins;
+    PDFGraphics2D g;
 
-        //PDFGraphics2D extends Graphics2D so has the same interface.
-        PDFGraphics2D g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
 
-        readAllBikes();
+    public Diagram(){
+        g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
+    }
+
+    public void init(String file_input){
+        readAllBikes(file_input);
 
         numHistogramBins = 3;
 //        printHistograms(numHistogramBins);
@@ -62,29 +56,11 @@ public class Main_vector {
 
         drawGrid(g);
         drawBikes(g);
+    }
 
-        //write to PDF file
-        try (FileOutputStream file = new FileOutputStream(FILE_OUTPUT)) {
+    public void writeToFile(String file_output) throws IOException {
+        try (FileOutputStream file = new FileOutputStream(file_output)) {
             file.write(g.getBytes());
-        }
-    }
-
-    /**
-     * Prints histogram info for each bike.
-     */
-    public static void printHistograms(int numHistogramBins) {
-        for (Bike bike : allBikes) {
-            bike.printHistogram(numHistogramBins);
-        }
-    }
-
-    /**
-     * Prints range info for each bike.
-     */
-    public static void printRanges() {
-        System.out.println("model\tabsolute range\tfactor"); //header for use in csv file
-        for (Bike bike : allBikes) {
-            bike.printRange();
         }
     }
 
@@ -92,13 +68,13 @@ public class Main_vector {
      * Opens the input file and reads all bikes in the file.
      * Called by main().
      */
-    private static void readAllBikes() {
+    private void readAllBikes(String file_input) {
 
         //open the file
         try {
-            fileScan = new Scanner(new File(FILE_INPUT));
+            fileScan = new Scanner(new File(file_input));
         } catch (FileNotFoundException e) {
-            System.err.println("File " + FILE_INPUT + " not found.");
+            System.err.println("File " + file_input + " not found.");
             System.exit(1);
         }
 
@@ -144,7 +120,7 @@ public class Main_vector {
      * @return Bike object containing all of the version names, costs, and materials
      */
     //@formatter:on
-    private static Bike readOneBike() {
+    private Bike readOneBike() {
 
         Scanner headerScan = new Scanner(fileScan.nextLine());
         Bike bike = new Bike(headerScan.next()); //read model name
@@ -202,7 +178,7 @@ public class Main_vector {
      *
      * @param g graphics context
      */
-    private static void drawGrid(Graphics2D g) {
+    private void drawGrid(Graphics2D g) {
         //          x1   ,  y1            , x2            , y2
         g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN); // bottom axis
 
@@ -236,7 +212,7 @@ public class Main_vector {
      *
      * @param g graphics context
      */
-    private static void drawBikes(Graphics2D g) {
+    private void drawBikes(Graphics2D g) {
         Bike currentBike;
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
@@ -275,9 +251,9 @@ public class Main_vector {
         }
     }
 
-    private static Color[] colors;
+    private Color[] colors;
 
-    private static void initColors(int numHistogramBins) {
+    private void initColors(int numHistogramBins) {
         colors = new Color[numHistogramBins];
         float n = 0.4f;
         colors[0] = new Color(n, n, n);
@@ -292,7 +268,7 @@ public class Main_vector {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private static void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
+    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
         for (int j = 0; j < currentBike.versionCosts.size(); j++) {
             currentCost = currentBike.versionCosts.get(j);
@@ -329,8 +305,28 @@ public class Main_vector {
      * @param cost cost in dollars
      * @return x position for that cost
      */
-    private static int getXPosition(int cost) {
+    private int getXPosition(int cost) {
         return (int) ((((float) cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
+    }
+
+
+        /**
+     * Prints histogram info for each bike.
+     */
+    public void printHistograms(int numHistogramBins) {
+        for (Bike bike : allBikes) {
+            bike.printHistogram(numHistogramBins);
+        }
+    }
+
+    /**
+     * Prints range info for each bike.
+     */
+    public void printRanges() {
+        System.out.println("model\tabsolute range\tfactor"); //header for use in csv file
+        for (Bike bike : allBikes) {
+            bike.printRange();
+        }
     }
 
 

@@ -64,7 +64,7 @@ class Bike {
 
     /**
      * Prints the cost range, both in absolute cost and multiples of least price.
-     * Called by printRanges() in Main_vector.
+     * Called by printRanges() in Main.
      *
      * Example: "Specialized_Diverge	$7400	7.73x"
      */
@@ -75,7 +75,7 @@ class Bike {
     /**
      * Divides the bikes by cost into numHistogramBins bins, and prints the result.
      * Not actually a histogram, just data for a histogram.
-     * Called by printHistograms() in Main_vector.
+     * Called by printHistograms() in Main.
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
