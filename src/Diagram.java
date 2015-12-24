@@ -11,51 +11,45 @@ import java.util.Vector;
 
 public class Diagram {
 
-    Scanner fileScan; //Scanner to read input text file
+    private int width, height, margin, gridStep; //width of the output PDF file. Units unknown.
 
-    int globalMinCost = 999999; //cost of the least expensive bike in the input file
-    int globalMaxCost = 0;//cost of the most expensive bike in the input file
-    float globalCostRange; //difference between least and most expensive bike in input file
+    private int costMin = 999999; //cost of the least expensive bike in the input file
+    private int costMax = 0;//cost of the most expensive bike in the input file
+    private float costRange; //difference between least and most expensive bike in input file
+    private boolean doCostRangeOverride = false; //whether or not to override the cost range
+    private int costMin_override, costMax_override; //custom cost range start
 
-    final boolean doRangeOverride = true; //whether or not to override the cost range
-    final int globalMin_override = 500; //custom cost range start
-    final int globalMax_override = 10000; //custom cost range end
+    private final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
+    private final Color BAR_BACKGROUND_COLOR = Color.gray;
+    private final int RECT_RADIUS = 0;
 
-    final int WIDTH = 1900; //width of the output PDF file. Units unknown.
-    final int HEIGHT = 940; //width of the output PDF file. Units unknown.
-    final int MARGIN = 100; //space between content and edges of page. Units unknown.
-    final int END_WIDTH = WIDTH - MARGIN * 2; //x location where everything should end
+    private Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
-    final int RECT_HEIGHT = 20; //height of each horizontal bar
-    final int VERTICAL_SPACING = RECT_HEIGHT + 30; //spacing between each horizontal bar
-    final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
-
-    final int GRID_STEP = 500; //spacing *in dollars* between vertical grid lines
-
-    final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
-    final Color BAR_BACKGROUND_COLOR = Color.gray;
-    final int RECT_RADIUS = 0;
-
-    Vector<Bike> allBikes = new Vector<>(); //holds every bike model
-    int numHistogramBins;
-    PDFGraphics2D g;
+    private PDFGraphics2D g;
 
 
-    public Diagram(){
-        g = new PDFGraphics2D(0.0, 0.0, WIDTH, HEIGHT);
+    public Diagram(int pageWidth, int pageHeight, int pageMargin, int gridStep) {
+        this.width = pageWidth;
+        this.height = pageHeight;
+        this.margin = pageMargin;
+        this.gridStep = gridStep;
+
+        g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
     }
 
-    public void init(String file_input){
+    public void setRangeOverride(int newMin, int newMax) {
+        doCostRangeOverride = true;
+        costMin_override = newMin;
+        costMax_override = newMax;
+    }
+
+    public void readFromFile(String file_input) {
         readAllBikes(file_input);
 
-        numHistogramBins = 3;
-//        printHistograms(numHistogramBins);
-//        System.out.println("----------------");
-//        printRanges();
-//        System.exit(0); //stop here for testing
+        int numHistogramBins = 3; //will go in Analysis.java eventually
 
         drawGrid(g);
-        drawBikes(g);
+        drawBikes(g, numHistogramBins);
     }
 
     public void writeToFile(String file_output) throws IOException {
@@ -70,6 +64,8 @@ public class Diagram {
      */
     private void readAllBikes(String file_input) {
 
+        Scanner fileScan = null; //Scanner to read input text file
+
         //open the file
         try {
             fileScan = new Scanner(new File(file_input));
@@ -80,7 +76,7 @@ public class Diagram {
 
         //go through file
         while (fileScan.hasNextLine()) {
-            allBikes.add(readOneBike());
+            allBikes.add(readOneBike(fileScan));
 
             fileScan.nextLine(); //skip a blank line
 
@@ -93,13 +89,13 @@ public class Diagram {
         }
 
         //optionally set a custom min and max cost to display
-        if (doRangeOverride) {
-            globalMaxCost = globalMax_override;
-            globalMinCost = globalMin_override;
+        if (doCostRangeOverride) {
+            costMax = costMax_override;
+            costMin = costMin_override;
         }
 
         //set the cost range
-        globalCostRange = globalMaxCost - globalMinCost;
+        costRange = costMax - costMin;
     }
 
 
@@ -120,7 +116,7 @@ public class Diagram {
      * @return Bike object containing all of the version names, costs, and materials
      */
     //@formatter:on
-    private Bike readOneBike() {
+    private Bike readOneBike(Scanner fileScan) {
 
         Scanner headerScan = new Scanner(fileScan.nextLine());
         Bike bike = new Bike(headerScan.next()); //read model name
@@ -138,11 +134,11 @@ public class Diagram {
             currentCost = fileScan.nextInt();
 
             //update global min and max cost
-            if (currentCost > globalMaxCost) {
-                globalMaxCost = currentCost;
+            if (currentCost > costMax) {
+                costMax = currentCost;
             }
-            if (currentCost < globalMinCost) {
-                globalMinCost = currentCost;
+            if (currentCost < costMin) {
+                costMin = currentCost;
             }
 
             bike.addCost(currentCost);
@@ -180,12 +176,12 @@ public class Diagram {
      */
     private void drawGrid(Graphics2D g) {
         //          x1   ,  y1            , x2            , y2
-        g.drawLine(MARGIN, HEIGHT - MARGIN, WIDTH - MARGIN, HEIGHT - MARGIN); // bottom axis
+        g.drawLine(margin, height - margin, width - margin, height - margin); // bottom axis
 
         // min and max labels for bottom axis
         g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString("$" + globalMinCost, MARGIN, HEIGHT - MARGIN + 20);
-        g.drawString("$" + globalMaxCost, WIDTH - MARGIN - 60, HEIGHT - MARGIN + 20);
+        g.drawString("$" + costMin, margin, height - margin + 20);
+        g.drawString("$" + costMax, width - margin - 60, height - margin + 20);
 
         //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
@@ -193,13 +189,13 @@ public class Diagram {
         int xPos;
 
         //draw vertical lines
-        for (int cost = globalMinCost; cost <= globalMaxCost; cost += GRID_STEP) {
+        for (int cost = costMin; cost <= costMax; cost += gridStep) {
             xPos = getXPosition(cost);
-            g.drawLine(xPos, 0, xPos, HEIGHT - MARGIN + 60);
+            g.drawLine(xPos, 0, xPos, height - margin + 60);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
-            if (globalMinCost != cost && globalMaxCost != cost) {
-                g.drawString("$" + cost, xPos, HEIGHT - MARGIN + 15);
+            if (costMin != cost && costMax != cost) {
+                g.drawString("$" + cost, xPos, height - margin + 15);
             }
 
         }
@@ -212,8 +208,11 @@ public class Diagram {
      *
      * @param g graphics context
      */
-    private void drawBikes(Graphics2D g) {
+    private void drawBikes(Graphics2D g, int numHistogramBins) {
         Bike currentBike;
+        final int rectHeight = 20; //height of each horizontal bar
+        final int markerSize = rectHeight - 5; //diameter of circle to mark a model version
+        int verticalSpacing = rectHeight + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
         Font fontModelName = new Font("Arial", Font.BOLD, 14);
@@ -225,7 +224,7 @@ public class Diagram {
 
             // colored rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
-            barYPos = i * VERTICAL_SPACING + 20;
+            barYPos = i * verticalSpacing + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
             barWidth = (int) ((barXEnd - barXStart) / numHistogramBins);
@@ -234,17 +233,17 @@ public class Diagram {
             int extraWidth = 0;
             for (int j = 0; j < numHistogramBins; j++) {
                 g.setColor(colors[j]);
-                if (j == numHistogramBins - 1) extraWidth = MARKER_SIZE;
-                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
+                if (j == numHistogramBins - 1) extraWidth = markerSize;
+                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, rectHeight, RECT_RADIUS, RECT_RADIUS);
                 xStartHist += barWidth;
             }
 
-            drawAllDots(g, currentBike, barYPos);
+            drawAllDots(g, currentBike, barYPos, rectHeight, markerSize);
 
             // draw model name on the left
             g.setColor(Color.black);
             g.setFont(fontModelName);
-            g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
+            g.drawString(currentBike.modelName, 10, barYPos + rectHeight - 6);
 
             //reset font - might not be needed - should not call new every time
             g.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -268,14 +267,14 @@ public class Diagram {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
+    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos, int rectHeight, int markerSize) {
         int currentCost, dotX, dotY;
         for (int j = 0; j < currentBike.versionCosts.size(); j++) {
             currentCost = currentBike.versionCosts.get(j);
 
             // get position for the cost dot
             dotX = getXPosition(currentCost);
-            dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
+            dotY = barVertPos + rectHeight / 2 - markerSize / 2;
 
             switch (currentBike.versionCarbons.get(j)) {
                 case ALL:
@@ -288,7 +287,7 @@ public class Diagram {
                     g.setColor(Color.red);
                     break;
             }
-            g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+            g.fillOval(dotX, dotY, markerSize, markerSize);
 
             // draw cost and model name
             g.setColor(Color.black);
@@ -306,27 +305,8 @@ public class Diagram {
      * @return x position for that cost
      */
     private int getXPosition(int cost) {
-        return (int) ((((float) cost - globalMinCost) / globalCostRange) * END_WIDTH + MARGIN);
-    }
-
-
-        /**
-     * Prints histogram info for each bike.
-     */
-    public void printHistograms(int numHistogramBins) {
-        for (Bike bike : allBikes) {
-            bike.printHistogram(numHistogramBins);
-        }
-    }
-
-    /**
-     * Prints range info for each bike.
-     */
-    public void printRanges() {
-        System.out.println("model\tabsolute range\tfactor"); //header for use in csv file
-        for (Bike bike : allBikes) {
-            bike.printRange();
-        }
+        int endWidth = width - margin * 2; //x location where everything should end
+        return (int) ((((float) cost - costMin) / costRange) * endWidth + margin);
     }
 
 

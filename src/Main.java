@@ -1,12 +1,4 @@
-import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
-
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Scanner;
-import java.util.Vector;
 
 /**
  * Makes a PDF of bikes from input file.
@@ -24,8 +16,9 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        Diagram d = new Diagram();
-        d.init(FILE_INPUT);
+        Diagram d = new Diagram(1900, 940, 100, 500);
+        d.setRangeOverride(500, 10000);
+        d.readFromFile(FILE_INPUT);
 
         d.writeToFile(FILE_OUTPUT);
 
