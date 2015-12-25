@@ -11,24 +11,35 @@ import java.util.Vector;
 
 public class Diagram {
 
-    private int width, height, margin, gridStep; //width of the output PDF file. Units unknown.
+    // constants
+    final Color BAR_BACKGROUND_COLOR = Color.gray;
+    final int RECT_HEIGHT = 20; //height of each horizontal bar
+    final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
+    final int RECT_RADIUS = 0;
 
+    // page properties
+    private int width, height, margin; //size and margins of the pdf pade. units are millimeters
+    private int gridStep; //spacing between vertical grid steps. units are dollars.
+
+    // cost range information
     private int costMin = 999999; //cost of the least expensive bike in the input file
-    private int costMax = 0;//cost of the most expensive bike in the input file
+    private int costMax = 0; //cost of the most expensive bike in the input file
     private float costRange; //difference between least and most expensive bike in input file
     private boolean doCostRangeOverride = false; //whether or not to override the cost range
     private int costMin_override, costMax_override; //custom cost range start
 
-    private final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
-    private final Color BAR_BACKGROUND_COLOR = Color.gray;
-    private final int RECT_RADIUS = 0;
-
+    //big vector
     private Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
+    //graphics context
     private PDFGraphics2D g;
 
 
+    private Color[] colors;
+
+
     public Diagram(int pageWidth, int pageHeight, int pageMargin, int gridStep) {
+        //units are millimeters
         this.width = pageWidth;
         this.height = pageHeight;
         this.margin = pageMargin;
@@ -175,6 +186,8 @@ public class Diagram {
      * @param g graphics context
      */
     private void drawGrid(Graphics2D g) {
+        final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
+
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, height - margin, width - margin, height - margin); // bottom axis
 
@@ -210,9 +223,7 @@ public class Diagram {
      */
     private void drawBikes(Graphics2D g, int numHistogramBins) {
         Bike currentBike;
-        final int rectHeight = 20; //height of each horizontal bar
-        final int markerSize = rectHeight - 5; //diameter of circle to mark a model version
-        int verticalSpacing = rectHeight + 30; //spacing between each horizontal bar
+        int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
         Font fontModelName = new Font("Arial", Font.BOLD, 14);
@@ -233,24 +244,23 @@ public class Diagram {
             int extraWidth = 0;
             for (int j = 0; j < numHistogramBins; j++) {
                 g.setColor(colors[j]);
-                if (j == numHistogramBins - 1) extraWidth = markerSize;
-                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, rectHeight, RECT_RADIUS, RECT_RADIUS);
+                if (j == numHistogramBins - 1) extraWidth = MARKER_SIZE;
+                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
                 xStartHist += barWidth;
             }
 
-            drawAllDots(g, currentBike, barYPos, rectHeight, markerSize);
+            drawAllDots(g, currentBike, barYPos);
 
             // draw model name on the left
             g.setColor(Color.black);
             g.setFont(fontModelName);
-            g.drawString(currentBike.modelName, 10, barYPos + rectHeight - 6);
+            g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
             //reset font - might not be needed - should not call new every time
             g.setFont(new Font("Arial", Font.PLAIN, 14));
         }
     }
 
-    private Color[] colors;
 
     private void initColors(int numHistogramBins) {
         colors = new Color[numHistogramBins];
@@ -267,14 +277,14 @@ public class Diagram {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos, int rectHeight, int markerSize) {
+    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
         for (int j = 0; j < currentBike.versionCosts.size(); j++) {
             currentCost = currentBike.versionCosts.get(j);
 
             // get position for the cost dot
             dotX = getXPosition(currentCost);
-            dotY = barVertPos + rectHeight / 2 - markerSize / 2;
+            dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
 
             switch (currentBike.versionCarbons.get(j)) {
                 case ALL:
@@ -287,7 +297,7 @@ public class Diagram {
                     g.setColor(Color.red);
                     break;
             }
-            g.fillOval(dotX, dotY, markerSize, markerSize);
+            g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
 
             // draw cost and model name
             g.setColor(Color.black);

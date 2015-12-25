@@ -6,9 +6,7 @@ import java.io.IOException;
  */
 public class Main {
 
-    static final String FILE_INPUT = "bikesInput.txt"; //location of text file containing bike information
-    static final String FILE_OUTPUT = "testing.pdf"; //location of PDF file to write diagram to
-
+    static final double INCH_TO_MM = 25.4;
 
     /**
      * Program entry point.
@@ -16,14 +14,22 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        Diagram d = new Diagram(1900, 940, 100, 500);
-        d.setRangeOverride(500, 10000);
-        d.readFromFile(FILE_INPUT);
+        //the number is in inches
+        int width = (int) (INCH_TO_MM * 75);
+        int height = (int) (INCH_TO_MM * 37);
+        int margin = (int) (INCH_TO_MM * 4);
+        int gridStep = 500; //this is in dollars
+        Diagram d = new Diagram(width, height, margin, gridStep);
 
-        d.writeToFile(FILE_OUTPUT);
+
+        d.setRangeOverride(500, 10000);
+
+
+        d.readFromFile("bikesInput.txt");
+
+        d.writeToFile("testing.pdf");
 
     }
-
 
 
 }
