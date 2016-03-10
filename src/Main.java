@@ -25,9 +25,9 @@ public class Main {
         d.setRangeOverride(500, 10000);
 
 
-        d.readFromFile("bikesInput.txt");
+        d.loadBikes("bikesInput.txt");
 
-        d.writeToFile("testing.pdf");
+        d.writeFile("testing.pdf");
 
     }
 

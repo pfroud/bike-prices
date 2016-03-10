@@ -11,14 +11,14 @@ import java.util.Vector;
 
 public class Diagram {
 
-    // constants
+    // appearance
     final Color BAR_BACKGROUND_COLOR = Color.gray;
     final int RECT_HEIGHT = 20; //height of each horizontal bar
     final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
     final int RECT_RADIUS = 0;
 
     // page properties
-    private int width, height, margin; //size and margins of the pdf pade. units are millimeters
+    private int width, height, margin; //size and margins of the pdf page. units are millimeters
     private int gridStep; //spacing between vertical grid steps. units are dollars.
 
     // cost range information
@@ -26,20 +26,23 @@ public class Diagram {
     private int costMax = 0; //cost of the most expensive bike in the input file
     private float costRange; //difference between least and most expensive bike in input file
     private boolean doCostRangeOverride = false; //whether or not to override the cost range
-    private int costMin_override, costMax_override; //custom cost range start
+    private int costMin_override, costMax_override; //custom cost range start and end
 
-    //big vector
     private Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
-    //graphics context
-    private PDFGraphics2D g;
+    private PDFGraphics2D g; //graphics context
 
+    private Color[] colors; //possibly not used
 
-    private Color[] colors;
-
-
+    /**
+     * Constructs a new Diagram instance.
+     *
+     * @param pageWidth width of the page in millimeters
+     * @param pageHeight height of the page in millimeters
+     * @param pageMargin margin in millimeters
+     * @param gridStep distance between vertical grid lines in dollars
+     */
     public Diagram(int pageWidth, int pageHeight, int pageMargin, int gridStep) {
-        //units are millimeters
         this.width = pageWidth;
         this.height = pageHeight;
         this.margin = pageMargin;
@@ -48,14 +51,25 @@ public class Diagram {
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
     }
 
+    /**
+     * Override the cost (x-axis) range.
+     *
+     * @param newMin custom minimum amount in dollars
+     * @param newMax custom maximum amount in dollars
+     */
     public void setRangeOverride(int newMin, int newMax) {
         doCostRangeOverride = true;
         costMin_override = newMin;
         costMax_override = newMax;
     }
 
-    public void readFromFile(String file_input) {
-        readAllBikes(file_input);
+    /**
+     * Reads bikes from a file and draws diagram.
+     *
+     * @param filename name of the text file with bike info.
+     */
+    public void loadBikes(String filename) {
+        readAllBikes(filename);
 
         int numHistogramBins = 3; //will go in Analysis.java eventually
 
@@ -63,8 +77,14 @@ public class Diagram {
         drawBikes(g, numHistogramBins);
     }
 
-    public void writeToFile(String file_output) throws IOException {
-        try (FileOutputStream file = new FileOutputStream(file_output)) {
+    /**
+     * Writes the diagram to a PDF file.
+     *
+     * @param filename name of the PDF file to write to
+     * @throws IOException
+     */
+    public void writeFile(String filename) throws IOException {
+        try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());
         }
     }
@@ -72,20 +92,22 @@ public class Diagram {
     /**
      * Opens the input file and reads all bikes in the file.
      * Called by main().
+     *
+     * @param filename name of text file with bike info
      */
-    private void readAllBikes(String file_input) {
+    private void readAllBikes(String filename) {
 
-        Scanner fileScan = null; //Scanner to read input text file
+        Scanner fileScan = null;//Scanner to read input text file
 
         //open the file
         try {
-            fileScan = new Scanner(new File(file_input));
+            fileScan = new Scanner(new File(filename));
         } catch (FileNotFoundException e) {
-            System.err.println("File " + file_input + " not found.");
+            System.err.println("File " + filename + " not found.");
             System.exit(1);
         }
 
-        //go through file
+        //go through input text file
         while (fileScan.hasNextLine()) {
             allBikes.add(readOneBike(fileScan));
 
@@ -105,7 +127,7 @@ public class Diagram {
             costMin = costMin_override;
         }
 
-        //set the cost range
+        //set the cost range, used in getXPosition()
         costRange = costMax - costMin;
     }
 
@@ -124,6 +146,7 @@ public class Diagram {
      *     (b) version costs
      *     (c) version materials
      *
+     * @param fileScan scanner on the input text file
      * @return Bike object containing all of the version names, costs, and materials
      */
     //@formatter:on
@@ -219,7 +242,8 @@ public class Diagram {
      * Draws the PDF.
      * Called by main().
      *
-     * @param g graphics context
+     * @param g                graphics context
+     * @param numHistogramBins how many histogram bins - might remove
      */
     private void drawBikes(Graphics2D g, int numHistogramBins) {
         Bike currentBike;
@@ -261,7 +285,9 @@ public class Diagram {
         }
     }
 
-
+    /**
+     * @param numHistogramBins how many histogram bins - might remove
+     */
     private void initColors(int numHistogramBins) {
         colors = new Color[numHistogramBins];
         float n = 0.4f;
@@ -273,6 +299,8 @@ public class Diagram {
 
 
     /**
+     * Draw the dots showing variants for a model.
+     *
      * @param g           graphics context
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar

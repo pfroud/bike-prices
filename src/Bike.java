@@ -8,7 +8,7 @@ import java.util.Vector;
 class Bike {
     String modelName; //name of the model
 
-    //yay, everything is default privacy!
+    //TODO make these not default privacy
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
