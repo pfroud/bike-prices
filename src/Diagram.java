@@ -11,6 +11,8 @@ import java.util.Vector;
 
 public class Diagram {
 
+    // region vars
+
     // appearance
     final Color BAR_BACKGROUND_COLOR = Color.gray;
     final int RECT_HEIGHT = 20; //height of each horizontal bar
@@ -34,13 +36,15 @@ public class Diagram {
 
     private Color[] colors; //possibly not used
 
+    //endregion
+
     /**
      * Constructs a new Diagram instance.
      *
-     * @param pageWidth width of the page in millimeters
+     * @param pageWidth  width of the page in millimeters
      * @param pageHeight height of the page in millimeters
      * @param pageMargin margin in millimeters
-     * @param gridStep distance between vertical grid lines in dollars
+     * @param gridStep   distance between vertical grid lines in dollars
      */
     public Diagram(int pageWidth, int pageHeight, int pageMargin, int gridStep) {
         this.width = pageWidth;
@@ -50,6 +54,9 @@ public class Diagram {
 
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
     }
+
+
+    /// PUBLIC FUNCTIONS
 
     /**
      * Override the cost (x-axis) range.
@@ -71,7 +78,7 @@ public class Diagram {
     public void loadBikes(String filename) {
         readAllBikes(filename);
 
-        int numHistogramBins = 3; //will go in Analysis.java eventually
+        int numHistogramBins = 4; //will go in Analysis.java eventually
 
         drawGrid(g);
         drawBikes(g, numHistogramBins);
@@ -89,9 +96,11 @@ public class Diagram {
         }
     }
 
+
+    /// PRIVATE FUNCTIONS
+
     /**
      * Opens the input file and reads all bikes in the file.
-     * Called by main().
      *
      * @param filename name of text file with bike info
      */
@@ -130,7 +139,6 @@ public class Diagram {
         //set the cost range, used in getXPosition()
         costRange = costMax - costMin;
     }
-
 
     //@formatter:off (formatter kills indentation in this doc comment)
     /**
@@ -201,10 +209,8 @@ public class Diagram {
         return bike;
     }
 
-
     /**
      * Draws the horizontal axis on the bottom, vertical grid lines, and labels on the left.
-     * Called by main().
      *
      * @param g graphics context
      */
@@ -251,50 +257,29 @@ public class Diagram {
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
         Font fontModelName = new Font("Arial", Font.BOLD, 14);
-        initColors(numHistogramBins);
 
         // iterate over all the bike models
         for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
 
-            // colored rectangle bar
+            // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
             barYPos = i * verticalSpacing + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
-            barWidth = (int) ((barXEnd - barXStart) / numHistogramBins);
+            barWidth = (int) (barXEnd - barXStart);
+            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
 
-            int xStartHist = (int) barXStart;
-            int extraWidth = 0;
-            for (int j = 0; j < numHistogramBins; j++) {
-                g.setColor(colors[j]);
-                if (j == numHistogramBins - 1) extraWidth = MARKER_SIZE;
-                g.fillRoundRect(xStartHist, barYPos, barWidth + extraWidth, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
-                xStartHist += barWidth;
-            }
-
-            drawAllDots(g, currentBike, barYPos);
+            drawDots(g, currentBike, barYPos);
 
             // draw model name on the left
             g.setColor(Color.black);
             g.setFont(fontModelName);
             g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
-            //reset font - might not be needed - should not call new every time
+        }
+            //reset font - might not be needed
             g.setFont(new Font("Arial", Font.PLAIN, 14));
-        }
-    }
-
-    /**
-     * @param numHistogramBins how many histogram bins - might remove
-     */
-    private void initColors(int numHistogramBins) {
-        colors = new Color[numHistogramBins];
-        float n = 0.4f;
-        colors[0] = new Color(n, n, n);
-        for (int i = 1; i < numHistogramBins; i++) {
-            colors[i] = colors[i - 1].brighter();
-        }
     }
 
 
@@ -305,35 +290,25 @@ public class Diagram {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private void drawAllDots(Graphics2D g, Bike currentBike, int barVertPos) {
+    private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
-        for (int j = 0; j < currentBike.versionCosts.size(); j++) {
-            currentCost = currentBike.versionCosts.get(j);
 
-            // get position for the cost dot
+        for (int i = 0; i < currentBike.versionCosts.size(); i++) {
+            currentCost = currentBike.versionCosts.get(i);
+
+            g.setColor(Carbon.getColor(currentBike.versionCarbons.get(i)));
+
+            // draw dot
             dotX = getXPosition(currentCost);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-
-            switch (currentBike.versionCarbons.get(j)) {
-                case ALL:
-                    g.setColor(Color.cyan);
-                    break;
-                case FORK:
-                    g.setColor(Color.yellow);
-                    break;
-                case NONE:
-                    g.setColor(Color.red);
-                    break;
-            }
             g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
 
             // draw cost and model name
             g.setColor(Color.black);
             g.drawString("$" + currentCost, dotX, dotY - 3);
-            g.drawString(currentBike.versionNames.get(j), dotX, dotY + 30);
+            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
         }
     }
-
 
     /**
      * Given the cost of a model version, returns the x position to draw it at.
@@ -346,6 +321,5 @@ public class Diagram {
         int endWidth = width - margin * 2; //x location where everything should end
         return (int) ((((float) cost - costMin) / costRange) * endWidth + margin);
     }
-
 
 }

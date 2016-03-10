@@ -21,15 +21,11 @@ public class Main {
         int gridStep = 500; //this is in dollars
         Diagram d = new Diagram(width, height, margin, gridStep);
 
-
         d.setRangeOverride(500, 10000);
 
-
         d.loadBikes("bikesInput.txt");
-
         d.writeFile("testing.pdf");
 
     }
-
 
 }
