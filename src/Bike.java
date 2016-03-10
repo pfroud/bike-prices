@@ -5,10 +5,10 @@ import java.util.Vector;
  * A model of bike, made up of versions of the model.
  * For example, a model is "Specialized Diverge" and a version is "Elite A1".
  */
-class Bike {
+public class Bike {
     String modelName; //name of the model
 
-    //TODO make these not default privacy
+    //TODO make these private
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions

@@ -1,4 +1,6 @@
-
+/**
+ * Eventually will print histograms and stuff.
+ */
 public class Analysis {
 
     private int numHistogramBins;

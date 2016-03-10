@@ -14,10 +14,14 @@ public class Diagram {
     // region vars
 
     // appearance
-    final Color BAR_BACKGROUND_COLOR = Color.gray;
-    final int RECT_HEIGHT = 20; //height of each horizontal bar
-    final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
-    final int RECT_RADIUS = 0;
+    private final Color BAR_BACKGROUND_COLOR = Color.gray;
+    private final int RECT_HEIGHT = 20; //height of each horizontal bar
+    private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
+    private final int RECT_RADIUS = 10;
+
+    // fonts
+    private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 14);
+    private final Font fontRowName = new Font("Arial", Font.BOLD, 14);
 
     // page properties
     private int width, height, margin; //size and margins of the pdf page. units are millimeters
@@ -55,7 +59,6 @@ public class Diagram {
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
     }
 
-
     /// PUBLIC FUNCTIONS
 
     /**
@@ -77,11 +80,8 @@ public class Diagram {
      */
     public void loadBikes(String filename) {
         readAllBikes(filename);
-
-        int numHistogramBins = 4; //will go in Analysis.java eventually
-
         drawGrid(g);
-        drawBikes(g, numHistogramBins);
+        drawBikes(g);
     }
 
     /**
@@ -105,10 +105,9 @@ public class Diagram {
      * @param filename name of text file with bike info
      */
     private void readAllBikes(String filename) {
+        Scanner fileScan = null; //Scanner to read input text file
 
-        Scanner fileScan = null;//Scanner to read input text file
-
-        //open the file
+        //open file
         try {
             fileScan = new Scanner(new File(filename));
         } catch (FileNotFoundException e) {
@@ -159,7 +158,7 @@ public class Diagram {
      */
     //@formatter:on
     private Bike readOneBike(Scanner fileScan) {
-
+        // separate scanner for the header (model name and number of models)
         Scanner headerScan = new Scanner(fileScan.nextLine());
         Bike bike = new Bike(headerScan.next()); //read model name
         int numModels = headerScan.nextInt();
@@ -170,18 +169,14 @@ public class Diagram {
             bike.versionNames.add(fileScan.nextLine());
         }
 
-        // add version versionCosts
+        // add version costs
         int currentCost;
         for (int i = 0; i < numModels; i++) {
             currentCost = fileScan.nextInt();
 
             //update global min and max cost
-            if (currentCost > costMax) {
-                costMax = currentCost;
-            }
-            if (currentCost < costMin) {
-                costMin = currentCost;
-            }
+            if (currentCost > costMax) costMax = currentCost;
+            if (currentCost < costMin) costMin = currentCost;
 
             bike.addCost(currentCost);
         }
@@ -190,22 +185,8 @@ public class Diagram {
         String currentCarbon;
         for (int i = 0; i < numModels; i++) {
             currentCarbon = fileScan.next();
-
-            switch (currentCarbon) {
-                case "all":
-                    bike.versionCarbons.add(Carbon.ALL);
-                    break;
-                case "fork":
-                    bike.versionCarbons.add(Carbon.FORK);
-                    break;
-                case "none":
-                    bike.versionCarbons.add(Carbon.NONE);
-                    break;
-                default:
-                    System.err.println("unrecognized carbon value \"" + currentCarbon + "\"");
-            }
+            bike.versionCarbons.add(Carbon.parseString(currentCarbon));
         }
-
         return bike;
     }
 
@@ -215,7 +196,6 @@ public class Diagram {
      * @param g graphics context
      */
     private void drawGrid(Graphics2D g) {
-        final Color GRID_VERTICAL_COLOR = Color.decode("0xbbbbbb");
 
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, height - margin, width - margin, height - margin); // bottom axis
@@ -227,7 +207,7 @@ public class Diagram {
 
         //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
-        g.setColor(GRID_VERTICAL_COLOR);
+        g.setColor(Color.decode("0xbbbbbb"));
         int xPos;
 
         //draw vertical lines
@@ -239,9 +219,7 @@ public class Diagram {
             if (costMin != cost && costMax != cost) {
                 g.drawString("$" + cost, xPos, height - margin + 15);
             }
-
         }
-
     }
 
     /**
@@ -249,14 +227,12 @@ public class Diagram {
      * Called by main().
      *
      * @param g                graphics context
-     * @param numHistogramBins how many histogram bins - might remove
      */
-    private void drawBikes(Graphics2D g, int numHistogramBins) {
+    private void drawBikes(Graphics2D g) {
         Bike currentBike;
         int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
-        Font fontModelName = new Font("Arial", Font.BOLD, 14);
 
         // iterate over all the bike models
         for (int i = 0; i < allBikes.size(); i++) {
@@ -268,18 +244,16 @@ public class Diagram {
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
-            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, 10, 10);
+            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
             drawDots(g, currentBike, barYPos);
 
             // draw model name on the left
             g.setColor(Color.black);
-            g.setFont(fontModelName);
+            g.setFont(fontRowName);
             g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
         }
-            //reset font - might not be needed
-            g.setFont(new Font("Arial", Font.PLAIN, 14));
     }
 
 
@@ -305,6 +279,7 @@ public class Diagram {
 
             // draw cost and model name
             g.setColor(Color.black);
+            g.setFont(fontDotCaption);
             g.drawString("$" + currentCost, dotX, dotY - 3);
             g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
         }

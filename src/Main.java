@@ -6,7 +6,7 @@ import java.io.IOException;
  */
 public class Main {
 
-    static final double INCH_TO_MM = 25.4;
+    private static final double INCH_TO_MM = 25.4;
 
     /**
      * Program entry point.
@@ -25,7 +25,6 @@ public class Main {
 
         d.loadBikes("bikesInput.txt");
         d.writeFile("testing.pdf");
-
     }
 
 }
