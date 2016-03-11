@@ -72,17 +72,13 @@ public class Bike {
     }
 
     /**
-     * Divides the bikes by cost into numHistogramBins bins, and prints the result.
-     * Not actually a histogram, just data for a histogram.
-     * Called by printHistograms() in Main.
+     * Divides the bikes by cost into numHistogramBins bins.
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
-    public void printHistogram(int numHistogramBins) {
+    public Vector<Integer> getHistogram(int numHistogramBins) {
         // each int is the number of versions in that price range
         Vector<Integer> bins = new Vector<>(numHistogramBins);
-
-        //init vector
         for (int i = 0; i < numHistogramBins; i++) {
             bins.add(i, 0);
         }
@@ -104,8 +100,7 @@ public class Bike {
             }
 
         }
-        System.out.println(modelName + ": " + bins);
-
+        return bins;
     }
 
 

@@ -1,18 +1,27 @@
+import java.util.Vector;
+
 /**
  * Eventually will print histograms and stuff.
  */
 public class Analysis {
 
-    private int numHistogramBins;
+    private int numBins;
+    private Vector<Bike> bikes;
 
+    public Analysis(int numBins){
+        this.numBins = numBins;
+    }
 
+    public void setBikes(Vector<Bike> bikes){
+        this.bikes = bikes;
+    }
 
     /**
      * Prints histogram info for each bike.
      */
     public void printHistograms(int numHistogramBins, Bike[] allBikes) {
         for (Bike bike : allBikes) {
-            bike.printHistogram(numHistogramBins);
+            bike.getHistogram(numHistogramBins);
         }
     }
 

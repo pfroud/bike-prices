@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.Vector;
 
-
+/**
+ * A diagram of bars, dots, and a grid, showing cost distribution.
+ */
 public class Diagram {
 
     // region fields
@@ -57,58 +59,11 @@ public class Diagram {
     /// PUBLIC FUNCTIONS
 
     /**
-     * Override the cost (x-axis) range.
-     *
-     * @param newMin custom minimum amount in dollars
-     * @param newMax custom maximum amount in dollars
-     */
-    public void setRangeOverride(int newMin, int newMax) {
-        doCostRangeOverride = true;
-        costMin_override = newMin;
-        costMax_override = newMax;
-    }
-
-    /**
-     * Reads bikes from a file and draws diagram.
-     *
-     * @param filename name of the text file with bike info.
-     */
-    public void loadBikes(String filename) {
-        readAllBikes(filename);
-        drawGrid(g);
-        drawAllBikes(g);
-    }
-
-    /**
-     * Adds a Legend to the diagram and draws it.
-     *
-     * @param l Legend object
-     */
-    public void addLegend(Legend l) {
-        l.setProps(MARKER_SIZE);
-        l.draw(g);
-    }
-
-    /**
-     * Writes the diagram to a PDF file.
-     *
-     * @param filename name of the PDF file to write to
-     * @throws IOException
-     */
-    public void writeFile(String filename) throws IOException {
-        try (FileOutputStream file = new FileOutputStream(filename)) {
-            file.write(g.getBytes());
-        }
-    }
-
-    /// PRIVATE FUNCTIONS
-
-    /**
      * Opens the input file and reads all bikes in the file.
      *
      * @param filename name of text file with bike info
      */
-    private void readAllBikes(String filename) {
+    public void loadBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
         //open file
@@ -133,20 +88,59 @@ public class Diagram {
             }
         }
 
-        //optionally set a custom min and max cost to display
-        if (doCostRangeOverride) {
-            costMax = costMax_override;
-            costMin = costMin_override;
-        }
-
         //set the cost range, used in getXPosition()
         costRange = costMax - costMin;
     }
 
+    /**
+     * Override the cost (x-axis) range.
+     *
+     * @param newMin custom minimum amount in dollars
+     * @param newMax custom maximum amount in dollars
+     */
+    public void addCustomRange(int newMin, int newMax) {
+        costMin = newMin;
+        costMax = newMax;
+
+        costRange = costMax - costMin;
+    }
+
+    /**
+     * Adds a Legend to the diagram and draws it.
+     *
+     * @param l Legend object
+     */
+    public void addLegend(Legend l) {
+        l.setProps(MARKER_SIZE);
+        l.draw(g);
+    }
+
+    public void addAnalysis(Analysis a) {
+        a.setBikes(allBikes);
+    }
+
+    /**
+     * Writes the diagram to a PDF file.
+     *
+     * @param filename name of the PDF file to write to
+     * @throws IOException
+     */
+    public void writePDF(String filename) throws IOException {
+
+        drawGrid(g);
+        drawAllBikes(g);
+
+        try (FileOutputStream file = new FileOutputStream(filename)) {
+            file.write(g.getBytes());
+        }
+    }
+
+    /// PRIVATE FUNCTIONS
+
     //@formatter:off (formatter kills indentation in this doc comment)
     /**
      * Reads a bike model and its versions, then returns a Bike object.
-     * Called by readAllBikes().
+     * Called by loadBikes().
      * Steps:
      *
      * (1) Reads the header, which contains the model name and number of versions.

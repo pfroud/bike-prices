@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ *
+ */
 public class Legend {
 
     private int x, y, width, height, markerSize;
