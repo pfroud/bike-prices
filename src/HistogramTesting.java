@@ -16,14 +16,14 @@ public class HistogramTesting extends JApplet implements KeyListener {
         addKeyListener(this);
 
         Vector<Integer> data = new Vector<>();
-        data.add(randRange(1, 10));
-        data.add(randRange(1, 10));
-        data.add(randRange(1, 10));
-        data.add(randRange(1, 10));
-        hist = new Histogram(data, 100, 250, 200, 200);
+        for (int i = 0; i < 5; i++) {
+            data.add(randRange(1, 10));
+        }
+
+        hist = new Histogram(data, "hello", 100, 250, 200, 200);
     }
 
-    //http://stackoverflow.com/a/363691
+    // http://stackoverflow.com/a/363691
     private int randRange(int min, int max){
         return min + rand.nextInt(max - min + 1);
     }
