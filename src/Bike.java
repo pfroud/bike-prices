@@ -10,9 +10,9 @@ import java.util.Vector;
  */
 public class Bike {
 
-    // region STATIC STUFF
+    // region statics
 
-    private static int costMax, costMin;
+    private static int costMax, costMin; // maximum and minimum costs of versions of this model
 
     /**
      * Opens the input file and reads all bikes in the file.
@@ -22,7 +22,7 @@ public class Bike {
     public static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
-        //open file
+        // open file
         try {
             fileScan = new Scanner(new File(filename));
         } catch (FileNotFoundException e) {
@@ -47,8 +47,6 @@ public class Bike {
         }
         return allBikes;
     }
-
-    /// PRIVATE FUNCTIONS
 
     //@formatter:off (formatter kills indentation in this doc comment)
     /**
@@ -85,7 +83,7 @@ public class Bike {
         for (int i = 0; i < numModels; i++) {
             currentCost = fileScan.nextInt();
 
-            //update global min and max cost
+            //update min and max cost
             if (currentCost > costMax) costMax = currentCost;
             if (currentCost < costMin) costMin = currentCost;
 
@@ -93,27 +91,26 @@ public class Bike {
         }
 
         // add version materials
-        String currentCarbon;
         for (int i = 0; i < numModels; i++) {
-            currentCarbon = fileScan.next();
-            bike.versionCarbons.add(Carbon.parseString(currentCarbon));
+            bike.versionCarbons.add(Carbon.parseString(fileScan.next()));
         }
+
         return bike;
     }
 
     public static int getCostMax() {
         return costMax;
     }
+
     public static int getCostMin() {
         return costMin;
     }
 
-    // endregion
+    // endregion statics
 
-    // region INSTANCE STUFF
+    // region instance stuff
 
-
-    String modelName; //name of the model
+    String modelName;
     int numModels;
 
     //TODO make these private
@@ -121,7 +118,7 @@ public class Bike {
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
 
-    int minCost = 999999, maxCost = 0; //tracks the cost of the most and least expensive version of the model
+    int minCost = 999999, maxCost = 0; // most and least expensive version of the model
 
 
     /**
@@ -134,18 +131,17 @@ public class Bike {
     }
 
     /**
-     * Converts Bike object to string.
-     * Overrides Object.toString().
+     * Gives human-readable representation of a bike.
      *
      * @return a human-readable representation of the bike model.
      */
     public String toString() {
-        ListIterator<String> n = versionNames.listIterator();
-        ListIterator<Integer> c = versionCosts.listIterator();
+        ListIterator<String> names = versionNames.listIterator();
+        ListIterator<Integer> costs = versionCosts.listIterator();
         String out = modelName + "\n-----------------------\n";
 
-        while (n.hasNext()) {
-            out += n.next() + ": $" + c.next() + "\n";
+        while (names.hasNext()) {
+            out += names.next() + ": $" + costs.next() + "\n";
         }
         return out;
     }
@@ -157,20 +153,14 @@ public class Bike {
      * @param c the cost of the version to add.
      */
     public void addCost(int c) {
-        versionCosts.add(c); //add to vector
+        versionCosts.add(c);
 
-        //update min and max versionCosts
-        if (c > maxCost) {
-            maxCost = c;
-        }
-        if (c < minCost) {
-            minCost = c;
-        }
+        if (c > maxCost) maxCost = c;
+        if (c < minCost) minCost = c;
     }
 
     /**
-     * Prints the cost range, both in absolute cost and multiples of least price.
-     * Called by printRanges() in Main.
+     * Prints the cost range, both in absolute cost and multiples of least price. Currently not used.
      *
      * Example: "Specialized_Diverge	$7400	7.73x"
      */
@@ -180,37 +170,37 @@ public class Bike {
 
     /**
      * Divides the bikes by cost into numHistogramBins bins.
+     * each int is the number of versions in that price range
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
     public Vector<Integer> getHistogramData(int numHistogramBins) {
-        // each int is the number of versions in that price range
         Vector<Integer> bins = new Vector<>(numHistogramBins);
         for (int i = 0; i < numHistogramBins; i++) {
             bins.add(i, 0);
         }
 
-        double binWidth = (double) (maxCost - minCost) / numHistogramBins; // size in cost of each bin
+        double binWidth = (double) (maxCost - minCost) / numHistogramBins; // width, in dollars, of each bin
         double costCutoff; //max cost for a version to be in a bin
 
         //iterate over versions
-        for (Integer currentVersionCost : versionCosts) {
+        for (Integer currentCost : versionCosts) {
 
             //iterate over bins
             for (int currentBin = 1; currentBin <= numHistogramBins; currentBin++) {
                 costCutoff = minCost + (binWidth * currentBin);
 
-                if (currentVersionCost <= costCutoff) {
-                    bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); //need currentBin-1 bc index starts at 0
+                if (currentCost <= costCutoff) {
+                    // it seems like this could be done better
+                    bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); // need currentBin-1 bc index starts at 0
                     break;
                 }
             }
-
         }
         return bins;
     }
 
-    // endregion
+    // endregion instance stuff
 
 }
 

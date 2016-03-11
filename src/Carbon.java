@@ -6,10 +6,9 @@ import java.awt.*;
 public enum Carbon {
     ALL, FORK, NONE;
 
-    // I didn't know you could do this. http://stackoverflow.com/a/18883717
+    //http://stackoverflow.com/a/18883717
     private Color color;
     private String description;
-
     static {
         ALL.color = Color.cyan;
         FORK.color = Color.yellow;
@@ -31,7 +30,7 @@ public enum Carbon {
      * @param dotX     x location of the dot
      * @param dotY     y location of the dot
      * @param size     diameter of the dot
-     * @param inLegend whether the dot appears in the legend
+     * @param inLegend true if drawing in the legend, false if drawing in bar
      */
     public void draw(Graphics g, int dotX, int dotY, int size, boolean inLegend) {
         g.setColor(this.color);

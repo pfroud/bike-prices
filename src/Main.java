@@ -2,7 +2,6 @@ import java.io.IOException;
 
 /**
  * Makes a PDF of bikes from input file.
- * There is also Main_applet which is old and not on git.
  */
 public class Main {
 

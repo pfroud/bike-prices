@@ -11,6 +11,11 @@ import java.util.Vector;
 public class Diagram {
 
     // region fields
+    // core
+    private Vector<Bike> allBikes; //holds every bike model
+    private PDFGraphics2D g; //graphics context
+    private Legend legend;
+
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
     private final int RECT_HEIGHT = 20; //height of each horizontal bar
@@ -24,17 +29,11 @@ public class Diagram {
     private int width, height, margin; //size and margins of the pdf page. units are millimeters
     private int gridStep; //spacing between vertical grid steps. units are dollars.
 
-    // cost range information
+    // cost range
     private int costMin = 999999; //cost of the least expensive bike in the input file
     private int costMax = 0; //cost of the most expensive bike in the input file
     private float costRange; //difference between least and most expensive bike in input file
-    private boolean doCostRangeOverride = false; //whether or not to override the cost range
-    private int costMin_override, costMax_override; //custom cost range start and end
-
-    private Vector<Bike> allBikes; //holds every bike model
-    private PDFGraphics2D g; //graphics context
-    private Legend legend;
-    //endregion
+    //endregion fields
 
     /**
      * Constructs a new Diagram instance.
@@ -62,7 +61,6 @@ public class Diagram {
 
     /// PUBLIC FUNCTIONS
 
-
     /**
      * Override the cost (x-axis) range.
      *
@@ -77,15 +75,20 @@ public class Diagram {
     }
 
     /**
-     * Adds a Legend to the diagram and draws it.
+     * Adds a Legend to the diagram.
      *
      * @param l Legend object
      */
     public void addLegend(Legend l) {
         legend = l;
-        legend.setProps(MARKER_SIZE);
+        legend.setMarkerSize(MARKER_SIZE);
     }
 
+    /**
+     * Adds an Analysis object to the diagram.
+     *
+     * @param a Analysis object
+     */
     public void addAnalysis(Analysis a) {
         a.init(allBikes);
     }
@@ -143,8 +146,7 @@ public class Diagram {
     }
 
     /**
-     * Draws the PDF.
-     * Called by main().
+     * Draws all the Bike objects.
      *
      * @param g graphics context
      */
@@ -197,7 +199,7 @@ public class Diagram {
             g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
             currentBike.versionCarbons.get(i).draw(g, dotX, dotY, MARKER_SIZE, false);
 
-            // draw cost and model name
+            // draw cost above the dot and model name below the dot
             g.setColor(Color.black);
             g.setFont(fontDotCaption);
             g.drawString("$" + currentCost, dotX, dotY - 3);
@@ -207,7 +209,6 @@ public class Diagram {
 
     /**
      * Given the cost of a model version, returns the x position to draw it at.
-     * Called by drawBikes() and drawGrid().
      *
      * @param cost cost in dollars
      * @return x position for that cost

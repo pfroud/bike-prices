@@ -1,11 +1,12 @@
 import java.awt.*;
 
 /**
- *
+ * A box describing what each of the color of dots mean.
  */
 public class Legend {
 
     private int x, y, width, height, markerSize;
+    Font theFont = new Font("Arial", Font.PLAIN, 14);
 
     public Legend(int x, int y, int width, int height) {
         this.x = x;
@@ -14,33 +15,27 @@ public class Legend {
         this.height = height;
     }
 
-    public void setProps(int markerSize) {
+    public void setMarkerSize(int markerSize) {
         this.markerSize = markerSize;
     }
 
-    /**
-     * Draws a box showing what each color of dot means.
-     *
-     * @param g Graphics context
-     */
     public void draw(Graphics2D g) {
-        // box
-        g.setColor(Color.white);
+        g.setColor(Color.white); // box background
         g.fillRect(x, y, width, height);
-        g.setColor(Color.black);
+        g.setColor(Color.black); // box border
         g.drawRect(x, y, width, height);
 
-        g.setFont(new Font("Arial", Font.PLAIN, 14));
+        g.setFont(theFont);
 
         // actual legend part
         Carbon[] cs = {Carbon.ALL, Carbon.FORK, Carbon.NONE};
         for (int i = 0; i < cs.length; i++) {
-            Carbon c = cs[i];
+            Carbon carbon = cs[i];
 
-            int theY = y + i * 30 + 10;
-            c.draw(g, x + 10, theY, markerSize, true);
+            int theY = y + (i * 30) + 10;
+            carbon.draw(g, x + 10, theY, markerSize, true);
             g.setColor(Color.black);
-            g.drawString(c.getDescription(), x + 20 + markerSize, theY + (markerSize / 2) + 4);
+            g.drawString(carbon.getDescription(), x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
 
     }
