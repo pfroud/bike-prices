@@ -11,13 +11,12 @@ import java.util.Vector;
 
 public class Diagram {
 
-    // region vars
+    // region fields
 
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.gray;
     private final int RECT_HEIGHT = 20; //height of each horizontal bar
     private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
-    private final int RECT_RADIUS = 10;
 
     // fonts
     private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 14);
@@ -81,7 +80,15 @@ public class Diagram {
     public void loadBikes(String filename) {
         readAllBikes(filename);
         drawGrid(g);
-        drawBikes(g);
+        drawAllBikes(g);
+    }
+
+    /**
+     * @param l
+     */
+    public void addLegend(Legend l) {
+        l.setProps(MARKER_SIZE);
+        l.draw(g);
     }
 
     /**
@@ -95,7 +102,6 @@ public class Diagram {
             file.write(g.getBytes());
         }
     }
-
 
     /// PRIVATE FUNCTIONS
 
@@ -226,9 +232,9 @@ public class Diagram {
      * Draws the PDF.
      * Called by main().
      *
-     * @param g                graphics context
+     * @param g graphics context
      */
-    private void drawBikes(Graphics2D g) {
+    private void drawAllBikes(Graphics2D g) {
         Bike currentBike;
         int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
@@ -240,10 +246,28 @@ public class Diagram {
 
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
+
+            String manu = currentBike.modelName.split("_")[0];
+            switch (manu) {
+                case "Specialized":
+                    g.setColor(Color.magenta);
+                    break;
+                case "Trek":
+                    g.setColor(Color.orange);
+                    break;
+                case "Cannondale":
+                    g.setColor(Color.pink);
+                    break;
+                default:
+                    System.err.println("you fucked up: \"" + manu + "\"");
+            }
+
+
             barYPos = i * verticalSpacing + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
             barWidth = (int) (barXEnd - barXStart);
+            int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
             drawDots(g, currentBike, barYPos);
@@ -270,12 +294,11 @@ public class Diagram {
         for (int i = 0; i < currentBike.versionCosts.size(); i++) {
             currentCost = currentBike.versionCosts.get(i);
 
-            g.setColor(Carbon.getColor(currentBike.versionCarbons.get(i)));
-
             // draw dot
             dotX = getXPosition(currentCost);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
             g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
+            currentBike.versionCarbons.get(i).draw(g, dotX, dotY, MARKER_SIZE, false);
 
             // draw cost and model name
             g.setColor(Color.black);
@@ -287,7 +310,7 @@ public class Diagram {
 
     /**
      * Given the cost of a model version, returns the x position to draw it at.
-     * Called by drawBikes() and drawGrid().
+     * Called by drawAllBikes() and drawGrid().
      *
      * @param cost cost in dollars
      * @return x position for that cost

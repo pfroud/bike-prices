@@ -6,22 +6,31 @@ import java.awt.*;
 public enum Carbon {
     ALL, FORK, NONE;
 
-    /**
-     * Gets a color to draw the dot for a Carbon enum.
-     *
-     * @param c Carbon enum to get a color for
-     * @return Color for the Carbon enum
-     */
-    public static Color getColor(Carbon c) {
-        switch (c) {
-            case ALL:
-                return Color.cyan;
-            case FORK:
-                return Color.yellow;
-            case NONE:
-                return Color.red;
+    // I didn't know you could do this. http://stackoverflow.com/a/18883717
+    private Color color;
+    private String description;
+
+    static {
+        ALL.color = Color.cyan;
+        FORK.color = Color.yellow;
+        NONE.color = Color.red;
+
+        ALL.description = "full carbon-fiber frame";
+        FORK.description = "carbon-fiber fork only";
+        NONE.description = "no carbon-fiber";
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void draw(Graphics2D g, int dotX, int dotY, int size, boolean inLegend) {
+        g.setColor(this.color);
+        g.fillOval(dotX, dotY, size, size);
+        if (inLegend) {
+            g.setColor(Color.black);
+            g.drawOval(dotX, dotY, size, size);
         }
-        return null;
     }
 
     /**

@@ -25,7 +25,6 @@ public class Bike {
         this.modelName = modelName;
     }
 
-
     /**
      * Converts Bike object to string.
      * Overrides Object.toString().
@@ -42,7 +41,6 @@ public class Bike {
         }
         return out;
     }
-
 
     /**
      * Used to add a cost to the vector of costs.

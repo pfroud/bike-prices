@@ -22,8 +22,8 @@ public class Main {
         Diagram d = new Diagram(width, height, margin, gridStep);
 
         d.setRangeOverride(500, 10000);
-
         d.loadBikes("bikesInput.txt");
+        d.addLegend(new Legend(1650, 10, 200, 90));
         d.writeFile("testing.pdf");
     }
 
