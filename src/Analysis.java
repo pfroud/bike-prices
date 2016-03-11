@@ -15,14 +15,14 @@ public class Analysis {
 
     public void init(Vector<Bike> bikes) {
         for (Bike b : bikes) {
-            hists.add(new Histogram(b, b.getHistogramData(numBins)));
+//            hists.add(new Histogram(b.getHistogramData(numBins)), 0, 0, 0, 0);
         }
     }
 
     // I don't know where this will get drawn
     public void draw(Graphics g) {
         for (Histogram hist : hists) {
-            hist.draw(g, 0, 0, 0, 0);
+            hist.draw(g);
         }
     }
 
