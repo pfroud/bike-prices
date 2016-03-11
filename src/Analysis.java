@@ -15,16 +15,29 @@ public class Analysis {
 
     // KEEP THIS SEPERATE from constructor - needs to be when used in Main.java
     public void init(Vector<Bike> bikes) {
-        for (Bike b : bikes) {
-            hists.add(new Histogram(b.getHistogramData(numBins), b.modelName, 0, 0, 0, 0));
+        Histogram h;
+
+        int histSize = 100;
+        int half = bikes.size() / 2;
+
+        for (int i = 0; i < half; i++) {
+            Bike bike = bikes.get(i);
+            h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
+            h.setSize(i * (histSize + 50) + 50, 200, histSize, histSize);
+            hists.add(h);
         }
+        for (int i = half; i < bikes.size(); i++) {
+            Bike bike = bikes.get(i);
+            h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
+            h.setSize((i - half) * (histSize + 50) + 50, 400, histSize, histSize);
+            hists.add(h);
+        }
+
     }
 
-    // I don't know where this will get drawn
     public void draw(Graphics g) {
         for (Histogram hist : hists) {
-//            hist.draw(g);
-            g.drawString("hello I am Analysis.java", 100,100);
+            hist.draw(g);
         }
     }
 

@@ -9,27 +9,28 @@ public class Histogram {
     private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter;
     private String caption;
     Font fontDefault = new Font("Arial", Font.PLAIN, 12);
-    Font fontCaption = new Font("Arial", Font.PLAIN, 20);
+    Font fontCaption = new Font("Arial", Font.PLAIN, 12);
 
-    public Histogram(Vector<Integer> data, String caption, int x, int y, int width, int height) {
+    public Histogram(Vector<Integer> data, String caption) {
         this.data = data;
+        this.caption = caption;
+    }
+
+    public void setSize(int x, int y, int width, int height){
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.caption = caption;
 
-        barWidth = 20;
-        barSpacing = 10;
+        barWidth = 10;
+        barSpacing = 5;
 
         int totalBarWidth = (barWidth + barSpacing) * data.size() - barSpacing;
         marginToCenter = (width - totalBarWidth) / 2;
 
-//        vertScale = 10;
         int max = Collections.max(data);
         int marginTop = 15;
         vertScale = (height - marginTop) / max;
-
     }
 
     public void draw(Graphics g) {
