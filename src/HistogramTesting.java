@@ -10,7 +10,7 @@ public class HistogramTesting extends JPanel {
         a = new Analysis(4);
         a.init(Bike.readBikes("bikesInput.txt"));
 
-        // disgusting jframe shit
+        // disgusting jframe shit - http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
         HistogramTesting panel = new HistogramTesting();
         JFrame application = new JFrame();
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
