@@ -116,7 +116,7 @@ public class Diagram {
     }
 
     public void addAnalysis(Analysis a) {
-        a.setBikes(allBikes);
+        a.init(allBikes);
     }
 
     /**

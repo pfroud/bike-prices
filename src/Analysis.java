@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Vector;
 
 /**
@@ -6,34 +7,23 @@ import java.util.Vector;
 public class Analysis {
 
     private int numBins;
-    private Vector<Bike> bikes;
+    private Vector<Histogram> hists;
 
-    public Analysis(int numBins){
+    public Analysis(int numBins) {
         this.numBins = numBins;
     }
 
-    public void setBikes(Vector<Bike> bikes){
-        this.bikes = bikes;
-    }
-
-    /**
-     * Prints histogram info for each bike.
-     */
-    public void printHistograms(int numHistogramBins, Bike[] allBikes) {
-        for (Bike bike : allBikes) {
-            bike.getHistogram(numHistogramBins);
+    public void init(Vector<Bike> bikes) {
+        for (Bike b : bikes) {
+            hists.add(new Histogram(b, b.getHistogramData(numBins)));
         }
     }
 
-    /**
-     * Prints range info for each bike.
-     */
-    public void printRanges(Bike[] allBikes) {
-        System.out.println("model\tabsolute range\tfactor"); //header for use in csv file
-        for (Bike bike : allBikes) {
-            bike.printRange();
+    // I don't know where this will get drawn
+    public void draw(Graphics2D g) {
+        for (Histogram hist : hists) {
+            hist.draw(g, 0, 0, 0, 0);
         }
     }
-
 
 }

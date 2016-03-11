@@ -76,7 +76,7 @@ public class Bike {
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
-    public Vector<Integer> getHistogram(int numHistogramBins) {
+    public Vector<Integer> getHistogramData(int numHistogramBins) {
         // each int is the number of versions in that price range
         Vector<Integer> bins = new Vector<>(numHistogramBins);
         for (int i = 0; i < numHistogramBins; i++) {
