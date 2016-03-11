@@ -23,6 +23,7 @@ public class Legend {
      *
      * @param g Graphics context
      */
+    // TODO this gets drawn over when the pdf is drawn
     public void draw(Graphics2D g) {
         // box
         g.setColor(Color.white);

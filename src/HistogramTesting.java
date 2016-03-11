@@ -1,44 +1,32 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.Random;
-import java.util.Vector;
 
-public class HistogramTesting extends JApplet implements KeyListener {
+public class HistogramTesting extends JPanel {
 
-    Histogram hist;
-    Random rand = new Random();
+    private static Analysis a;
 
-    public void init() {
-//        setSize(800, 800);
-        setFocusable(true);
-        addKeyListener(this);
+    public static void main(String[] args) {
+        // disgusting jframe shit
+        HistogramTesting panel = new HistogramTesting();
+        JFrame application = new JFrame();
+        application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        application.add(panel);
+        application.setSize(800, 800);
+        application.setVisible(true);
 
-        Vector<Integer> data = new Vector<>();
-        for (int i = 0; i < 5; i++) {
-            data.add(randRange(1, 10));
-        }
 
-        hist = new Histogram(data, "hello", 100, 250, 200, 200);
+        a = new Analysis(4);
+        a.init(Bike.readBikes("bikesInput.txt"));
     }
 
-    // http://stackoverflow.com/a/363691
-    private int randRange(int min, int max){
-        return min + rand.nextInt(max - min + 1);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        g.fillRect(10, 10, 200, 300);
+
+
+        a.draw(g);
     }
 
-    public void paint(Graphics g) {
-        hist.draw(g);
-    }
 
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) System.exit(0);
-    }
-
-    public void keyTyped(KeyEvent e) {
-    }
-
-    public void keyReleased(KeyEvent e) {
-    }
 }

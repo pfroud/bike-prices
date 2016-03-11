@@ -19,13 +19,12 @@ public class Main {
         int height = (int) (INCH_TO_MM * 37);
         int margin = (int) (INCH_TO_MM * 4);
         int gridStep = 500; //this is in dollars
-        Diagram d = new Diagram(width, height, margin, gridStep);
 
-        d.loadBikes("bikesInput.txt");
+        Diagram d = new Diagram(Bike.readBikes("bikesInput.txt"), width, height, margin, gridStep);
 
         d.addCustomRange(500, 10000); // $500 through $10,000
-        d.addLegend(new Legend(1650, 10, 200, 90));
-        d.addAnalysis(new Analysis(4)); //4 histogram bins
+        d.addLegend(new Legend(1650, 10, 200, 90)); // this gets drawn over when the pdf is drawn
+        d.addAnalysis(new Analysis(4)); // 4 histogram bins
 
         d.writePDF("testing.pdf");
 

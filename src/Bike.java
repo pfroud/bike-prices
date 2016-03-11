@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ListIterator;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -6,6 +9,110 @@ import java.util.Vector;
  * For example, a model is "Specialized Diverge" and a version is "Elite A1".
  */
 public class Bike {
+
+    // region STATIC STUFF
+
+    private static int costMax, costMin;
+
+    /**
+     * Opens the input file and reads all bikes in the file.
+     *
+     * @param filename name of text file with bike info
+     */
+    public static Vector<Bike> readBikes(String filename) {
+        Scanner fileScan = null; //Scanner to read input text file
+
+        //open file
+        try {
+            fileScan = new Scanner(new File(filename));
+        } catch (FileNotFoundException e) {
+            System.err.println("File " + filename + " not found.");
+            System.exit(1);
+        }
+
+        Vector<Bike> allBikes = new Vector<>();
+
+        //go through input text file
+        while (fileScan.hasNextLine()) {
+            allBikes.add(readOneBike(fileScan));
+
+            fileScan.nextLine(); //skip a blank line
+
+            //this works but is terrible
+            if (fileScan.hasNextLine()) {
+                fileScan.nextLine();
+            } else {
+                break;
+            }
+        }
+        return allBikes;
+    }
+
+    /// PRIVATE FUNCTIONS
+
+    //@formatter:off (formatter kills indentation in this doc comment)
+    /**
+     * Reads a bike model and its versions, then returns a Bike object.
+     * Steps:
+     *
+     * (1) Reads the header, which contains the model name and number of versions.
+     *     Example: "Specialized_Diverge 7"
+     *
+     * (2) Does three for loops to read:
+     *     (a) version names
+     *     (b) version costs
+     *     (c) version materials
+     *
+     * @param fileScan scanner on the input text file
+     * @return Bike object containing all of the version names, costs, and materials
+     */
+    //@formatter:on
+    private static Bike readOneBike(Scanner fileScan) {
+        // separate scanner for the header (model name and number of models)
+        Scanner headerScan = new Scanner(fileScan.nextLine());
+        Bike bike = new Bike(headerScan.next()); //read model name
+        int numModels = headerScan.nextInt();
+        bike.numModels = numModels;
+        headerScan.close();
+
+        // add version names
+        for (int i = 0; i < numModels; i++) {
+            bike.versionNames.add(fileScan.nextLine());
+        }
+
+        // add version costs
+        int currentCost;
+        for (int i = 0; i < numModels; i++) {
+            currentCost = fileScan.nextInt();
+
+            //update global min and max cost
+            if (currentCost > costMax) costMax = currentCost;
+            if (currentCost < costMin) costMin = currentCost;
+
+            bike.addCost(currentCost);
+        }
+
+        // add version materials
+        String currentCarbon;
+        for (int i = 0; i < numModels; i++) {
+            currentCarbon = fileScan.next();
+            bike.versionCarbons.add(Carbon.parseString(currentCarbon));
+        }
+        return bike;
+    }
+
+    public static int getCostMax() {
+        return costMax;
+    }
+    public static int getCostMin() {
+        return costMin;
+    }
+
+    // endregion
+
+    // region INSTANCE STUFF
+
+
     String modelName; //name of the model
     int numModels;
 
@@ -103,6 +210,7 @@ public class Bike {
         return bins;
     }
 
+    // endregion
 
 }
 

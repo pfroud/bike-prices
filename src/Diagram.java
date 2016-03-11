@@ -1,11 +1,8 @@
 import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -34,7 +31,7 @@ public class Diagram {
     private boolean doCostRangeOverride = false; //whether or not to override the cost range
     private int costMin_override, costMax_override; //custom cost range start and end
 
-    private Vector<Bike> allBikes = new Vector<>(); //holds every bike model
+    private Vector<Bike> allBikes; //holds every bike model
 
     private PDFGraphics2D g; //graphics context
     //endregion
@@ -47,50 +44,19 @@ public class Diagram {
      * @param pageMargin margin in millimeters
      * @param gridStep   distance between vertical grid lines in dollars
      */
-    public Diagram(int pageWidth, int pageHeight, int pageMargin, int gridStep) {
+    public Diagram(Vector<Bike> allBikes, int pageWidth, int pageHeight, int pageMargin, int gridStep) {
         this.width = pageWidth;
         this.height = pageHeight;
         this.margin = pageMargin;
         this.gridStep = gridStep;
+
+        this.allBikes = allBikes;
 
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
     }
 
     /// PUBLIC FUNCTIONS
 
-    /**
-     * Opens the input file and reads all bikes in the file.
-     *
-     * @param filename name of text file with bike info
-     */
-    public void loadBikes(String filename) {
-        Scanner fileScan = null; //Scanner to read input text file
-
-        //open file
-        try {
-            fileScan = new Scanner(new File(filename));
-        } catch (FileNotFoundException e) {
-            System.err.println("File " + filename + " not found.");
-            System.exit(1);
-        }
-
-        //go through input text file
-        while (fileScan.hasNextLine()) {
-            allBikes.add(readOneBike(fileScan));
-
-            fileScan.nextLine(); //skip a blank line
-
-            //this works but is terrible
-            if (fileScan.hasNextLine()) {
-                fileScan.nextLine();
-            } else {
-                break;
-            }
-        }
-
-        //set the cost range, used in getXPosition()
-        costRange = costMax - costMin;
-    }
 
     /**
      * Override the cost (x-axis) range.
@@ -115,6 +81,7 @@ public class Diagram {
         l.draw(g);
     }
 
+    // TODO this gets drawn over when the pdf is drawn
     public void addAnalysis(Analysis a) {
         a.init(allBikes);
     }
@@ -128,66 +95,13 @@ public class Diagram {
     public void writePDF(String filename) throws IOException {
 
         drawGrid(g);
-        drawAllBikes(g);
+        drawBikes(g);
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());
         }
     }
 
-    /// PRIVATE FUNCTIONS
-
-    //@formatter:off (formatter kills indentation in this doc comment)
-    /**
-     * Reads a bike model and its versions, then returns a Bike object.
-     * Called by loadBikes().
-     * Steps:
-     *
-     * (1) Reads the header, which contains the model name and number of versions.
-     *     Example: "Specialized_Diverge 7"
-     *
-     * (2) Does three for loops to read:
-     *     (a) version names
-     *     (b) version costs
-     *     (c) version materials
-     *
-     * @param fileScan scanner on the input text file
-     * @return Bike object containing all of the version names, costs, and materials
-     */
-    //@formatter:on
-    private Bike readOneBike(Scanner fileScan) {
-        // separate scanner for the header (model name and number of models)
-        Scanner headerScan = new Scanner(fileScan.nextLine());
-        Bike bike = new Bike(headerScan.next()); //read model name
-        int numModels = headerScan.nextInt();
-        bike.numModels = numModels;
-        headerScan.close();
-
-        // add version names
-        for (int i = 0; i < numModels; i++) {
-            bike.versionNames.add(fileScan.nextLine());
-        }
-
-        // add version costs
-        int currentCost;
-        for (int i = 0; i < numModels; i++) {
-            currentCost = fileScan.nextInt();
-
-            //update global min and max cost
-            if (currentCost > costMax) costMax = currentCost;
-            if (currentCost < costMin) costMin = currentCost;
-
-            bike.addCost(currentCost);
-        }
-
-        // add version materials
-        String currentCarbon;
-        for (int i = 0; i < numModels; i++) {
-            currentCarbon = fileScan.next();
-            bike.versionCarbons.add(Carbon.parseString(currentCarbon));
-        }
-        return bike;
-    }
 
     /**
      * Draws the horizontal axis on the bottom, vertical grid lines, and labels on the left.
@@ -227,7 +141,7 @@ public class Diagram {
      *
      * @param g graphics context
      */
-    private void drawAllBikes(Graphics g) {
+    private void drawBikes(Graphics g) {
         Bike currentBike;
         int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
@@ -286,7 +200,7 @@ public class Diagram {
 
     /**
      * Given the cost of a model version, returns the x position to draw it at.
-     * Called by drawAllBikes() and drawGrid().
+     * Called by drawBikes() and drawGrid().
      *
      * @param cost cost in dollars
      * @return x position for that cost
