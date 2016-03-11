@@ -12,9 +12,8 @@ import java.util.Vector;
 public class Diagram {
 
     // region fields
-
     // appearance
-    private final Color BAR_BACKGROUND_COLOR = Color.gray;
+    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
     private final int RECT_HEIGHT = 20; //height of each horizontal bar
     private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
@@ -36,9 +35,6 @@ public class Diagram {
     private Vector<Bike> allBikes = new Vector<>(); //holds every bike model
 
     private PDFGraphics2D g; //graphics context
-
-    private Color[] colors; //possibly not used
-
     //endregion
 
     /**
@@ -84,7 +80,9 @@ public class Diagram {
     }
 
     /**
-     * @param l
+     * Adds a Legend to the diagram and draws it.
+     *
+     * @param l Legend object
      */
     public void addLegend(Legend l) {
         l.setProps(MARKER_SIZE);
@@ -168,6 +166,7 @@ public class Diagram {
         Scanner headerScan = new Scanner(fileScan.nextLine());
         Bike bike = new Bike(headerScan.next()); //read model name
         int numModels = headerScan.nextInt();
+        bike.numModels = numModels;
         headerScan.close();
 
         // add version names
@@ -246,23 +245,6 @@ public class Diagram {
 
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
-
-            String manu = currentBike.modelName.split("_")[0];
-            switch (manu) {
-                case "Specialized":
-                    g.setColor(Color.magenta);
-                    break;
-                case "Trek":
-                    g.setColor(Color.orange);
-                    break;
-                case "Cannondale":
-                    g.setColor(Color.pink);
-                    break;
-                default:
-                    System.err.println("you fucked up: \"" + manu + "\"");
-            }
-
-
             barYPos = i * verticalSpacing + 20;
             barXStart = getXPosition(currentBike.minCost);
             barXEnd = getXPosition(currentBike.maxCost);
@@ -291,7 +273,7 @@ public class Diagram {
     private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
 
-        for (int i = 0; i < currentBike.versionCosts.size(); i++) {
+        for (int i = 0; i < currentBike.numModels; i++) {
             currentCost = currentBike.versionCosts.get(i);
 
             // draw dot

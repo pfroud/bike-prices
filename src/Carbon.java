@@ -24,6 +24,15 @@ public enum Carbon {
         return this.description;
     }
 
+    /**
+     * Draws a dot for the carbon value.
+     *
+     * @param g        graphic context
+     * @param dotX     x location of the dot
+     * @param dotY     y location of the dot
+     * @param size     diameter of the dot
+     * @param inLegend whether the dot appears in the legend
+     */
     public void draw(Graphics2D g, int dotX, int dotY, int size, boolean inLegend) {
         g.setColor(this.color);
         g.fillOval(dotX, dotY, size, size);

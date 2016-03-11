@@ -15,6 +15,11 @@ public class Legend {
         this.markerSize = markerSize;
     }
 
+    /**
+     * Draws a box showing what each color of dot means.
+     *
+     * @param g Graphics context
+     */
     public void draw(Graphics2D g) {
         // box
         g.setColor(Color.white);

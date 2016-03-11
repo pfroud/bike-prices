@@ -7,6 +7,7 @@ import java.util.Vector;
  */
 public class Bike {
     String modelName; //name of the model
+    int numModels;
 
     //TODO make these private
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
