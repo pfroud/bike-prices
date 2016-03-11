@@ -32,8 +32,8 @@ public class Diagram {
     private int costMin_override, costMax_override; //custom cost range start and end
 
     private Vector<Bike> allBikes; //holds every bike model
-
     private PDFGraphics2D g; //graphics context
+    private Legend legend;
     //endregion
 
     /**
@@ -53,6 +53,11 @@ public class Diagram {
         this.allBikes = allBikes;
 
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
+
+        costMin = Bike.getCostMin();
+        costMax = Bike.getCostMax();
+
+        costRange = costMax - costMin;
     }
 
     /// PUBLIC FUNCTIONS
@@ -77,11 +82,10 @@ public class Diagram {
      * @param l Legend object
      */
     public void addLegend(Legend l) {
-        l.setProps(MARKER_SIZE);
-        l.draw(g);
+        legend = l;
+        legend.setProps(MARKER_SIZE);
     }
 
-    // TODO this gets drawn over when the pdf is drawn
     public void addAnalysis(Analysis a) {
         a.init(allBikes);
     }
@@ -93,9 +97,12 @@ public class Diagram {
      * @throws IOException
      */
     public void writePDF(String filename) throws IOException {
-
         drawGrid(g);
         drawBikes(g);
+
+        if (legend != null) {
+            legend.draw(g);
+        }
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());

@@ -23,7 +23,7 @@ public class Main {
         Diagram d = new Diagram(Bike.readBikes("bikesInput.txt"), width, height, margin, gridStep);
 
         d.addCustomRange(500, 10000); // $500 through $10,000
-        d.addLegend(new Legend(1650, 10, 200, 90)); // this gets drawn over when the pdf is drawn
+        d.addLegend(new Legend(1650, 10, 200, 90));
         d.addAnalysis(new Analysis(4)); // 4 histogram bins
 
         d.writePDF("testing.pdf");
