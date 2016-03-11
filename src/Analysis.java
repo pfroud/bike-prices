@@ -20,7 +20,7 @@ public class Analysis {
     }
 
     // I don't know where this will get drawn
-    public void draw(Graphics2D g) {
+    public void draw(Graphics g) {
         for (Histogram hist : hists) {
             hist.draw(g, 0, 0, 0, 0);
         }

@@ -13,7 +13,7 @@ public class Histogram {
         this.data = data;
     }
 
-    public void draw(Graphics2D g, int x, int y, int width, int height){
+    public void draw(Graphics g, int x, int y, int width, int height){
         bike = null; //eliminate warning
         data = null;
     }

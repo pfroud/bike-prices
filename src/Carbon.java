@@ -33,7 +33,7 @@ public enum Carbon {
      * @param size     diameter of the dot
      * @param inLegend whether the dot appears in the legend
      */
-    public void draw(Graphics2D g, int dotX, int dotY, int size, boolean inLegend) {
+    public void draw(Graphics g, int dotX, int dotY, int size, boolean inLegend) {
         g.setColor(this.color);
         g.fillOval(dotX, dotY, size, size);
         if (inLegend) {

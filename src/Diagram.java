@@ -194,7 +194,7 @@ public class Diagram {
      *
      * @param g graphics context
      */
-    private void drawGrid(Graphics2D g) {
+    private void drawGrid(Graphics g) {
 
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, height - margin, width - margin, height - margin); // bottom axis
@@ -227,7 +227,7 @@ public class Diagram {
      *
      * @param g graphics context
      */
-    private void drawAllBikes(Graphics2D g) {
+    private void drawAllBikes(Graphics g) {
         Bike currentBike;
         int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
         int barYPos, barWidth;
@@ -264,7 +264,7 @@ public class Diagram {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
+    private void drawDots(Graphics g, Bike currentBike, int barVertPos) {
         int currentCost, dotX, dotY;
 
         for (int i = 0; i < currentBike.numModels; i++) {

@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Vector;
 
 /**
  * Makes a PDF of bikes from input file.
@@ -14,18 +13,6 @@ public class Main {
      * Opens a text file with information about and writes a PDF file showing range and gradiation of prices.
      */
     public static void main(String[] args) throws IOException {
-
-
-        Vector<Integer> data = new Vector<>();
-        data.add(2);
-        data.add(5);
-        data.add(6);
-        data.add(1);
-        Histogram hist = new Histogram(new Bike("test_model"), data);
-
-
-
-        /*
 
         //the number is in inches
         int width = (int) (INCH_TO_MM * 75);
@@ -42,7 +29,6 @@ public class Main {
 
         d.writePDF("testing.pdf");
 
-        */
     }
 
 }
