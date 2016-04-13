@@ -9,6 +9,7 @@ public enum Carbon {
     //http://stackoverflow.com/a/18883717
     private Color color;
     private String description;
+
     static {
         ALL.color = Color.cyan;
         FORK.color = Color.yellow;
@@ -17,6 +18,10 @@ public enum Carbon {
         ALL.description = "full carbon-fiber frame";
         FORK.description = "carbon-fiber fork only";
         NONE.description = "no carbon-fiber";
+    }
+
+    public static Carbon[] getAllValues() {
+        return new Carbon[]{ALL, FORK, NONE};
     }
 
     public String getDescription() {

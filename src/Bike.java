@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Vector;
@@ -19,7 +20,7 @@ public class Bike {
      *
      * @param filename name of text file with bike info
      */
-    public static Vector<Bike> readBikes(String filename) {
+    static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
         // open file
@@ -98,11 +99,11 @@ public class Bike {
         return bike;
     }
 
-    public static int getCostMax() {
+    static int getCostMax() {
         return costMax;
     }
 
-    public static int getCostMin() {
+    static int getCostMin() {
         return costMin;
     }
 
@@ -113,7 +114,6 @@ public class Bike {
     String modelName;
     int numModels;
 
-    //TODO make these private
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
@@ -152,7 +152,7 @@ public class Bike {
      *
      * @param c the cost of the version to add.
      */
-    public void addCost(int c) {
+    void addCost(int c) {
         versionCosts.add(c);
 
         if (c > maxCost) maxCost = c;
@@ -174,7 +174,7 @@ public class Bike {
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
-    public Vector<Integer> getHistogramData(int numHistogramBins) {
+    Vector<Integer> getHistogramData(int numHistogramBins) {
         Vector<Integer> bins = new Vector<>(numHistogramBins);
         for (int i = 0; i < numHistogramBins; i++) {
             bins.add(i, 0);
@@ -199,6 +199,46 @@ public class Bike {
         }
         return bins;
     }
+
+
+    Vector<HashMap<Carbon, Integer>> getHistogramData_color(int numHistogramBins) {
+        Vector<HashMap<Carbon, Integer>> vecOfMaps = new Vector<>(numHistogramBins);
+
+        HashMap<Carbon, Integer> initMap;
+        for (int i = 0; i < vecOfMaps.size(); i++) {
+            initMap = new HashMap<>(3); // 3 for the three possible Carbon values
+            for (Carbon c : Carbon.getAllValues()) initMap.put(c, 0);
+            vecOfMaps.add(initMap);
+        }
+
+        double binWidth = (double) (maxCost - minCost) / numHistogramBins; // width, in dollars, of each bin
+        double costCutoff; //max cost for a version to be in a bin
+
+        int currentCost;
+        HashMap<Carbon, Integer> currentMap;
+        Carbon currentCarb;
+        int oldCount;
+
+        //iterate over costs
+        for (int indexCost = 0; indexCost < versionCosts.size(); indexCost++) {
+            currentCost = versionCosts.get(indexCost);
+
+            //iterate over "bins"
+            for (int i = 0; i <= numHistogramBins; i++) {
+                costCutoff = minCost + (binWidth * (i + 1)); // +1 because not good when i==0
+
+                if (currentCost <= costCutoff) {
+                    currentMap = vecOfMaps.get(i);
+                    currentCarb = versionCarbons.get(indexCost);
+                    oldCount = currentMap.get(currentCarb);
+                    currentMap.put(currentCarb, oldCount + 1);
+                    break;
+                }
+            }
+        }
+        return vecOfMaps;
+    }
+
 
     // endregion instance stuff
 

@@ -1,30 +1,39 @@
 import java.awt.*;
+import java.util.HashMap;
 import java.util.Vector;
 
 /**
  *
  */
-public class Histogram {
+class Histogram {
 
     private Vector<Integer> data; // contents of histogram bins
 
     private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter; // height not used
     private String caption;
-    Font fontDefault = new Font("Arial", Font.PLAIN, 12);
-    Font fontCaption = fontDefault;
+    private Font fontDefault = new Font("Arial", Font.PLAIN, 12);
+    private Font fontCaption = fontDefault;
 
-    public Histogram(Vector<Integer> data, String caption) {
+    Vector<HashMap<Carbon, Integer>> vecOfMaps;
+
+    Histogram(Vector<Integer> data, String caption) {
         this.data = data;
         this.caption = caption;
     }
 
-    public void setSize(int x, int y, int width, int height) {
+    // argument color so doesn't clash with other constructor
+    Histogram(Vector<HashMap<Carbon, Integer>> data, String caption, boolean color) {
+        this.vecOfMaps = data;
+        this.caption = caption;
+    }
+
+
+    void setSize(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
 
-//        barWidth = 10;
         barSpacing = 1;
         barWidth = (width + barSpacing) / data.size();
 
@@ -40,7 +49,34 @@ public class Histogram {
         vertScale = (height - marginTop) / 12;
     }
 
-    public void draw(Graphics g) {
+    void draw_color(Graphics g) {
+
+        Carbon[] carbons = Carbon.getAllValues();
+        HashMap currentMap;
+        int datum, xStart, height, yStart;
+
+        for (int i = 0; i < vecOfMaps.size(); i++) {
+            currentMap = vecOfMaps.get(i);
+
+            for (Carbon c : carbons) {
+                datum = (int) currentMap.get(c);
+
+                xStart = x + i * (barWidth + barSpacing) + marginToCenter;
+                height = datum * vertScale;
+                yStart = y - height;
+
+                g.fillRect(xStart, yStart, barWidth, height);
+                g.drawString(Integer.toString(datum), xStart + barWidth / 2 - 3, yStart - 2);
+
+
+            }
+
+        }
+
+
+    }
+
+    void draw(Graphics g) {
         // coordinate system: positive is down and right.
 
 /*        g.setColor(Color.lightGray);
