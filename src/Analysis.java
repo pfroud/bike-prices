@@ -29,14 +29,14 @@ class Analysis {
         // draw the first half of the histograms on one row
         for (int i = 0; i < half; i++) {
             bike = bikes.get(i);
-            h = new Histogram(bike.getHistogramData_color(numBins), bike.modelName, true);
+            h = new Histogram(bike.getHistogramData_color(numBins), bike.modelName);
             h.setSize(i * (histSize + 50) + 50, 200, histSize, histSize);
             hists.add(h);
         }
         // draw the second half of histograms on a second row
         for (int i = half; i < bikes.size(); i++) {
             bike = bikes.get(i);
-            h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
+            h = new Histogram(bike.getHistogramData_color(numBins), bike.modelName);
             h.setSize((i - half) * (histSize + 50) + 50, 400, histSize, histSize);
             hists.add(h);
         }

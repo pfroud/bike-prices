@@ -205,7 +205,7 @@ public class Bike {
         Vector<HashMap<Carbon, Integer>> vecOfMaps = new Vector<>(numHistogramBins);
 
         HashMap<Carbon, Integer> initMap;
-        for (int i = 0; i < vecOfMaps.size(); i++) {
+        for (int i = 0; i < numHistogramBins; i++) {
             initMap = new HashMap<>(3); // 3 for the three possible Carbon values
             for (Carbon c : Carbon.getAllValues()) initMap.put(c, 0);
             vecOfMaps.add(initMap);
