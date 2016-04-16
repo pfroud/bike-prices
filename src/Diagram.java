@@ -60,6 +60,8 @@ class Diagram {
         priceRange = priceMax - priceMin;
     }
 
+
+
     /// PUBLIC FUNCTIONS
 
     /**
@@ -117,7 +119,7 @@ class Diagram {
      * Prints the range info for every bike.
      */
     void printRanges() {
-        for(Bike b : allBikes){
+        for (Bike b : allBikes) {
             b.printRange();
         }
     }

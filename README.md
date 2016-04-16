@@ -55,11 +55,13 @@ The model with the least relative range between least and most expensive version
 Range information for every model is available in [ranges.csv](ranges.csv).
 
 
-
-
 #### Distribution
 
+No groundbreaking conclusions were drawn. The histograms show that for most models, there are more versions in the first quarter than in the other three quarters. Three models don't do this: Specialized Tarmac, Trek Madone and Emonda ALR, and Cannondale CAAD8.
+
 #### Material
+
+Again, so significant conclusion was drawn. Some
 
 #### Discussion
 
