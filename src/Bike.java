@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.NumberFormat;
 import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Vector;
@@ -161,17 +162,31 @@ public class Bike {
     }
 
     /**
-     * Prints the price range, both in absolute price and multiples of least price. Currently not used.
+     * Prints a CSV row of model name, absolute price range, relative price range, least expensive version name,
+     * least expensive version price, most expensive version name, most expensive version price.
+     * Use printHeader() first.
      *
-     * Example: "Specialized_Diverge	$7400	7.73x"
+     * Example: "Specialized_Diverge	$7400	7.73x	A1	Carbon DI2"
      */
-    public void printRange() {
-        System.out.printf("%s\t$%d\t%.2fx\n", modelName, maxPrice - minPrice, (double) (maxPrice) / minPrice);
+    void printRange() {
+        NumberFormat numForm = NumberFormat.getNumberInstance();
+        System.out.printf("%s\t$%s\t%.2fx\t%s\t$%s\t%s\t$%s\n",
+                modelName.replace('_', ' '), numForm.format(maxPrice - minPrice), (double) (maxPrice) / minPrice,
+                versionNames.firstElement(), numForm.format(versionPrices.firstElement()),
+                versionNames.lastElement(), numForm.format(versionPrices.lastElement()));
     }
 
     /**
-     * Divides the bikes by price into numHistogramBins bins.
-     * each int is the number of versions in that price range
+     * Prints the header for the CSV populated by printRange().
+     */
+    static void printHeader() {
+        System.out.println("Model\tAbsolute price range\tRelative price range\t" +
+                "Least expensive version\tLeast expensive version price\t" +
+                "Most expensive version\tMost expensive version price");
+    }
+
+    /**
+     * Divides the bikes by price into numHistogramBins bins. Each int is the number of versions in that price range.
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */

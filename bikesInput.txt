@@ -1,11 +1,11 @@
 Specialized_Diverge 7
 A1
 Sport A1
-Comp carbon
+Comp Carbon
 Elite A1
-Comp smartweld
-Expert carbon
-Carbon DI2
+Comp Smartweld
+Expert Carbon
+Carbon Di2
 1100
 1250
 3500
@@ -24,8 +24,8 @@ all
 Specialized_Secteur 4
 Double
 Triple
-Sport double
-Elite double
+Sport Double
+Elite Double
 850
 900
 1050
@@ -36,19 +36,19 @@ fork
 fork
 
 Specialized_Roubiax 13
-sl4 double
-sl4 disc
-sl4 sport
-sl4 elite
-sl4 elite disc
-sl4 comp
-sl4 comp disc
-sl4 export
-sl4 pro race
-sl4 pro disc race
-sl4 pro disc race udi2
-S-work sl4 dura-ace
-S-works sl4 disc di2
+SL4 Double
+SL4 Disc
+SL4 Sport
+SL4 Elite
+SL4 Elite Disc
+SL4 Comp
+SL4 Comp Disc
+SL4 Expert
+SL4 Pro Race
+SL4 Pro Disc Race
+SL4 Pro Disc Race Di2
+S-Works SL4 Dura-Ace
+S-Works SL4 Disc Di2
 1800
 1950
 2100
@@ -77,15 +77,15 @@ all
 all
 
 Specialized_Allez 9
-allez
-elite
+Allez
+Elite
 650
-sport
-comp
-expert
-comp race
-pro
-As-works di2
+Sport
+Comp
+Expert
+Comp Race
+Pro
+S-Works Di2
 770
 1250
 770
@@ -106,16 +106,16 @@ fork
 fork
 
 Specialized_Tarmac 10
-sport
-elite
-comp
-expert
-pro race
-pro disc race
-pro disc race udi2
-S-works dura-ace
-S-works tarmac red
-S-works tarmac di2 disc
+Sport
+Elite
+Comp
+Expert
+Pro Race
+Pro Disc Race
+Pro Disc Race Di2
+S-works Dura-Ace
+S-works Tarmac Red
+S-works Tarmac Di2 Disc
 2100
 2500
 3000
@@ -138,9 +138,9 @@ all
 all
 
 Trek_CrossRip 4
-crosrip
-comp
-elite
+Crosrip
+Comp
+Elite
 LTD
 990
 1100
@@ -154,19 +154,19 @@ fork
 Trek_Domane 15
 2.0
 2.3
-4.0 disc
+4.0 Disc
 4.1
 4.3
-4.3 disc
+4.3 Disc
 4.5
-4.5 disc
+4.5 Disc
 5.2
-5.9 dura-ace
+5.9 Dura-Ace
 5.9
 6.2
-6.2 disc
+6.2 Disc
 6.9
-6.9 disc
+6.9 Disc
 1430
 1870
 2100
@@ -239,18 +239,18 @@ S 4
 S 5 wsd
 S 5
 S 6
-Sl 5 wsd
-Sl 5
-Sl 6 wsd
-Sl 6 wsd
-Sl 8 wsd
-Sl 8 red
-Sl 8
-Slr 6
-Slr 8
-Slr 9 wsd
-Slr 9
-Slr 10
+SL 5 wsd
+SL 5
+SL 6 wsd
+SL 6 wsd
+SL 8 wsd
+SL 8 Red
+SL 8
+SLR 6
+SLR 8
+SLR 9 wsd
+SLR 9
+SLR 10
 1650
 2100
 2100
@@ -287,9 +287,9 @@ all
 Cannondale_CAAD10 5
 105 5
 Ultegra 3
-force, racing
-sram rival disc
-black inc disc
+Force Racing
+Sram Rival Disc
+Black Inc Disc
 1680
 2270
 2830
@@ -315,18 +315,18 @@ fork
 fork
 fork
 
-Cannondale_supersix_evo 11
-carbon 105 5
-carbon sram rival
-carbon ultegra
-carbon force racing
-carbon sram red
-carbon ultegra di2
-high-mod dura ace 2
-high-mod red racing
-high-mod dura ace di2
-high-mod team
-black inc
+Cannondale_Supersix_Evo 11
+Carbon 105 5
+Carbon Sram Rival
+Carbon Ultegra
+Carbon Force Racing
+Carbon Sram Red
+Carbon Ultegra Di2
+High-mod Dura-Ace 2
+High-mod Red Racing
+High-mod Dura-Ace Di2
+High-mod Team
+Black Inc
 2270
 2710
 3250
@@ -353,9 +353,9 @@ all
 Cannondale_Synapse 5
 Claris 8
 Sora 7
-tiagra disc 6
-105 5 disc
-sram rival disc
+Tiagra Disc 6
+105 5 Disc
+Sram Rival Disc
 920
 1030
 1300
@@ -370,13 +370,13 @@ fork
 Cannondale_Synapse_Carbon 9
 105 6
 105 5
-sram rival disc
-ultegra
-ultegra disc
-ultegra di2 disc
-Hi-mod ultegra disc
-Hi-mod sram red disc
-Hi-mod black inc disc
+Sram Rival Disc
+Ultegra
+Ultegra Disc
+Ultegra Di2 Disc
+Hi-mod Ultegra Disc
+Hi-mod Sram Red Disc
+Hi-mod Black Inc Disc
 2060
 2380
 2920

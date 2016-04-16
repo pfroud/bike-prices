@@ -13,7 +13,7 @@ Used more reasonable software to do this: https://public.tableau.com/profile/pet
 
 The original purpose was to visualize bicycle pricing, which would help me think about buying a road bicycle.
 
-The generated diagrams are exactly what I had in mind, and do reveal some price patterns. However, they don't include enough information to be the only guideline in a decision to buy a bicycle.
+The generated diagrams are exactly what I had in mind, but they don't include enough information to be very useful.
 
 ###Problem
 
@@ -45,7 +45,16 @@ More generally, I seek to answer whether given a price point,
 
 #### Range
 
-The overall price range of the bikes I sampled is from \$770 (both Specialized Allez and Trek 1 Series) to \$15,750 (Trek Emonda). The most expensive 1 Series version is $1100 (1.4x increase) while the most expensive Allez is a remarkable $8,000 (10.4x increase)
+The least expensive bike I sampled is \$770 (both Specialized Allez base and Trek 1 Series 1.1) and the most expensive is \$15,750 (Trek Emonda SLR 10). So, the Emonda SLR 10 is 20.5 times as expensive as the Allez or the 1 Series.
+
+The model with the greatest relative range between least and most expensive versions is the Specialized Allez. The Allez base is $770 and the Allez S-Works Di2 is $8,000, for a range of 10.4x.
+
+The model with the least relative range between least and most expensive versions is the Trek Emonda ALR. There are only two models, but the Emonda ALR 5 is $1,760 and the Emonda ALR 6 is $2,250, for a range of 1.3x.
+
+
+Range information for every model is available in [ranges.csv](ranges.csv).
+
+
 
 
 #### Distribution

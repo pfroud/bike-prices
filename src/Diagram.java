@@ -113,6 +113,14 @@ class Diagram {
         }
     }
 
+    /**
+     * Prints the range info for every bike.
+     */
+    void printRanges() {
+        for(Bike b : allBikes){
+            b.printRange();
+        }
+    }
 
     /**
      * Draws the horizontal axis on the bottom, vertical grid lines, and labels on the left.

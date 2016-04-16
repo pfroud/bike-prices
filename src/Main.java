@@ -20,12 +20,15 @@ public class Main {
         int gridStep = 500; //this is in dollars
 
         Diagram d = new Diagram(Bike.readBikes("bikesInput.txt"), width, height, margin, gridStep);
+        Bike.printHeader();
+        d.printRanges();
 
-        d.addCustomRange(500, 10000); // $500 through $10,000
-        d.addLegend(new Legend(1650, 10, 200, 90)); // x, y, width, height
-        d.addAnalysis(new Analysis(4, 30, height - 50, 70)); // 4 histogram bins then x, y
 
-        d.writePDF("testing.pdf");
+//        d.addCustomRange(500, 10000); // $500 through $10,000
+//        d.addLegend(new Legend(1650, 10, 200, 90)); // x, y, width, height
+//        d.addAnalysis(new Analysis(4, 30, height - 50, 70)); // 4 histogram bins then x, y
+
+//        d.writePDF("testing_fullRange.pdf");
 
     }
 
