@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Vector;
 
 /**
- * A diagram of bars, dots, and a grid, showing cost distribution.
+ * A diagram of bars, dots, and a grid, showing price distribution.
  */
 class Diagram {
 
@@ -30,10 +30,10 @@ class Diagram {
     private int width, height, margin; //size and margins of the pdf page. Units are millimeters.
     private int gridStep; //spacing between vertical grid steps. Units are dollars.
 
-    // cost range
-    private int costMin = 999999; //cost of the least expensive bike in the input file
-    private int costMax = 0; //cost of the most expensive bike in the input file
-    private float costRange; //difference between least and most expensive bike in input file
+    // price range
+    private int priceMin = 999999; //price of the least expensive bike in the input file
+    private int priceMax = 0; //price of the most expensive bike in the input file
+    private float priceRange; //difference between least and most expensive bike in input file
     //endregion fields
 
     /**
@@ -54,25 +54,25 @@ class Diagram {
 
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
 
-        costMin = Bike.getCostMin();
-        costMax = Bike.getCostMax();
+        priceMin = Bike.getPriceMax();
+        priceMax = Bike.getPriceMin();
 
-        costRange = costMax - costMin;
+        priceRange = priceMax - priceMin;
     }
 
     /// PUBLIC FUNCTIONS
 
     /**
-     * Override the cost (x-axis) range.
+     * Override the price (x-axis) range.
      *
      * @param newMin custom minimum amount in dollars
      * @param newMax custom maximum amount in dollars
      */
     void addCustomRange(int newMin, int newMax) {
-        costMin = newMin;
-        costMax = newMax;
+        priceMin = newMin;
+        priceMax = newMax;
 
-        costRange = costMax - costMin;
+        priceRange = priceMax - priceMin;
     }
 
     /**
@@ -129,8 +129,8 @@ class Diagram {
 
         // min and max labels for bottom axis
         g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString("$" + costMin, margin, bottomEdge + 20);
-        g.drawString("$" + costMax, rightEdge - 60, bottomEdge + 20);
+        g.drawString("$" + priceMin, margin, bottomEdge + 20);
+        g.drawString("$" + priceMax, rightEdge - 60, bottomEdge + 20);
 
         //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
@@ -138,13 +138,13 @@ class Diagram {
         int xPos;
 
         //draw vertical lines
-        for (int cost = costMin; cost <= costMax; cost += gridStep) {
-            xPos = getXPosition(cost);
+        for (int price = priceMin; price <= priceMax; price += gridStep) {
+            xPos = getXPosition(price);
             g.drawLine(xPos, 0, xPos, bottomEdge + 60);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
-            if (costMin != cost && costMax != cost) {
-                g.drawString("$" + cost, xPos, bottomEdge + 15);
+            if (priceMin != price && priceMax != price) {
+                g.drawString("$" + price, xPos, bottomEdge + 15);
             }
         }
     }
@@ -167,8 +167,8 @@ class Diagram {
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
             barYPos = i * verticalSpacing + 20;
-            barXStart = getXPosition(currentBike.minCost);
-            barXEnd = getXPosition(currentBike.maxCost);
+            barXStart = getXPosition(currentBike.minPrice);
+            barXEnd = getXPosition(currentBike.maxPrice);
             barWidth = (int) (barXEnd - barXStart);
             int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
@@ -192,34 +192,34 @@ class Diagram {
      * @param barVertPos  vertical position of that bike's bar
      */
     private void drawDots(Graphics g, Bike currentBike, int barVertPos) {
-        int currentCost, dotX, dotY;
+        int currentPrice, dotX, dotY;
 
         for (int i = 0; i < currentBike.numModels; i++) {
-            currentCost = currentBike.versionCosts.get(i);
+            currentPrice = currentBike.versionPrices.get(i);
 
             // draw dot
-            dotX = getXPosition(currentCost);
+            dotX = getXPosition(currentPrice);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
             g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
             currentBike.versionCarbons.get(i).draw(g, dotX, dotY, MARKER_SIZE, false);
 
-            // draw cost above the dot and model name below the dot
+            // draw price above the dot and model name below the dot
             g.setColor(Color.black);
             g.setFont(fontDotCaption);
-            g.drawString("$" + currentCost, dotX, dotY - 3);
+            g.drawString("$" + currentPrice, dotX, dotY - 3);
             g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
         }
     }
 
     /**
-     * Given the cost of a model version, returns the x position to draw it at.
+     * Given the price of a model version, returns the x position to draw it at.
      *
-     * @param cost cost in dollars
-     * @return x position for that cost
+     * @param price price in dollars
+     * @return x position for that price
      */
-    private int getXPosition(int cost) {
+    private int getXPosition(int price) {
         int endWidth = width - margin * 2; //x location where everything should end
-        return (int) ((((float) cost - costMin) / costRange) * endWidth + margin);
+        return (int) ((((float) price - priceMin) / priceRange) * endWidth + margin);
     }
 
 }

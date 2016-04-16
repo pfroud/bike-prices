@@ -12,7 +12,7 @@ public class Bike {
 
     // region statics
 
-    private static int costMax, costMin; // maximum and minimum costs of versions of this model
+    private static int priceMin, priceMax; // maximum and minimum prices of versions of this model
 
     /**
      * Opens the input file and reads all bikes in the file.
@@ -58,11 +58,11 @@ public class Bike {
      *
      * (2) Does three for loops to read:
      *     (a) version names
-     *     (b) version costs
+     *     (b) version prices
      *     (c) version materials
      *
      * @param fileScan scanner on the input text file
-     * @return Bike object containing all of the version names, costs, and materials
+     * @return Bike object containing all of the version names, prices, and materials
      */
     //@formatter:on
     private static Bike readOneBike(Scanner fileScan) {
@@ -78,16 +78,16 @@ public class Bike {
             bike.versionNames.add(fileScan.nextLine());
         }
 
-        // add version costs
-        int currentCost;
+        // add version prices
+        int currentPrice;
         for (int i = 0; i < numModels; i++) {
-            currentCost = fileScan.nextInt();
+            currentPrice = fileScan.nextInt();
 
-            //update min and max cost
-            if (currentCost > costMax) costMax = currentCost;
-            if (currentCost < costMin) costMin = currentCost;
+            //update min and max price
+            if (currentPrice > priceMin) priceMin = currentPrice;
+            if (currentPrice < priceMax) priceMax = currentPrice;
 
-            bike.addCost(currentCost);
+            bike.addPrice(currentPrice);
         }
 
         // add version materials
@@ -98,12 +98,12 @@ public class Bike {
         return bike;
     }
 
-    static int getCostMax() {
-        return costMax;
+    static int getPriceMin() {
+        return priceMin;
     }
 
-    static int getCostMin() {
-        return costMin;
+    static int getPriceMax() {
+        return priceMax;
     }
 
     // endregion statics
@@ -115,10 +115,11 @@ public class Bike {
 
     //TODO make these private?
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
-    Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
+    Vector<Integer> versionPrices = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
 
-    int minCost = 999999, maxCost = 0; // most and least expensive version of the model
+    // why do I have this in instance and statis??
+    int minPrice = 999999, maxPrice = 0; // most and least expensive version of the model
 
 
     /**
@@ -137,39 +138,39 @@ public class Bike {
      */
     public String toString() {
         ListIterator<String> names = versionNames.listIterator();
-        ListIterator<Integer> costs = versionCosts.listIterator();
+        ListIterator<Integer> prices = versionPrices.listIterator();
         String out = modelName + "\n-----------------------\n";
 
         while (names.hasNext()) {
-            out += names.next() + ": $" + costs.next() + "\n";
+            out += names.next() + ": $" + prices.next() + "\n";
         }
         return out;
     }
 
     /**
-     * Used to add a cost to the vector of costs.
-     * Costs isn't private but you should still use this.
+     * Used to add a price to the vector of prices.
+     * prices isn't private but you should still use this.
      *
-     * @param c the cost of the version to add.
+     * @param c the price of the version to add.
      */
-    void addCost(int c) {
-        versionCosts.add(c);
+    void addPrice(int c) {
+        versionPrices.add(c);
 
-        if (c > maxCost) maxCost = c;
-        if (c < minCost) minCost = c;
+        if (c > maxPrice) maxPrice = c;
+        if (c < minPrice) minPrice = c;
     }
 
     /**
-     * Prints the cost range, both in absolute cost and multiples of least price. Currently not used.
+     * Prints the price range, both in absolute price and multiples of least price. Currently not used.
      *
      * Example: "Specialized_Diverge	$7400	7.73x"
      */
     public void printRange() {
-        System.out.printf("%s\t$%d\t%.2fx\n", modelName, maxCost - minCost, (double) (maxCost) / minCost);
+        System.out.printf("%s\t$%d\t%.2fx\n", modelName, maxPrice - minPrice, (double) (maxPrice) / minPrice);
     }
 
     /**
-     * Divides the bikes by cost into numHistogramBins bins.
+     * Divides the bikes by price into numHistogramBins bins.
      * each int is the number of versions in that price range
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
@@ -180,17 +181,17 @@ public class Bike {
             bins.add(i, 0);
         }
 
-        double binWidth = (double) (maxCost - minCost) / numHistogramBins; // width, in dollars, of each bin
-        double costCutoff; //max cost for a version to be in a bin
+        double binWidth = (double) (maxPrice - minPrice) / numHistogramBins; // width, in dollars, of each bin
+        double priceCutoff; //max price for a version to be in a bin
 
         //iterate over versions
-        for (Integer currentCost : versionCosts) {
+        for (Integer currentPrice : versionPrices) {
 
             //iterate over bins
             for (int currentBin = 1; currentBin <= numHistogramBins; currentBin++) {
-                costCutoff = minCost + (binWidth * currentBin);
+                priceCutoff = minPrice + (binWidth * currentBin);
 
-                if (currentCost <= costCutoff) {
+                if (currentPrice <= priceCutoff) {
                     // it seems like this could be done better
                     bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); // need currentBin-1 bc index starts at 0
                     break;

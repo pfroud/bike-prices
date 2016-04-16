@@ -1,6 +1,6 @@
-# Bicycle cost infographic generator
+# Bicycle price infographic generator
 
-Reads plaintext bicycle cost information and generates a PDF showing cost range and distribution.
+Generates a PDF showing range and distribution for bicycle prices.
 
 All the prices are from the 2015 model year and are now outdated.
 
@@ -17,9 +17,9 @@ The generated diagrams are exactly what I had in mind, and do reveal some price 
 
 ###Problem
 
-There are several bicycle *manufacturers*. Specialized, Trek, Cannondale, ...  
-Each manufacturer makes several *models*. Roubiax, Tarmac, Domane, Madone, CAAD10, Supersix, ...  
-Each model has several *versions*. Double, Triple, Comp, Elite, 2.0, 2.3, ...  
+There are several bicycle *manufacturers*. Specialized, Trek, Cannondale, ...
+Each manufacturer makes several *models*. Roubiax, Tarmac, Domane, Madone, CAAD10, Supersix, ...
+Each model has several *versions*. Double, Triple, Comp, Elite, 2.0, 2.3, ...
 That multiplies to a lot of bikes to choose from:
 
 
@@ -54,7 +54,7 @@ The overall price range of the bikes I sampled is from \$770 (both Specialized A
 
 #### Discussion
 
-Through internet research, I learned that frame material has little to do with a bicycle's overall performance. While a major classification like frame material 
+Through internet research, I learned that frame material has little to do with a bicycle's overall performance. While a major classification like frame material
 
 more important than frame: groupset
 
@@ -64,7 +64,7 @@ more important than frame: groupset
 
 I wrote this in Java because it's already installed and I already know how to use it.
 It would make several hundred times more sense to use a data visualization library to do this,
-but I started with this proof-of-concept.  
+but I started with this proof-of-concept.
 
 A `Bike` object is a *model* of bike, and holds set of *versions* of the model. A model could be 'Specialized Diverge', and a version of that model could be 'Elite A1'.
 
@@ -73,7 +73,7 @@ All the Java code is in `src/`.
 
 
 I'm using the [`VectorGraphics2D`](http://trac.erichseifert.de/vectorgraphics2d/) library to make a PDF. It's already in the repository.
- 
+
 The first version I made ran a `JApplet` because it required the least amount of tying and thought to get a graphics window going.
 
 ## Input and output
@@ -94,9 +94,9 @@ Thus prices are MSRP.
 
 An input entry begins with a header, which has the name of the model, a space, and the number of versions for that model. For example, `Specialized_Diverge 7`.
 
-Following the header are lines for version names, version costs, and version materials.
+Following the header are lines for version names, version prices, and version materials.
 
-For example, if a model has 7 versions, there are seven lines with one name on each line, then seven lines with one cost on each line, etc.
+For example, if a model has 7 versions, there are seven lines with one name on each line, then seven lines with one price on each line, etc.
 
 One blank line separates input entries.
 
@@ -110,4 +110,4 @@ The page size is currently 74.81 inches by 37.01 inches.
 
 ## Known issues
 - Model versions with the same price are drawn on top of each other.
-- When cost range override is on, colored bars go off the edge of the page.
+- When price range override is on, colored bars go off the edge of the page.
