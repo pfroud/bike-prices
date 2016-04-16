@@ -1,7 +1,7 @@
 # Bicycle cost infographic generator
 
 
-Branch `histogram_with_color` has an implementation of the Histogram which shows stacked materials in each bar.
+Branch `histogram_with_color` has an implementation of the Histogram which shows stacked materials in each bar. To view, run, [`src/AnalysisTesting.java`](src/AnalysisTesting.java).
 
 
 <!-- need to use html to center -->
