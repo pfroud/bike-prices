@@ -19,7 +19,7 @@ public class Bike {
      *
      * @param filename name of text file with bike info
      */
-    public static Vector<Bike> readBikes(String filename) {
+    static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
         // open file
@@ -98,11 +98,11 @@ public class Bike {
         return bike;
     }
 
-    public static int getCostMax() {
+    static int getCostMax() {
         return costMax;
     }
 
-    public static int getCostMin() {
+    static int getCostMin() {
         return costMin;
     }
 
@@ -113,7 +113,7 @@ public class Bike {
     String modelName;
     int numModels;
 
-    //TODO make these private
+    //TODO make these private?
     Vector<String> versionNames = new Vector<>(); //list of versions of the model
     Vector<Integer> versionCosts = new Vector<>(); //list of prices of the versions
     Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
@@ -152,7 +152,7 @@ public class Bike {
      *
      * @param c the cost of the version to add.
      */
-    public void addCost(int c) {
+    void addCost(int c) {
         versionCosts.add(c);
 
         if (c > maxCost) maxCost = c;
@@ -174,7 +174,7 @@ public class Bike {
      *
      * Example: "Specialized_Diverge: [5, 1, 1]"
      */
-    public Vector<Integer> getHistogramData(int numHistogramBins) {
+    Vector<Integer> getHistogramData(int numHistogramBins) {
         Vector<Integer> bins = new Vector<>(numHistogramBins);
         for (int i = 0; i < numHistogramBins; i++) {
             bins.add(i, 0);

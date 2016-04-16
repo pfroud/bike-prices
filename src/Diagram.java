@@ -8,13 +8,14 @@ import java.util.Vector;
 /**
  * A diagram of bars, dots, and a grid, showing cost distribution.
  */
-public class Diagram {
+class Diagram {
 
     // region fields
     // core
-    private Vector<Bike> allBikes; //holds every bike model
+    private Vector<Bike> allBikes; // holds every bike model
     private PDFGraphics2D g; //graphics context
     private Legend legend;
+    private Analysis analysis;
 
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
@@ -26,8 +27,8 @@ public class Diagram {
     private final Font fontRowName = new Font("Arial", Font.BOLD, 14);
 
     // page properties
-    private int width, height, margin; //size and margins of the pdf page. units are millimeters
-    private int gridStep; //spacing between vertical grid steps. units are dollars.
+    private int width, height, margin; //size and margins of the pdf page. Units are millimeters.
+    private int gridStep; //spacing between vertical grid steps. Units are dollars.
 
     // cost range
     private int costMin = 999999; //cost of the least expensive bike in the input file
@@ -43,7 +44,7 @@ public class Diagram {
      * @param pageMargin margin in millimeters
      * @param gridStep   distance between vertical grid lines in dollars
      */
-    public Diagram(Vector<Bike> allBikes, int pageWidth, int pageHeight, int pageMargin, int gridStep) {
+    Diagram(Vector<Bike> allBikes, int pageWidth, int pageHeight, int pageMargin, int gridStep) {
         this.width = pageWidth;
         this.height = pageHeight;
         this.margin = pageMargin;
@@ -67,7 +68,7 @@ public class Diagram {
      * @param newMin custom minimum amount in dollars
      * @param newMax custom maximum amount in dollars
      */
-    public void addCustomRange(int newMin, int newMax) {
+    void addCustomRange(int newMin, int newMax) {
         costMin = newMin;
         costMax = newMax;
 
@@ -79,7 +80,7 @@ public class Diagram {
      *
      * @param l Legend object
      */
-    public void addLegend(Legend l) {
+    void addLegend(Legend l) {
         legend = l;
         legend.setMarkerSize(MARKER_SIZE);
     }
@@ -89,8 +90,9 @@ public class Diagram {
      *
      * @param a Analysis object
      */
-    public void addAnalysis(Analysis a) {
-        a.init(allBikes);
+    void addAnalysis(Analysis a) {
+        analysis = a;
+        analysis.init(allBikes);
     }
 
     /**
@@ -99,13 +101,12 @@ public class Diagram {
      * @param filename name of the PDF file to write to
      * @throws IOException
      */
-    public void writePDF(String filename) throws IOException {
+    void writePDF(String filename) throws IOException {
         drawGrid(g);
         drawBikes(g);
 
-        if (legend != null) {
-            legend.draw(g);
-        }
+        if (legend != null) legend.draw(g);
+        if (analysis != null) analysis.draw(g);
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());
@@ -120,13 +121,16 @@ public class Diagram {
      */
     private void drawGrid(Graphics g) {
 
+        int bottomEdge = height - margin - 100;
+        int rightEdge = width - margin;
+
         //          x1   ,  y1            , x2            , y2
-        g.drawLine(margin, height - margin, width - margin, height - margin); // bottom axis
+        g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
 
         // min and max labels for bottom axis
         g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString("$" + costMin, margin, height - margin + 20);
-        g.drawString("$" + costMax, width - margin - 60, height - margin + 20);
+        g.drawString("$" + costMin, margin, bottomEdge + 20);
+        g.drawString("$" + costMax, rightEdge - 60, bottomEdge + 20);
 
         //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
@@ -136,11 +140,11 @@ public class Diagram {
         //draw vertical lines
         for (int cost = costMin; cost <= costMax; cost += gridStep) {
             xPos = getXPosition(cost);
-            g.drawLine(xPos, 0, xPos, height - margin + 60);
+            g.drawLine(xPos, 0, xPos, bottomEdge + 60);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
             if (costMin != cost && costMax != cost) {
-                g.drawString("$" + cost, xPos, height - margin + 15);
+                g.drawString("$" + cost, xPos, bottomEdge + 15);
             }
         }
     }

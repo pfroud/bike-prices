@@ -4,21 +4,21 @@ import java.util.Vector;
 /**
  *
  */
-public class Histogram {
+class Histogram {
 
     private Vector<Integer> data; // contents of histogram bins
 
     private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter; // height not used
     private String caption;
-    Font fontDefault = new Font("Arial", Font.PLAIN, 12);
-    Font fontCaption = fontDefault;
+    private Font fontDefault = new Font("Arial", Font.PLAIN, 12);
+    private Font fontCaption = fontDefault;
 
-    public Histogram(Vector<Integer> data, String caption) {
+    Histogram(Vector<Integer> data, String caption) {
         this.data = data;
         this.caption = caption;
     }
 
-    public void setSize(int x, int y, int width, int height) {
+    void setSize(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -40,13 +40,18 @@ public class Histogram {
         vertScale = (height - marginTop) / 12;
     }
 
-    public void draw(Graphics g) {
+    void draw(Graphics g) {
         // coordinate system: positive is down and right.
 
-/*        g.setColor(Color.lightGray);
-        g.drawRect(x, y - height, width, height); // bounding box
+        /*
+        // bounding box
+        g.setColor(Color.lightGray);
+        g.drawRect(x, y - height, width, height);
+        //dot for origin
         g.setColor(Color.red);
-        g.fillOval(x - 5, y - 5, 10, 10); //dot for origin*/
+        g.fillOval(x - 5, y - 5, 10, 10);
+        */
+
 
         g.setColor(Color.black);
 //        g.drawLine(x-2, y, x + width, y); // x-axis
@@ -54,7 +59,7 @@ public class Histogram {
         g.setFont(fontDefault);
 
         // draw individual bars
-        for (int i = 0; i < data.size(); i++) {
+        for (int i = 0, len = data.size(); i < len; i++) {
             int currentData = data.get(i);
 
             int xStart = x + i * (barWidth + barSpacing) + marginToCenter;

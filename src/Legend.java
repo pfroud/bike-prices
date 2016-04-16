@@ -3,23 +3,23 @@ import java.awt.*;
 /**
  * A box describing what each of the color of dots mean.
  */
-public class Legend {
+class Legend {
 
     private int x, y, width, height, markerSize;
-    Font theFont = new Font("Arial", Font.PLAIN, 14);
+    private Font theFont = new Font("Arial", Font.PLAIN, 14);
 
-    public Legend(int x, int y, int width, int height) {
+    Legend(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
 
-    public void setMarkerSize(int markerSize) {
+    void setMarkerSize(int markerSize) {
         this.markerSize = markerSize;
     }
 
-    public void draw(Graphics2D g) {
+    void draw(Graphics2D g) {
         g.setColor(Color.white); // box background
         g.fillRect(x, y, width, height);
         g.setColor(Color.black); // box border
