@@ -16,8 +16,10 @@ public class Main {
 
 
         Vector<Bike> v = Bike.readBikes("new_test_input.txt");
-        System.out.println(v);
 
+        for (Bike b : v) {
+            System.out.println(b);
+        }
 
         //findCarbonPercents(Bike.readBikes("bikesInput.txt"));
         System.exit(0);

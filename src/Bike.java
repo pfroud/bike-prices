@@ -127,7 +127,7 @@ public class Bike {
             bike.versionCarbons.add(Carbon.parseString(sc.next()));
         }
 
-        // currently doesn't do anyhting with groupsets
+        // currently doesn't do anything with groupsets
         for (int i = 0; i < numModels_; i++) {
             bike.versionGroupsets.add(sc.next());
         }
@@ -175,12 +175,13 @@ public class Bike {
      * @return a human-readable representation of the bike model.
      */
     public String toString() {
+        NumberFormat format = NumberFormat.getInstance();
         ListIterator<String> names = versionNames.listIterator();
         ListIterator<Integer> prices = versionPrices.listIterator();
         String out = modelName + "\n-----------------------\n";
 
         while (names.hasNext()) {
-            out += names.next() + ": $" + prices.next() + "\n";
+            out += names.next() + ": $" + format.format(prices.next()) + "\n";
         }
         return out;
     }
