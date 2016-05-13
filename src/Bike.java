@@ -35,7 +35,7 @@ public class Bike {
 
         //go through input text file
         while (fileScan.hasNextLine()) {
-            allBikes.add(readOneBike(fileScan));
+            allBikes.add(readOneBike_new(fileScan));
 
             fileScan.nextLine(); //skip a blank line
 
@@ -90,10 +90,46 @@ public class Bike {
 
             bike.addPrice(currentPrice);
         }
-
         // add version materials
         for (int i = 0; i < numModels; i++) {
             bike.versionCarbons.add(Carbon.parseString(fileScan.next()));
+        }
+
+        return bike;
+    }
+
+    private static Bike readOneBike_new(Scanner sc) {
+        sc.useDelimiter(": |\n");
+        Bike bike = new Bike(sc.next()); //read model name
+        int numModels_ = sc.nextInt();
+        bike.numModels = numModels_;
+
+        sc.useDelimiter(", |\n");
+
+        // add version names
+        for (int i = 0; i < numModels_; i++) {
+            bike.versionNames.add(sc.next());
+        }
+
+        // add version prices
+        int currentPrice;
+        for (int i = 0; i < numModels_; i++) {
+            currentPrice = sc.nextInt();
+
+            //update min and max price
+            if (currentPrice > priceMin) priceMin = currentPrice;
+            if (currentPrice < priceMax) priceMax = currentPrice;
+
+            bike.addPrice(currentPrice);
+        }
+        // add version materials
+        for (int i = 0; i < numModels_; i++) {
+            bike.versionCarbons.add(Carbon.parseString(sc.next()));
+        }
+
+        // currently doesn't do anyhting with groupsets
+        for (int i = 0; i < numModels_; i++) {
+            bike.versionGroupsets.add(sc.next());
         }
 
         return bike;
@@ -115,9 +151,10 @@ public class Bike {
     int numModels;
 
     //TODO make these private?
-    Vector<String> versionNames = new Vector<>(); //list of versions of the model
-    Vector<Integer> versionPrices = new Vector<>(); //list of prices of the versions
-    Vector<Carbon> versionCarbons = new Vector<>(); //list of materials of the versions
+    Vector<String> versionNames = new Vector<>();
+    Vector<Integer> versionPrices = new Vector<>();
+    Vector<Carbon> versionCarbons = new Vector<>();
+    Vector<String> versionGroupsets = new Vector<>();
 
     // why do I have this in instance and statis??
     int minPrice = 999999, maxPrice = 0; // most and least expensive version of the model

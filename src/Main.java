@@ -14,7 +14,12 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        findCarbonPercents(Bike.readBikes("bikesInput.txt"));
+
+        Vector<Bike> v = Bike.readBikes("new_test_input.txt");
+        System.out.println(v);
+
+
+        //findCarbonPercents(Bike.readBikes("bikesInput.txt"));
         System.exit(0);
 
         //the number is in inches. ridiculously large because that's what I started with. it's vector anyway...

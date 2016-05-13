@@ -1,0 +1,29 @@
+Synapse Carbon: 11
+105, Disc 105, Disc Ultegra, Disc Ultegra Di2, Tiagra, Ultegra 3, Ultegra 4, Hi-MOD Disc Black Inc., Hi-MOD Disc RED, Hi-MOD Disc Ultegra, Hi-MOD Dura Ace
+2240, 2660, 3730, 4800, 1840, 3200, 2660, 9590, 7460, 5330, 5860
+all, all, all, all, all, all, all, all, all, all, all
+105, 105, Ultegra, Ultegra Di2, Tiagra, Ultegra, Ultegra, Dura-Ace Di2, SRAM Red, Ultegra, Dura-Ace
+
+Synapse: 5
+Claris, Disc 105, Disc Adventure, Disc Tiagra, Sora
+870, 1570, 2130, 1250, 1030
+fork, fork, fork, fork, fork
+Claris, 105, Rival, Tiagra, Sora
+
+Cannondale CAAD12: 7
+105, Black Inc., Disc 105, Disc Dura Ace, Disc Ultegra, RED, Ultegra
+1680, 5860, 1950, 4260, 2660, 3200, 2240
+fork, fork, fork, fork, fork, fork, fork
+105, Dura-Ace, 105, Dura-Ace, Ultegra, SRAM Red, Ultegra
+
+Cannondale CAAD8: 4
+105, Claris, Sora, Tiagra
+1410, 815, 1030, 1250
+fork, fork, fork, fork
+105, Claris, Sora, Tiagra
+
+Cannondale SuperSix EVO: 10
+105, Black Inc., Hi-MOD Dura Ace 1, Hi-MOD Dura Ace 2, Hi-MOD Team, Hi-MOD Ultegra, RED, Tiagra, Ultegra 3, Ultegra 4
+2240, 12790, 7990, 5330, 10660, 4260, 3940, 1840, 3200, 2660
+all, all, all, all, all, all, all, all, all, all
+105, Dura-Ace, Dura-Ace, Dura-Ace, Dura-Ace Di2, Ultegra, SRAM Red, Tiagra, Ultegra, Ultegra
