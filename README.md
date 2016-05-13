@@ -6,7 +6,7 @@ All the prices are from the 2015 model year and are now outdated.
 
 Used more reasonable software to do this: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices
 
-**Update:** in September 2015, I purchased a [Giant Defy 1](http://www.giant-bicycles.com/en-us/bikes/model/defy.1/18733/76108/) on sale for \$1,000. The frame is aluminum with a 105 groupset and is lighter than a low-end carbon bike. I didn't include Giant in my graphic because they don't follow the same model/version patterns, but if I had, it would not have contributed to my choice.
+**Update:** in September 2015, I purchased a [Giant Defy 1](http://www.giant-bicycles.com/en-us/bikes/model/defy.1/18733/76108/) on sale for $1,000. The frame is aluminum with a 105 groupset and is lighter than a low-end carbon bike. I didn't include Giant in my graphic because they don't follow the same model/version patterns, but if I had, it would not have contributed to my choice.
 
 
 ## Motivation
@@ -45,11 +45,12 @@ More generally, I seek to answer whether given a price point,
 
 #### Range
 
-The least expensive bike I sampled is \$770 (both Specialized Allez base and Trek 1 Series 1.1) and the most expensive is \$15,750 (Trek Emonda SLR 10). So, the Emonda SLR 10 is 20.5 times as expensive as the Allez or the 1 Series.
+The least expensive bike I sampled is $770 (Specialized Allez base and Trek 1 Series 1.1 both at that price) and the most expensive is $15,750 (Trek Emonda SLR 10). So, the Emonda SLR 10 is 20.5 times as expensive as the Allez base or the Tek 1.1.
 
-The model with the greatest relative range between least and most expensive versions is the Specialized Allez. The Allez base is $770 and the Allez S-Works Di2 is $8,000, for a range of 10.4x.
 
-The model with the least relative range between least and most expensive versions is the Trek Emonda ALR. There are only two models, but the Emonda ALR 5 is $1,760 and the Emonda ALR 6 is $2,250, for a range of 1.3x.
+The model with the greatest range between versions is the Specialized Allez. The Allez base is $770 and the Allez S-Works Di2 is $8,000. So, the most expensive one is  10.4 the price of the least expensive one.
+
+The model with the least range between versions is the Trek Emonda ALR. There are only two models, but the Emonda ALR 5 is $1,760 and the Emonda ALR 6 is $2,250, for a range of 1.3x.
 
 
 Range information for every model is available in [ranges.csv](ranges.csv).
