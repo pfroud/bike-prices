@@ -23,6 +23,8 @@ public class Bike {
     static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
+        String thing;
+
         // open file
         try {
             fileScan = new Scanner(new File(filename));
@@ -33,18 +35,16 @@ public class Bike {
 
         Vector<Bike> allBikes = new Vector<>();
 
+        Bike tempBike;
+
         //go through input text file
-        while (fileScan.hasNextLine()) {
-            allBikes.add(readOneBike_new(fileScan));
+        while (true) {
+            tempBike = readOneBike(fileScan);
+            if(tempBike == null) break;
+            allBikes.add(tempBike);
 
             fileScan.nextLine(); //skip a blank line
 
-            //this works but is terrible
-            if (fileScan.hasNextLine()) {
-                fileScan.nextLine();
-            } else {
-                break;
-            }
         }
         return allBikes;
     }
@@ -62,49 +62,21 @@ public class Bike {
      *     (b) version prices
      *     (c) version materials
      *
-     * @param fileScan scanner on the input text file
+     * @param sc scanner on the input text file
      * @return Bike object containing all of the version names, prices, and materials
      */
     //@formatter:on
-    private static Bike readOneBike(Scanner fileScan) {
-        // separate scanner for the header (model name and number of models)
-        Scanner headerScan = new Scanner(fileScan.nextLine());
-        Bike bike = new Bike(headerScan.next()); //read model name
-        int numModels = headerScan.nextInt();
-        bike.numModels = numModels;
-        headerScan.close();
-
-        // add version names
-        for (int i = 0; i < numModels; i++) {
-            bike.versionNames.add(fileScan.nextLine());
-        }
-
-        // add version prices
-        int currentPrice;
-        for (int i = 0; i < numModels; i++) {
-            currentPrice = fileScan.nextInt();
-
-            //update min and max price
-            if (currentPrice > priceMin) priceMin = currentPrice;
-            if (currentPrice < priceMax) priceMax = currentPrice;
-
-            bike.addPrice(currentPrice);
-        }
-        // add version materials
-        for (int i = 0; i < numModels; i++) {
-            bike.versionCarbons.add(Carbon.parseString(fileScan.next()));
-        }
-
-        return bike;
-    }
-
-    private static Bike readOneBike_new(Scanner sc) {
+    private static Bike readOneBike(Scanner sc) {
         sc.useDelimiter(": |\n");
-        Bike bike = new Bike(sc.next()); //read model name
+        String name = sc.next();
+        if(name.equals("end")) return null;
+        Bike bike = new Bike(name); //read model name
         int numModels_ = sc.nextInt();
         bike.numModels = numModels_;
 
         sc.useDelimiter(", |\n");
+
+        String temp;
 
         // add version names
         for (int i = 0; i < numModels_; i++) {
@@ -129,7 +101,7 @@ public class Bike {
 
         // currently doesn't do anything with groupsets
         for (int i = 0; i < numModels_; i++) {
-            bike.versionGroupsets.add(sc.next());
+            bike.versionGroupsets.add(Groupset.parse(sc.next()));
         }
 
         return bike;
@@ -154,7 +126,7 @@ public class Bike {
     Vector<String> versionNames = new Vector<>();
     Vector<Integer> versionPrices = new Vector<>();
     Vector<Carbon> versionCarbons = new Vector<>();
-    Vector<String> versionGroupsets = new Vector<>();
+    Vector<Groupset> versionGroupsets = new Vector<>();
 
     // why do I have this in instance and statis??
     int minPrice = 999999, maxPrice = 0; // most and least expensive version of the model
@@ -178,11 +150,11 @@ public class Bike {
         NumberFormat format = NumberFormat.getInstance();
         ListIterator<String> names = versionNames.listIterator();
         ListIterator<Integer> prices = versionPrices.listIterator();
-        String out = modelName + "\n-----------------------\n";
+        String out = modelName; /* + "\n-----------------------\n";
 
         while (names.hasNext()) {
             out += names.next() + ": $" + format.format(prices.next()) + "\n";
-        }
+        }*/
         return out;
     }
 

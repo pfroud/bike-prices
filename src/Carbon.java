@@ -8,7 +8,7 @@ public enum Carbon {
 
     //http://stackoverflow.com/a/18883717
     Color color;
-    private String description;
+    String description;
 
     static {
 
@@ -30,9 +30,7 @@ public enum Carbon {
         return new Carbon[]{NONE, FORK, ALL};
     }
 
-    public String getDescription() {
-        return this.description;
-    }
+
 
     /**
      * Draws a dot for the carbon value.
@@ -59,17 +57,7 @@ public enum Carbon {
      * @return Carbon parsed from string
      */
     public static Carbon parseString(String s) {
-        switch (s) {
-            case "all":
-                return Carbon.ALL;
-            case "fork":
-                return Carbon.FORK;
-            case "none":
-                return Carbon.NONE;
-            default:
-                System.err.println("unrecognized carbon value \"" + s + "\"");
-        }
-        return null;
+         return Carbon.valueOf(s.toUpperCase());
     }
 
 }

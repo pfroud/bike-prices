@@ -35,7 +35,7 @@ class Legend {
             int theY = y + (i * 30) + 10;
             carbon.draw(g, x + 10, theY, markerSize, true);
             g.setColor(Color.black);
-            g.drawString(carbon.getDescription(), x + 20 + markerSize, theY + (markerSize / 2) + 4);
+            g.drawString(carbon.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
 
     }

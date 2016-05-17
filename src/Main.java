@@ -14,7 +14,6 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-
         Vector<Bike> v = Bike.readBikes("new_test_input.txt");
 
         for (Bike b : v) {
