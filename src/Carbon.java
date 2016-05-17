@@ -53,7 +53,7 @@ public enum Carbon {
     /**
      * Parses a string into a Carbon enum.
      *
-     * @param s string to parse into Carbon
+     * @param s string to parseString into Carbon
      * @return Carbon parsed from string
      */
     public static Carbon parseString(String s) {

@@ -131,7 +131,7 @@ class Diagram {
      */
     private void drawGrid(Graphics g) {
 
-        int bottomEdge = height - margin - 100;
+        int bottomEdge = height - margin;
         int rightEdge = width - margin;
 
         //          x1   ,  y1            , x2            , y2
@@ -166,7 +166,7 @@ class Diagram {
      */
     private void drawBikes(Graphics g) {
         Bike currentBike;
-        int verticalSpacing = RECT_HEIGHT + 30; //spacing between each horizontal bar
+        int verticalSpacing = RECT_HEIGHT + 12; //spacing between each horizontal bar
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
 
@@ -176,8 +176,8 @@ class Diagram {
 
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
-            barYPos = i * verticalSpacing + 20;
             barXStart = getXPosition(currentBike.minPrice);
+            barYPos = i * verticalSpacing + 20;
             barXEnd = getXPosition(currentBike.maxPrice);
             barWidth = (int) (barXEnd - barXStart);
             int RECT_RADIUS = 10;
@@ -214,10 +214,10 @@ class Diagram {
             currentBike.versionCarbons.get(i).draw(g, dotX, dotY, MARKER_SIZE, false);
 
             // draw price above the dot and model name below the dot
-            g.setColor(Color.black);
+            /*g.setColor(Color.black);
             g.setFont(fontDotCaption);
             g.drawString("$" + currentPrice, dotX, dotY - 3);
-            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
+            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);*/
         }
     }
 

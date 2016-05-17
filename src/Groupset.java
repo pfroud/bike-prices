@@ -3,14 +3,26 @@ enum Groupset {
     RIVAL, FORCE, RED, RED_ETAP;
 
 
-    public static Groupset parse(String s){
+    public static Groupset parseString(String s){
         if(s.equals("105")) return _105;
         return Groupset.valueOf(s.replaceAll(" |-", "_").toUpperCase());
     }
 
     public int getRank(){
 
-        return this.ordinal();
+        /*
+        Rival == 105
+        force == ultegra
+        red == dura ace
+        */
+
+
+        int rank = this.ordinal();
+        if(rank>7){
+            rank = -1;
+        }
+
+        return rank;
     }
 
 }

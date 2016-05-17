@@ -23,8 +23,6 @@ public class Bike {
     static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null; //Scanner to read input text file
 
-        String thing;
-
         // open file
         try {
             fileScan = new Scanner(new File(filename));
@@ -94,14 +92,14 @@ public class Bike {
 
             bike.addPrice(currentPrice);
         }
+
         // add version materials
         for (int i = 0; i < numModels_; i++) {
             bike.versionCarbons.add(Carbon.parseString(sc.next()));
         }
 
-        // currently doesn't do anything with groupsets
         for (int i = 0; i < numModels_; i++) {
-            bike.versionGroupsets.add(Groupset.parse(sc.next()));
+            bike.versionGroupsets.add(Groupset.parseString(sc.next()));
         }
 
         return bike;
