@@ -1,43 +1,33 @@
 import java.awt.*;
 
 enum Groupset {
-    CLARIS, SORA, TIAGRA, _105, ULTEGRA, ULTEGRA_DI2, DURA_ACE, DURA_ACE_DI2,
-    RIVAL, FORCE, RED, RED_ETAP;
+    CLARIS(6), SORA(5), TIAGRA(4), _105(3), ULTEGRA(2), ULTEGRA_DI2(2), DURA_ACE(1), DURA_ACE_DI2(1),
+    RIVAL(3), FORCE(2), RED(1), RED_ETAP(1);
 
+    static final int NUM_RANKS = 6;
+    static Color[] rankColors = new Color[NUM_RANKS];
 
-    public static Groupset parseString(String s){
-        if(s.equals("105")) return _105;
+    int rank;
+
+    Groupset(int rank) {
+        this.rank = rank;
+    }
+
+    public static Groupset parseString(String s) {
+        if (s.equals("105")) return _105;
         return Groupset.valueOf(s.replaceAll(" |-", "_").toUpperCase());
     }
 
-    public int getRank(){
-
-        /*
-        Rival == 105
-        force == ultegra
-        red == dura ace
-        */
-
-
-        int rank = this.ordinal();
-        if(rank>7){
-            rank = -1;
+    public static void initRankColors() {
+        for (int i = 0; i < NUM_RANKS; i++) {
+            rankColors[i] = blendColors(Color.red, Color.blue, i / (float) NUM_RANKS);
         }
-
-        return rank;
     }
 
-    public static Color[] getGradient(){
-//        int len = Groupset.values().length;
-        int len = 6;
-        Color[] cs = new Color[len];
-
-        for (int i = 0; i < len; i++) {
-            cs[i] = blendColors(Color.red, Color.blue, i/(float)len);
-        }
-
-        return cs;
+    public Color getColor() {
+        return rankColors[this.rank];
     }
+
 
     // http://stackoverflow.com/a/17544598
     private static Color blendColors(Color x, Color y, float bl) {
@@ -48,7 +38,7 @@ enum Groupset {
         float g = x.getGreen() * bl + y.getGreen() * inv;
         float b = x.getBlue() * bl + y.getBlue() * inv;
 
-        return new Color(r/255, g/255, b/255);
+        return new Color(r / 255, g / 255, b / 255);
     }
 
 }

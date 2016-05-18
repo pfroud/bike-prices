@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 /**
  * Describes the material of a bike by how much of it is carbon fiber.
@@ -11,7 +12,6 @@ public enum Carbon {
     String description;
 
     static {
-
         ALL.color = Color.cyan;
         FORK.color = Color.yellow;
         NONE.color = Color.red;
@@ -30,7 +30,7 @@ public enum Carbon {
      * @param size     diameter of the dot
      * @param inLegend true if drawing in the legend, false if drawing in bar
      */
-    public void draw(Graphics g, int dotX, int dotY, int size, boolean inLegend) {
+    public void draw_old(Graphics g, int dotX, int dotY, int size, boolean inLegend) {
         g.setColor(this.color);
         g.fillOval(dotX, dotY, size, size);
         if (inLegend) {
@@ -39,6 +39,19 @@ public enum Carbon {
         }
     }
 
+    public Shape getShape(int x, int y, int size){
+        switch (this) {
+            case ALL:
+                return new Ellipse2D.Float(x, y, size, size);
+            case FORK:
+                return new Polygon(new int[]{x+size/2, x+size, x}, new int[]{y, y+size, y+size}, 3);
+            case NONE:
+                return new Rectangle(x, y, size, size);
+        }
+        return null;
+    }
+
+
     /**
      * Parses a string into a Carbon enum.
      *
@@ -46,7 +59,7 @@ public enum Carbon {
      * @return Carbon parsed from string
      */
     public static Carbon parseString(String s) {
-         return Carbon.valueOf(s.toUpperCase());
+        return Carbon.valueOf(s.toUpperCase());
     }
 
 }

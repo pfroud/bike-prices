@@ -22,7 +22,7 @@ class Diagram {
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
     private final int RECT_HEIGHT = 20; //height of each horizontal bar
-    private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
+    private final int MARKER_SIZE = RECT_HEIGHT - 8; //diameter of circle to mark a model version
 
     // fonts
     private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 14);
@@ -168,7 +168,7 @@ class Diagram {
      *
      * @param g graphics context
      */
-    private void drawBikes(Graphics g) {
+    private void drawBikes(Graphics2D g) {
         Bike currentBike;
         int verticalSpacing = RECT_HEIGHT + 12; //spacing between each horizontal bar
         int barYPos, barWidth;
@@ -205,8 +205,10 @@ class Diagram {
      * @param currentBike the bike object from the main loop
      * @param barVertPos  vertical position of that bike's bar
      */
-    private void drawDots(Graphics g, Bike currentBike, int barVertPos) {
+    private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentPrice, dotX, dotY;
+
+        Carbon carb;
 
         for (int i = 0; i < currentBike.numModels; i++) {
             currentPrice = currentBike.versionPrices.get(i);
@@ -214,8 +216,9 @@ class Diagram {
             // draw dot
             dotX = getXPosition(currentPrice);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-            g.fillOval(dotX, dotY, MARKER_SIZE, MARKER_SIZE);
-            currentBike.versionCarbons.get(i).draw(g, dotX, dotY, MARKER_SIZE, false);
+            carb = currentBike.versionCarbons.get(i);
+            g.setColor(carb.color);
+            g.fill(carb.getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
             /*g.setColor(Color.black);

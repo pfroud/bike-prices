@@ -5,14 +5,12 @@ import java.awt.*;
  */
 class Legend {
 
-    private int x, y, width, height, markerSize;
+    private int x, y, markerSize;
     private Font theFont = new Font("Arial", Font.PLAIN, 14);
 
-    Legend(int x, int y, int width, int height) {
+    Legend(int x, int y) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
     }
 
     void setMarkerSize(int markerSize) {
@@ -20,33 +18,36 @@ class Legend {
     }
 
     void draw(Graphics2D g) {
+        final int WIDTH = 200, HEIGHT = 400;
+
         g.setColor(Color.white); // box background
-        g.fillRect(x, y, width, height);
+        g.fillRect(x, y, WIDTH, HEIGHT);
         g.setColor(Color.black); // box border
-        g.drawRect(x, y, width, height);
+        g.drawRect(x, y, WIDTH, HEIGHT);
 
         g.setFont(theFont);
 
         // actual legend part
         Carbon[] cs = Carbon.values();
-        Carbon currentCarb;
+        Carbon carb;
+        Shape shape;
         for (int i = 0; i < cs.length; i++) {
-            currentCarb = cs[i];
-
+            carb = cs[i];
             int theY = y + (i * 30) + 10;
-            currentCarb.draw(g, x + 10, theY, markerSize, true);
+            shape = carb.getShape(x+10, theY, markerSize);
             g.setColor(Color.black);
-            g.drawString(currentCarb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
+            g.draw(shape);
+            g.drawString(carb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
 
         Color[] colors = Groupset.getGradient();
-
+        int barHeight = 50;
         for (int i = 0, len = colors.length; i < len; i++) {
             g.setColor(colors[i]);
-            g.fillRect(0, i*50, 300, 50);
+            g.fillRect(x, y + 100 + i*barHeight, 50, barHeight);
+            g.setColor(Color.black);
+
         }
-
-
 
     }
 
