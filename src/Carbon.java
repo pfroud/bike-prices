@@ -12,25 +12,14 @@ public enum Carbon {
 
     static {
 
-        int alpha = 100;
-
         ALL.color = Color.cyan;
-//        ALL.color = new Color(0, 255, 255, alpha);
         FORK.color = Color.yellow;
-//        FORK.color = new Color(255, 255, 0, alpha);
         NONE.color = Color.red;
-//        NONE.color = new Color(255, 0, 0, alpha);
 
         ALL.description = "full carbon-fiber frame";
         FORK.description = "carbon-fiber fork only";
         NONE.description = "no carbon-fiber";
     }
-
-    public static Carbon[] getAllValues() {
-        return new Carbon[]{NONE, FORK, ALL};
-    }
-
-
 
     /**
      * Draws a dot for the carbon value.

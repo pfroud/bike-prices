@@ -3,6 +3,8 @@ import de.erichseifert.vectorgraphics2d.PDFGraphics2D;
 import java.awt.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Vector;
 
 /**
@@ -34,6 +36,9 @@ class Diagram {
     private int priceMin = 999999; //price of the least expensive bike in the input file
     private int priceMax = 0; //price of the most expensive bike in the input file
     private float priceRange; //difference between least and most expensive bike in input file
+
+    //    private NumberFormat numberFormat = NumberFormat.getInstance();
+    private NumberFormat numberFormat = new DecimalFormat("$#,###");
     //endregion fields
 
     /**
@@ -59,7 +64,6 @@ class Diagram {
 
         priceRange = priceMax - priceMin;
     }
-
 
 
     /// PUBLIC FUNCTIONS
@@ -139,8 +143,8 @@ class Diagram {
 
         // min and max labels for bottom axis
         g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString("$" + priceMin, margin, bottomEdge + 20);
-        g.drawString("$" + priceMax, rightEdge - 60, bottomEdge + 20);
+        g.drawString(numberFormat.format(priceMin), margin, bottomEdge + 20);
+        g.drawString(numberFormat.format(priceMax), rightEdge - 60, bottomEdge + 20);
 
         //setup for vertical lines
         g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
@@ -154,7 +158,7 @@ class Diagram {
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
             if (priceMin != price && priceMax != price) {
-                g.drawString("$" + price, xPos, bottomEdge + 15);
+                g.drawString(numberFormat.format(price), xPos, bottomEdge + 15);
             }
         }
     }

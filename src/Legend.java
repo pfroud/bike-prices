@@ -28,15 +28,27 @@ class Legend {
         g.setFont(theFont);
 
         // actual legend part
-        Carbon[] cs = {Carbon.ALL, Carbon.FORK, Carbon.NONE};
+        Carbon[] cs = Carbon.values();
+        Carbon currentCarb;
         for (int i = 0; i < cs.length; i++) {
-            Carbon carbon = cs[i];
+            currentCarb = cs[i];
 
             int theY = y + (i * 30) + 10;
-            carbon.draw(g, x + 10, theY, markerSize, true);
+            currentCarb.draw(g, x + 10, theY, markerSize, true);
             g.setColor(Color.black);
-            g.drawString(carbon.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
+            g.drawString(currentCarb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
 
+        Color[] colors = Groupset.getGradient();
+
+        for (int i = 0, len = colors.length; i < len; i++) {
+            g.setColor(colors[i]);
+            g.fillRect(0, i*50, 300, 50);
+        }
+
+
+
     }
+
+
 }

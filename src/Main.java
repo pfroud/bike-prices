@@ -21,7 +21,7 @@ public class Main {
         int width = (int) (INCH_TO_MM * 75);
         int height = (int) (INCH_TO_MM * 42);
         int margin = (int) (INCH_TO_MM * 2);
-        int gridStep = 500; //this is in dollars
+        int gridStep = 1000; //this is in dollars
 
         Diagram d = new Diagram(Bike.readBikes("new_test_input.txt"), width, height, margin, gridStep);
 
