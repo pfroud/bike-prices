@@ -208,7 +208,6 @@ class Diagram {
     private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentPrice, dotX, dotY;
 
-        Carbon carb;
 
         for (int i = 0; i < currentBike.numModels; i++) {
             currentPrice = currentBike.versionPrices.get(i);
@@ -216,9 +215,8 @@ class Diagram {
             // draw dot
             dotX = getXPosition(currentPrice);
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-            carb = currentBike.versionCarbons.get(i);
-            g.setColor(carb.color);
-            g.fill(carb.getShape(dotX, dotY, MARKER_SIZE));
+            g.setColor(currentBike.versionGroupsets.get(i).getColor());
+            g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
             /*g.setColor(Color.black);
