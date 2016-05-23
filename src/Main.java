@@ -14,11 +14,11 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-        //findCarbonPercents(Bike.readBikes("bikesInput.txt"));
+//        printCounts(Bike.readBikes("new_test_input.txt"));
 //        System.exit(0);
 
         //the number is in inches. ridiculously large because that's what I started with. it's vector anyway...
-        int width = (int) (INCH_TO_MM * 75);
+        int width = (int) (INCH_TO_MM * 75); //was 75
         int height = (int) (INCH_TO_MM * 42);
         int margin = (int) (INCH_TO_MM * 2);
         int gridStep = 1000; //this is in dollars
@@ -26,12 +26,43 @@ public class Main {
         Diagram d = new Diagram(Bike.readBikes("new_test_input.txt"), width, height, margin, gridStep);
 
 
-        //d.addCustomRange(500, 10000); // $500 through $10,000
+//        d.addCustomRange(500, 3000); // $500 through $10,000
         d.addLegend(new Legend(1450, 420)); // x, y, width, height
         //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins then x, y
 
         d.writePDF("output.pdf");
 
+    }
+
+    private static void printCounts(Vector<Bike> bikes) {
+        int cannondale = 0, giant = 0, spec = 0, trek = 0;
+
+        String name;
+        for (Bike b : bikes) {
+            name = b.modelName.split(" ")[0];
+            switch (name) {
+                case "Cannondale":
+                    cannondale += b.numModels;
+                    break;
+                case "Giant":
+                    giant += b.numModels;
+                    break;
+                case "Trek":
+                    trek += b.numModels;
+                    break;
+                case "Specialized":
+                    spec += b.numModels;
+                    break;
+                default:
+                    System.err.println("I don't know what " + name + "is!");
+            }
+        }
+
+        System.out.println("cannondale: " + cannondale);
+        System.out.println("giant: " + giant);
+        System.out.println("spec: " + spec);
+        System.out.println("trek: " + trek);
+        System.out.println("total: " + (cannondale + giant + spec + trek));
     }
 
 
@@ -57,9 +88,9 @@ public class Main {
                 }
             }
 
-            System.out.println("at price " + price + ": " + versionsTotal + " versions total, " + versionsFullCarbon + " versions with full carbon = "+ (versionsFullCarbon/versionsTotal));
+            System.out.println("at price " + price + ": " + versionsTotal + " versions total, " + versionsFullCarbon + " versions with full carbon = " + (versionsFullCarbon / versionsTotal));
 
-            percentData.add( versionsFullCarbon / versionsTotal);
+            percentData.add(versionsFullCarbon / versionsTotal);
 
         }
 

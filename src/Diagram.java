@@ -20,9 +20,10 @@ class Diagram {
     private Analysis analysis;
 
     // appearance
-    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
+//    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
+    private final Color BAR_BACKGROUND_COLOR = Color.gray;
     private final int RECT_HEIGHT = 20; //height of each horizontal bar
-    private final int MARKER_SIZE = RECT_HEIGHT - 8; //diameter of circle to mark a model version
+    private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     // fonts
     private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 14);
@@ -108,6 +109,7 @@ class Diagram {
      * @throws IOException
      */
     void writePDF(String filename) throws IOException {
+        drawBackground(g);
         drawGrid(g);
         drawBikes(g);
 
@@ -117,6 +119,11 @@ class Diagram {
         try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());
         }
+    }
+
+    private void drawBackground(Graphics g){
+        g.setColor(Color.black);
+        g.fillRect(0,0, width, height);
     }
 
     /**
@@ -137,11 +144,13 @@ class Diagram {
 
         int bottomEdge = height - margin;
         int rightEdge = width - margin;
+        g.setColor(Color.white);
 
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
 
         // min and max labels for bottom axis
+        g.setColor(Color.white);
         g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
         g.drawString(numberFormat.format(priceMin), margin, bottomEdge + 20);
         g.drawString(numberFormat.format(priceMax), rightEdge - 60, bottomEdge + 20);
@@ -152,7 +161,7 @@ class Diagram {
         int xPos;
 
         //draw vertical lines
-        for (int price = priceMin; price <= priceMax; price += gridStep) {
+        for (int price = priceMin+gridStep; price <= priceMax; price += gridStep) {
             xPos = getXPosition(price);
             g.drawLine(xPos, 0, xPos, bottomEdge + 60);
 
@@ -190,7 +199,7 @@ class Diagram {
             drawDots(g, currentBike, barYPos);
 
             // draw model name on the left
-            g.setColor(Color.black);
+            g.setColor(Color.white);
             g.setFont(fontRowName);
             g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
@@ -219,10 +228,12 @@ class Diagram {
             g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
-            /*g.setColor(Color.black);
+            /*
+            g.setColor(Color.white);
             g.setFont(fontDotCaption);
             g.drawString("$" + currentPrice, dotX, dotY - 3);
-            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);*/
+            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
+            */
         }
     }
 

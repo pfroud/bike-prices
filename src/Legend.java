@@ -20,9 +20,9 @@ class Legend {
     void draw(Graphics2D g) {
         final int WIDTH = 200, HEIGHT = 470;
 
-        g.setColor(Color.white); // box background
+        g.setColor(Color.black); // box background
         g.fillRect(x, y, WIDTH, HEIGHT);
-        g.setColor(Color.black); // box border
+        g.setColor(Color.white); // box border
         g.drawRect(x, y, WIDTH, HEIGHT);
 
         g.setFont(theFont);
@@ -35,7 +35,7 @@ class Legend {
             carb = cs[i];
             int theY = y + (i * 30) + 10;
             shape = carb.getShape(x + 10, theY, markerSize);
-            g.setColor(Color.black);
+            g.setColor(Color.white);
             g.draw(shape);
             g.drawString(carb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
@@ -50,7 +50,7 @@ class Legend {
             g.setColor(currGroup.getColor());
             theY = y + 120 + i * (barHeight+2);
             g.fillRect(x + 10, theY, barWidth, barHeight);
-            g.setColor(Color.black);
+            g.setColor(Color.white);
             g.drawString(currGroup.toString(), x + barWidth + 20, theY + barHeight / 2 + 3);
         }
 
