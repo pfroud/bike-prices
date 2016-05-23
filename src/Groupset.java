@@ -1,10 +1,13 @@
 import java.awt.*;
 
 enum Groupset {
-    CLARIS(8), SORA(7), TIAGRA(6), _105(5), ULTEGRA(4), ULTEGRA_DI2(3), DURA_ACE(2), DURA_ACE_DI2(1),
-    RIVAL(5), FORCE(4), RED(2), RED_ETAP(1);
+    CLARIS(8, "Claris"), SORA(7, "Sora"), TIAGRA(6, "Tiagra"), _105(5, "105"), ULTEGRA(4, "Ultegra"),
+    ULTEGRA_DI2(3, "Ultegra Di2"), DURA_ACE(2, "Dura-Ace"), DURA_ACE_DI2(1, "Dura-Ace Di2"),
+
+    RIVAL(5, "Rival"), FORCE(4, "Force"), RED(2, "Red"), RED_ETAP(1, "Red eTap");
 
     int rank;
+    String name;
 
     static final Color[] rankColors =
             {
@@ -18,8 +21,9 @@ enum Groupset {
                     Color.decode("#5924E0"), // purple
             };
 
-    Groupset(int rank) {
+    Groupset(int rank, String name) {
         this.rank = rank;
+        this.name = name;
     }
 
     public static Groupset[] getRanked() {

@@ -190,7 +190,7 @@ class Diagram {
      */
     private void drawBikes(Graphics2D g) {
         Bike currentBike;
-        int verticalSpacing = RECT_HEIGHT + 12; //spacing between each horizontal bar
+        int verticalSpacing = RECT_HEIGHT + 11; //spacing between each horizontal bar
         int barYPos, barWidth;
         float barXStart, barXEnd; // x positions of start and end of a bar
 
@@ -202,6 +202,7 @@ class Diagram {
 
 
             // rectangle bar
+
             g.setColor(BAR_BACKGROUND_COLOR);
             barXStart = getXPosition(currentBike.minPrice);
             barYPos = i * verticalSpacing + 20;
@@ -209,6 +210,7 @@ class Diagram {
             barWidth = (int) (barXEnd - barXStart);
             int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
+
 
 //            drawDots(g, currentBike, barYPos);
 
@@ -243,12 +245,12 @@ class Diagram {
             g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
-            /*
+
             g.setColor(Color.white);
             g.setFont(fontDotCaption);
             g.drawString("$" + currentPrice, dotX, dotY - 3);
             g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
-            */
+
         }
     }
 

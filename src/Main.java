@@ -23,12 +23,12 @@ public class Main {
         int margin = (int) (INCH_TO_MM * 2);
         int gridStep = 2000; //this is in dollars
 
-        Diagram d = new Diagram(Bike.readBikes("new_test_input.txt"), width, height, margin, gridStep);
+        Diagram d = new Diagram(Bike.readBikes("new_test_input_corrected_supersix.txt"), width, height, margin, gridStep);
 
 
 //        d.addCustomRange(500, 3000); // $500 through $10,000
-        d.addLegend(new Legend(1150, 430)); // x, y, width, height
-        //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins then x, y
+//        d.addLegend(new Legend(1150, 430)); // x, y, width, height
+        //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins thenimp x, y
 
         d.writePDF("output.pdf");
 

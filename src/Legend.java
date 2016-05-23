@@ -51,7 +51,7 @@ class Legend {
             theY = y + 120 + i * (barHeight+2);
             g.fillRect(x + 10, theY, barWidth, barHeight);
             g.setColor(Color.white);
-            g.drawString(currGroup.toString(), x + barWidth + 20, theY + barHeight / 2 + 3);
+            g.drawString(currGroup.name, x + barWidth + 20, theY + barHeight / 2 + 3);
         }
 
 
