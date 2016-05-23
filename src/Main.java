@@ -18,16 +18,16 @@ public class Main {
 //        System.exit(0);
 
         //the number is in inches. ridiculously large because that's what I started with. it's vector anyway...
-        int width = (int) (INCH_TO_MM * 75); //was 75
+        int width = (int) (INCH_TO_MM * 56); //was 75
         int height = (int) (INCH_TO_MM * 42);
         int margin = (int) (INCH_TO_MM * 2);
-        int gridStep = 1000; //this is in dollars
+        int gridStep = 2000; //this is in dollars
 
         Diagram d = new Diagram(Bike.readBikes("new_test_input.txt"), width, height, margin, gridStep);
 
 
 //        d.addCustomRange(500, 3000); // $500 through $10,000
-        d.addLegend(new Legend(1450, 420)); // x, y, width, height
+        d.addLegend(new Legend(1150, 430)); // x, y, width, height
         //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins then x, y
 
         d.writePDF("output.pdf");

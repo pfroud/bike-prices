@@ -110,6 +110,7 @@ class Diagram {
      */
     void writePDF(String filename) throws IOException {
         drawBackground(g);
+
         drawGrid(g);
         drawBikes(g);
 
@@ -149,27 +150,37 @@ class Diagram {
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
 
-        // min and max labels for bottom axis
-        g.setColor(Color.white);
-        g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString(numberFormat.format(priceMin), margin, bottomEdge + 20);
-        g.drawString(numberFormat.format(priceMax), rightEdge - 60, bottomEdge + 20);
-
         //setup for vertical lines
-        g.setFont(new Font("Arial", Font.PLAIN, 14)); //14pt size
+        Font smallFont = new Font("Arial", Font.PLAIN, 40);
+        g.setFont(smallFont); //14pt size
+        FontMetrics metrics = g.getFontMetrics(smallFont);
+        int textHeght = metrics.getHeight()-10;
         g.setColor(Color.decode("0xbbbbbb"));
         int xPos;
 
         //draw vertical lines
-        for (int price = priceMin+gridStep; price <= priceMax; price += gridStep) {
+        for (int price = priceMin+gridStep; price <= priceMax-gridStep; price += gridStep) {
             xPos = getXPosition(price);
             g.drawLine(xPos, 0, xPos, bottomEdge + 60);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
             if (priceMin != price && priceMax != price) {
-                g.drawString(numberFormat.format(price), xPos, bottomEdge + 15);
+                g.drawString(numberFormat.format(price), xPos, bottomEdge + textHeght);
             }
         }
+
+
+        // min and max labels for bottom axis
+        g.setColor(Color.white);
+        Font bigFont = new Font("Arial", Font.BOLD, 60);
+        g.setFont(bigFont);
+        metrics = g.getFontMetrics(bigFont);
+        textHeght = metrics.getHeight();
+        int marginNudge = 30;
+        g.drawString(numberFormat.format(priceMin), margin-marginNudge, bottomEdge+textHeght/2);
+        String maxPrice = numberFormat.format(priceMax);
+        g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice)+marginNudge, bottomEdge + textHeght/2);
+
     }
 
     /**
@@ -187,6 +198,9 @@ class Diagram {
         for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
 
+            barYPos = i * verticalSpacing + 20;
+
+
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
             barXStart = getXPosition(currentBike.minPrice);
@@ -196,7 +210,8 @@ class Diagram {
             int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
-            drawDots(g, currentBike, barYPos);
+//            drawDots(g, currentBike, barYPos);
+
 
             // draw model name on the left
             g.setColor(Color.white);
