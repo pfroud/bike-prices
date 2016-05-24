@@ -203,6 +203,7 @@ class Diagram {
 
             // rectangle bar
 
+
             g.setColor(BAR_BACKGROUND_COLOR);
             barXStart = getXPosition(currentBike.minPrice);
             barYPos = i * verticalSpacing + 20;
@@ -213,6 +214,7 @@ class Diagram {
 
 
             drawDots(g, currentBike, barYPos);
+
 
 
             // draw model name on the left
@@ -246,12 +248,14 @@ class Diagram {
 
             // draw price above the dot and model name below the dot
 
+/*
 
             g.setColor(Color.white);
             g.setFont(fontDotCaption);
-//            g.drawString("$" + currentPrice, dotX, dotY - 3);
-//            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30); // for size 14
+            g.drawString("$" + currentPrice, dotX, dotY - 3);
+            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30); // for size 14
             g.drawString(currentBike.versionNames.get(i), dotX, dotY +0); // for size 8
+*/
 
         }
     }

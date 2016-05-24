@@ -24,6 +24,8 @@ class Histogram {
         this.width = width;
         this.height = height;
 
+        System.out.printf("%30s: %d, %d\n", caption, x, y);
+
 //        barWidth = 10;
         barSpacing = 1;
         barWidth = (width + barSpacing) / data.size();
@@ -43,14 +45,16 @@ class Histogram {
     void draw(Graphics g) {
         // coordinate system: positive is down and right.
 
-        /*
+/*
+
         // bounding box
         g.setColor(Color.lightGray);
         g.drawRect(x, y - height, width, height);
         //dot for origin
         g.setColor(Color.red);
         g.fillOval(x - 5, y - 5, 10, 10);
-        */
+*/
+
 
 
         g.setColor(Color.black);

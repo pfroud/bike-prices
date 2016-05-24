@@ -6,7 +6,7 @@ import java.util.Vector;
  */
 class Analysis {
 
-    private int numBins, x, y, histSize;
+    private int numBins, x, y, histSize, width = 1;
     private Vector<Histogram> hists = new Vector<>();
 
     Analysis(int numBins, int x, int y, int histSize) {
@@ -25,32 +25,24 @@ class Analysis {
     void init(Vector<Bike> bikes) {
         Histogram h;
 
-        Bike currBike;
-        for (int i = 0, len = bikes.size(); i < len; i++) {
-            currBike = bikes.get(i);
-            h = new Histogram(currBike.getHistogramData(numBins), currBike.modelName);
-            h.setSize(x + i * (histSize + 50), y, histSize, histSize);
-            hists.add(h);
-        }
 
-        /*
-        int half = bikes.size() / 2;
+        final int histsPerRow = 10;
+        final int size = bikes.size();
+        final int SPACING = 50;
 
-        // draw the first half of the histograms on one row
-        for (int i = 0; i < half; i++) {
-            Bike bike = bikes.get(i);
-            h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
-            h.setSize(x + i * (histSize + 50), y, histSize, histSize);
-            hists.add(h);
+
+
+        Bike bike;
+        int mod;
+        for (int start = 0, end = histsPerRow; end <= size; start = end + 1, end += histsPerRow) {
+            mod = start / histsPerRow;
+            for (int i = start; i < end; i++) {
+                bike = bikes.get(i);
+                h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
+                h.setSize(x + (histSize + SPACING) * (i%10), y + mod * (histSize+50), histSize, histSize);
+                hists.add(h);
+            }
         }
-        // draw the second half of histograms on a second row
-        for (int i = half; i < bikes.size(); i++) {
-            Bike bike = bikes.get(i);
-            h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
-            h.setSize(x + (i - half) * (histSize + 50), y + histSize, histSize, histSize);
-            hists.add(h);
-        }
-        */
 
     }
 
