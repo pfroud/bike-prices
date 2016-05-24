@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.NumberFormat;
+import java.util.Collections;
 import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Vector;
@@ -9,7 +10,7 @@ import java.util.Vector;
  * A model of bike, made up of versions of the model.
  * For example, a model is "Specialized Diverge" and a version is "Elite A1".
  */
-public class Bike {
+public class Bike implements Comparable<Bike> {
 
     // region statics
 
@@ -38,12 +39,14 @@ public class Bike {
         //go through input text file
         while (true) {
             tempBike = readOneBike(fileScan);
-            if(tempBike == null) break;
+            if (tempBike == null) break;
             allBikes.add(tempBike);
 
             fileScan.nextLine(); //skip a blank line
 
         }
+
+        Collections.sort(allBikes);
         return allBikes;
     }
 
@@ -67,7 +70,7 @@ public class Bike {
     private static Bike readOneBike(Scanner sc) {
         sc.useDelimiter(": |\n");
         String name = sc.next();
-        if(name.equals("end")) return null;
+        if (name.equals("end")) return null;
         Bike bike = new Bike(name); //read model name
         int numModels_ = sc.nextInt();
         bike.numModels = numModels_;
@@ -126,8 +129,12 @@ public class Bike {
     Vector<Carbon> versionCarbons = new Vector<>();
     Vector<Groupset> versionGroupsets = new Vector<>();
 
-    // why do I have this in instance and statis??
+    // why do I have this in both instance and statis??
     int minPrice = 999999, maxPrice = 0; // most and least expensive version of the model
+
+    public int compareTo(Bike other) {
+        return Integer.compare(Collections.min(versionPrices), Collections.min(other.versionPrices));
+    }
 
 
     /**

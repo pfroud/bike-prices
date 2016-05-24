@@ -26,8 +26,8 @@ class Diagram {
     private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     // fonts
-    private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 14);
-    private final Font fontRowName = new Font("Arial", Font.BOLD, 14);
+    private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 8);
+    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
 
     // page properties
     private int width, height, margin; //size and margins of the pdf page. Units are millimeters.
@@ -212,7 +212,7 @@ class Diagram {
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
 
-//            drawDots(g, currentBike, barYPos);
+            drawDots(g, currentBike, barYPos);
 
 
             // draw model name on the left
@@ -246,10 +246,12 @@ class Diagram {
 
             // draw price above the dot and model name below the dot
 
+
             g.setColor(Color.white);
             g.setFont(fontDotCaption);
-            g.drawString("$" + currentPrice, dotX, dotY - 3);
-            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30);
+//            g.drawString("$" + currentPrice, dotX, dotY - 3);
+//            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30); // for size 14
+            g.drawString(currentBike.versionNames.get(i), dotX, dotY +0); // for size 8
 
         }
     }

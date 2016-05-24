@@ -9,16 +9,17 @@ enum Groupset {
     int rank;
     String name;
 
+    // indexed by rank
     static final Color[] rankColors =
             {
-                    Color.magenta,
-                    Color.red,
-                    Color.orange,
-                    Color.yellow,
-                    Color.decode("#23DB45"), // green
-                    Color.decode("#27DBDB"), // sky blue
-                    Color.blue,
-                    Color.decode("#5924E0"), // purple
+                    Color.decode("#ff43f4"), // pink
+                    Color.decode("#ff0000"), // red
+                    Color.decode("#ff9400"), // orange
+                    Color.decode("#fff000"), // yellow
+                    Color.decode("#00ff00"), // green
+                    Color.decode("#0054ff"), // blue
+                    Color.decode("#5824e0"), // purple
+                    Color.decode("#735132") // brown
             };
 
     Groupset(int rank, String name) {
@@ -39,16 +40,6 @@ enum Groupset {
         return Groupset.valueOf(s.replaceAll(" |-", "_").toUpperCase());
     }
 
-    // http://stackoverflow.com/a/17544598
-    private static Color blendColors(Color x, Color y, float bl) {
-        if (bl < 0 || bl > 1) throw new IllegalArgumentException("blend factor must be between 0 and 1");
-        float inv = 1 - bl;
 
-        float r = x.getRed() * bl + y.getRed() * inv;
-        float g = x.getGreen() * bl + y.getGreen() * inv;
-        float b = x.getBlue() * bl + y.getBlue() * inv;
-
-        return new Color(r / 255, g / 255, b / 255);
-    }
 
 }
