@@ -12,7 +12,7 @@ public class AnalysisTesting extends JPanel {
 
     public static void main(String[] args) {
         a = new Analysis(4, 50, 150, 100);
-        a.init(Bike.readBikes("new_test_input_corrected_supersix.txt"));
+        a.init(Bike.readBikes("new_test_input.txt"));
 
         // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
         AnalysisTesting panel = new AnalysisTesting();

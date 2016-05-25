@@ -21,12 +21,12 @@ public class Main {
         int width = (int) (INCH_TO_MM * 56); //was 75
         int height = (int) (INCH_TO_MM * 42);
         int margin = (int) (INCH_TO_MM * 2);
-        int gridStep = 2000; //this is in dollars
+        int gridStep = 500; //this is in dollars
 
-        Diagram d = new Diagram(Bike.readBikes("new_test_input_corrected_supersix.txt"), width, height, margin, gridStep);
+        Diagram d = new Diagram(Bike.readBikes("new_test_input_filtered_zoomedIn.txt"), width, height, margin, gridStep);
 
 
-//        d.addCustomRange(500, 3000); // $500 through $10,000
+        d.addCustomRange(500, 2000); // $500 through $3,000
 //        d.addLegend(new Legend(1150, 430)); // x, y, width, height
         //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins thenimp x, y
 

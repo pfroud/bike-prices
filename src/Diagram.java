@@ -22,12 +22,14 @@ class Diagram {
     // appearance
 //    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
     private final Color BAR_BACKGROUND_COLOR = Color.gray;
-    private final int RECT_HEIGHT = 20; //height of each horizontal bar
+//    private final int RECT_HEIGHT = 20; //height of each horizontal bar
+    private final int RECT_HEIGHT = 65; //height of each horizontal bar
     private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     // fonts
-    private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 8);
-    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
+    private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 12);
+//    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
+    private final Font fontRowName = new Font("Arial", Font.PLAIN, 40);
 
     // page properties
     private int width, height, margin; //size and margins of the pdf page. Units are millimeters.
@@ -195,8 +197,11 @@ class Diagram {
         float barXStart, barXEnd; // x positions of start and end of a bar
 
         // iterate over all the bike models
-        for (int i = 0; i < allBikes.size(); i++) {
+//        for (int i = 0; i < allBikes.size(); i++) {
+        for (int i = 0; i <= 12; i++) {
             currentBike = allBikes.get(i);
+
+
 
             barYPos = i * verticalSpacing + 20;
 
@@ -220,6 +225,7 @@ class Diagram {
             // draw model name on the left
             g.setColor(Color.white);
             g.setFont(fontRowName);
+//            g.drawString(i+": "+currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
             g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
 
         }
@@ -248,14 +254,11 @@ class Diagram {
 
             // draw price above the dot and model name below the dot
 
-/*
 
-            g.setColor(Color.white);
-            g.setFont(fontDotCaption);
-            g.drawString("$" + currentPrice, dotX, dotY - 3);
-            g.drawString(currentBike.versionNames.get(i), dotX, dotY + 30); // for size 14
-            g.drawString(currentBike.versionNames.get(i), dotX, dotY +0); // for size 8
-*/
+//            g.setColor(Color.white);
+//            g.setFont(fontDotCaption);
+//            g.drawString("$" + currentPrice, dotX, dotY - 3);
+//            g.drawString(currentBike.versionNames.get(i), dotX, dotY); // for size 8
 
         }
     }
