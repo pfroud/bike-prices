@@ -1,0 +1,128 @@
+version	S-Works Ruby Di2
+price	$ 8250.00
+frame	S-Works FACT 11r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, carbon OSBB
+fork	S-Works FACT carbon, Zertz, full monocoque
+shifers	Shimano Dura-Ace Di2, 11-speed, w/ satellite shifter
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	S-Works FACT carbon, 50/34T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace Di2, 11-speed, braze-on
+der_rear	Shimano Dura-Ace Di2, 11-speed
+
+
+version	Ruby Pro Disc UDi2
+price	$ 5800.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, size-specific taper
+shifers	Shimano 785 Di2, 11-speed, w/ satellite shifter
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Specialized Pro, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Ruby Expert Disc UDi2
+price	$ 4500.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB
+fork	Specialized FACT carbon, size-specific taper
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Shimano Ultegra, compact, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Ruby Comp UDi2
+price	$ 3000.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, Zertz, full monocoque
+shifers	Shimano Ultegra Di2, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Ruby Comp Disc
+price	$ 3000.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, size-specific taper
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Ruby Comp
+price	$ 2500.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, Zertz, full monocoque
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Ruby Elite Disc
+price	$ 2500.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, size-specific taper
+shifers	SRAM Rival, 11-speed
+brake_rear	SRAM Rival, hydraulic disc
+brake_front	SRAM Rival, hydraulic disc
+crankset	New FSA Gossamer Pro, BB30, 50/34T
+chain	SRAM PC-1130, 11-speed, w/ PowerLink
+der_front	SRAM Rival 22, braze-on, YAW, w/ chain spotter
+der_rear	SRAM Rival 22, 11-speed, WiFLi
+
+
+version	Ruby Sport
+price	$ 2000.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB
+fork	Specialized FACT carbon, Zertz, full monocoque
+shifers	Shimano 105 STI, 11-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	FSA Gossamer Pro, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed, long cage
+
+
+version	Ruby Disc
+price	$ 1950.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB
+fork	Specialized FACT carbon, size-specific taper
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	Tektro Spyre, mechanical disc, dual pivot, 140mm rotor
+brake_front	Tektro Spyre, mechanical disc, dual pivot, 160mm rotor
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, 10-speed, braze-on
+der_rear	Shimano Tiagra, 10-speed, long cage
+
+
+version	Ruby
+price	$ 1800.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB
+fork	Specialized FACT carbon, Zertz, full monocoque
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, 10-speed, braze-on
+der_rear	Shimano Tiagra, 10-speed, long cage

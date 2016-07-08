@@ -1,0 +1,167 @@
+version	S-Works Roubaix SL4 Disc Di2
+price	$ 8500.00
+frame	S-Works SL4 FACT 11r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, size-specific taper, disc mount
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	S-Works FACT carbon, 50/34T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace Di2, 11-speed, braze-on
+der_rear	Shimano Dura-Ace Di2, 11-speed
+
+
+version	Specialized Edition Roubaix SL4 Disc Power
+price	$ 7250.00
+frame	Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, size-specific taper, disc mount
+shifers	SRAM Force, 11-speed, disc
+brake_rear	SRAM Force, hydraulic disc
+brake_front	SRAM Force, hydraulic disc
+crankset	SRAM Elsa, Quarq power meter, 11-speed
+chain	SRAM PC-1170, 11-speed
+der_front	SRAM Force 22, YAW, w/ chain spotter
+der_rear	SRAM Force 22
+
+
+version	Roubaix SL4 Pro Disc Race UDi2
+price	$ 5800.00
+frame	Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB
+fork	Specialized FACT carbon, size-specific taper, disc mount
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Specialized Pro, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Roubaix SL4 Pro Disc
+price	$ 4500.00
+frame	Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, size-specific taper, disc mount
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Specialized Pro, 50/34T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Roubaix SL4 Expert Disc UDi2
+price	$ 4500.00
+frame	Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB
+fork	Specialized FACT carbon, size-specific taper, disc mount
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Shimano Ultegra, compact, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Roubaix SL4 Expert
+price	$ 3500.00
+frame	Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB
+fork	Specialized FACT carbon, size-specific taper
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	Shimano Ultegra, compact, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Roubaix SL4 Comp UDi2
+price	$ 3000.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, OSBB
+fork	Specialized FACT carbon
+shifers	Shimano Ultegra Di2, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Roubaix SL4 Comp Disc
+price	$ 3000.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, OSBB
+fork	Specialized FACT carbon, disc mount
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Roubaix SL4 Comp
+price	$ 2500.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, OSBB
+fork	Specialized FACT carbon
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Roubaix SL4 Elite Disc
+price	$ 2500.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, OSBB
+fork	Specialized FACT carbon, disc mount
+shifers	SRAM Rival, 11-speed
+brake_rear	SRAM Rival, hydraulic disc
+brake_front	SRAM Rival, hydraulic disc
+crankset	FSA Gossamer Pro, BB30, 50/34T
+chain	SRAM PC-1130, 11-speed, w/ PowerLink
+der_front	SRAM Rival 22, braze-on, YAW, w/ chain spotter
+der_rear	SRAM Rival 22, 11-speed, WiFLi
+
+
+version	Roubaix SL4 Sport
+price	$ 2000.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, OSBB
+fork	Specialized FACT carbon
+shifers	Shimano 105 STI, 11-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	FSA Gossamer Pro, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed, long cage
+
+
+version	Roubaix SL4 Disc
+price	$ 1950.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, threaded BB
+fork	Specialized FACT carbon, disc mount
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	Tektro Spyre, mechanical disc, dual pivot, 140mm rotor
+brake_front	Tektro Spyre, mechanical disc, dual pivot, 160mm rotor
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, 10-speed, braze-on
+der_rear	Shimano Tiagra, 10-speed, long cage
+
+
+version	Roubaix SL4
+price	$ 1800.00
+frame	Specialized SL4 FACT 8r carbon, 1-1/8" to 1-3/8" head tube, compact race design, Zertz, internal rear brake cable, threaded BB
+fork	Specialized FACT carbon
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, 10-speed, braze-on
+der_rear	Shimano Tiagra, 10-speed, long cage

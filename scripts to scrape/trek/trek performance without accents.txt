@@ -1,0 +1,230 @@
+version	Emonda SLR 9
+price	$12,079.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Madone 9.9 Women's
+price	$11,999.99
+frame	600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2, BB90, invisible cable routing, Control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible
+fork	Madone KVF full carbon, carbon E2 asymmetric steerer, carbon dropouts, integrated brake and stem
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Madone 9.9
+price	$11,999.99
+frame	600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2, BB90, invisible cable routing, Control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible
+fork	Madone KVF full carbon, carbon E2 asymmetric steerer, carbon dropouts, integrated brake and stem
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Emonda SLR 10
+price	$11,999.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	SRAM RED 22, braze-on
+der_rear	SRAM RED 22
+
+
+version	Emonda SLR 9 Women's
+price	$8,499.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Madone 9.5
+price	$7,999.99
+frame	600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2, BB90, invisible cable routing, Control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible
+fork	Madone KVF full carbon, carbon E2 asymmetric steerer, carbon dropouts, integrated brake and stem
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Madone Race Shop Limited
+price	$12,999.99
+frame	700 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2, BB90, invisible cable routing, Control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible
+fork	Madone KVF full carbon, carbon E2 asymmetric steerer, carbon dropouts, integrated brake and stem
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Emonda SLR 8 (H1 fit)
+price	$6,499.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Emonda SLR 8 (H2 fit)
+price	$6,499.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Madone 9.2
+price	$5,999.99
+frame	600 Series OCLV Carbon, KVF (Kammtail Virtual Foil) tube shape, Madone IsoSpeed, Micro-adjust seatmast, E2, BB90, invisible cable routing, Control center, precision water bottle placement, Aero 3S chain keeper, DuoTrap S compatible
+fork	Madone KVF full carbon, carbon E2 asymmetric steerer, carbon dropouts, integrated brake and stem
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda SLR 6 (H1 fit)
+price	$4,999.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda SLR 6 (H2 fit)
+price	$4,999.99
+frame	Ultralight 700 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 asymmetric steerer, carbon dropouts
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda SL 8
+price	$3,999.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Emonda SL 8 Women's
+price	$4,729.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Emonda SL 8 RED
+price	$3,499.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	SRAM RED 22, braze-on
+der_rear	SRAM RED 22
+
+
+version	Emonda SL 6
+price	$3,149.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda SL 6 Women's
+price	$2,999.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda SL 5 Women's
+price	$2,599.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Emonda SL 5
+price	$2,599.99
+frame	Ultralight 500 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB90, internal cable routing, DuoTrap S compatible, Ride Tuned seatmast
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Emonda S 6
+price	$2,629.99
+frame	Ultralight 300 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB86.5, DuoTrap compatible
+fork	Emonda carbon, E2
+der_front	Shimano Ultegra
+der_rear	Shimano Ultegra
+
+
+version	Emonda S 5
+price	$2,099.99
+frame	Ultralight 300 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB86.5, DuoTrap compatible
+fork	Emonda carbon, E2
+der_front	Shimano 105
+der_rear	Shimano 105
+
+
+version	Emonda ALR 6
+price	$1,899.99
+frame	Ultralight 300 Series Alpha Aluminum, Invisible Weld Technology, DuoTrap S compatible, E2 tapered head tube, BB86.5
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Emonda S 4
+price	$1,569.99
+frame	Ultralight 300 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB86.5, DuoTrap compatible
+fork	Emonda carbon, E2
+der_front	Shimano Tiagra
+der_rear	Shimano Tiagra
+
+
+version	Emonda S 4 Women's
+price	$1,569.99
+frame	Ultralight 300 Series OCLV Carbon, ride-tuned performance tube optimization, E2 tapered head tube, BB86.5, DuoTrap compatible
+fork	Emonda carbon, E2
+der_front	Shimano Tiagra
+der_rear	Shimano Tiagra
+
+
+version	Emonda ALR 5
+price	$1,379.99
+frame	Ultralight 300 Series Alpha Aluminum, Invisible Weld Technology, DuoTrap S compatible, E2 tapered head tube, BB86.5
+fork	Emonda full carbon, carbon E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Emonda ALR 4
+price	$1,309.99
+frame	Ultralight 300 Series Alpha Aluminum, Invisible Weld Technology, DuoTrap S compatible, E2 tapered head tube, BB86.5
+fork	Emonda carbon, E2
+der_front	Shimano Tiagra, braze-on
+der_rear	Shimano Tiagra
+
+
+version	1.2
+price	$929.99
+frame	100 Series Alpha Aluminum, fender & rack compatible
+fork	Trek carbon road
+der_front	Shimano Sora
+der_rear	Shimano Sora
+
+
+version	KRX
+price	$879.99
+frame	Alpha Silver Aluminum, DuoTrap S compatible
+fork	Dialed Road alloy
+der_front	Shimano Sora
+der_rear	Shimano Sora
+
+
+version	1.1
+price	$769.99
+frame	100 Series Alpha Aluminum, fender & rack compatible
+fork	Trek carbon road
+der_front	Shimano Claris
+der_rear	Shimano Claris

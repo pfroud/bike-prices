@@ -1,0 +1,238 @@
+version	Domane SLR 9 eTap
+price	$10,999.99
+frame	600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast
+fork	Domane full carbon, E2 tapered steerer, direct mount brakes
+der_front	SRAM RED eTap, braze-on
+der_rear	SRAM RED eTap
+
+
+version	Domane SLR 7 Disc
+price	$6,499.99
+frame	600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Flat Mount disc brakes, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast
+fork	Domane full carbon disc, E2 tapered steerer, 12mm thru-axle
+der_front	Shimano Ultegra Di2, braze-on
+der_rear	Shimano Ultegra Di2
+
+
+version	Domane SLR 7
+price	$5,999.99
+frame	600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast
+fork	Domane full carbon, E2 tapered steerer, direct mount brakes
+der_front	Shimano Ultegra Di2, braze-on
+der_rear	Shimano Ultegra Di2
+
+
+version	Domane SLR 6 Disc
+price	$5,499.99
+frame	600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Flat Mount disc brakes, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast
+fork	Domane full carbon disc, E2 tapered steerer, 12mm thru-axle
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane SLR 6
+price	$4,999.99
+frame	600 Series OCLV Carbon, Front IsoSpeed, Adjustable Rear IsoSpeed, E2 tapered head tube, BB90, Power Transfer Construction, hidden fender mounts, internal cable routing, 3S chain keeper, DuoTrap S compatible, Ride Tuned seatmast
+fork	Domane full carbon, E2 tapered steerer, direct mount brakes
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane 6.9
+price	$7,999.99
+frame	600 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon, carbon E2 asymmetric steerer
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Domane 6.9 Disc
+price	$6,999.99
+frame	600 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, disc balanced post mount, 142x12 Closed Convert dropouts, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon disc, 15mm thru-axle, carbon E2 asymmetric steerer
+der_front	Shimano Dura-Ace Di2, braze-on
+der_rear	Shimano Dura-Ace Di2
+
+
+version	Domane 6.5
+price	$5,999.99
+frame	600 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon, carbon E2 asymmetric steerer
+der_front	Shimano Dura-Ace, braze-on
+der_rear	Shimano Dura-Ace
+
+
+version	Silque SSL Women's
+price	$4,999.99
+frame	600 Series OCLV Carbon, WSD-tuned IsoSpeed, Ride Tuned seatmast, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek full carbon road, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra Di2, braze-on
+der_rear	Shimano Ultegra Di2
+
+
+version	Domane 6.2 Disc
+price	$4,499.99
+frame	600 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, disc balanced post mount, 142x12 Closed Convert dropouts, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon disc, 15mm thru-axle, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane 5.9
+price	$4,399.99
+frame	500 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra Di2, braze-on
+der_rear	Shimano Ultegra Di2
+
+
+version	Domane 6.2
+price	$3,999.99
+frame	600 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Silque SL Di2 Women's
+price	$3,799.99
+frame	400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper, vanishing fender mounts
+fork	Trek carbon road, carbon E2 steerer
+der_front	Shimano Ultegra Di2, braze-on
+der_rear	Shimano Ultegra Di2
+
+
+version	Silque SLX Women's
+price	$3,599.99
+frame	600 Series OCLV Carbon, WSD-tuned IsoSpeed, Ride Tuned seatmast, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek full carbon road, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane 5.2
+price	$3,499.99
+frame	500 Series OCLV Carbon, IsoSpeed, Ride Tuned seatmast, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed full carbon, carbon E2 asymmetric steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Silque SL Women's
+price	$3,259.99
+frame	400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper, vanishing fender mounts
+fork	Trek carbon road, carbon E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane 4.5 Disc
+price	$3,099.99
+frame	400 Series OCLV Carbon, IsoSpeed, Power Transfer Construction, disc balanced post mount, 142x12 Closed Convert dropout, hidden fender mounts, E2 tapered head tube, BB90, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed carbon disc, 15mm thru-axle, E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Domane 4.3 Disc
+price	$2,599.99
+frame	400 Series OCLV Carbon, IsoSpeed, Power Transfer Construction, disc balanced post mount, 142x12 Closed Convert dropout, hidden fender mounts, E2 tapered head tube, BB90, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed carbon disc, 15mm thru-axle, E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Domane 4.5
+price	$2,499.99
+frame	400 Series OCLV Carbon, IsoSpeed, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed carbon, E2 steerer
+der_front	Shimano Ultegra, braze-on
+der_rear	Shimano Ultegra
+
+
+version	Silque S Women's
+price	$2,469.99
+frame	400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper, vanishing fender mounts
+fork	Trek carbon road, carbon E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Domane 4.3
+price	$2,299.99
+frame	400 Series OCLV Carbon, IsoSpeed, Power Transfer Construction, hidden fender mounts, E2 tapered head tube, BB90, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed carbon, E2 steerer
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Silque
+price	$2,099.99
+frame	400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper, vanishing fender mounts
+fork	Trek carbon road, E2
+der_front	Shimano Tiagra, braze-on
+der_rear	Shimano Tiagra
+
+
+version	Domane 4.0 Disc
+price	$2,099.99
+frame	400 Series OCLV Carbon, IsoSpeed, Power Transfer Construction, disc balanced post mount, 142x12 Closed Convert dropout, hidden fender mounts, E2 tapered head tube, BB90, DuoTrap compatible, 3S chain keeper
+fork	Trek IsoSpeed carbon disc, 15mm thru-axle, E2 steerer
+der_front	Shimano Sora, braze-on
+der_rear	Shimano Sora
+
+
+version	Silque Women's
+price	$2,099.99
+frame	400 Series OCLV Carbon, WSD-tuned IsoSpeed, E2 tapered head tube, BB90, performance cable routing, DuoTrap compatible, 3S chain keeper, vanishing fender mounts
+fork	Trek carbon road, carbon E2 steerer
+der_front	Shimano Tiagra, braze-on
+der_rear	Shimano Tiagra
+
+
+version	Domane 2.3
+price	$1,679.99
+frame	200 Series Alpha Aluminum, IsoSpeed, vanishing fender mounts
+fork	Trek IsoSpeed carbon, SpeedTrap compatible
+der_front	Shimano 105
+der_rear	Shimano 105
+
+
+version	Lexa SLX Women's
+price	$1,569.99
+frame	200 Series Alpha Aluminum, WSD-tuned IsoSpeed, vanishing fender mounts, E2 tapered head tube, BB86.5
+fork	Trek carbon road, E2 steerer, SpeedTrap compatible
+der_front	Shimano 105, braze-on
+der_rear	Shimano 105
+
+
+version	Domane 2.0
+price	$1,359.99
+frame	200 Series Alpha Aluminum, IsoSpeed, vanishing fender mounts
+fork	Trek IsoSpeed carbon, SpeedTrap compatible
+der_front	Shimano Tiagra
+der_rear	Shimano Tiagra
+
+
+version	Lexa SL Women's
+price	$1,149.99
+frame	100 Series Alpha Aluminum, fender & rack compatible
+fork	Trek carbon road
+der_front	Shimano Tiagra
+der_rear	Shimano Tiagra
+
+
+version	Lexa S Women's
+price	$989.99
+frame	100 Series Alpha Aluminum, fender & rack compatible
+fork	Trek carbon road
+der_front	Shimano Sora
+der_rear	Shimano Sora
+
+
+version	Lexa Women's
+price	$769.99
+frame	100 Series Alpha Aluminum, fender & rack compatible
+fork	Trek carbon road
+der_front	Shimano Claris
+der_rear	Shimano Claris

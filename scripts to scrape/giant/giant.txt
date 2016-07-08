@@ -1,0 +1,214 @@
+version	Propel Advanced SL 0
+price	$9,000
+frame	Professional-grade Advanced SL composite frame
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace Di2 11-speed electronic componentry
+
+
+version	Propel Advanced SL 1 Team
+price	$6,900
+frame	Professional-grade Advanced SL composite frame
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace 11-speed mechanical componentry
+
+
+version	Propel Advanced SL 1
+price	$6,900
+frame	Professional-grade Advanced SL composite frame
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace 11-speed mechanical componentry
+
+
+version	Propel Advanced SL 2
+price	$4,400
+frame	Professional-grade Advanced SL composite frame
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra 11-speed mechanical componentry
+
+
+version	Propel Advanced Pro 0
+price	$5,650
+frame	High-performance Advanced-grade composite frame
+fork	Advanced-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra Di2 11-speed electronic componentry
+
+
+version	Propel Advanced 0
+price	$4,000
+frame	High-performance Advanced-grade composite frame
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Ultegra Di2 11-speed electronic componentry
+
+
+version	Propel Advanced 1
+price	$2,600
+frame	High-performance Advanced-grade composite frame 
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Ultegra 11-speed mechanical componentry 
+
+
+version	Propel Advanced 2
+price	$2,100
+frame	High-performance Advanced-grade composite frame 
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano 105 11-speed componentry 
+
+
+version	TCR Advanced SL 0
+price	$8,800
+frame	Professional-grade Advanced SL composite frame with integrated Variant seatpost
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace Di2 11-speed electronic componentry
+
+
+version	TCR Advanced SL 1
+price	$5,900
+frame	Professional-grade Advanced SL composite frame with integrated Variant seatpost
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra Di2 11-speed electronic componentry
+
+
+version	TCR Advanced SL 2
+price	$4,100
+frame	Professional-grade Advanced SL composite frame with integrated Variant seatpost
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra 11-speed mechanical componentry
+
+
+version	TCR Advanced Pro 0
+price	$5,500
+frame	High-performance Advanced-grade composite frame with Variant composite seatpost
+fork	Advanced-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace 11-speed mechanical componentry
+
+
+version	TCR Advanced Pro 1
+price	$3,200
+frame	High-performance Advanced-grade composite frame with Variant composite seatpost
+fork	Advanced-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra 11-speed mechanical componentry
+
+
+version	TCR Advanced 1
+price	$2,500
+frame	High-performance Advanced-grade composite frame with Variant composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Ultegra 11-speed componentry
+
+
+version	TCR Advanced  2
+price	$2,000
+frame	High-performance Advanced-grade composite frame with Variant composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano 105 11-speed componentry
+
+
+version	TCR Advanced  3
+price	$1,600
+frame	High-performance Advanced-grade composite frame with Variant composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Tiagra 10-speed componentry
+
+
+version	Trinity Advanced Pro 0
+price	$7,200
+frame	High-performance Advanced-grade composite frame
+fork	AeroDrive Tri Advanced-grade composite fork with alloy/composite hybrid steerer
+drivetrain	AeroVault System: Integrated front hydration/toptube storage/downtube water bottle, integrated...
+
+
+version	Trinity Advanced Pro 1
+price	$4,950
+frame	High-performance Advanced-grade composite frame
+fork	AeroDrive Tri Advanced-grade composite fork with alloy/composite hybrid steerer
+drivetrain	AeroVault System: Integrated front hydration/toptube storage/downtube water bottle, integrated...
+
+
+version	Trinity Advanced Pro 2
+price	$3,400
+frame	High-performance Advanced-grade composite frame
+fork	AeroDrive Tri Advanced-grade composite fork with alloy/composite hybrid steerer
+drivetrain	AeroVault System: Integrated front hydration/toptube storage/downtube water bottle, integrated...
+
+
+version	Defy Advanced SL 0
+price	$8,300
+frame	Professional-grade Advanced SL composite frame with integrated D-Fuse seatpost
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace Di2 11-speed electronic shifting
+
+
+version	Defy Advanced SL 1
+price	$4,600
+frame	Professional-grade Advanced SL composite frame with integrated D-Fuse seatpost
+fork	Advanced SL-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra 11-speed mechanical shifting
+
+
+version	Defy Advanced Pro 0 
+price	$5,100
+frame	Advanced-grade composite frame with D-Fuse SL composite seatpost
+fork	Advanced-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Dura-Ace 11-speed mechanical shifting
+
+
+version	Defy Advanced Pro 2
+price	$3,200
+frame	Advanced-grade composite frame with D-Fuse SL composite seatpost
+fork	Advanced-grade composite fork with full-composite OverDrive 2 steerer
+drivetrain	Shimano Ultegra 11-speed mechanical shifting
+
+
+version	Defy Advanced 1
+price	$2,600
+frame	Advanced-grade composite frame with D-Fuse composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Ultegra 11-speed mechanical shifting 
+
+
+version	Defy Advanced 2
+price	$2,100
+frame	Advanced-grade composite frame with D-Fuse composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano 105 11-speed shifting 
+
+
+version	Defy Advanced 3 
+price	$1,800
+frame	Advanced-grade composite frame with D-Fuse composite seatpost
+fork	Advanced-grade composite fork with alloy/composite hybrid OverDrive steerer
+drivetrain	Shimano Tiagra 10-speed shifting
+
+
+version	Defy 1 Disc
+price	$1,500
+frame	ALUXX SL-grade aluminum frame with compliant D-Fuse composite seatpost
+fork	Composite fork with alloy OverDrive steerer
+drivetrain	Shimano 105 11-speed shifting
+
+
+version	Defy 2 Disc
+price	$1,200
+frame	ALUXX SL-grade aluminum frame with compliant D-Fuse composite seatpost
+fork	Composite fork with alloy OverDrive steerer
+drivetrain	Shimano Tiagra 10-speed shifting
+
+
+version	Defy 3 
+price	$920
+frame	Lightweight and durable ALUXX-grade butted aluminum frame 
+fork	Composite fork with alloy OverDrive steerer 
+drivetrain	Shimano Sora 9-speed shifting 
+
+
+version	Defy 5 
+price	$660
+frame	Lightweight and durable ALUXX-grade butted aluminum frame 
+fork	Aluminum fork with alloy OverDrive steerer
+drivetrain	Shimano Claris 8-speed shifting 
+
+version	Trinity Advanced
+price	$2,250
+frame	High-performance Advanced-grade composite frame
+fork	Advanced-grade composite fork with alloy/composite hybrid steerer
+drivetrain	Shimano 105 11-speed componentry with bar end shifters

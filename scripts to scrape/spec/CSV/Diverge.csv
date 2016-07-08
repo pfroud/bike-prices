@@ -1,0 +1,128 @@
+version	Diverge Pro
+price	$ 5500.00
+frame	Specialized FACT 10r carbon, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Specialized Pro, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Diverge Expert X1
+price	$ 3900.00
+frame	Specialized FACT 10r carbon, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	SRAM Force, 11-speed, disc
+brake_rear	[rear brake not found!]
+brake_front	[front brake not found!]
+crankset	SRAM Force 1, 46T
+chain	SRAM PC-1170, 11-speed
+der_front	[front derailleur not found!]
+der_rear	SRAM Force 1, 11-speed
+
+
+version	Diverge Expert
+price	$ 3800.00
+frame	Specialized FACT 10r carbon, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	FSA SL-K Light, BB30
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed, medium cage
+
+
+version	Diverge Comp
+price	$ 3300.00
+frame	Specialized FACT 10r carbon, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	KMC X11, 11-speed, w/ reusable MissingLink
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed, long cage
+
+
+version	Diverge Comp DSW
+price	$ 2400.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	FSA Gossamer Pro, BB30, compact, 50/34T
+chain	KMC X11, 11-speed, w/ reusable MissingLink
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed, long cage
+
+
+version	Diverge Elite DSW
+price	$ 1500.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	Tektro Spyre, mechanical disc, dual pivot, 140mm rotor
+brake_front	Tektro Spyre, mechanical disc, dual pivot, 160mm rotor
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, 10-speed, braze-on
+der_rear	Shimano Tiagra, 10-speed, long cage
+
+
+version	Diverge Sport A1
+price	$ 1150.00
+frame	Specialized A1 Premium Aluminum, threaded BB
+fork	Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount
+shifers	Shimano Sora STI
+brake_rear	Tektro Spyre, mechanical disc, dual pivot
+brake_front	Tektro Spyre, mechanical disc, dual pivot
+crankset	Shimano Sora, 50/34T
+chain	KMC X9, 9-speed, w/ reusable MissingLink
+der_front	Shimano Sora, braze-on
+der_rear	Shimano Sora
+
+
+version	Diverge A1
+price	$ 1000.00
+frame	Specialized A1 Premium Aluminum, threaded BB
+fork	Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount
+shifers	Shimano Claris 2400 STI
+brake_rear	Tektro Spyre, mechanical disc, dual pivot
+brake_front	Tektro Spyre, mechanical disc, dual pivot
+crankset	Shimano Claris, 50/34T
+chain	KMC Z7, 8-speed, w/ reusable MissingLink
+der_front	Shimano Claris 2400, braze-on
+der_rear	Shimano Claris 2400
+
+
+version	Diverge A1 Sub Compact
+price	$ 850.00
+frame	Specialized A1 Premium Aluminum, threaded BB
+fork	Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount
+shifers	Shimano Claris 2400 STI
+brake_rear	Mechanical disc, resin pads
+brake_front	Mechanical disc, resin pads
+crankset	FSA, alloy, sub compact, 48/32T
+chain	KMC Z7, 8-speed, w/ reusable MissingLink
+der_front	Shimano Claris 2400, braze-on
+der_rear	Shimano Claris 2400
+
+
+version	Diverge Comp DSW X1
+price	$ 2600.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB
+fork	Specialized FACT carbon w/ Zertz, tapered
+shifers	SRAM Rival, 11-speed
+brake_rear	SRAM Rival, hydraulic disc
+brake_front	SRAM Rival, hydraulic disc
+crankset	SRAM Rival 1, 46T
+chain	SRAM PC-1130, 11-speed, w/ PowerLink
+der_front	[front derailleur not found!]
+der_rear	SRAM Rival 1, 11-speed

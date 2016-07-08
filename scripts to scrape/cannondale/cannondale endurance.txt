@@ -1,0 +1,110 @@
+version	Synapse Carbon 105
+price	$2,240
+frame	BallisTec Carbon
+fork	Synapse SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano 105
+
+
+version	Synapse Carbon Disc 105
+price	$2,660
+frame	BallisTec Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano 105
+
+
+version	Synapse Carbon Disc Ultegra
+price	$3,730
+frame	BallisTec Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Ultegra
+
+
+version	Synapse Carbon Disc Ultegra Di2
+price	$4,800
+frame	BallisTec Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Ultegra Di2
+
+
+version	Synapse Carbon Tiagra
+price	$1,840
+frame	BallisTec Carbon
+fork	Synapse SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" alloy steerer
+drivetrain	Shimano Tiagra
+
+
+version	Synapse Carbon Ultegra 3
+price	$3,200
+frame	BallisTec Carbon
+fork	Synapse SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Ultegra
+
+
+version	Synapse Carbon Ultegra 4
+price	$2,660
+frame	BallisTec Carbon
+fork	Synapse SAVE PLUS, BallisTec Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Ultegra
+
+
+version	Synapse Claris
+price	$870
+frame	Aluminum
+fork	Synapse SAVE, Carbon blades, 1-1/8"
+drivetrain	Shimano Claris
+
+
+version	Synapse Disc 105
+price	$1,570
+frame	Aluminum
+fork	Synapse SAVE Disc, Carbon blades, 1-1/8"
+drivetrain	Shimano 105
+
+
+version	Synapse Disc Adventure
+price	$2,130
+frame	Aluminum
+fork	Synapse SAVE Disc, Carbon blades, 1-1/8"
+drivetrain	SRAM Rival
+
+
+version	Synapse Disc Tiagra
+price	$1,250
+frame	Aluminum
+fork	Synapse SAVE Disc, Carbon blades, 1-1/8"
+drivetrain	Shimano Tiagra
+
+
+version	Synapse Hi-MOD Disc Black Inc.
+price	$9,590
+frame	BallisTec Hi-MOD Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Hi-MOD Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Dura-Ace Di2
+
+
+version	Synapse Hi-MOD Disc RED
+price	$7,460
+frame	BallisTec Hi-MOD Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Hi-MOD Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	SRAM Red
+
+
+version	Synapse Hi-MOD Disc Ultegra
+price	$5,330
+frame	BallisTec Hi-MOD Carbon
+fork	Synapse Disc, SAVE PLUS, BallisTec Hi-MOD Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Ultegra
+
+
+version	Synapse Hi-MOD Dura Ace
+price	$5,860
+frame	BallisTec Hi-MOD Carbon
+fork	Synapse, SAVE PLUS, BallisTec Hi-MOD Carbon, 1-1/8" to 1-1/4" tapered steerer
+drivetrain	Shimano Dura-Ace
+
+
+version	Synapse Sora
+price	$1,030
+frame	Aluminum
+fork	Synapse SAVE, Carbon blades, 1-1/8"
+drivetrain	Shimano Sora

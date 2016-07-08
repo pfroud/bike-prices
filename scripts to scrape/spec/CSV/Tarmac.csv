@@ -1,0 +1,167 @@
+version	S-Works Tarmac eTap
+price	$ 9500.00
+frame	S-Works Tarmac, FACT 11r
+fork	S-Works Tarmac, FACT 11r
+shifers	SRAM eTap
+brake_rear	SRAM Red 22
+brake_front	SRAM Red 22
+crankset	SRAM Red 22
+chain	SRAM Red 22 chain, 11-speed
+der_front	SRAM eTap front derailleur, braze-on
+der_rear	SRAM eTap rear derailleur, 11-speed
+
+
+version	S-Works Tarmac Di2
+price	$ 9250.00
+frame	S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	Shimano Dura-Ace Di2, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	S-Works FACT carbon, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace Di2, 11-speed, braze-on
+der_rear	Shimano Dura-Ace Di2, 11-speed
+
+
+version	S-Works Tarmac Disc Di2
+price	$ 9250.00
+frame	S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing, disc mount
+fork	Specialized FACT carbon, full monocoque, size-specific taper, disc mount
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	S-Works FACT carbon, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace Di2, 11-speed, braze-on
+der_rear	Shimano Dura-Ace Di2, 11-speed
+
+
+version	S-Works Tarmac Dura-Ace
+price	$ 8000.00
+frame	S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	S-Works FACT carbon, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Specialized Edition Tarmac Disc Power
+price	$ 7250.00
+frame	Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing, disc mount
+fork	Specialized FACT carbon, full monocoque, size-specific taper, disc mount
+shifers	SRAM Force, 11-speed, disc
+brake_rear	SRAM Force, hydraulic disc
+brake_front	SRAM Force, hydraulic disc
+crankset	SRAM Elsa, Quarq power meter, 11-speed
+chain	SRAM PC-1170, 11-speed
+der_front	SRAM Force 22, YAW, w/ chain spotter
+der_rear	SRAM Force 22
+
+
+version	Tarmac Pro Disc Race UDi2
+price	$ 6000.00
+frame	Specialized FACT 10r carbon, FACT construction, shaped/tapered 1-1/8" to size-specific lower head tube, disc specific, compact race design, internal cable routing
+fork	Specialized FACT carbon, full monocoque, size-specific taper, disc mount
+shifers	Shimano 785 Di2, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	Specialized Pro, 52/36T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Tarmac Pro Race
+price	$ 5500.00
+frame	Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	Specialized Pro, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Tarmac Expert Disc Race
+price	$ 5000.00
+frame	Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing, disc mount
+fork	Specialized FACT carbon, full monocoque, size-specific taper, disc mount
+shifers	Shimano 685, 11-speed
+brake_rear	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+brake_front	Shimano BR-785, hydraulic disc, Ice-Tech resin pads w/ fins
+crankset	FSA SL-K Light, BB30, 52/36T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Tarmac Expert
+price	$ 3700.00
+frame	Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8" to size-specific lower head tube, compact race design, internal cable routing
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	FSA SL-K Light, BB30, 52/36T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Tarmac Sport
+price	$ 2000.00
+frame	Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8" lower bearing, OSBB
+fork	Specialized FACT carbon, monocoque, OS race for 1-3/8" bearing
+shifers	Shimano 105 STI, 11-speed
+brake_rear	AXIS 2.0
+brake_front	AXIS 2.0
+crankset	FSA Gossamer Pro, BB30, 52/36T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed
+
+
+version	Tarmac Elite
+price	$ 2400.00
+frame	Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8" lower bearing, OSBB
+fork	Specialized FACT carbon, monocoque, OS race for 1-3/8" bearing
+shifers	Shimano 105 STI, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 52/36T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed
+
+
+version	Tarmac Comp
+price	$ 2800.00
+frame	Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8" lower bearing, OSBB
+fork	Specialized FACT carbon, monocoque, OS race for 1-3/8" bearing
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	TURN Zayante by Praxis Works, BB30, 52/36T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Tarmac Comp UDi2
+price	$ 3300.00
+frame	Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8" lower bearing, OSBB
+fork	Specialized FACT carbon, monocoque, OS race for 1-3/8" bearing
+shifers	Shimano Ultegra Di2, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 52/36T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed

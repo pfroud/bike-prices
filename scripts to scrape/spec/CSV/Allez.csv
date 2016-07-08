@@ -1,0 +1,128 @@
+version	Specialized Edition Allez Sprint X2
+price	$ 4000.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	SRAM Force 22
+brake_rear	SRAM Force
+brake_front	SRAM Force
+crankset	SRAM Force, 52/36T
+chain	SRAM PC-1170, 11-speed
+der_front	SRAM Force 22, YAW, w/ chain spotter
+der_rear	SRAM Force 22
+
+
+version	SPECIALIZED EDITION ALLEZ SPRINT X1
+price	$ 3750.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	SRAM Force 1
+brake_rear	SRAM Force
+brake_front	SRAM Force
+crankset	SRAM Force 1, 50T
+chain	SRAM PC-1170, 11-speed
+der_front	[front derailleur not found!]
+der_rear	SRAM Force 1, 11-speed
+
+
+version	Allez DSW Sprint X1 Expert
+price	$ 2600.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	SRAM Force 1
+brake_rear	SRAM Force
+brake_front	SRAM Force
+crankset	SRAM Force 1, 50T
+chain	SRAM PC-1170, 11-speed
+der_front	[front derailleur not found!]
+der_rear	SRAM Force 1, 11-speed
+
+
+version	Allez DSW Sprint X1 Comp
+price	$ 2000.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	S-Works FACT carbon, full monocoque, size-specific taper
+shifers	SRAM Rival 22, 11-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	SRAM Rival 1, 48T
+chain	SRAM PC-1130, 11-speed, w/ PowerLink
+der_front	[front derailleur not found!]
+der_rear	SRAM Rival 1, 11-speed, long cage
+
+
+version	Allez DSW SL Expert
+price	$ 2000.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	Specialized FACT carbon, full monocoque, 1-3/8" lower bearing
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	KMC X11, 11-speed, w/ reusable MissingLink
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Allez DSW SL Comp
+price	$ 1550.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB
+fork	Specialized FACT carbon, full monocoque, 1-3/8" lower bearing
+shifers	Shimano 105 STI, 11-speed
+brake_rear	AXIS 2.0
+brake_front	AXIS 2.0
+crankset	FSA Gossamer Pro, BB30, compact, 52/36T
+chain	KMC X11, 11-speed, w/ reusable MissingLink
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed
+
+
+version	Allez DSW Elite
+price	$ 1250.00
+frame	Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, 1-1/8" lower bearing, threaded BB
+fork	Specialized FACT carbon, alloy crown/steerer
+shifers	Shimano Tiagra STI, 10-speed
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	Shimano Tiagra, compact, 50/34T
+chain	KMC X10, 10-speed, w/ reusable MissingLink
+der_front	Shimano Tiagra, clamp-on
+der_rear	Shimano Tiagra, 10-speed
+
+
+version	Allez E5 Sport
+price	$ 970.00
+frame	Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8" lower bearing
+fork	Specialized FACT carbon, alloy crown/steerer
+shifers	Shimano Sora STI
+brake_rear	AXIS 1.0
+brake_front	AXIS 1.0
+crankset	Shimano Sora, 50/34T
+chain	KMC X9, 9-speed, w/ reusable MissingLink
+der_front	Shimano Sora
+der_rear	Shimano Sora
+
+
+version	Allez E5
+price	$ 770.00
+frame	Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8" lower bearing
+fork	Specialized FACT carbon, alloy crown/steerer
+shifers	Shimano Claris 2400 STI
+brake_rear	Tektro, caliper, dual pivot, short reach
+brake_front	Tektro, caliper, dual pivot, short reach
+crankset	Shimano Claris, 50/34T
+chain	KMC Z7, 8-speed, w/ reusable MissingLink
+der_front	Shimano Claris 2400
+der_rear	Shimano Claris 2400
+
+
+version	Allez Jr.
+price	$ 770.00
+frame	Specialized A1 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8" lower bearing
+fork	Alloy, 1-1/8" alloy steer, 45mm crown
+shifers	microSHIFT R482, short reach
+brake_rear	Tektro, caliper, dual pivot, short reach
+brake_front	Tektro, caliper, dual pivot, short reach
+crankset	Forged alloy, 9-speed, square taper spindle
+chain	KMC Z7, 8-speed, w/ reusable MissingLink
+der_front	Shimano Claris 2400
+der_rear	Shimano Claris 2400

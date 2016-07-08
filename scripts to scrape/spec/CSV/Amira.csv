@@ -1,0 +1,89 @@
+version	S-Works Amira SL4
+price	$ 8000.00
+frame	S-Works FACT 11r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, carbon OSBB
+fork	S-Works FACT carbon, FACT IS construction, full monocoque, 1-1/8" to 1-3/8" tapered steerer
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	S-Works FACT carbon, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Amira SL4 Pro Race
+price	$ 5500.00
+frame	Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB
+fork	Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8" to 1-3/8" tapered steerer
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	Specialized Pro, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Amira SL4 Expert
+price	$ 3600.00
+frame	Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB
+fork	Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8" to 1-3/8" tapered steerer
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	FSA SL-K Light, BB30
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Amira SL4 Comp UDi2
+price	$ 3300.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8" to 1-3/8" head tube, OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano Ultegra Di2, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano Ultegra Di2, 11-speed, braze-on
+der_rear	Shimano Ultegra Di2, 11-speed
+
+
+version	Amira SL4 Comp
+price	$ 2800.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8" to 1-3/8" head tube, OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Amira SL4 Elite
+price	$ 2400.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8" to 1-3/8" head tube, OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano 105 STI, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed
+
+
+version	Amira SL4 Sport
+price	$ 2000.00
+frame	Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano 105 STI, 11-speed
+brake_rear	AXIS 2.0
+brake_front	AXIS 2.0
+crankset	FSA Gossamer Pro, BB30, 50/34T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed

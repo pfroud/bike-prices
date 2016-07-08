@@ -223,7 +223,7 @@ class Diagram {
 
 
             // draw model name on the left
-            g.setColor(Color.white);
+            g.setColor(Color.black);
             g.setFont(fontRowName);
 //            g.drawString(i+": "+currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
             g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);

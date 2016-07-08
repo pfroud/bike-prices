@@ -1,0 +1,63 @@
+version	S-Works Venge ViAS Di2
+price	$ 12900.00
+frame	FACT 11r carbon, Rider-First Engineered™, Win Tunnel Engineered, internal cable routing, carbon OSBB
+fork	FACT carbon, full monocoque
+shifers	Shimano Dura-Ace Di2, 11-speed
+brake_rear	Venge ViAS
+brake_front	Venge ViAS
+crankset	S-Works FACT carbon, OSBB, Quarq Power Meter, 52/36T, w/ CeramicSpeed ceramic bearings
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace Di2, 11-speed, braze-on
+der_rear	Shimano Dura-Ace Di2, 11-speed
+
+
+version	Venge Pro ViAS
+price	$ 8200.00
+frame	FACT 11r carbon, Rider-First Engineered™, Win Tunnel Engineered, internal cable routing, carbon OSBB
+fork	FACT carbon, full monocoque
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Venge ViAS
+brake_front	Venge ViAS
+crankset	Specialized Pro, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Venge Pro 
+price	$ 5700.00
+frame	Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8" to 1-3/8" head tube, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano Dura-Ace, 11-speed
+brake_rear	Shimano Dura-Ace
+brake_front	Shimano Dura-Ace
+crankset	Specialized Pro, 52/36T
+chain	Shimano Dura-Ace, 11-speed
+der_front	Shimano Dura-Ace, 11-speed, braze-on
+der_rear	Shimano Dura-Ace, 11-speed
+
+
+version	Venge Expert
+price	$ 3600.00
+frame	Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8" to 1-3/8" head tube, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano Ultegra, 11-speed
+brake_rear	Shimano Ultegra
+brake_front	Shimano Ultegra
+crankset	FSA SL-K Light, BB30
+chain	Shimano Ultegra, 11-speed
+der_front	Shimano Ultegra, 11-speed
+der_rear	Shimano Ultegra, 11-speed
+
+
+version	Venge Elite
+price	$ 2800.00
+frame	Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8" to 1-3/8" head tube, internal cable routing, carbon OSBB
+fork	Specialized FACT carbon, full monocoque
+shifers	Shimano 105 STI, 11-speed
+brake_rear	Shimano 105
+brake_front	Shimano 105
+crankset	TURN Zayante by Praxis Works, BB30, 52/36T
+chain	Shimano 105, 11-speed
+der_front	Shimano 105, 11-speed
+der_rear	Shimano 105, 11-speed

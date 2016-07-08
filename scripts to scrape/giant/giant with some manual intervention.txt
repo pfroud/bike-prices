@@ -1,0 +1,38 @@
+Propel Advanced SL
+Propel Advanced SL 0	9000	all	Dura-Ace Di2
+Propel Advanced SL 1 Team	6900	all	Dura-Ace
+Propel Advanced SL 1	6900	all	Dura-Ace
+Propel Advanced SL 2	4400	all	Ultegra
+
+Propel Advanced Pro 0	5650	all	Ultegra Di2
+
+Propel Advanced 0	4000	all	Ultegra Di2
+Propel Advanced 1	2600	all	Ultegra
+Propel Advanced 2	2100	all	105
+
+TCR Advanced SL 0	8800	all	Dura-Ace Di2
+TCR Advanced SL 1	5900	all	Ultegra Di2
+TCR Advanced SL 2	4100	all	Ultegra
+
+TCR Advanced Pro 0	5500	all	Dura-Ace
+TCR Advanced Pro 1	3200	all	Ultegra
+
+TCR Advanced 1	2500	all	Ultegra
+TCR Advanced  2	2000	all	105
+TCR Advanced  3	1600	all	Tiagra
+
+Defy Advanced SL 0	8300	all	Dura-Ace Di2
+Defy Advanced SL 1	4600	all	Ultegra
+
+Defy Advanced Pro 0 	5100	all	Dura-Ace
+Defy Advanced Pro 2	3200	all	Ultegra
+
+Defy Advanced 1	2600	all	Ultegra
+Defy Advanced 2	2100	all	105
+Defy Advanced 3 	1800	all	Tiagra
+
+Defy 1 Disc	1500	fork	105
+Defy 2 Disc	1200	fork	Tiagra
+
+Defy 3 	920	fork	Sora
+Defy 5 	660	none	Claris

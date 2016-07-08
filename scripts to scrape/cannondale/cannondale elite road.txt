@@ -1,0 +1,145 @@
+version	CAAD12 105
+price	$1,680
+frame	Aluminum
+fork	CAAD12, SPEED SAVE, BallisTec full carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano 105
+
+
+version	CAAD12 Black Inc.
+price	$5,860
+frame	Aluminum
+fork	CAAD12, SPEED SAVE, BallisTec Hi-MOD full carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Dura-Ace
+
+
+version	CAAD12 Disc 105
+price	$1,950
+frame	Aluminum
+fork	CAAD12 Disc, SPEED SAVE, BallisTec Carbon, 1-1/8" to 1-1/4", integrated crown race, post-mount disc
+drivetrain	Shimano 105
+
+
+version	CAAD12 Disc Dura Ace
+price	$4,260
+frame	Aluminum
+fork	CAAD12 Disc, SPEED SAVE, BallisTec Carbon, 1-1/8" to 1-1/4", integrated crown race, post-mount disc
+drivetrain	Shimano Dura-Ace
+
+
+version	CAAD12 Disc Ultegra
+price	$2,660
+frame	Aluminum
+fork	CAAD12 Disc, SPEED SAVE, BallisTec Carbon, 1-1/8" to 1-1/4", integrated crown race, post-mount disc
+drivetrain	Shimano Ultegra
+
+
+version	CAAD12 RED
+price	$3,200
+frame	Aluminum
+fork	CAAD12, SPEED SAVE, BallisTec full carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	SRAM Red
+
+
+version	CAAD12 Ultegra
+price	$2,240
+frame	Aluminum
+fork	CAAD12, SPEED SAVE, BallisTec full carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Ultegra
+
+
+version	CAAD8 105
+price	$1,410
+frame	Aluminum
+fork	Cannondale Ultra, Carbon blades, 1-1/8"
+drivetrain	Shimano 105
+
+
+version	CAAD8 Claris
+price	$815
+frame	Aluminum
+fork	Cannondale Ultra, Carbon blades, 1-1/8"
+drivetrain	Shimano Claris
+
+
+version	CAAD8 Sora
+price	$1,030
+frame	Aluminum
+fork	Cannondale Ultra, Carbon blades, 1-1/8"
+drivetrain	Shimano Sora
+
+
+version	CAAD8 Tiagra
+price	$1,250
+frame	Aluminum
+fork	Cannondale Ultra, Carbon blades, 1-1/8"
+drivetrain	Shimano Tiagra
+
+
+version	SuperSix EVO 105
+price	$2,240
+frame	BallisTec Carbon
+fork	SuperSix EVO, BallisTec Carbon, SPEED SAVE, 1-1/8" to 1-1/4" steerer
+drivetrain	Shimano 105
+
+
+version	SuperSix EVO Black Inc.
+price	$12,790
+frame	Ballistec Hi-MOD Carbon
+fork	All-New SuperSix EVO, SPEED SAVE, BallisTec Hi-MOD full Carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Dura-Ace
+
+
+version	SuperSix EVO Hi-MOD Dura Ace 1
+price	$7,990
+frame	BallisTec Hi-Mod Carbon
+fork	All-New SuperSix EVO, SPEED SAVE, BallisTec Hi-MOD full Carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Dura-Ace
+
+
+version	SuperSix EVO Hi-MOD Dura Ace 2
+price	$5,330
+frame	BallisTec Hi-Mod Carbon
+fork	All-New SuperSix EVO, SPEED SAVE, BallisTec Hi-MOD full Carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Dura-Ace
+
+
+version	SuperSix EVO Hi-MOD Team
+price	$10,660
+frame	Ballistec Hi-MOD Carbon
+fork	All-New SuperSix EVO, SPEED SAVE, BallisTec Hi-MOD full Carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Dura-Ace Di2
+
+
+version	SuperSix EVO Hi-MOD Ultegra
+price	$4,260
+frame	Ballistec Hi-MOD Carbon
+fork	All-New SuperSix EVO, SPEED SAVE, BallisTec Hi-MOD full Carbon, 1-1/8" to 1-1/4" steerer, integrated crown race.
+drivetrain	Shimano Ultegra
+
+
+version	SuperSix EVO RED
+price	$3,940
+frame	BallisTec Carbon
+fork	SuperSix EVO, BallisTec Carbon, SPEED SAVE, 1-1/8" to 1-1/4" steerer
+drivetrain	SRAM Red
+
+
+version	SuperSix EVO Tiagra
+price	$1,840
+frame	BallisTec Carbon
+fork	SuperSix EVO, BallisTec Carbon, SPEED SAVE, 1-1/8" to 1-1/4" steerer
+drivetrain	Shimano Tiagra
+
+
+version	SuperSix EVO Ultegra 3
+price	$3,200
+frame	BallisTec Carbon
+fork	SuperSix EVO, BallisTec Carbon, SPEED SAVE, 1-1/8" to 1-1/4" steerer
+drivetrain	Shimano Ultegra
+
+
+version	SuperSix EVO Ultegra 4
+price	$2,660
+frame	BallisTec Carbon
+fork	SuperSix EVO, BallisTec Carbon, SPEED SAVE, 1-1/8" to 1-1/4" steerer
+drivetrain	Shimano Ultegra
