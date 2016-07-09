@@ -20,16 +20,13 @@ class Diagram {
     private Analysis analysis;
 
     // appearance
-//    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
-    private final Color BAR_BACKGROUND_COLOR = Color.gray;
-//    private final int RECT_HEIGHT = 20; //height of each horizontal bar
-    private final int RECT_HEIGHT = 65; //height of each horizontal bar
+    private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
+    private final int RECT_HEIGHT = 20; //height of each horizontal bar
     private final int MARKER_SIZE = RECT_HEIGHT - 5; //diameter of circle to mark a model version
 
     // fonts
     private final Font fontDotCaption = new Font("Arial", Font.PLAIN, 12);
-//    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
-    private final Font fontRowName = new Font("Arial", Font.PLAIN, 40);
+    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
 
     // page properties
     private int width, height, margin; //size and margins of the pdf page. Units are millimeters.
@@ -111,8 +108,6 @@ class Diagram {
      * @throws IOException
      */
     void writePDF(String filename) throws IOException {
-        drawBackground(g);
-
         drawGrid(g);
         drawBikes(g);
 
@@ -122,11 +117,6 @@ class Diagram {
         try (FileOutputStream file = new FileOutputStream(filename)) {
             file.write(g.getBytes());
         }
-    }
-
-    private void drawBackground(Graphics g){
-        g.setColor(Color.black);
-        g.fillRect(0,0, width, height);
     }
 
     /**
@@ -147,17 +137,17 @@ class Diagram {
 
         int bottomEdge = height - margin;
         int rightEdge = width - margin;
-        g.setColor(Color.white);
+        g.setColor(Color.black);
 
         //          x1   ,  y1            , x2            , y2
         g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
 
         //setup for vertical lines
-        Font smallFont = new Font("Arial", Font.PLAIN, 40);
+        Font smallFont = new Font("Arial", Font.PLAIN, 20);
         g.setFont(smallFont); //14pt size
         FontMetrics metrics = g.getFontMetrics(smallFont);
         int textHeght = metrics.getHeight()-10;
-        g.setColor(Color.decode("0xbbbbbb"));
+        g.setColor(Color.decode("0x999999"));
         int xPos;
 
         //draw vertical lines
@@ -171,10 +161,14 @@ class Diagram {
             }
         }
 
+        g.setColor(Color.white);
+        g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
+        g.drawString(numberFormat.format(priceMin), margin, bottomEdge + 20);
+        g.drawString(numberFormat.format(priceMax), rightEdge - 60, bottomEdge + 20);
 
         // min and max labels for bottom axis
-        g.setColor(Color.white);
-        Font bigFont = new Font("Arial", Font.BOLD, 60);
+        g.setColor(Color.black);
+        Font bigFont = new Font("Arial", Font.BOLD, 30);
         g.setFont(bigFont);
         metrics = g.getFontMetrics(bigFont);
         textHeght = metrics.getHeight();
@@ -182,6 +176,7 @@ class Diagram {
         g.drawString(numberFormat.format(priceMin), margin-marginNudge, bottomEdge+textHeght/2);
         String maxPrice = numberFormat.format(priceMax);
         g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice)+marginNudge, bottomEdge + textHeght/2);
+
 
     }
 
@@ -197,11 +192,8 @@ class Diagram {
         float barXStart, barXEnd; // x positions of start and end of a bar
 
         // iterate over all the bike models
-//        for (int i = 0; i < allBikes.size(); i++) {
-        for (int i = 0; i <= 12; i++) {
+        for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
-
-
 
             barYPos = i * verticalSpacing + 20;
 
@@ -255,7 +247,7 @@ class Diagram {
             // draw price above the dot and model name below the dot
 
 
-//            g.setColor(Color.white);
+//            g.setColor(Color.black);
 //            g.setFont(fontDotCaption);
 //            g.drawString("$" + currentPrice, dotX, dotY - 3);
 //            g.drawString(currentBike.versionNames.get(i), dotX, dotY); // for size 8

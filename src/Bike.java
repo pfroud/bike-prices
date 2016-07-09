@@ -145,9 +145,11 @@ public class Bike implements Comparable<Bike> {
     public Bike(String name) {
         this.modelName = name;
 
+        /*
         modelName = modelName.replace("Specialized", "Spec.");
         modelName = modelName.replace("Cannondale", "Can.");
         modelName = modelName.replace("Advanced", "Adv.");
+        */
 
     }
 
