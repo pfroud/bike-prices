@@ -1,16 +1,14 @@
 /**
- *
+ * Scrapes information about Cannondale bikes.
  *
  * Instructions:
  *
- * (1) In a browser, open the list of Cannondale bike models at:
- *     http://www.cannondale.com/en/USA/Products/ProductGrid?Id=71aba9e0-0676-4d1f-b29f-af83f7f14ab7
- *     To get there, click Bikes > Road > View All Road Bikes.
+ * (1) In a browser, open a page on Cannondale.com with a list of bike models. (See readme.md.)
  * (2) Repeatedly scroll to the bottom of the page to load all models.
  * (3) Paste this file into browser's javascript console and run it.
  * (4) The page will be replaced with a list of links for each model. Open all of them.
  * (5) On each page with a bike model, run cannondale_versions.js.
- *     After running cannondale_versions.js each time,
+ * (6) After running cannondale_versions.js each time, the page you ran this script on will be updated.
  */
 
 "use strict";
