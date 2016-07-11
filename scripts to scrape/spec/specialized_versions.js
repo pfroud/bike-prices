@@ -23,7 +23,7 @@ function getSpec(specName) {
     for (var i = 0; i < specTags.length; i++) {
         currentSpec = specTags[i];
         if (currentSpec.innerHTML == caps) {
-            return currentSpec.parentElement.nextSibling.nextSibling.firstElementChild.innerHTML;
+            return currentSpec.parentElement.nextElementSibling.firstElementChild.innerHTML;
         }
     }
     return "[" + specName + " not found!]";

@@ -1,5 +1,7 @@
 out/
 chrome_console_functions.js
+output_ods/
+*.ods
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

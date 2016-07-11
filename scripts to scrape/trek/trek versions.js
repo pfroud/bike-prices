@@ -20,7 +20,7 @@ function getSpec(specName) {
     for (var i = 0; i < specTags.length; i++) {
         currentSpec = specTags[i];
         if (currentSpec.innerHTML.trim() == specName) {
-            return currentSpec.nextSibling.nextSibling.innerHTML;
+            return currentSpec.nextElementSibling.innerHTML;
         }
     }
     return "[" + specName + " not found!]";

@@ -1,3 +1,0 @@
-use nextElementChild instead of nextChild.nextChild
-
-$$ for more stuff, like "div.class h4" instead of getting the h4 later
