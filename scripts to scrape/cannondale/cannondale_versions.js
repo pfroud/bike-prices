@@ -13,8 +13,8 @@ var specsInOverview = $$("div.textBox-sm");
 /**
  * Gets a bike specification from the Component Overview section.
  *
- * @param {string} specName - case-sensitive name of the spec to read.
- * @returns {string} the value of the spec.
+ * @param {string} specName - Case-sensitive name of the spec to read.
+ * @returns {string} The value of the spec.
  */
 function getSpecFromOverview(specName) {
     var currentSpec;
@@ -33,8 +33,8 @@ var specsInAll = $$("div.cell h4");
 /**
  * Gets a bike specification from the View All Components dropdown.
  *
- * @param {string} specName - case-sensitive name of the spec to read.
- * @returns {string} the value of the spec.
+ * @param {string} specName - Case-sensitive name of the spec to read.
+ * @returns {string} The value of the spec.
  */
 function getSpecFromAll(specName) {
     var currentSpec;

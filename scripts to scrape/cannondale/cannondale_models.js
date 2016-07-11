@@ -31,7 +31,7 @@ window.addEventListener("storage", readNewData);
  * Called when data about a bike version is written to localStorage by cannondale_versions.js.
  * Marks which URL the version is from, and appends the data to the page.
  *
- * @param event
+ * @param {Event} event - The Event fired from storage listener.
  */
 function readNewData(event) {
     /*
@@ -41,9 +41,9 @@ function readNewData(event) {
     $("p#" + event.key)[0].innerHTML += " - found!";
 
     var data = JSON.parse(event.newValue);
-    for (var specification in data) {
-        if (data.hasOwnProperty(specification)) { //http://stackoverflow.com/a/16735184
-            document.write(specification + "\t" + data[specification] + "\n");
+    for (var spec in data) {
+        if (data.hasOwnProperty(spec)) { //http://stackoverflow.com/a/16735184
+            document.write(spec + "\t" + data[spec] + "\n");
         }
     }
     document.write("\n\n");
