@@ -18,7 +18,7 @@ localStorage.clear();
 var linkElements = $$("a.product-tile__link"), versionId, currentLink;
 for (var i = 0; i < linkElements.length; i++) {
     currentLink = linkElements[i].href;
-    if (currentLink.indexOf("frameset") != -1) continue; // skip frame-only versions
+    if (currentLink.includes("frameset")) continue; // skip frame-only versions
     versionId = currentLink.split("/").slice(-1)[0];
     document.write("<p id=\"" + versionId + "\"><a href=\"" + currentLink + "\">" + currentLink + "</a></p>");
 

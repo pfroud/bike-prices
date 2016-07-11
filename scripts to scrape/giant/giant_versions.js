@@ -18,7 +18,7 @@
  */
 function parseArticle(article) {
     var versionName = article.querySelector("div.name a").innerHTML; //actually currentModel name
-    if (versionName.indexOf("Frameset") != -1) return undefined; // skip frame-only models
+    if (versionName.includes("Frameset")) return undefined; // skip frame-only models
     var features = article.querySelectorAll("li");
     return {
         version: versionName,
