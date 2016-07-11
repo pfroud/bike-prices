@@ -1,14 +1,14 @@
 ## How to scrape Specialized bikes
 
 1. In a browser, open the pages for these models:
-* [Tarmac](https://www.specialized.com/bikes/road/tarmac)
-* [Amira](https://www.specialized.com/bikes/road/amira)
-* [Venge](https://www.specialized.com/bikes/road/venge)
-* [Roubaix](https://www.specialized.com/bikes/road/roubaix)
-* [Ruby](https://www.specialized.com/bikes/road/ruby)
-* [Diverge](https://www.specialized.com/bikes/road/diverge)
-* [Dolce](https://www.specialized.com/bikes/road/dolce)
-* [Allez](https://www.specialized.com/bikes/road/allez)
+    * [Tarmac](https://www.specialized.com/bikes/road/tarmac)
+    * [Amira](https://www.specialized.com/bikes/road/amira)
+    * [Venge](https://www.specialized.com/bikes/road/venge)
+    * [Roubaix](https://www.specialized.com/bikes/road/roubaix)
+    * [Ruby](https://www.specialized.com/bikes/road/ruby)
+    * [Diverge](https://www.specialized.com/bikes/road/diverge)
+    * [Dolce](https://www.specialized.com/bikes/road/dolce)
+    * [Allez](https://www.specialized.com/bikes/road/allez)  
 Note the  [Shiv](https://www.specialized.com/bikes/triathlon/shiv) is excluded because it's a triathlon bike and the
 [Langster](https://www.specialized.com/bikes/road/langster) is excluded because it's a track bike.
 1. On each page, paste [`specialized_models.js`](specialized_models.js) into the browser's javascript console and run it.
