@@ -28,8 +28,9 @@ public class Main {
 
 
 //        d.addCustomRange(500, 2000); // $500 through $3,000
-//        d.addLegend(new Legend(1150, 430)); // x, y, width, height
+        d.addLegend(new Legend(900, 30)); // x, y
         //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins thenimp x, y
+
 
         d.writePDF("working_output.pdf");
 
