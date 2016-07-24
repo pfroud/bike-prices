@@ -18,7 +18,7 @@ class Legend {
     }
 
     void draw(Graphics2D g) {
-        final int WIDTH = 200, HEIGHT = 470;
+        final int WIDTH = 200, HEIGHT = 320;
 
         g.setColor(Color.white); // box background
         g.fillRect(x, y, WIDTH, HEIGHT);
@@ -42,13 +42,14 @@ class Legend {
 
         Groupset[] gs = Groupset.getRanked();
 
-        final int barHeight = 40, barWidth = 60;
+//        final int barHeight = 40, barWidth = 60;
+        final int barHeight = 25, barWidth = 40;
         Groupset currGroup;
         int theY;
         for (int i = 0; i < gs.length; i++) {
             currGroup = gs[i];
             g.setColor(currGroup.getColor());
-            theY = y + 120 + i * (barHeight+2);
+            theY = y + 100 + i * (barHeight+2);
             g.fillRect(x + 10, theY, barWidth, barHeight);
             g.setColor(Color.black);
             g.drawString(currGroup.name, x + barWidth + 20, theY + barHeight / 2 + 3);

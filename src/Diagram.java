@@ -115,8 +115,13 @@ class Diagram {
         if (analysis != null) analysis.draw(g);
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
-            file.write(g.getBytes());
+//            System.out.print("Getting bytes...");
+            byte[] bytes = g.getBytes();
+//            System.out.println("done.");
+
+            file.write(bytes);
         }
+
     }
 
     /**
@@ -144,12 +149,12 @@ class Diagram {
         Font smallFont = new Font("Arial", Font.PLAIN, 20);
         g.setFont(smallFont); //14pt size
         FontMetrics metrics = g.getFontMetrics(smallFont);
-        int textHeght = metrics.getHeight()-10;
+        int textHeght = metrics.getHeight() - 10;
         g.setColor(Color.decode("0x999999"));
         int xPos;
 
         //draw vertical lines
-        for (int price = priceMin+gridStep; price <= priceMax-gridStep; price += gridStep) {
+        for (int price = priceMin + gridStep; price <= priceMax - gridStep; price += gridStep) {
             xPos = getXPosition(price);
             g.drawLine(xPos, 0, xPos, bottomEdge + 60);
 
@@ -171,9 +176,9 @@ class Diagram {
         metrics = g.getFontMetrics(bigFont);
         textHeght = metrics.getHeight();
         int marginNudge = 30;
-        g.drawString(numberFormat.format(priceMin), margin-marginNudge, bottomEdge+textHeght/2);
+        g.drawString(numberFormat.format(priceMin), margin - marginNudge, bottomEdge + textHeght / 2);
         String maxPrice = numberFormat.format(priceMax);
-        g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice)+marginNudge, bottomEdge + textHeght/2);
+        g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice) + marginNudge, bottomEdge + textHeght / 2);
 
 
     }
@@ -209,7 +214,6 @@ class Diagram {
 
 
             drawDots(g, currentBike, barYPos);
-
 
 
             // draw model name on the left
