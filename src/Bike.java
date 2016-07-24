@@ -22,7 +22,7 @@ public class Bike implements Comparable<Bike> {
      * @param filename name of text file with bike info
      */
     static Vector<Bike> readBikes(String filename) {
-        Scanner fileScan = null; //Scanner to read input text file
+        Scanner fileScan = null;
 
         // open file
         try {
@@ -35,8 +35,6 @@ public class Bike implements Comparable<Bike> {
         Vector<Bike> allBikes = new Vector<>();
 
         Bike tempBike;
-
-        //go through input text file
         while (true) {
             tempBike = readOneBike(fileScan);
             if (tempBike == null) break;
@@ -68,16 +66,14 @@ public class Bike implements Comparable<Bike> {
      */
     //@formatter:on
     private static Bike readOneBike(Scanner sc) {
-        sc.useDelimiter(": |\n");
+        sc.useDelimiter(": |\r?\n|\r");
         String name = sc.next();
         if (name.equals("end")) return null;
         Bike bike = new Bike(name); //read model name
         int numModels_ = sc.nextInt();
         bike.numModels = numModels_;
 
-        sc.useDelimiter(", |\n");
-
-        String temp;
+        sc.useDelimiter(", |\r?\n|\r");
 
         // add version names
         for (int i = 0; i < numModels_; i++) {
@@ -140,7 +136,7 @@ public class Bike implements Comparable<Bike> {
     /**
      * Constructs new Bike given the name of the model.
      *
-     * @param modelName the name of the model to construct.
+     * @param name the name of the model to construct.
      */
     public Bike(String name) {
         this.modelName = name;

@@ -105,7 +105,7 @@ class Diagram {
      * Writes the diagram to a PDF file.
      *
      * @param filename name of the PDF file to write to
-     * @throws IOException
+     * @throws IOException if cannot write to the file
      */
     void writePDF(String filename) throws IOException {
         drawGrid(g);
@@ -123,9 +123,7 @@ class Diagram {
      * Prints the range info for every bike.
      */
     void printRanges() {
-        for (Bike b : allBikes) {
-            b.printRange();
-        }
+        allBikes.forEach(Bike::printRange);
     }
 
     /**

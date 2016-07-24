@@ -1,9 +1,6 @@
 import java.io.IOException;
 import java.util.Vector;
 
-/*
-IF YOU GET InputMismatchException - CHANGE LINE ENDINGS IN new_test_input.txt FROM CRLF TO LF
- */
 
 /**
  * Makes a PDF of bikes from input file.
@@ -27,14 +24,14 @@ public class Main {
         int margin = (int) (INCH_TO_MM * 2);
         int gridStep = 1000; //this is in dollars
 
-        Diagram d = new Diagram(Bike.readBikes("new_test_input.txt"), width, height, margin, gridStep);
+        Diagram d = new Diagram(Bike.readBikes("bikesInput.txt"), width, height, margin, gridStep);
 
 
 //        d.addCustomRange(500, 2000); // $500 through $3,000
 //        d.addLegend(new Legend(1150, 430)); // x, y, width, height
         //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins thenimp x, y
 
-        d.writePDF("output.pdf");
+        d.writePDF("working_output.pdf");
 
     }
 
@@ -71,7 +68,7 @@ public class Main {
 
 
     static private void findCarbonPercents(Vector<Bike> bikes) {
-        double versionsTotal = 0, versionsFullCarbon = 0;
+        double versionsTotal, versionsFullCarbon;
         int currPrice;
 
 

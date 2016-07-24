@@ -1,397 +1,193 @@
-Specialized_Diverge 7
-A1
-Sport A1
-Comp Carbon
-Elite A1
-Comp Smartweld
-Expert Carbon
-Carbon Di2
-1100
-1250
-3500
-1400
-2700
-4000
-8500
-fork
-fork
-all
-fork
-fork
-all
-all
+Cannondale Synapse Carbon: 11
+105, Disc 105, Disc Ultegra, Disc Ultegra Di2, Tiagra, Ultegra 3, Ultegra 4, Hi-MOD Disc Black Inc., Hi-MOD Disc Red, Hi-MOD Disc Ultegra, Hi-MOD Dura Ace
+2240, 2660, 3730, 4800, 1840, 3200, 2660, 9590, 7460, 5330, 5860
+all, all, all, all, all, all, all, all, all, all, all
+_105, _105, Ultegra, Ultegra Di2, Tiagra, Ultegra, Ultegra, Dura-Ace Di2, Red, Ultegra, Dura-Ace
 
-Specialized_Secteur 4
-Double
-Triple
-Sport Double
-Elite Double
-850
-900
-1050
-1250
-fork
-fork
-fork
-fork
+Cannondale Synapse: 5
+Claris, Disc 105, Disc Adventure, Disc Tiagra, Sora
+870, 1570, 2130, 1250, 1030
+fork, fork, fork, fork, fork
+Claris, 105, Rival, Tiagra, Sora
 
-Specialized_Roubiax 13
-SL4 Double
-SL4 Disc
-SL4 Sport
-SL4 Elite
-SL4 Elite Disc
-SL4 Comp
-SL4 Comp Disc
-SL4 Expert
-SL4 Pro Race
-SL4 Pro Disc Race
-SL4 Pro Disc Race Di2
-S-Works SL4 Dura-Ace
-S-Works SL4 Disc Di2
-1800
-1950
-2100
-2500
-2800
-3000
-3300
-3500
-5500
-6000
-7500
-8000
-9500
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Cannondale CAAD12: 7
+105, Black Inc., Disc 105, Disc Dura Ace, Disc Ultegra, Red, Ultegra
+1680, 5860, 1950, 4260, 2660, 3200, 2240
+fork, fork, fork, fork, fork, fork, fork
+105, Dura-Ace, 105, Dura-Ace, Ultegra, Red, Ultegra
 
-Specialized_Allez 9
-Allez
-Elite
-650
-Sport
-Comp
-Expert
-Comp Race
-Pro
-S-Works Di2
-770
-1250
-770
-970
-1600
-2400
-2900
-3500
-8000
-none
-fork
-none
-fork
-fork
-fork
-fork
-fork
-fork
+Cannondale CAAD8: 4
+105, Claris, Sora, Tiagra
+1410, 815, 1030, 1250
+fork, fork, fork, fork
+105, Claris, Sora, Tiagra
 
-Specialized_Tarmac 10
-Sport
-Elite
-Comp
-Expert
-Pro Race
-Pro Disc Race
-Pro Disc Race Di2
-S-works Dura-Ace
-S-works Tarmac Red
-S-works Tarmac Di2 Disc
-2100
-2500
-3000
-4000
-5600
-6200
-7600
-8250
-8250
-9500
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Cannondale SuperSix EVO Hi-Mod: 5
+Black Inc., Hi-MOD Dura Ace 1, Hi-MOD Dura Ace 2, Hi-MOD Team, Hi-MOD Ultegra
+12790, 7990, 5330, 10660, 4260
+all, all, all, all, all
+Dura-Ace, Dura-Ace, Dura-Ace, Dura-Ace Di2, Ultegra
 
-Trek_CrossRip 4
-Crosrip
-Comp
-Elite
-LTD
-990
-1100
-1270
-1760
-none
-fork
-fork
-fork
+Cannondale SuperSix EVO: 5
+105, Red, Tiagra, Ultegra 3, Ultegra 4
+2240, 3940, 1840, 3200, 2660
+all, all, all, all, all
+105, Red, Tiagra, Ultegra, Ultegra
 
-Trek_Domane 15
-2.0
-2.3
-4.0 Disc
-4.1
-4.3
-4.3 Disc
-4.5
-4.5 Disc
-5.2
-5.9 Dura-Ace
-5.9
-6.2
-6.2 Disc
-6.9
-6.9 Disc
-1430
-1870
-2100
-2100
-2300
-2730
-2670
-3260
-3670
-5150
-5150
-4730
-5250
-7600
-8300
-fork
-fork
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Trek Domane: 19
+2.0, 2.3, 4.0 Disc, 4.3, 4.3 Disc, 4.5, 4.5 Disc, 5.2, 5.9, 6.2, 6.2 Disc, 6.5, 6.9, 6.9 Disc, SLR 6, SLR 6 Disc, SLR 7, SLR 7 Disc, SLR 9 eTap
+1360, 1680, 2100, 2300, 2600, 2500, 3100, 3500, 4400, 4000, 4500, 6000, 8000, 7000, 5000, 5500, 6000, 6500, 11000
+fork, fork, all, all, all, all, all, all, all, all, all, all, all, all, all, all, all, all, all
+Tiagra, 105, Sora, 105, 105, Ultegra, Ultegra, Ultegra, Ultegra Di2, Ultegra, Ultegra, Dura-Ace, Dura-Ace Di2, Dura-Ace Di2, Ultegra, Ultegra, Ultegra Di2, Ultegra Di2, Red eTap
 
-Trek_1_Series 3
-1.1
-1.2
-1.5
-770
-930
-1100
-fork
-fork
-fork
+Trek Lexa: 4
+S, SL, SLX, base
+990, 1150, 1570, 770
+fork, fork, fork, fork
+Sora, Tiagra, 105, Claris
 
-Trek_Madone 5
-2.1
-2.5
-7.7
-7.9 WSD
-7.9 WSD
-1320
-1980
-7880
-11550
-11550
-fork
-fork
-all
-all
-all
+Trek Silque: 6
+S, SL Di2, SL, SLX, SSL, base
+2470, 3800, 3260, 3600, 5000, 2100
+all, all, all, all, all, all
+105, Ultegra Di2, Ultegra, Ultegra, Ultegra Di2, Tiagra
 
-Trek_Emonda_ALR 2
-5
-6
-1760
-2250
-fork
-fork
+Trek 1 Series: 2
+1.1, 1.2
+770, 930
+fork, fork
+Claris, Sora
 
-Trek_Emonda 16
-S 4
-S 5 wsd
-S 5
-S 6
-SL 5 wsd
-SL 5
-SL 6 wsd
-SL 6 wsd
-SL 8 wsd
-SL 8 Red
-SL 8
-SLR 6
-SLR 8
-SLR 9 wsd
-SLR 9
-SLR 10
-1650
-2100
-2100
-2630
-2730
-2730
-3150
-3150
-4730
-4730
-4730
-5780
-7870
-12080
-12080
-15750
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Trek Emonda ALR: 3
+4, 5, 6
+1310, 1380, 1900
+fork, fork, fork
+Tiagra, 105, Ultegra
 
-Cannondale_CAAD10 5
-105 5
-Ultegra 3
-Force Racing
-Sram Rival Disc
-Black Inc Disc
-1680
-2270
-2830
-2170
-4330
-fork
-fork
-fork
-fork
-fork
+Trek Emonda: 14
+S 4 / Women's, S 5, S 6, SL 5 / Women's, SL 6, SL 6 Women's, SL 8, SL 8 Red, SL 8 Women's, SLR 10, SLR 6, SLR 8, SLR 9, SLR 9 Women's
+1570, 2100, 2630, 2600, 3150, 3000, 4000, 3500, 4730, 12000, 5000, 6500, 12080, 8500
+all, all, all, all, all, all, all, all, all, all, all, all, all, all
+Tiagra, 105, Ultegra, 105, Ultegra, Ultegra, Dura-Ace, Red, Dura-Ace, Red, Ultegra, Dura-Ace, Dura-Ace Di2, Dura-Ace Di2
 
-Cannondale_CAAD8 4
-Claris 8
-Sora 7
-Tiagara 6
-105 5
-870
-980
-1250
-1410
-fork
-fork
-fork
-fork
+Trek Madone: 4
+9.2, 9.5, 9.9 / Women's, Race Shop Limited
+6000, 8000, 12000, 13000
+all, all, all, all
+Ultegra, Dura-Ace, Dura-Ace Di2, Dura-Ace Di2
 
-Cannondale_Supersix_Evo 11
-Carbon 105 5
-Carbon Sram Rival
-Carbon Ultegra
-Carbon Force Racing
-Carbon Sram Red
-Carbon Ultegra Di2
-High-mod Dura-Ace 2
-High-mod Red Racing
-High-mod Dura-Ace Di2
-High-mod Team
-Black Inc
-2270
-2710
-3250
-3790
-4440
-4870
-5420
-6500
-8120
-9210
-11920
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Giant Propel Advanced SL: 4
+0, 1 Team, 1, 2
+9000, 6900, 6900, 4400
+all, all, all, all
+Dura-Ace Di2, Dura-Ace, Dura-Ace, Ultegra
 
-Cannondale_Synapse 5
-Claris 8
-Sora 7
-Tiagra Disc 6
-105 5 Disc
-Sram Rival Disc
-920
-1030
-1300
-1570
-2170
-fork
-fork
-fork
-fork
-fork
+Giant Propel Advanced Pro: 1
+0
+5650
+all
+Ultegra Di2
 
-Cannondale_Synapse_Carbon 9
-105 6
-105 5
-Sram Rival Disc
-Ultegra
-Ultegra Disc
-Ultegra Di2 Disc
-Hi-mod Ultegra Disc
-Hi-mod Sram Red Disc
-Hi-mod Black Inc Disc
-2060
-2380
-2920
-3140
-3790
-4870
-5420
-7040
-9120
-all
-all
-all
-all
-all
-all
-all
-all
-all
+Giant Propel Advanced: 3
+0, 1, 2
+4000, 2600, 2100
+all, all, all
+Ultegra Di2, Ultegra, 105
+
+Giant TCR Advanced SL: 3
+0, 1, 2
+8800, 5900, 4100
+all, all, all
+Dura-Ace Di2, Ultegra Di2, Ultegra
+
+Giant TCR Advanced Pro: 2
+0, 1
+5500, 3200
+all, all
+Dura-Ace, Ultegra
+
+Giant TCR Advanced: 3
+1, 2, 3
+2500, 2000, 1600
+all, all, all
+Ultegra, 105, Tiagra
+
+Giant Defy Advanced SL: 2
+0, 1
+8300, 4600
+all, all
+Dura-Ace Di2, Ultegra
+
+Giant Defy Advanced Pro: 2
+0, 2
+5100, 3200
+all, all
+Dura-Ace, Ultegra
+
+Giant Defy Advanced: 3
+1, 2, 3
+2600, 2100, 1800
+all, all, all
+Ultegra, 105, Tiagra
+
+Giant Defy Disc: 2
+1, 2
+1500, 1200
+fork, fork
+105, Tiagra
+
+Giant Defy: 2
+3, 5
+920, 660
+fork, none
+Sora, Claris
+
+Specialized Tarmac: 13
+S-Works eTap, S-Works Di2, S-Works Disc Di2, S-Works Dura-Ace, Disc Power Specialized Edition, Pro Disc Race UDi2, Pro Race, Expert Disc Race, Expert, Sport, Elite, Comp, Comp UDi2
+9500, 9250, 9250, 8000, 7250, 6000, 5500, 5000, 3700, 2000, 2400, 2800, 3300
+all, all, all, all, all, all, all, all, all, all, all, all, all
+Red, Dura-Ace Di2, Dura-Ace Di2, Dura-Ace, Force, Ultegra Di2, Dura-Ace, Ultegra, Ultegra, 105, 105, Ultegra, Ultegra Di2
+
+Specialized Ruby: 10
+S-Works Di2, Pro Disc UDi2, Expert Disc UDi2, Comp UDi2, Comp Disc, Comp, Elite Disc, Sport, Disc, base
+8250, 5800, 4500, 3000, 3000, 2500, 2500, 2000, 1950, 1800
+all, all, all, all, all, all, all, all, all, all
+Dura-Ace Di2, Ultegra Di2, Ultegra Di2, Ultegra Di2, Ultegra, Ultegra, Rival, 105, Tiagra, Tiagra
+
+Specialized Diverge: 10
+Pro, Expert X1, Expert, Comp, Comp DSW, Elite DSW, Sport A1, A1, A1 Sub Compact, Comp DSW X1
+5500, 3900, 3800, 3300, 2400, 1500, 1150, 1000, 850, 2600
+all, all, all, all, fork, fork, fork, fork, fork, fork
+Dura-Ace, Force, Ultegra, 105, 105, Tiagra, Sora, Claris, Claris, Rival
+
+Specialized Dolce: 7
+Comp EVO, EVO, Comp, Elite, Sport Disc, Sport, base
+2100, 1450, 1500, 1250, 1150, 970, 770
+fork, fork, fork, fork, fork, fork, fork
+105, Tiagra, 105, Tiagra, Sora, Sora, Claris
+
+Specialized Roubaix: 13
+S-Works SL4 Disc Di2, SL4 Disc Power Specialized Edition, SL4 Pro Disc Race UDi2, SL4 Pro Disc, SL4 Expert Disc UDi2, SL4 Expert, SL4 Comp UDi2, SL4 Comp Disc, SL4 Comp, SL4 Elite Disc, SL4 Sport, SL4 Disc, SL4
+8500, 7250, 5800, 4500, 4500, 3500, 3000, 3000, 2500, 2500, 2000, 1950, 1800
+all, all, all, all, all, all, all, all, all, all, all, all, all
+Dura-Ace Di2, Force, Ultegra Di2, Dura-Ace, Ultegra Di2, Ultegra, Ultegra Di2, Ultegra, Ultegra, Rival, 105, Tiagra, Tiagra
+
+Specialized Allez: 9
+Sprint X2 Specialized Edition, Sprint X1 Specialized Edition, DSW Sprint X1 Expert, DSW Sprint X1 Comp, DSW SL Expert, DSW SL Comp, DSW Elite, E5 Sport, E5
+4000, 3750, 2600, 2000, 2000, 1550, 1250, 970, 770
+fork, fork, fork, fork, fork, fork, fork, fork, fork
+Force, Force, Force, Rival, Ultegra, 105, Tiagra, Sora, Claris
+
+Specialized Venge: 5
+S-Works ViAS Di2, Pro ViAS, Pro , Expert, Elite
+12900, 8200, 5700, 3600, 2800
+all, all, all, all, all
+Dura-Ace Di2, Dura-Ace, Dura-Ace, Ultegra, 105
+
+Specialized Amira: 7
+S-Works SL4, SL4 Pro Race, SL4 Expert, SL4 Comp UDi2, SL4 Comp, SL4 Elite, SL4 Sport
+8000, 5500, 3600, 3300, 2800, 2400, 2000
+all, all, all, all, all, all, all
+Dura-Ace, Dura-Ace, Ultegra, Ultegra Di2, Ultegra, 105, 105
+
+end
