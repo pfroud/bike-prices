@@ -24,7 +24,7 @@ Diverge: 13
 
 Dolce: 7
 Comp EVO, EVO, Comp, Elite, Sport Disc, Sport, Dolce
-2100, 1450, 1500, 1250, 1150, 970, 770
+2100, 1450, 1500, 0, 1150, 970, 770
 
 Allez: 10
 Specialized Edition Sprint X2, SPECIALIZED EDITION ALLEZ SPRINT X1, DSW Sprint X1 Expert, DSW Sprint X1 Comp, DSW SL Expert, DSW SL Comp, DSW Elite, E5 Sport, E5, Jr.

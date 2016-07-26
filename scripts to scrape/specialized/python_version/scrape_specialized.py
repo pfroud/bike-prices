@@ -1,10 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import json
-import pickle
 import os.path
 
-# PICKLE_FILENAME = 'models.pickle'
 JSON_FILENAME = 'models.json'
 
 
@@ -44,10 +42,10 @@ def main():
 
     models = []
 
-    if os.path.isfile(JSON_FILENAME) and False:
+    if os.path.isfile(JSON_FILENAME):
         with open(JSON_FILENAME, 'r') as f:
-            # models = pickle.load(f)
             models = json.load(f)
+            f.close()
     else:
         soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
         model_a_tags = soup('a', class_ = 'product-tile__anchor')
@@ -58,8 +56,8 @@ def main():
                 models.append(read_model(href))
 
         with open(JSON_FILENAME, 'w') as f:
-            # pickle.dump(models, f)
-            json.dump(models, f)
+            json.dump(models, f, indent = 4, sort_keys = True)
+            f.close()
 
     write_output(models)
 
@@ -192,6 +190,7 @@ def write_output(models):
                                ', '.join(buff_name),
                                ', '.join(buff_price),
                                '', '']))
+        f.close()
 
 
 main()

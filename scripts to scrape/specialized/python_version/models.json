@@ -1,1 +1,682 @@
-[{"name": "Tarmac", "versions": [{"der_front": "SRAM eTap, braze-on", "price": "9500", "name": "2017 S-Works eTap", "der_rear": "SRAM eTap, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "S-Works FACT 11r carbon, OSBB, full internal, electronic-specific routing, internally integrated seat clamp, 130mm rear spacing"}, {"der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on", "price": "9250", "name": "S-Works Di2", "der_rear": "Shimano Dura-Ace Di2, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing"}, {"der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on", "price": "9250", "name": "S-Works Disc Di2", "der_rear": "Shimano Dura-Ace Di2, 11-speed", "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount", "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "8000", "name": "S-Works Dura-Ace", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing"}, {"der_front": "SRAM Force 22, YAW, w/ chain spotter", "price": "7250", "name": "Specialized Edition Disc Power", "der_rear": "SRAM Force 22", "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount", "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "6000", "name": "Pro Disc Race UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount", "frame": "Specialized FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, disc specific, compact race design, internal cable routing"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "5500", "name": "Pro Race", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "5000", "name": "Expert Disc Race", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount", "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3700", "name": "Expert", "der_rear": "Shimano Ultegra, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "3300", "name": "Comp UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing", "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "2800", "name": "Comp", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing", "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2400", "name": "Elite", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing", "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2000", "name": "Sport", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing", "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB"}], "num_versions": "13"}, {"name": "Amira", "versions": [{"der_front": "SRAM eTap, braze-on", "price": "9250", "name": "2017 S-Works eTap", "der_rear": "SRAM eTap, 11-speed", "fork": "S-Works FACT carbon, full monocoque", "frame": "FACT 11r carbon, women's carbon layup & competitive geometry, tapered head tube, OSBB, internal routing, 130mm spacing"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "8000", "name": "S-Works SL4", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "S-Works FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer", "frame": "S-Works FACT 11r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, carbon OSBB"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "5500", "name": "SL4 Pro Race", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer", "frame": "Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3600", "name": "SL4 Expert", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer", "frame": "Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "3300", "name": "SL4 Comp UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "2800", "name": "SL4 Comp", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2400", "name": "SL4 Elite", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2000", "name": "SL4 Sport", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB"}], "num_versions": "8"}, {"name": "Venge", "versions": [{"der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on", "price": "12900", "name": "S-Works ViAS Di2", "der_rear": "Shimano Dura-Ace Di2, 11-speed", "fork": "FACT carbon, full monocoque", "frame": "FACT 11r carbon, Rider-First Engineered\u2122, Win Tunnel Engineered, internal cable routing, carbon OSBB"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "8200", "name": "Pro ViAS", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "FACT carbon, full monocoque", "frame": "FACT 11r carbon, Rider-First Engineered\u2122, Win Tunnel Engineered, internal cable routing, carbon OSBB"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "5700", "name": "Pro ", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3600", "name": "Expert", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2800", "name": "Elite", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, full monocoque", "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB"}], "num_versions": "5"}, {"name": "Roubaix", "versions": [{"der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on", "price": "8500", "name": "S-Works SL4 Disc Di2", "der_rear": "Shimano Dura-Ace Di2, 11-speed", "fork": "Specialized FACT carbon, size-specific taper, disc mount", "frame": "S-Works SL4 FACT 11r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB"}, {"der_front": "SRAM Force 22, YAW, w/ chain spotter", "price": "7250", "name": "Specialized Edition SL4 Disc Power", "der_rear": "SRAM Force 22", "fork": "Specialized FACT carbon, size-specific taper, disc mount", "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "5800", "name": "SL4 Pro Disc Race UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, size-specific taper, disc mount", "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "4500", "name": "SL4 Pro Disc", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "Specialized FACT carbon, size-specific taper, disc mount", "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "4500", "name": "SL4 Expert Disc UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, size-specific taper, disc mount", "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3500", "name": "SL4 Expert", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "3000", "name": "SL4 Comp UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3000", "name": "SL4 Comp Disc", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon, disc mount", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "2500", "name": "SL4 Comp", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB"}, {"der_front": "SRAM Rival 22, braze-on, YAW, w/ chain spotter", "price": "0", "name": "SL4 Elite Disc", "der_rear": "SRAM Rival 22, 11-speed, WiFLi", "fork": "Specialized FACT carbon, disc mount", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2000", "name": "SL4 Sport", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1950", "name": "SL4 Disc", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon, disc mount", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, threaded BB"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1800", "name": "SL4", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon", "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, threaded BB"}], "num_versions": "13"}, {"name": "Ruby", "versions": [{"der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on", "price": "8250", "name": "S-Works Di2", "der_rear": "Shimano Dura-Ace Di2, 11-speed", "fork": "S-Works FACT carbon, Zertz, full monocoque", "frame": "S-Works FACT 11r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, carbon OSBB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "5800", "name": "Pro Disc UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "4500", "name": "Expert Disc UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB"}, {"der_front": "Shimano Ultegra Di2, 11-speed, braze-on", "price": "3000", "name": "Comp UDi2", "der_rear": "Shimano Ultegra Di2, 11-speed", "fork": "Specialized FACT carbon, Zertz, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3000", "name": "Comp Disc", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "2500", "name": "Comp", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon, Zertz, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "SRAM Rival 22, braze-on, YAW, w/ chain spotter", "price": "2500", "name": "Elite Disc", "der_rear": "SRAM Rival 22, 11-speed, WiFLi", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2000", "name": "Sport", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon, Zertz, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1950", "name": "Disc", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon, size-specific taper", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1800", "name": "Ruby", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon, Zertz, full monocoque", "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB"}], "num_versions": "10"}, {"name": "Diverge", "versions": [{"der_front": "Shimano Tiagra, braze-on", "price": "1400", "name": "2017 Elite DSW", "der_rear": "Shimano Tiagra, long cage, 10-speed", "fork": "Specialized FACT carbon w/Zertz, tapered", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB"}, {"der_front": "Shimano Sora, braze-on", "price": "1050", "name": "2017 Sport A1", "der_rear": "Shimano Sora, 9-speed", "fork": "FACT carbon fiber, alloy steerer/crown, Zertz inserts, post disc mount, Plug + Play fender mount", "frame": "Specialized A1 Premium Aluminum, threaded BB"}, {"der_front": "Shimano Claris 2400, braze-on", "price": "900", "name": "2017 A1", "der_rear": "Shimano Claris 2400, 8-speed", "fork": "FACT carbon fiber, alloy steerer/crown, Zertz inserts, post disc mount, Plug + Play fender mount", "frame": "Specialized A1 Premium Aluminum, threaded BB"}, {"der_front": "Shimano Dura-Ace, 11-speed, braze-on", "price": "5500", "name": "Pro", "der_rear": "Shimano Dura-Ace, 11-speed", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB"}, {"der_front": "[front derailleur not found]", "price": "3900", "name": "Expert X1", "der_rear": "SRAM Force 1, 11-speed", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "3800", "name": "Expert", "der_rear": "Shimano Ultegra, 11-speed, medium cage", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "3300", "name": "Comp", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "2400", "name": "Comp DSW", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1500", "name": "Elite DSW", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB"}, {"der_front": "Shimano Sora, braze-on", "price": "1150", "name": "Sport A1", "der_rear": "Shimano Sora", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized A1 Premium Aluminum, threaded BB"}, {"der_front": "Shimano Claris 2400, braze-on", "price": "1000", "name": "A1", "der_rear": "Shimano Claris 2400", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized A1 Premium Aluminum, threaded BB"}, {"der_front": "Shimano Claris 2400, braze-on", "price": "850", "name": "A1 Sub Compact", "der_rear": "Shimano Claris 2400", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized A1 Premium Aluminum, threaded BB"}, {"der_front": "[front derailleur not found]", "price": "2600", "name": "Comp DSW X1", "der_rear": "SRAM Rival 1, 11-speed", "fork": "Specialized FACT carbon w/ Zertz, tapered", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB"}], "num_versions": "13"}, {"name": "Dolce", "versions": [{"der_front": "Shimano 105, 11-speed", "price": "2100", "name": "Comp EVO", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1450", "name": "EVO", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount"}, {"der_front": "Shimano 105, 11-speed", "price": "1500", "name": "Comp", "der_rear": "Shimano 105, 11-speed, long cage", "fork": "Specialized FACT carbon, Zertz, full monocoque, for 1-1/8\" bearings", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing"}, {"der_front": "Shimano Tiagra, 10-speed, braze-on", "price": "1250", "name": "Elite", "der_rear": "Shimano Tiagra, 10-speed, long cage", "fork": "Specialized FACT carbon, Zertz, full monocoque, for 1-1/8\" bearings", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing"}, {"der_front": "Shimano Sora, braze-on", "price": "1150", "name": "Sport Disc", "der_rear": "Shimano Sora, long cage", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount"}, {"der_front": "Shimano Sora, braze-on", "price": "970", "name": "Sport", "der_rear": "Shimano Sora, long cage", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz", "frame": "Specialized A1 Premium Aluminum, Women's Endurance Geometry, women's fully-manipulated tube sets, 1-1/8\" lower bearing"}, {"der_front": "Shimano Claris 2400, braze-on", "price": "770", "name": "Dolce", "der_rear": "Shimano Claris 2400", "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz", "frame": "Specialized A1 Premium Aluminum, Women's Endurance Geometry, women's fully-manipulated tube sets, 1-1/8\" lower bearing"}], "num_versions": "7"}, {"name": "Allez", "versions": [{"der_front": "SRAM Force 22, YAW, w/ chain spotter", "price": "4000", "name": "Specialized Edition Sprint X2", "der_rear": "SRAM Force 22", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "[front derailleur not found]", "price": "3750", "name": "SPECIALIZED EDITION ALLEZ SPRINT X1", "der_rear": "SRAM Force 1, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "[front derailleur not found]", "price": "2600", "name": "DSW Sprint X1 Expert", "der_rear": "SRAM Force 1, 11-speed", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "[front derailleur not found]", "price": "2000", "name": "DSW Sprint X1 Comp", "der_rear": "SRAM Rival 1, 11-speed, long cage", "fork": "S-Works FACT carbon, full monocoque, size-specific taper", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "Shimano Ultegra, 11-speed", "price": "2000", "name": "DSW SL Expert", "der_rear": "Shimano Ultegra, 11-speed", "fork": "Specialized FACT carbon, full monocoque, 1-3/8\" lower bearing", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "Shimano 105, 11-speed", "price": "1550", "name": "DSW SL Comp", "der_rear": "Shimano 105, 11-speed", "fork": "Specialized FACT carbon, full monocoque, 1-3/8\" lower bearing", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB"}, {"der_front": "Shimano Tiagra, clamp-on", "price": "1250", "name": "DSW Elite", "der_rear": "Shimano Tiagra, 10-speed", "fork": "Specialized FACT carbon, alloy crown/steerer", "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, 1-1/8\" lower bearing, threaded BB"}, {"der_front": "Shimano Sora", "price": "970", "name": "E5 Sport", "der_rear": "Shimano Sora", "fork": "Specialized FACT carbon, alloy crown/steerer", "frame": "Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing"}, {"der_front": "Shimano Claris 2400", "price": "770", "name": "E5", "der_rear": "Shimano Claris 2400", "fork": "Specialized FACT carbon, alloy crown/steerer", "frame": "Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing"}, {"der_front": "Shimano Claris 2400", "price": "770", "name": "Jr.", "der_rear": "Shimano Claris 2400", "fork": "Alloy, 1-1/8\" alloy steer, 45mm crown", "frame": "Specialized A1 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing"}], "num_versions": "10"}]
+[
+    {
+        "name": "Tarmac",
+        "num_versions": "13",
+        "versions": [
+            {
+                "der_front": "SRAM eTap, braze-on",
+                "der_rear": "SRAM eTap, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "S-Works FACT 11r carbon, OSBB, full internal, electronic-specific routing, internally integrated seat clamp, 130mm rear spacing",
+                "name": "2017 S-Works eTap",
+                "price": "9500"
+            },
+            {
+                "der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace Di2, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing",
+                "name": "S-Works Di2",
+                "price": "9250"
+            },
+            {
+                "der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace Di2, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount",
+                "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount",
+                "name": "S-Works Disc Di2",
+                "price": "9250"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "S-Works FACT 11r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing",
+                "name": "S-Works Dura-Ace",
+                "price": "8000"
+            },
+            {
+                "der_front": "SRAM Force 22, YAW, w/ chain spotter",
+                "der_rear": "SRAM Force 22",
+                "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount",
+                "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount",
+                "name": "Specialized Edition Disc Power",
+                "price": "7250"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount",
+                "frame": "Specialized FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, disc specific, compact race design, internal cable routing",
+                "name": "Pro Disc Race UDi2",
+                "price": "6000"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing",
+                "name": "Pro Race",
+                "price": "5500"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque, size-specific taper, disc mount",
+                "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing, disc mount",
+                "name": "Expert Disc Race",
+                "price": "5000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized FACT 10r carbon, FACT construction, tapered/shaped 1-1/8\" to size-specific lower head tube, compact race design, internal cable routing",
+                "name": "Expert",
+                "price": "3700"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing",
+                "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB",
+                "name": "Comp UDi2",
+                "price": "3300"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing",
+                "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB",
+                "name": "Comp",
+                "price": "2800"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing",
+                "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB",
+                "name": "Elite",
+                "price": "2400"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, monocoque, OS race for 1-3/8\" bearing",
+                "frame": "Specialized FACT 9r carbon, FACT construction, compact race design, 1-3/8\" lower bearing, OSBB",
+                "name": "Sport",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "name": "Amira",
+        "num_versions": "8",
+        "versions": [
+            {
+                "der_front": "SRAM eTap, braze-on",
+                "der_rear": "SRAM eTap, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque",
+                "frame": "FACT 11r carbon, women's carbon layup & competitive geometry, tapered head tube, OSBB, internal routing, 130mm spacing",
+                "name": "2017 S-Works eTap",
+                "price": "9250"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "S-Works FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer",
+                "frame": "S-Works FACT 11r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, carbon OSBB",
+                "name": "S-Works SL4",
+                "price": "8000"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer",
+                "frame": "Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB",
+                "name": "SL4 Pro Race",
+                "price": "5500"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, FACT IS construction, full monocoque, 1-1/8\" to 1-3/8\" tapered steerer",
+                "frame": "Specialized FACT 10r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB",
+                "name": "SL4 Expert",
+                "price": "3600"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB",
+                "name": "SL4 Comp UDi2",
+                "price": "3300"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB",
+                "name": "SL4 Comp",
+                "price": "2800"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ shaped/tapered 1-1/8\" to 1-3/8\" head tube, OSBB",
+                "name": "SL4 Elite",
+                "price": "2400"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Competitive Geometry, women's layup w/ tapered head tube, OSBB",
+                "name": "SL4 Sport",
+                "price": "2000"
+            }
+        ]
+    },
+    {
+        "name": "Venge",
+        "num_versions": "5",
+        "versions": [
+            {
+                "der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace Di2, 11-speed",
+                "fork": "FACT carbon, full monocoque",
+                "frame": "FACT 11r carbon, Rider-First Engineered\u2122, Win Tunnel Engineered, internal cable routing, carbon OSBB",
+                "name": "S-Works ViAS Di2",
+                "price": "12900"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "FACT carbon, full monocoque",
+                "frame": "FACT 11r carbon, Rider-First Engineered\u2122, Win Tunnel Engineered, internal cable routing, carbon OSBB",
+                "name": "Pro ViAS",
+                "price": "8200"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB",
+                "name": "Pro ",
+                "price": "5700"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB",
+                "name": "Expert",
+                "price": "3600"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque",
+                "frame": "Specialized FACT 10r carbon, FACT IS construction, aero-shaped tubing, compact race design, tapered 1-1/8\" to 1-3/8\" head tube, internal cable routing, carbon OSBB",
+                "name": "Elite",
+                "price": "2800"
+            }
+        ]
+    },
+    {
+        "name": "Roubaix",
+        "num_versions": "13",
+        "versions": [
+            {
+                "der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace Di2, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper, disc mount",
+                "frame": "S-Works SL4 FACT 11r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB",
+                "name": "S-Works SL4 Disc Di2",
+                "price": "8500"
+            },
+            {
+                "der_front": "SRAM Force 22, YAW, w/ chain spotter",
+                "der_rear": "SRAM Force 22",
+                "fork": "Specialized FACT carbon, size-specific taper, disc mount",
+                "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB",
+                "name": "Specialized Edition SL4 Disc Power",
+                "price": "7250"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper, disc mount",
+                "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB",
+                "name": "SL4 Pro Disc Race UDi2",
+                "price": "5800"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper, disc mount",
+                "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, carbon OSBB",
+                "name": "SL4 Pro Disc",
+                "price": "4500"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper, disc mount",
+                "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB",
+                "name": "SL4 Expert Disc UDi2",
+                "price": "4500"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized SL4 FACT 10r carbon, FACT construction, shaped/tapered 1-1/8\" to size-specific lower head tube, compact race design, Zertz, internal cable routing, threaded carbon BB",
+                "name": "SL4 Expert",
+                "price": "3500"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB",
+                "name": "SL4 Comp UDi2",
+                "price": "3000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon, disc mount",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB",
+                "name": "SL4 Comp Disc",
+                "price": "3000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB",
+                "name": "SL4 Comp",
+                "price": "2500"
+            },
+            {
+                "der_front": "SRAM Rival 22, braze-on, YAW, w/ chain spotter",
+                "der_rear": "SRAM Rival 22, 11-speed, WiFLi",
+                "fork": "Specialized FACT carbon, disc mount",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB",
+                "name": "SL4 Elite Disc",
+                "price": "0"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, OSBB",
+                "name": "SL4 Sport",
+                "price": "2000"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon, disc mount",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, threaded BB",
+                "name": "SL4 Disc",
+                "price": "1950"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon",
+                "frame": "Specialized SL4 FACT 8r carbon, 1-1/8\" to 1-3/8\" head tube, compact race design, Zertz, internal rear brake cable, threaded BB",
+                "name": "SL4",
+                "price": "1800"
+            }
+        ]
+    },
+    {
+        "name": "Ruby",
+        "num_versions": "10",
+        "versions": [
+            {
+                "der_front": "Shimano Dura-Ace Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace Di2, 11-speed",
+                "fork": "S-Works FACT carbon, Zertz, full monocoque",
+                "frame": "S-Works FACT 11r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, carbon OSBB",
+                "name": "S-Works Di2",
+                "price": "8250"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Pro Disc UDi2",
+                "price": "5800"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB",
+                "name": "Expert Disc UDi2",
+                "price": "4500"
+            },
+            {
+                "der_front": "Shimano Ultegra Di2, 11-speed, braze-on",
+                "der_rear": "Shimano Ultegra Di2, 11-speed",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Comp UDi2",
+                "price": "3000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Comp Disc",
+                "price": "3000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Comp",
+                "price": "2500"
+            },
+            {
+                "der_front": "SRAM Rival 22, braze-on, YAW, w/ chain spotter",
+                "der_rear": "SRAM Rival 22, 11-speed, WiFLi",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Elite Disc",
+                "price": "2500"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, OSBB",
+                "name": "Sport",
+                "price": "2000"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon, size-specific taper",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB",
+                "name": "Disc",
+                "price": "1950"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque",
+                "frame": "Specialized FACT 9r carbon, FACT construction, Women's Endurance Geometry, women's layup, Zertz, threaded BB",
+                "name": "Ruby",
+                "price": "1800"
+            }
+        ]
+    },
+    {
+        "name": "Diverge",
+        "num_versions": "13",
+        "versions": [
+            {
+                "der_front": "Shimano Tiagra, braze-on",
+                "der_rear": "Shimano Tiagra, long cage, 10-speed",
+                "fork": "Specialized FACT carbon w/Zertz, tapered",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB",
+                "name": "2017 Elite DSW",
+                "price": "1400"
+            },
+            {
+                "der_front": "Shimano Sora, braze-on",
+                "der_rear": "Shimano Sora, 9-speed",
+                "fork": "FACT carbon fiber, alloy steerer/crown, Zertz inserts, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized A1 Premium Aluminum, threaded BB",
+                "name": "2017 Sport A1",
+                "price": "1050"
+            },
+            {
+                "der_front": "Shimano Claris 2400, braze-on",
+                "der_rear": "Shimano Claris 2400, 8-speed",
+                "fork": "FACT carbon fiber, alloy steerer/crown, Zertz inserts, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized A1 Premium Aluminum, threaded BB",
+                "name": "2017 A1",
+                "price": "900"
+            },
+            {
+                "der_front": "Shimano Dura-Ace, 11-speed, braze-on",
+                "der_rear": "Shimano Dura-Ace, 11-speed",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB",
+                "name": "Pro",
+                "price": "5500"
+            },
+            {
+                "der_front": "[front derailleur not found]",
+                "der_rear": "SRAM Force 1, 11-speed",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB",
+                "name": "Expert X1",
+                "price": "3900"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed, medium cage",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB",
+                "name": "Expert",
+                "price": "3800"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized FACT 10r carbon, tapered head tube, OSBB",
+                "name": "Comp",
+                "price": "3300"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB",
+                "name": "Comp DSW",
+                "price": "2400"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB",
+                "name": "Elite DSW",
+                "price": "1500"
+            },
+            {
+                "der_front": "Shimano Sora, braze-on",
+                "der_rear": "Shimano Sora",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized A1 Premium Aluminum, threaded BB",
+                "name": "Sport A1",
+                "price": "1150"
+            },
+            {
+                "der_front": "Shimano Claris 2400, braze-on",
+                "der_rear": "Shimano Claris 2400",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized A1 Premium Aluminum, threaded BB",
+                "name": "A1",
+                "price": "1000"
+            },
+            {
+                "der_front": "Shimano Claris 2400, braze-on",
+                "der_rear": "Shimano Claris 2400",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized A1 Premium Aluminum, threaded BB",
+                "name": "A1 Sub Compact",
+                "price": "850"
+            },
+            {
+                "der_front": "[front derailleur not found]",
+                "der_rear": "SRAM Rival 1, 11-speed",
+                "fork": "Specialized FACT carbon w/ Zertz, tapered",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld technology, tapered head tube, OSBB",
+                "name": "Comp DSW X1",
+                "price": "2600"
+            }
+        ]
+    },
+    {
+        "name": "Dolce",
+        "num_versions": "7",
+        "versions": [
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount",
+                "name": "Comp EVO",
+                "price": "2100"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount",
+                "name": "EVO",
+                "price": "1450"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed, long cage",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque, for 1-1/8\" bearings",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing",
+                "name": "Comp",
+                "price": "1500"
+            },
+            {
+                "der_front": "Shimano Tiagra, 10-speed, braze-on",
+                "der_rear": "Shimano Tiagra, 10-speed, long cage",
+                "fork": "Specialized FACT carbon, Zertz, full monocoque, for 1-1/8\" bearings",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing",
+                "name": "Elite",
+                "price": "0"
+            },
+            {
+                "der_front": "Shimano Sora, braze-on",
+                "der_rear": "Shimano Sora, long cage",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz, post disc mount, Plug + Play fender mount",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, Women's Endurance Geometry, women's fully-manipulated tube sets w/ smooth welds, Zertz, 1-1/8\" lower bearing, disc mount",
+                "name": "Sport Disc",
+                "price": "1150"
+            },
+            {
+                "der_front": "Shimano Sora, braze-on",
+                "der_rear": "Shimano Sora, long cage",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz",
+                "frame": "Specialized A1 Premium Aluminum, Women's Endurance Geometry, women's fully-manipulated tube sets, 1-1/8\" lower bearing",
+                "name": "Sport",
+                "price": "970"
+            },
+            {
+                "der_front": "Shimano Claris 2400, braze-on",
+                "der_rear": "Shimano Claris 2400",
+                "fork": "Specialized FACT carbon, alloy steerer/crown, Zertz",
+                "frame": "Specialized A1 Premium Aluminum, Women's Endurance Geometry, women's fully-manipulated tube sets, 1-1/8\" lower bearing",
+                "name": "Dolce",
+                "price": "770"
+            }
+        ]
+    },
+    {
+        "name": "Allez",
+        "num_versions": "10",
+        "versions": [
+            {
+                "der_front": "SRAM Force 22, YAW, w/ chain spotter",
+                "der_rear": "SRAM Force 22",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "Specialized Edition Sprint X2",
+                "price": "4000"
+            },
+            {
+                "der_front": "[front derailleur not found]",
+                "der_rear": "SRAM Force 1, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "SPECIALIZED EDITION ALLEZ SPRINT X1",
+                "price": "3750"
+            },
+            {
+                "der_front": "[front derailleur not found]",
+                "der_rear": "SRAM Force 1, 11-speed",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "DSW Sprint X1 Expert",
+                "price": "2600"
+            },
+            {
+                "der_front": "[front derailleur not found]",
+                "der_rear": "SRAM Rival 1, 11-speed, long cage",
+                "fork": "S-Works FACT carbon, full monocoque, size-specific taper",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Sprint Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "DSW Sprint X1 Comp",
+                "price": "2000"
+            },
+            {
+                "der_front": "Shimano Ultegra, 11-speed",
+                "der_rear": "Shimano Ultegra, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque, 1-3/8\" lower bearing",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "DSW SL Expert",
+                "price": "2000"
+            },
+            {
+                "der_front": "Shimano 105, 11-speed",
+                "der_rear": "Shimano 105, 11-speed",
+                "fork": "Specialized FACT carbon, full monocoque, 1-3/8\" lower bearing",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld SL Technology, hydroformed aluminum tubing, tapered head tube, OSBB",
+                "name": "DSW SL Comp",
+                "price": "1550"
+            },
+            {
+                "der_front": "Shimano Tiagra, clamp-on",
+                "der_rear": "Shimano Tiagra, 10-speed",
+                "fork": "Specialized FACT carbon, alloy crown/steerer",
+                "frame": "Specialized E5 Premium Aluminum w/ D'Aluisio Smartweld Technology, 1-1/8\" lower bearing, threaded BB",
+                "name": "DSW Elite",
+                "price": "1250"
+            },
+            {
+                "der_front": "Shimano Sora",
+                "der_rear": "Shimano Sora",
+                "fork": "Specialized FACT carbon, alloy crown/steerer",
+                "frame": "Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing",
+                "name": "E5 Sport",
+                "price": "970"
+            },
+            {
+                "der_front": "Shimano Claris 2400",
+                "der_rear": "Shimano Claris 2400",
+                "fork": "Specialized FACT carbon, alloy crown/steerer",
+                "frame": "Specialized E5 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing",
+                "name": "E5",
+                "price": "770"
+            },
+            {
+                "der_front": "Shimano Claris 2400",
+                "der_rear": "Shimano Claris 2400",
+                "fork": "Alloy, 1-1/8\" alloy steer, 45mm crown",
+                "frame": "Specialized A1 Premium Aluminum, fully-manipulated tubing w/ smooth welds, 1-1/8\" lower bearing",
+                "name": "Jr.",
+                "price": "770"
+            }
+        ]
+    }
+]

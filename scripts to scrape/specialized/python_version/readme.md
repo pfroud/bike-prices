@@ -4,6 +4,6 @@ Uses [Requests](http://docs.python-requests.org/en/master/) and [Beautiful Soup]
 
 Other files:
 
-* `scraping_log.txt`: console output printed when scraping, showing all the bikes scraped.
-* `models.pickle`: the data from scraping serialized so you don't have to scrape it again.
-* `partial_output.txt`: output from the python script, in the format used for input to the main Java program. Only has name and price.
+* `partial_output.txt`: output from the python script, in the format used for input to the main Java program. Only has name and price because the material and groupset need manual designation.
+* `models.json`: the data from scraping, serialized so you don't have to scrape it again.
+* `scraping_log.txt`: console output printed when scraping, showing all the bikes read.

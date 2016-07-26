@@ -1,6 +1,8 @@
 ## How to scrape Specialized bikes
 
-There's a fully automatic Python version of this scraper it [`python_version/`](python_version)!
+There's a fully automatic Python version of this scraper at [`python_version/`](python_version).
+
+To use the Javascript version:
 
 1. In a browser, open the pages for these models:
     * [Tarmac](https://www.specialized.com/bikes/road/tarmac)
