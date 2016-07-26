@@ -1,0 +1,110 @@
+"C:\Users\Peter Froud\AppData\Local\Programs\Python\Python35\python.exe" "C:/Users/Peter Froud/Documents/Bikes/scripts to scrape/specialized/python version/scrape_specialized.py"
+Tarmac
+    2017 S-Works Tarmac eTap
+    S-Works Tarmac Di2
+    S-Works Tarmac Disc Di2
+    S-Works Tarmac Dura-Ace
+    Specialized Edition Tarmac Disc Power
+    Tarmac Pro Disc Race UDi2
+    Tarmac Pro Race
+    Tarmac Expert Disc Race
+    Tarmac Expert
+    Tarmac Comp UDi2
+    Tarmac Comp
+    Tarmac Elite
+    Tarmac Sport
+
+Amira
+    2017 S-Works Amira eTap
+    S-Works Amira SL4
+    Amira SL4 Pro Race
+    Amira SL4 Expert
+    Amira SL4 Comp UDi2
+    Amira SL4 Comp
+    Amira SL4 Elite
+    Amira SL4 Sport
+
+Venge
+    S-Works Venge ViAS Di2
+    Venge Pro ViAS
+    Venge Pro
+    Venge Expert
+    Venge Elite
+
+Roubaix
+    S-Works Roubaix SL4 Disc Di2
+    Specialized Edition Roubaix SL4 Disc Power
+    Roubaix SL4 Pro Disc Race UDi2
+    Roubaix SL4 Pro Disc
+    Roubaix SL4 Expert Disc UDi2
+    Roubaix SL4 Expert
+    Roubaix SL4 Comp UDi2
+    Roubaix SL4 Comp Disc
+    Roubaix SL4 Comp
+    Roubaix SL4 Elite Disc
+    Roubaix SL4 Sport
+    Roubaix SL4 Disc
+    Roubaix SL4
+
+Ruby
+    S-Works Ruby Di2
+    Ruby Pro Disc UDi2
+    Ruby Expert Disc UDi2
+    Ruby Comp UDi2
+    Ruby Comp Disc
+    Ruby Comp
+    Ruby Elite Disc
+    Ruby Sport
+    Ruby Disc
+    Ruby
+
+Diverge
+    2017 Diverge Elite DSW
+    2017 Diverge Sport A1
+    2017 Diverge A1
+    Diverge Pro
+    Diverge Expert X1
+    Diverge Expert
+    Diverge Comp
+    Diverge Comp DSW
+    Diverge Elite DSW
+    Diverge Sport A1
+    Diverge A1
+    Diverge A1 Sub Compact
+    Diverge Comp DSW X1
+
+Dolce
+    Dolce Comp EVO
+    Dolce EVO
+    Dolce Comp
+    Dolce Elite
+    Dolce Sport Disc
+    Dolce Sport
+    Dolce
+
+Allez
+    Specialized Edition Allez Sprint X2
+    SPECIALIZED EDITION ALLEZ SPRINT X1
+    Allez DSW Sprint X1 Expert
+    Allez DSW Sprint X1 Comp
+    Allez DSW SL Expert
+    Allez DSW SL Comp
+    Allez DSW Elite
+    Allez E5 Sport
+    Allez E5
+    Allez Jr.
+
+Langster
+    Langster Atlantis
+    2017 Langster Durango
+    2017 Langster
+    2017 Langster Street
+    Langster Pro
+    Langster Rio
+    Langster Street
+    Langster
+
+Shiv TT
+
+
+Process finished with exit code 0
