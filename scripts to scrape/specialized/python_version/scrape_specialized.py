@@ -1,29 +1,32 @@
-from pprint import pprint
-
 from bs4 import BeautifulSoup
 import requests
 import json
 import pickle
 
-def _remove_duplicates_preserve_order(input):
+
+def _remove_duplicates_preserve_order(list_in):
     """
+    Removes duplicates form a list and preserve the order.
     http://stackoverflow.com/a/480227
 
-    :param input:
-    :type input: list
-    :return:
+    :param list_in: the list to remove duplicates in
+    :type list_in: list
+    :return: the list with duplicates removed, with order preserved
     :rtype: list
     """
     seen = set()
     seen_add = seen.add
-    return [x for x in input if not (x in seen or seen_add(x))]
+    return [x for x in list_in if not (x in seen or seen_add(x))]
 
 
 def _get_soup(url):
     """
+    Returnes a BeautifulSoup object of the specified url.
 
-    :param url:
-    :return:
+    :param url: url of the page to load
+    :type url: str
+    :return: BeautifulSoup object of the url
+    :rtype: bs4.BeautifulSoup
     """
     r = requests.get(url)
     r.raise_for_status()
@@ -33,7 +36,6 @@ def _get_soup(url):
 def main():
     """
 
-    :return:
     """
     soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
 
@@ -51,9 +53,12 @@ def main():
 
 def read_model(relative_url):
     """
+    Gets info about all versions of a Specialized bike model.
 
-    :param relative_url:
-    :return:
+    :param relative_url: a url relative to specialized.com
+    :type relative_url: str
+    :return: dict containing name of model and dict of versions
+    :rtype: dict
     """
     model_url = 'https://www.specialized.com' + relative_url
     soup = _get_soup(model_url)
@@ -81,9 +86,12 @@ def read_model(relative_url):
 
 def read_version(url):
     """
+    Gets info about a Specialized bike version.
 
-    :param url:
-    :return:
+    :param url: the url of the version
+    :type url: str
+    :return: dict containing data about the version
+    :rtype dict
     """
     soup = _get_soup(url)
 
@@ -107,10 +115,14 @@ def read_version(url):
 
 def _get_spec(soup, spec_name):
     """
+    Gets a specification about a Specialized bike
 
-    :param soup:
-    :param spec_name:
-    :return:
+    :param soup: BeautifulSoup object of the version's webpage
+    :type soup: bs4.BeautifulSoup
+    :param spec_name: name of the spec to retrieve
+    :type: spec_name: str
+    :return: value of the specification
+    :rtype: str
     """
     try:
         return soup.find('h2', string = spec_name.upper()).parent.next_sibling.next_sibling.p.string
@@ -120,9 +132,12 @@ def _get_spec(soup, spec_name):
 
 def _get_price(soup):
     """
+    Gets the price of a Specialized bike version.
 
-    :param soup:
-    :return:
+    :param soup: BeautifulSoup object of the version to get the price of
+    :type soup: bs4.BeautifulSoup
+    :return: price of the bike version
+    :rtype: str
     """
     escaped_json = soup.find('div', class_ = 'js-select-container')['data-available-params']
 
@@ -140,10 +155,10 @@ def _get_price(soup):
             return value
 
 
-def print_input_file(models):
-    with open('output.txt', 'w+') as f:
-        for model in models:
-            f.write(model['name'])
+# def print_input_file(models):
+#     with open('output.txt', 'w+') as f:
+#         for model in models:
+#             f.write(model['name'])
 
 
 # with open('models.pickle', 'rb') as f:
