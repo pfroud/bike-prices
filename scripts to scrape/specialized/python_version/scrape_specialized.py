@@ -4,7 +4,8 @@ import json
 import pickle
 import os.path
 
-PICKLE_FILENAME = 'models.pickle'
+# PICKLE_FILENAME = 'models.pickle'
+JSON_FILENAME = 'models.json'
 
 
 def _remove_duplicates_preserve_order(list_in):
@@ -43,9 +44,10 @@ def main():
 
     models = []
 
-    if os.path.isfile(PICKLE_FILENAME) and False:
-        with open(PICKLE_FILENAME, 'rb') as f:
-            models = pickle.load(f)
+    if os.path.isfile(JSON_FILENAME) and False:
+        with open(JSON_FILENAME, 'r') as f:
+            # models = pickle.load(f)
+            models = json.load(f)
     else:
         soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
         model_a_tags = soup('a', class_ = 'product-tile__anchor')
@@ -55,8 +57,9 @@ def main():
             if 'shiv' not in href and 'langster' not in href:
                 models.append(read_model(href))
 
-        with open(PICKLE_FILENAME, 'wb') as f:
-            pickle.dump(models, f)
+        with open(JSON_FILENAME, 'w') as f:
+            # pickle.dump(models, f)
+            json.dump(models, f)
 
     write_output(models)
 
