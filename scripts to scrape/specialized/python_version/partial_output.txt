@@ -1,0 +1,32 @@
+Tarmac: 13
+2017 S-Works eTap, S-Works Di2, S-Works Disc Di2, S-Works Dura-Ace, Specialized Edition Disc Power, Pro Disc Race UDi2, Pro Race, Expert Disc Race, Expert, Comp UDi2, Comp, Elite, Sport
+9500, 9250, 9250, 8000, 7250, 6000, 5500, 5000, 3700, 3300, 2800, 2400, 2000
+
+Amira: 8
+2017 S-Works eTap, S-Works SL4, SL4 Pro Race, SL4 Expert, SL4 Comp UDi2, SL4 Comp, SL4 Elite, SL4 Sport
+9250, 8000, 5500, 3600, 3300, 2800, 2400, 2000
+
+Venge: 5
+S-Works ViAS Di2, Pro ViAS, Pro , Expert, Elite
+12900, 8200, 5700, 3600, 2800
+
+Roubaix: 13
+S-Works SL4 Disc Di2, Specialized Edition SL4 Disc Power, SL4 Pro Disc Race UDi2, SL4 Pro Disc, SL4 Expert Disc UDi2, SL4 Expert, SL4 Comp UDi2, SL4 Comp Disc, SL4 Comp, SL4 Elite Disc, SL4 Sport, SL4 Disc, SL4
+8500, 7250, 5800, 4500, 4500, 3500, 3000, 3000, 2500, 0, 2000, 1950, 1800
+
+Ruby: 10
+S-Works Di2, Pro Disc UDi2, Expert Disc UDi2, Comp UDi2, Comp Disc, Comp, Elite Disc, Sport, Disc, Ruby
+8250, 5800, 4500, 3000, 3000, 2500, 2500, 2000, 1950, 1800
+
+Diverge: 13
+2017 Elite DSW, 2017 Sport A1, 2017 A1, Pro, Expert X1, Expert, Comp, Comp DSW, Elite DSW, Sport A1, A1, A1 Sub Compact, Comp DSW X1
+1400, 1050, 900, 5500, 3900, 3800, 3300, 2400, 1500, 1150, 1000, 850, 2600
+
+Dolce: 7
+Comp EVO, EVO, Comp, Elite, Sport Disc, Sport, Dolce
+2100, 1450, 1500, 0, 1150, 970, 770
+
+Allez: 10
+Specialized Edition Sprint X2, SPECIALIZED EDITION ALLEZ SPRINT X1, DSW Sprint X1 Expert, DSW Sprint X1 Comp, DSW SL Expert, DSW SL Comp, DSW Elite, E5 Sport, E5, Jr.
+4000, 3750, 2600, 2000, 2000, 1550, 1250, 970, 770, 770
+

@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import pickle
+import os.path
+
+PICKLE_FILENAME = 'models.pickle'
 
 
 def _remove_duplicates_preserve_order(list_in):
@@ -37,18 +40,25 @@ def main():
     """
 
     """
-    soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
 
     models = []
-    for bike in soup('a', class_ = 'product-tile__anchor'):
-        href = bike['href']
-        if 'triathlon' not in href:
-            models.append(read_model(href))
 
-    with open('models.pickle', 'wb') as f:
-        pickle.dump(models, f)
+    if os.path.isfile(PICKLE_FILENAME) and False:
+        with open(PICKLE_FILENAME, 'rb') as f:
+            models = pickle.load(f)
+    else:
+        soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
+        model_a_tags = soup('a', class_ = 'product-tile__anchor')
+        model_hrefs = [x['href'] for x in model_a_tags]
 
-        # print_input_file(models)
+        for href in model_hrefs:
+            if 'shiv' not in href and 'langster' not in href:
+                models.append(read_model(href))
+
+        with open(PICKLE_FILENAME, 'wb') as f:
+            pickle.dump(models, f)
+
+    write_output(models)
 
 
 def read_model(relative_url):
@@ -77,30 +87,32 @@ def read_model(relative_url):
     versions = []
     for url in version_hrefs:
         if 'frameset' not in url and 'module' not in url and 'sbuild' not in url:
-            versions.append(read_version(model_url + url))
+            versions.append(read_version(model_url + url, model_name))
 
     print()
 
-    return {'name': model_name, 'versions': versions}
+    return {'name': model_name, 'versions': versions, 'num_versions': str(len(versions))}
 
 
-def read_version(url):
+def read_version(url, model_name):
     """
     Gets info about a Specialized bike version.
 
     :param url: the url of the version
     :type url: str
+    :param model_name: name of the model this version is for
+    :type model_name: str
     :return: dict containing data about the version
     :rtype dict
     """
     soup = _get_soup(url)
 
-    version_name = soup.find('h2', class_ = 'pdp-hero__heading').string
+    version_name = soup.find('h2', class_ = 'pdp-hero__heading').string.replace(model_name + ' ', '')
 
     print('    ' + version_name)
 
     version_data = {
-        'version': soup.find('h2', class_ = 'pdp-hero__heading').string,
+        'name': version_name,
         'price': _get_price(soup),
         'frame': _get_spec(soup, "frame"),
         'fork': _get_spec(soup, "fork"),
@@ -108,7 +120,8 @@ def read_version(url):
         'der_rear': _get_spec(soup, "rear derailleur")
     }
 
-    version_data = [str(v) for v in version_data.values()]  # change bs4's NavigableString to str
+    for k, v in version_data.items():
+        version_data[k] = str(version_data[k])
 
     return version_data
 
@@ -150,18 +163,32 @@ def _get_price(soup):
 
     first_color = data[list(data)[0]]
 
-    for key, value in first_color.items():
+    for key, value in first_color['sizes'].items():
         if key.isnumeric():
-            return value
+            return value['price']
+
+    return '[price not found]'
 
 
-# def print_input_file(models):
-#     with open('output.txt', 'w+') as f:
-#         for model in models:
-#             f.write(model['name'])
+def write_output(models):
+    """
 
+    :param models:
+    :type models: dict
+    """
 
-# with open('models.pickle', 'rb') as f:
-#     print_input_file(pickle.load(f))
+    with open('partial_output.txt', 'w+') as f:
+        for model in models:
+            buff_name = []
+            buff_price = []
+            for version in model['versions']:
+                buff_name.append(version['name'])
+                buff_price.append(version['price'])
+
+            f.write('\n'.join([model['name'] + ': ' + model['num_versions'],
+                               ', '.join(buff_name),
+                               ', '.join(buff_price),
+                               '', '']))
+
 
 main()
