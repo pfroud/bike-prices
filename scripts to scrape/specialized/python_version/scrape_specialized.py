@@ -1,3 +1,7 @@
+"""
+An automated scraper which replaces specialized_models.js and specialized_versions.js.
+"""
+
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -37,7 +41,7 @@ def _get_soup(url):
 
 def main():
     """
-
+    Writes a file with partial output of Specialized bikes.
     """
 
     models = []
@@ -173,6 +177,8 @@ def _get_price(soup):
 
 def write_output(models):
     """
+    Writes to a file a list of bike models.
+    Only writes version names and prices because material and groupset require human classification.
 
     :param models:
     :type models: dict
