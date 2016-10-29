@@ -1,72 +1,74 @@
 # Bicycle price infographic generator
 
-Generates a PDF showing range and distribution for bicycle prices.
+Visualizes price and performance of road bicycles.
 
-All the prices are from the 2015 model year and are now outdated.
-
-Used more reasonable software to do this: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices
-
-**Update:** in September 2015, I purchased a [Giant Defy 1](http://www.giant-bicycles.com/en-us/bikes/model/defy.1/18733/76108/) on sale for $1,000. The frame is aluminum with a 105 groupset and is lighter than a low-end carbon bike. I didn't include Giant in my graphic because they don't follow the same model/version patterns, but if I had, it would not have contributed to my choice.
-
+In September 2015, I purchased a [Giant Defy 1](http://www.giant-bicycles.com/en-us/bikes/model/defy.1/18733/76108/) on sale for $1,000. The frame is aluminum with a 105 groupset and is lighter than a low-end carbon bike. I didn't include Giant in my graphic because they don't follow the same model/version patterns, but if I had, it would not have contributed to my choice.
 
 ## Motivation
 
-The original purpose was to visualize bicycle pricing, which would help me think about buying a road bicycle.
+In May 2015, I was interested in a road bike but didn't have a sense for the market. 
 
-The generated diagrams are exactly what I had in mind, but they don't include enough information to be very useful.
+There are many bicycle brands. Each brand makes many models. Each model has many versions.  That multiplies to a lot of bikes to choose from: the are currently 190 versions in the project.
 
-###Problem
+I figured it was easier to make a shitty proof-of-concept program to make the diagram I wanted than it was to find and learn a data viz library. I made the first chart to see if the style I had in mind would be useful. It was, and I have been developing the project since then.
 
-There are several bicycle *manufacturers*. Specialized, Trek, Cannondale, ...
-Each manufacturer makes several *models*. Roubiax, Tarmac, Domane, Madone, CAAD10, Supersix, ...
-Each model has several *versions*. Double, Triple, Comp, Elite, 2.0, 2.3, ...
-That multiplies to a lot of bikes to choose from:
+I have still not been able to find a data viz library to this this for me, mostly because I'm not sure what to call this kind of chart. I did do this though: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices [old data!!!]
+
+It turned out I didn't have enough information to come close to answer for the last question. I had thought of adding a variable for groupset (the drivetrain components) but it would be a lot of work.
+
+It also turns out that this question cannot be answered by a diagram.
+
+## Preliminary questions
+
+In the first version, I manually entered data from four bike brands (Specialized, Cannondale, Trek, Giant) with only price
+
+Specifically, I wanted to learn:
+
+* do brands have different pricing styles?
+* are versions clustered by price or spread out?
+* what is the price range of different models?
+
+### Results
+
+Answers to those questions are still the same, so I'll show results using current bike data and diagram.
+
+**Do brands have different pricing styles?**
+No.
+
+**Are versions clustered by price or spread out?**
+Spread out.
+
+**What is the price range of different models?**
+Mostly very big.
 
 
-<!-- need to use html to center -->
-<p align="center">
-<a href="graph_for_readme/bikes-graph-sidebyside-orig.png?raw=true"><img src="graph_for_readme/bikes-graph-sidebyside-small.png"></a>
-</p>
+## Expansion to material
 
-I want to a graphic representation of:
+I soon expanded to another variable for material to try to answer:
 
-- price *range* for each model, and which versions are price outliers
-- price *distribution*, i.e. whether versions are clustered by price or if there are significant price jumps
-- how the amount of carbon fiber affects a model/version's price
-- general sense of road bike price range, and how each manufacturer prices theirs
+- how does the amount of carbon fiber affects a model/version's price? (it's really expensive)
+- is there an obvious best value? (no)
+
+The holy grail was to determine whether, at a given price point, **is it better to get an expensive version of a cheap model, or a cheap version of an expensive model?**
+
+### Results
 
 
-More generally, I seek to answer whether given a price point,
-**is it better to get an expensive version of a cheap model, or a cheap version of an expensive model?**
 
+
+## Expansion to groupset
+
+I was offered a chance to present at Gunn High School's Engineering Night, and decided to bring the bike diagram to full fruitition ith groupset information. 
 
 
 ### Results
 
-#### Range
+## Old content here
 
-The least expensive bike I sampled is $770 (Specialized Allez base and Trek 1 Series 1.1 both at that price) and the most expensive is $15,750 (Trek Emonda SLR 10). So, the Emonda SLR 10 is 20.5 times as expensive as the Allez base or the Tek 1.1.
-
-
-The model with the greatest range between versions is the Specialized Allez. The Allez base is $770 and the Allez S-Works Di2 is $8,000. So, the most expensive one is  10.4 the price of the least expensive one.
-
-The model with the least range between versions is the Trek Emonda ALR. There are only two models, but the Emonda ALR 5 is $1,760 and the Emonda ALR 6 is $2,250, for a range of 1.3x.
+The overall price range of the bikes I sampled is from $770 (both Specialized Allez and Trek 1 Series) to $15,750 (Trek Emonda). The most expensive 1 Series version is $1100 (1.4x increase) while the most expensive Allez is a remarkable $8,000 (10.4x increase)
 
 
-Range information for every model is available in [ranges.csv](ranges.csv).
-
-
-#### Distribution
-
-No groundbreaking conclusions were drawn. The histograms show that for most models, there are more versions in the first quarter than in the other three quarters. Three models don't do this: Specialized Tarmac, Trek Madone and Emonda ALR, and Cannondale CAAD8.
-
-#### Material
-
-Again, so significant conclusion was drawn. Some
-
-#### Discussion
-
-Through internet research, I learned that frame material has little to do with a bicycle's overall performance. While a major classification like frame material
+Through internet research, I learned that frame material has little to do with a bicycle's overall performance. While a major classification like frame material 
 
 more important than frame: groupset
 
@@ -76,7 +78,7 @@ more important than frame: groupset
 
 I wrote this in Java because it's already installed and I already know how to use it.
 It would make several hundred times more sense to use a data visualization library to do this,
-but I started with this proof-of-concept.
+but I started with this proof-of-concept.  
 
 A `Bike` object is a *model* of bike, and holds set of *versions* of the model. A model could be 'Specialized Diverge', and a version of that model could be 'Elite A1'.
 
@@ -85,12 +87,10 @@ All the Java code is in `src/`.
 
 
 I'm using the [`VectorGraphics2D`](http://trac.erichseifert.de/vectorgraphics2d/) library to make a PDF. It's already in the repository.
-
+ 
 The first version I made ran a `JApplet` because it required the least amount of tying and thought to get a graphics window going.
 
-## Input and output
-
-### Input file
+### Input
 
 Currently called `bikesInput.txt`.
 
@@ -102,24 +102,24 @@ I assembled information by hand from the websites of these three bicycle manufac
 
 Thus prices are MSRP.
 
-#### Format
-
 An input entry begins with a header, which has the name of the model, a space, and the number of versions for that model. For example, `Specialized_Diverge 7`.
 
-Following the header are lines for version names, version prices, and version materials.
+Following the header are lines for version names, version costs, and version materials.
 
-For example, if a model has 7 versions, there are seven lines with one name on each line, then seven lines with one price on each line, etc.
+For example, if a model has 7 versions, there are seven lines with one name on each line, then seven lines with one cost on each line, etc.
 
 One blank line separates input entries.
 
 
-### Output PDF
+### Output
 
 Check out `Sample output/`.
 
-The page size is currently 74.81 inches by 37.01 inches.
+The page size is currently 74.81 inches by 37.01 inches, because fuck you. It's vector anyway.
 
 
-## Known issues
+## Issues & future work
 - Model versions with the same price are drawn on top of each other.
-- When price range override is on, colored bars go off the edge of the page.
+- When cost range override is on, colored bars go off the edge of the page.
+
+Obviously, a static pdf diagram is really shitty.
