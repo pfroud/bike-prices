@@ -2,16 +2,17 @@ import java.awt.*;
 import java.util.Vector;
 
 /**
- *
+ * Represents a histogram of bike prices.
+ * Histograms's aren't used at all right now.
  */
 class Histogram {
 
     private Vector<Integer> data; // contents of histogram bins
 
-    private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter; // height not used
+    private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter; // height currently not used
     private String caption;
     private Font fontDefault = new Font("Arial", Font.PLAIN, 12);
-    private Font fontCaption = fontDefault;
+    private Font fontCaption = fontDefault; // temporarily
 
     Histogram(Vector<Integer> data, String caption) {
         this.data = data;

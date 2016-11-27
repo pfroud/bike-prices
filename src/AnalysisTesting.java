@@ -2,7 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Used to test Analysis and Histogram drawing before putting them in the PDF.
+ * Used this to test the Analysis and Histogram classes.
+ * It only draws histograms, no diagram.
  */
 public class AnalysisTesting extends JPanel {
 
@@ -14,7 +15,7 @@ public class AnalysisTesting extends JPanel {
         a = new Analysis(4, 50, 150, 100);
         a.init(Bike.readBikes("new_test_input.txt"));
 
-        // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
+        // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php since I never remember this stuff
         AnalysisTesting panel = new AnalysisTesting();
         JFrame application = new JFrame();
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

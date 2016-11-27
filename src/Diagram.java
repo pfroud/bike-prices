@@ -115,9 +115,7 @@ class Diagram {
         if (analysis != null) analysis.draw(g);
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
-//            System.out.print("Getting bytes...");
             byte[] bytes = g.getBytes();
-//            System.out.println("done.");
 
             file.write(bytes);
         }
@@ -200,10 +198,7 @@ class Diagram {
 
             barYPos = i * verticalSpacing + 20;
 
-
             // rectangle bar
-
-
             g.setColor(BAR_BACKGROUND_COLOR);
             barXStart = getXPosition(currentBike.minPrice);
             barYPos = i * verticalSpacing + 20;
@@ -212,9 +207,7 @@ class Diagram {
             int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
 
-
             drawDots(g, currentBike, barYPos);
-
 
             // draw model name on the left
             g.setColor(Color.black);
@@ -236,7 +229,6 @@ class Diagram {
     private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
         int currentPrice, dotX, dotY;
 
-
         for (int i = 0; i < currentBike.numModels; i++) {
             currentPrice = currentBike.versionPrices.get(i);
 
@@ -247,8 +239,6 @@ class Diagram {
             g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
-
-
 //            g.setColor(Color.black);
 //            g.setFont(fontDotCaption);
 //            g.drawString("$" + currentPrice, dotX, dotY - 3);

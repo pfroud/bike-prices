@@ -34,14 +34,14 @@ public class Bike implements Comparable<Bike> {
 
         Vector<Bike> allBikes = new Vector<>();
 
+        // go through file and add bikes to the vector
         Bike tempBike;
         while (true) {
-            tempBike = readOneBike(fileScan);
-            if (tempBike == null) break;
+            tempBike = readBikeModel(fileScan);
+            if (tempBike == null) break; // readBikeModel() stops when it reads "end"
             allBikes.add(tempBike);
 
             fileScan.nextLine(); //skip a blank line
-
         }
 
         Collections.sort(allBikes);
@@ -50,10 +50,10 @@ public class Bike implements Comparable<Bike> {
 
     //@formatter:off (formatter kills indentation in this doc comment)
     /**
-     * Reads a bike model and its versions, then returns a Bike object.
+     * Reads and returns a single bike model and its versions.
      * Steps:
      *
-     * (1) Reads the header, which contains the model name and number of versions.
+     * (1) Reads the header, which contains the model name and the number of versions.
      *     Example: "Specialized_Diverge 7"
      *
      * (2) Does three for loops to read:
@@ -62,27 +62,31 @@ public class Bike implements Comparable<Bike> {
      *     (c) version materials
      *
      * @param sc scanner on the input text file
-     * @return Bike object containing all of the version names, prices, and materials
+     * @return a Bike object containing all of the version names, prices, and materials
      */
     //@formatter:on
-    private static Bike readOneBike(Scanner sc) {
-        sc.useDelimiter(": |\r?\n|\r");
+    private static Bike readBikeModel(Scanner sc) {
+        sc.useDelimiter(": |\r?\n|\r"); // use newline and ":" as delimiter
+
+        //read model name
         String name = sc.next();
         if (name.equals("end")) return null;
-        Bike bike = new Bike(name); //read model name
-        int numModels_ = sc.nextInt();
-        bike.numModels = numModels_;
+        Bike bike = new Bike(name);
 
-        sc.useDelimiter(", |\r?\n|\r");
+        // read number of versions
+        int numModels = sc.nextInt();
+        bike.numModels = numModels;
 
-        // add version names
-        for (int i = 0; i < numModels_; i++) {
+        sc.useDelimiter(", |\r?\n|\r"); // only use newline as delimiter
+
+        // read version names
+        for (int i = 0; i < numModels; i++) {
             bike.versionNames.add(sc.next());
         }
 
-        // add version prices
+        // read version prices
         int currentPrice;
-        for (int i = 0; i < numModels_; i++) {
+        for (int i = 0; i < numModels; i++) {
             currentPrice = sc.nextInt();
 
             //update min and max price
@@ -92,12 +96,13 @@ public class Bike implements Comparable<Bike> {
             bike.addPrice(currentPrice);
         }
 
-        // add version materials
-        for (int i = 0; i < numModels_; i++) {
+        // read version materials
+        for (int i = 0; i < numModels; i++) {
             bike.versionCarbons.add(Carbon.parseString(sc.next()));
         }
 
-        for (int i = 0; i < numModels_; i++) {
+        // read version groupsets
+        for (int i = 0; i < numModels; i++) {
             bike.versionGroupsets.add(Groupset.parseString(sc.next()));
         }
 
@@ -119,14 +124,13 @@ public class Bike implements Comparable<Bike> {
     String modelName;
     int numModels;
 
-    //TODO make these private?
-    Vector<String> versionNames = new Vector<>();
+    // these should maybe be all private
+    private Vector<String> versionNames = new Vector<>();
     Vector<Integer> versionPrices = new Vector<>();
     Vector<Carbon> versionCarbons = new Vector<>();
     Vector<Groupset> versionGroupsets = new Vector<>();
 
-    // why do I have this in both instance and statis??
-    int minPrice = 999999, maxPrice = 0; // most and least expensive version of the model
+    int minPrice = 999999, maxPrice = 0; // price of most and least expensive version of the model
 
     public int compareTo(Bike other) {
         return Integer.compare(Collections.min(versionPrices), Collections.min(other.versionPrices));
@@ -142,6 +146,7 @@ public class Bike implements Comparable<Bike> {
         this.modelName = name;
 
         /*
+//        sometimes nice to shorten long words
         modelName = modelName.replace("Specialized", "Spec.");
         modelName = modelName.replace("Cannondale", "Can.");
         modelName = modelName.replace("Advanced", "Adv.");
@@ -150,7 +155,7 @@ public class Bike implements Comparable<Bike> {
     }
 
     /**
-     * Gives human-readable representation of a bike.
+     * Gives human-readable representation of a bike with all the versions.
      *
      * @return a human-readable representation of the bike model.
      */
@@ -158,11 +163,11 @@ public class Bike implements Comparable<Bike> {
         NumberFormat format = NumberFormat.getInstance();
         ListIterator<String> names = versionNames.listIterator();
         ListIterator<Integer> prices = versionPrices.listIterator();
-        String out = modelName; /* + "\n-----------------------\n";
+        String out = modelName + "\n-----------------------\n";
 
         while (names.hasNext()) {
             out += names.next() + ": $" + format.format(prices.next()) + "\n";
-        }*/
+        }
         return out;
     }
 
@@ -172,7 +177,7 @@ public class Bike implements Comparable<Bike> {
      *
      * @param c the price of the version to add.
      */
-    void addPrice(int c) {
+    private void addPrice(int c) {
         versionPrices.add(c);
 
         if (c > maxPrice) maxPrice = c;
@@ -180,18 +185,18 @@ public class Bike implements Comparable<Bike> {
     }
 
     /**
-     * Prints a CSV row of model name, absolute price range, relative price range, least expensive version name,
-     * least expensive version price, most expensive version name, most expensive version price.
-     * Use printHeader() first.
+     * Prints a CSV row of: model name, absolute price range, relative price range, name of least expensive version,
+     * price of least expensive version, name of most expensive version, price of most expensive version.
      *
-     * Example: "Specialized_Diverge	$7400	7.73x	A1	Carbon DI2"
+     * When writing CSV files, use printHeader() first.
      */
     void printRange() {
-        NumberFormat numForm = NumberFormat.getNumberInstance();
+        NumberFormat numFmt = NumberFormat.getNumberInstance();
         System.out.printf("%s\t$%s\t%.2fx\t%s\t$%s\t%s\t$%s\n",
-                modelName.replace('_', ' '), numForm.format(maxPrice - minPrice), (double) (maxPrice) / minPrice,
-                versionNames.firstElement(), numForm.format(versionPrices.firstElement()),
-                versionNames.lastElement(), numForm.format(versionPrices.lastElement()));
+                modelName.replace('_', ' '),
+                numFmt.format(maxPrice - minPrice), (double) (maxPrice) / minPrice,
+                versionNames.firstElement(), numFmt.format(versionPrices.firstElement()),
+                versionNames.lastElement(), numFmt.format(versionPrices.lastElement()));
     }
 
     /**
@@ -204,9 +209,9 @@ public class Bike implements Comparable<Bike> {
     }
 
     /**
-     * Divides the bikes by price into numHistogramBins bins. Each int is the number of versions in that price range.
-     *
-     * Example: "Specialized_Diverge: [5, 1, 1]"
+     * Returns data for input to a histogram.
+     * Partitions the bikes by price into numHistogramBins bins. Each element of the vector
+     * is the number of versions in that price range.
      */
     Vector<Integer> getHistogramData(int numHistogramBins) {
         Vector<Integer> bins = new Vector<>(numHistogramBins);
@@ -225,7 +230,7 @@ public class Bike implements Comparable<Bike> {
                 priceCutoff = minPrice + (binWidth * currentBin);
 
                 if (currentPrice <= priceCutoff) {
-                    // it seems like this could be done better
+                    // there is probably a better way to do this
                     bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); // need currentBin-1 bc index starts at 0
                     break;
                 }

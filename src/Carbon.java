@@ -7,7 +7,7 @@ import java.awt.geom.Ellipse2D;
 public enum Carbon {
     ALL, FORK, NONE;
 
-    //http://stackoverflow.com/a/18883717
+    //static(?) variables - http://stackoverflow.com/a/18883717
     Color color;
     String description;
 
@@ -22,29 +22,19 @@ public enum Carbon {
     }
 
     /**
-     * Draws a dot for the carbon value.
+     * Gets a shape to represent this carbon value.
      *
-     * @param g        graphic context
-     * @param dotX     x location of the dot
-     * @param dotY     y location of the dot
-     * @param size     diameter of the dot
-     * @param inLegend true if drawing in the legend, false if drawing in bar
+     * @param x    the x coordinate of the shape
+     * @param y    the y coordinate of the shape
+     * @param size the width of the shape
+     * @return the shape to draw for this Carbon
      */
-    public void draw_old(Graphics g, int dotX, int dotY, int size, boolean inLegend) {
-        g.setColor(this.color);
-        g.fillOval(dotX, dotY, size, size);
-        if (inLegend) {
-            g.setColor(Color.black);
-            g.drawOval(dotX, dotY, size, size);
-        }
-    }
-
-    public Shape getShape(int x, int y, int size){
+    public Shape getShape(int x, int y, int size) {
         switch (this) {
             case ALL:
                 return new Ellipse2D.Float(x, y, size, size);
             case FORK:
-                return new Polygon(new int[]{x+size/2, x+size, x}, new int[]{y, y+size, y+size}, 3);
+                return new Polygon(new int[]{x + size / 2, x + size, x}, new int[]{y, y + size, y + size}, 3);
             case NONE:
                 return new Rectangle(x, y, size, size);
         }
@@ -55,8 +45,8 @@ public enum Carbon {
     /**
      * Parses a string into a Carbon enum.
      *
-     * @param s string to parseString into Carbon
-     * @return Carbon parsed from string
+     * @param s string to parse into a Carbon enum
+     * @return Carbon enum parsed from string
      */
     public static Carbon parseString(String s) {
         return Carbon.valueOf(s.toUpperCase());

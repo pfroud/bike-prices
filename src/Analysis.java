@@ -6,7 +6,7 @@ import java.util.Vector;
  */
 class Analysis {
 
-    private int numBins, x, y, histSize, width = 1;
+    private int numBins, x, y, histSize;
     private Vector<Histogram> hists = new Vector<>();
 
     Analysis(int numBins, int x, int y, int histSize) {
@@ -18,19 +18,17 @@ class Analysis {
 
 
     /**
-     * This must be separate from the constructor b/c bikes vector only accessible in Diagram, not Main
+     * Initialize the vector of histograms.
+     * This must be separate from the constructor and called by a Diagram instance.
      *
      * @param bikes vector of all bikes
      */
     void init(Vector<Bike> bikes) {
         Histogram h;
 
-
         final int histsPerRow = 10;
         final int size = bikes.size();
         final int SPACING = 50;
-
-
 
         Bike bike;
         int mod;
@@ -39,7 +37,7 @@ class Analysis {
             for (int i = start; i < end; i++) {
                 bike = bikes.get(i);
                 h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
-                h.setSize(x + (histSize + SPACING) * (i%10), y + mod * (histSize+50), histSize, histSize);
+                h.setSize(x + (histSize + SPACING) * (i % 10), y + mod * (histSize + 50), histSize, histSize);
                 hists.add(h);
             }
         }

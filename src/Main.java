@@ -15,11 +15,8 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
 
-//        printCounts(Bike.readBikes("new_test_input.txt"));
-//        System.exit(0);
-
-        //the number is in inches. ridiculously large because that's what I started with. it's vector anyway...
-        int width = (int) (INCH_TO_MM * 75); //was 75
+        //numbers in inches
+        int width = (int) (INCH_TO_MM * 75);
         int height = (int) (INCH_TO_MM * 42);
         int margin = (int) (INCH_TO_MM * 2);
         int gridStep = 1000; //this is in dollars
@@ -27,15 +24,20 @@ public class Main {
         Diagram d = new Diagram(Bike.readBikes("bikesInput.txt"), width, height, margin, gridStep);
 
 
-//        d.addCustomRange(500, 2000); // $500 through $2,000
+//        d.addCustomRange(500, 2000);
         d.addLegend(new Legend(1650, 15)); // x, y
-        //d.addAnalysis(new Analysis(3, 30, height - 50, 70)); // 4 histogram bins thenimp x, y
+//        d.addAnalysis(new Analysis(3, 30, height - 50, 70));
 
 
         d.writePDF("working_output.pdf");
 
     }
 
+    /**
+     * Prints how many bikes there are for each brand.
+     *
+     * @param bikes a vector of bikes to print counts for
+     */
     private static void printCounts(Vector<Bike> bikes) {
         int cannondale = 0, giant = 0, spec = 0, trek = 0;
 
@@ -68,6 +70,10 @@ public class Main {
     }
 
 
+    /**
+     * At multuple price points, pritns what percentage of bikes have a carbon-fiber frame.
+     * @param bikes vector of bikes to look at
+     */
     static private void findCarbonPercents(Vector<Bike> bikes) {
         double versionsTotal, versionsFullCarbon;
         int currPrice;
@@ -90,7 +96,8 @@ public class Main {
                 }
             }
 
-            System.out.println("at price " + price + ": " + versionsTotal + " versions total, " + versionsFullCarbon + " versions with full carbon = " + (versionsFullCarbon / versionsTotal));
+            System.out.println("at price " + price + ": " + versionsTotal + " versions total, " + versionsFullCarbon +
+                    " versions with full carbon = " + (versionsFullCarbon / versionsTotal));
 
             percentData.add(versionsFullCarbon / versionsTotal);
 

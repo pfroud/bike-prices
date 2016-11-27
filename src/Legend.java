@@ -20,6 +20,7 @@ class Legend {
     void draw(Graphics2D g) {
         final int WIDTH = 200, HEIGHT = 320;
 
+        //background
         g.setColor(Color.white); // box background
         g.fillRect(x, y, WIDTH, HEIGHT);
         g.setColor(Color.black); // box border
@@ -27,29 +28,29 @@ class Legend {
 
         g.setFont(theFont);
 
-        // actual legend part
-        Carbon[] cs = Carbon.values();
-        Carbon carb;
-        Shape shape;
-        for (int i = 0; i < cs.length; i++) {
-            carb = cs[i];
-            int theY = y + (i * 30) + 10;
-            shape = carb.getShape(x + 10, theY, markerSize);
+        // draw carbon legend
+        Carbon[] carbons = Carbon.values();
+        Carbon currCarb;
+        Shape shapeToDraw;
+        int theY;
+        for (int i = 0; i < carbons.length; i++) {
+            currCarb = carbons[i];
+            theY = y + (i * 30) + 10;
+            shapeToDraw = currCarb.getShape(x + 10, theY, markerSize);
             g.setColor(Color.black);
-            g.draw(shape);
-            g.drawString(carb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
+            g.draw(shapeToDraw);
+            g.drawString(currCarb.description, x + 20 + markerSize, theY + (markerSize / 2) + 4);
         }
 
+        // draw groupset legend
         Groupset[] gs = Groupset.getRanked();
-
 //        final int barHeight = 40, barWidth = 60;
         final int barHeight = 25, barWidth = 40;
         Groupset currGroup;
-        int theY;
         for (int i = 0; i < gs.length; i++) {
             currGroup = gs[i];
             g.setColor(currGroup.getColor());
-            theY = y + 100 + i * (barHeight+2);
+            theY = y + 100 + i * (barHeight + 2);
             g.fillRect(x + 10, theY, barWidth, barHeight);
             g.setColor(Color.black);
             g.drawString(currGroup.name, x + barWidth + 20, theY + barHeight / 2 + 3);
