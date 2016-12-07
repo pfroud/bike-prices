@@ -2,6 +2,12 @@
 
 Visualizes price and performance of road bicycles.
 
+<p align="center" style="text-align: center">
+<img src="sample_output/sample_output.png" alt="Bike price infographic">
+</p>
+
+**This readme is not done yet.**
+
 In September 2015, I purchased a [Giant Defy 1](http://www.giant-bicycles.com/en-us/bikes/model/defy.1/18733/76108/) on sale for $1,000. The frame is aluminum with a 105 groupset and is lighter than a low-end carbon bike. I didn't include Giant in my graphic because they don't follow the same model/version patterns, but if I had, it would not have contributed to my choice.
 
 ## Motivation
