@@ -2,6 +2,7 @@
 An automated scraper which replaces specialized_models.js and specialized_versions.js.
 """
 
+from typing import List, Dict, Union
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -9,8 +10,11 @@ import os.path
 
 JSON_FILENAME = 'models.json'
 
+Version = Dict[str, str]
+Model = Dict[str, Union[str, List[Version]]]
 
-def _remove_duplicates_preserve_order(list_in: list) -> list:
+
+def _remove_duplicates_preserve_order(list_in: List[str]) -> List[str]:
     """
     Removes duplicates form a list and preserve the order.
     http://stackoverflow.com/a/480227
@@ -66,7 +70,7 @@ def main() -> None:
     write_output(models)
 
 
-def read_model(relative_url: str) -> dict:
+def read_model(relative_url: str) -> Model:
     """
     Gets info about all versions of a Specialized bike model.
 
@@ -99,7 +103,7 @@ def read_model(relative_url: str) -> dict:
     return {'name': model_name, 'versions': versions, 'num_versions': str(len(versions))}
 
 
-def read_version(url: str, model_name: str) -> dict:
+def read_version(url: str, model_name: str) -> Version:
     """
     Gets info about a Specialized bike version.
 
@@ -175,13 +179,13 @@ def _get_price(soup) -> str:
     return '[price not found]'
 
 
-def write_output(models: dict) -> None:
+def write_output(models: List[Model]) -> None:
     """
     Writes to a file a list of bike models.
     Only writes version names and prices because material and groupset require human classification.
 
     :param models: models to print
-    :type models: dict
+    :type models: list
     """
 
     with open('partial_output.txt', 'w+') as f:
