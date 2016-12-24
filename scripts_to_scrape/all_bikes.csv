@@ -1,0 +1,155 @@
+Brand,Model,Version,Price,Carbon,Groupset
+Cannondale,Synapse,Sora,1030,fork,Sora
+Cannondale,Synapse,Hi-MOD Dura Ace,5860,all,Dura-Ace
+Cannondale,Synapse,Hi-MOD Disc Ultegra,5330,all,Ultegra
+Cannondale,Synapse,Hi-MOD Disc RED,7460,all,Red
+Cannondale,Synapse,Hi-MOD Disc Black Inc.,9590,all,Dura-Ace Di2
+Cannondale,Synapse,Disc Tiagra,1250,fork,Tiagra
+Cannondale,Synapse,Disc Adventure,2130,fork,Rival
+Cannondale,Synapse,Disc 105,1570,fork,105
+Cannondale,Synapse,Claris,870,fork,Claris
+Cannondale,Synapse Carbon,Ultegra 4,2660,all,Ultegra
+Cannondale,Synapse Carbon,Ultegra 3,3200,all,Ultegra
+Cannondale,Synapse Carbon,Tiagra,1840,all,Tiagra
+Cannondale,Synapse Carbon,Disc Ultegra Di2,4800,all,Ultegra Di2
+Cannondale,Synapse Carbon,Disc Ultegra,3730,all,Ultegra
+Cannondale,Synapse Carbon,Disc 105,2660,all,105
+Cannondale,Synapse Carbon,105,2240,all,105
+Cannondale,SuperSix EVO,Ultegra 4,2660,all,Ultegra
+Cannondale,SuperSix EVO,Ultegra 3,3200,all,Ultegra
+Cannondale,SuperSix EVO,Tiagra,1840,all,Tiagra
+Cannondale,SuperSix EVO,RED,3940,all,Red
+Cannondale,SuperSix EVO,Hi-MOD Ultegra,4260,all,Ultegra
+Cannondale,SuperSix EVO,Hi-MOD Team,10660,all,Dura-Ace Di2
+Cannondale,SuperSix EVO,Hi-MOD Dura Ace 2,5330,all,Dura-Ace
+Cannondale,SuperSix EVO,Hi-MOD Dura Ace 1,7990,all,Dura-Ace
+Cannondale,SuperSix EVO,Black Inc.,12790,all,Dura-Ace
+Cannondale,SuperSix EVO,105,2240,all,105
+Cannondale,CAAD8,Tiagra,1250,fork,Tiagra
+Cannondale,CAAD8,Sora,1030,fork,Sora
+Cannondale,CAAD8,Claris,815,fork,Claris
+Cannondale,CAAD8,105,1410,fork,105
+Cannondale,CAAD12,Ultegra,2240,fork,Ultegra
+Cannondale,CAAD12,RED,3200,fork,Red
+Cannondale,CAAD12,Disc Ultegra,2660,fork,Ultegra
+Cannondale,CAAD12,Disc Dura Ace,4260,fork,Dura-Ace
+Cannondale,CAAD12,Disc 105,1950,fork,105
+Cannondale,CAAD12,Black Inc.,5860,fork,Dura-Ace
+Cannondale,CAAD12,105,1680,fork,105
+Giant,TCR Advanced SL,2,4100,all,Ultegra
+Giant,TCR Advanced SL,1,5900,all,Ultegra Di2
+Giant,TCR Advanced SL,0,8800,all,Dura-Ace Di2
+Giant,TCR Advanced Pro,1,3200,all,Ultegra
+Giant,TCR Advanced Pro,0,5500,all,Dura-Ace
+Giant,TCR Advanced,1,2500,all,Ultegra
+Giant,TCR Advanced, 3,1600,all,Tiagra
+Giant,TCR Advanced, 2,2000,all,105
+Giant,Propel Advanced SL,2,4400,all,Ultegra
+Giant,Propel Advanced SL,1 Team,6900,all,Dura-Ace
+Giant,Propel Advanced SL,1,6900,all,Dura-Ace
+Giant,Propel Advanced SL,0,9000,all,Dura-Ace Di2
+Giant,Propel Advanced Pro,0,5650,all,Ultegra Di2
+Giant,Propel Advanced,2,2100,all,105
+Giant,Propel Advanced,1,2600,all,Ultegra
+Giant,Propel Advanced,0,4000,all,Ultegra Di2
+Giant,Defy Advanced SL,1,4600,all,Ultegra
+Giant,Defy Advanced SL,0,8300,all,Dura-Ace Di2
+Giant,Defy Advanced Pro,2,3200,all,Ultegra
+Giant,Defy Advanced Pro,0 ,5100,all,Dura-Ace
+Giant,Defy Advanced,3 ,1800,all,Tiagra
+Giant,Defy Advanced,2,2100,all,105
+Giant,Defy Advanced,1,2600,all,Ultegra
+Giant,Defy,5 ,660,none,Claris
+Giant,Defy,3 ,920,fork,Sora
+Giant,Defy,2 Disc,1200,fork,Tiagra
+Giant,Defy,1 Disc,1500,fork,105
+Specialized,Venge,Pro ViAS,8200,all,Dura-Ace
+Specialized,Venge,Pro ,5700,all,Dura-Ace
+Specialized,Venge,Expert,3600,all,Ultegra
+Specialized,Venge,Elite,2800,all,105
+Specialized,Tarmac,Sport,2000,all,105
+Specialized,Tarmac,Pro Race,5500,all,Dura-Ace
+Specialized,Tarmac,Pro Disc Race UDi2,6000,all,Ultegra Di2
+Specialized,Tarmac,Expert Disc Race,5000,all,Ultegra
+Specialized,Tarmac,Expert,3700,all,Ultegra
+Specialized,Tarmac,Elite,2400,all,105
+Specialized,Tarmac,Comp UDi2,3300,all,Ultegra Di2
+Specialized,Tarmac,Comp,2800,all,Ultegra
+Specialized,Ruby,Sport,2000,all,105
+Specialized,Ruby,Pro Disc UDi2,5800,all,Ultegra Di2
+Specialized,Ruby,Expert Disc UDi2,4500,all,Ultegra Di2
+Specialized,Ruby,Elite Disc,2500,all,Rival
+Specialized,Ruby,Disc,1950,all,Tiagra
+Specialized,Ruby,Comp UDi2,3000,all,Ultegra Di2
+Specialized,Ruby,Comp Disc,3000,all,Ultegra
+Specialized,Ruby,Comp,2500,all,Ultegra
+Specialized,Ruby,base,1800,all,Tiagra
+Specialized,Roubaix,SL4 Sport,2000,all,105
+Specialized,Roubaix,SL4 Pro Disc Race UDi2,5800,all,Ultegra Di2
+Specialized,Roubaix,SL4 Pro Disc,4500,all,Dura-Ace
+Specialized,Roubaix,SL4 Expert Disc UDi2,4500,all,Ultegra Di2
+Specialized,Roubaix,SL4 Expert,3500,all,Ultegra
+Specialized,Roubaix,SL4 Elite Disc,2500,all,Rival
+Specialized,Roubaix,SL4 Disc,1950,all,Tiagra
+Specialized,Roubaix,SL4 Comp UDi2,3000,all,Ultegra Di2
+Specialized,Roubaix,SL4 Comp Disc,3000,all,Ultegra
+Specialized,Roubaix,SL4 Comp,2500,all,Ultegra
+Specialized,Roubaix,SL4,1800,all,Tiagra
+Specialized,Dolce,Sport Disc,1150,fork,Sora
+Specialized,Dolce,Sport,970,fork,Sora
+Specialized,Dolce,EVO,1450,fork,Tiagra
+Specialized,Dolce,Elite,1250,fork,Tiagra
+Specialized,Dolce,Comp EVO,2100,fork,105
+Specialized,Dolce,Comp,1500,fork,105
+Specialized,Dolce,base,770,fork,Claris
+Specialized,Diverge,Sport A1,1150,fork,Sora
+Specialized,Diverge,Pro,5500,all,Dura-Ace
+Specialized,Diverge,Expert X1,3900,all,Force
+Specialized,Diverge,Expert,3800,all,Ultegra
+Specialized,Diverge,Elite DSW,1500,fork,Tiagra
+Specialized,Diverge,Comp DSW X1,2600,fork,Rival
+Specialized,Diverge,Comp DSW,2400,fork,105
+Specialized,Diverge,Comp,3300,all,105
+Specialized,Diverge,A1 Sub Compact,850,fork,Claris
+Specialized,Diverge,A1,1000,fork,Claris
+Specialized,Amira,SL4 Sport,2000,all,105
+Specialized,Amira,SL4 Pro Race,5500,all,Dura-Ace
+Specialized,Amira,SL4 Expert,3600,all,Ultegra
+Specialized,Amira,SL4 Elite,2400,all,105
+Specialized,Amira,SL4 Comp UDi2,3300,all,Ultegra Di2
+Specialized,Amira,SL4 Comp,2800,all,Ultegra
+Specialized,Allez,E5 Sport,970,fork,Sora
+Specialized,Allez,E5,770,fork,Claris
+Specialized,Allez,DSW Sprint X1 Expert,2600,fork,Force
+Specialized,Allez,DSW Sprint X1 Comp,2000,fork,Rival
+Specialized,Allez,DSW SL Expert,2000,fork,Ultegra
+Specialized,Allez,DSW SL Comp,1550,fork,105
+Specialized,Allez,DSW Elite,1250,fork,Tiagra
+Trek,Madone,Race Shop Limited,13000,all,Dura-Ace Di2
+Trek,Madone,9.9 Women's,12000,all,Dura-Ace Di2
+Trek,Madone,9.9,12000,all,Dura-Ace Di2
+Trek,Madone,9.5,8000,all,Dura-Ace
+Trek,Madone,9.2,6000,all,Ultegra
+Trek,Emonda,SLR 9 Women's,8500,all,Dura-Ace Di2
+Trek,Emonda,SLR 9,12080,all,Dura-Ace Di2
+Trek,Emonda,SLR 8 (H2 fit),6500,all,Dura-Ace
+Trek,Emonda,SLR 8 (H1 fit),6500,all,Dura-Ace
+Trek,Emonda,SLR 6 (H2 fit),5000,all,Ultegra
+Trek,Emonda,SLR 6 (H1 fit),5000,all,Ultegra
+Trek,Emonda,SLR 10,12000,all,Red
+Trek,Emonda,SL 8 Women's,4730,all,Dura-Ace
+Trek,Emonda,SL 8 RED,3500,all,Red
+Trek,Emonda,SL 8,4000,all,Dura-Ace
+Trek,Emonda,SL 6 Women's,3000,all,Ultegra
+Trek,Emonda,SL 6,3150,all,Ultegra
+Trek,Emonda,SL 5 Women's,2600,all,105
+Trek,Emonda,SL 5,2600,all,105
+Trek,Emonda,S 6,2630,all,Ultegra
+Trek,Emonda,S 5,2100,all,105
+Trek,Emonda,S 4 Women's,1570,all,Tiagra
+Trek,Emonda,S 4,1570,all,Tiagra
+Trek,Emonda,6,1900,fork,Ultegra
+Trek,Emonda,5,1380,fork,105
+Trek,Emonda,4,1310,fork,Tiagra
+Trek,1.2,base,930,fork,Sora
+Trek,1.1,base,770,fork,Claris
