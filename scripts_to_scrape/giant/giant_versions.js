@@ -31,9 +31,9 @@ function parseArticle(article) {
 
 var articleTags = $$("article"); // each currentModel is conveniently in an <article> tag
 var models = [], currentModel;
-for (var i = 0; i < articleTags.length; i++) {
-    if (currentModel = parseArticle(articleTags[i])) models.push(currentModel);
-}
+articleTags.forEach(function (tag) {
+    if (currentModel = parseArticle(tag)) models.push(currentModel);
+});
 
 var modelId = window.location.href.split("/").slice(-2, -1)[0];
 localStorage.setItem(modelId, JSON.stringify(models));

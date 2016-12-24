@@ -14,18 +14,19 @@
 
 localStorage.clear();
 
-var links = $$("a.colorway-tile__anchor-link"), versionId, currentLink;
+var links = $$("a.colorway-tile__anchor-link"), versionId;
 
 // A bunch of models are listed twice. It's really weird. This removed duplicates. Set() is from ECMAScript 6.
 var hrefs = links.map(function (value, index, array) {return value.href});
 hrefs = Array.from(new Set(hrefs));
 
-for (var i = 0; i < hrefs.length; i++) {
-    currentLink = hrefs[i];
-    if (currentLink.includes("frameset") || currentLink.includes("module") || currentLink.includes("sbuild")) continue;
-    versionId = currentLink.split("/").slice(-1)[0];
-    document.write("<p id=\"" + versionId + "\"><a href=\"" + currentLink + "\">" + currentLink + "</a></p>");
-}
+hrefs.forEach(function (link) {
+    if (!(link.includes("frameset") || link.includes("module") || link.includes("sbuild"))) {
+        versionId = link.split("/").slice(-1)[0];
+        document.write("<p id=\"" + versionId + "\"><a href=\"" + link + "\">" + link + "</a></p>");
+    }
+
+});
 
 
 document.write("<pre>");

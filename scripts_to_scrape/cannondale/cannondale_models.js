@@ -17,11 +17,11 @@ localStorage.clear();
 console.warn("This version does not distinguish between models SuperSix EVO and SuperSix EVO Hi-Mod");
 
 var linkElements = $$("a.relatedProducts"), versionId, currentLink;
-for (var i = 0; i < linkElements.length; i++) {
-    currentLink = linkElements[i].href;
+linkElements.forEach(function (element) {
+    currentLink = element.href;
     versionId = currentLink.split("=")[1];
     document.write("<p id=\"" + versionId + "\"><a href=\"" + currentLink + "\">" + currentLink + "</a></p>");
-}
+});
 document.write("<pre>");
 
 

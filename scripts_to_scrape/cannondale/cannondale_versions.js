@@ -17,13 +17,11 @@ var specsInOverview = $$("div.textBox-sm");
  * @returns {string} The value of the spec.
  */
 function getSpecFromOverview(specName) {
-    var currentSpec;
-    for (var i = 0; i < specsInOverview.length; i++) {
-        currentSpec = specsInOverview[i];
-        if (currentSpec.firstElementChild.innerHTML == specName) {
-            return currentSpec.firstElementChild.nextElementSibling.innerHTML.trim();
+    specsInOverview.forEach(function (spec) {
+        if (spec.firstElementChild.innerHTML == specName) {
+            return spec.firstElementChild.nextElementSibling.innerHTML.trim();
         }
-    }
+    });
     return "[" + specName + " not found!]";
 }
 
@@ -37,13 +35,11 @@ var specsInAll = $$("div.cell h4");
  * @returns {string} The value of the spec.
  */
 function getSpecFromAll(specName) {
-    var currentSpec;
-    for (var i = 0; i < specsInAll.length; i++) {
-        currentSpec = specsInAll[i];
-        if (currentSpec.innerHTML == specName) {
-            return currentSpec.nextElementSibling.innerHTML.trim();
+    specsInAll.forEach(function (spec) {
+        if (spec.innerHTML == specName) {
+            return spec.nextElementSibling.innerHTML.trim();
         }
-    }
+    });
     return "[" + specName + " not found!]";
 }
 

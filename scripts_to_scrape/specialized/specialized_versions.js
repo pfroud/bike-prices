@@ -17,15 +17,13 @@ var specTags = $$("h2.specs__subheading");
  * @returns {string} The value of the spec.
  */
 function getSpec(specName) {
-    var currentSpec;
     var caps = specName.toUpperCase();
 
-    for (var i = 0; i < specTags.length; i++) {
-        currentSpec = specTags[i];
-        if (currentSpec.innerHTML == caps) {
-            return currentSpec.parentElement.nextElementSibling.firstElementChild.innerHTML;
+    specTags.forEach(function (spec) {
+        if (spec.innerHTML == caps) {
+            return spec.parentElement.nextElementSibling.firstElementChild.innerHTML;
         }
-    }
+    });
     return "[" + specName + " not found!]";
 }
 

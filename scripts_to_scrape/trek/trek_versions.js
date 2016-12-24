@@ -16,13 +16,11 @@ var specTags = $$("dt.details-list__title");
  * @returns {string} The value of the spec.
  */
 function getSpec(specName) {
-    var currentSpec;
-    for (var i = 0; i < specTags.length; i++) {
-        currentSpec = specTags[i];
-        if (currentSpec.innerHTML.trim() == specName) {
-            return currentSpec.nextElementSibling.innerHTML;
+    specTags.forEach(function (spec) {
+        if (spec.innerHTML.trim() == specName) {
+            return spec.nextElementSibling.innerHTML;
         }
-    }
+    });
     return "[" + specName + " not found!]";
 }
 

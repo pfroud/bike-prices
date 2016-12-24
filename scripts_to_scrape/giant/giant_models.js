@@ -18,11 +18,11 @@
 localStorage.clear();
 
 var linkElements = $$("article div.text a"), modelId, currentLink;
-for (var i = 0; i < linkElements.length; i++) {
-    currentLink = linkElements[i].href;
+linkElements.forEach(function (element) {
+    currentLink = element.href;
     modelId = currentLink.split("/").slice(-2, -1)[0];
     document.write("<p id=\"" + modelId + "\"><a href=\"" + currentLink + "\">" + currentLink + "</a></p>");
-}
+});
 document.write("<pre>");
 
 
@@ -39,16 +39,14 @@ function readNewData(event) {
 
     var data = JSON.parse(event.newValue);
 
-    var model;
-    for (var i = 0; i < data.length; i++) {
-        model = data[i];
+    data.forEach(function (model) {
         for (var spec in model) {
             if (model.hasOwnProperty(spec)) { //http://stackoverflow.com/a/16735184
                 document.write(spec + "\t" + model[spec] + "\n");
             }
         }
         document.write("\n\n");
-    }
+    });
 
 
 }
