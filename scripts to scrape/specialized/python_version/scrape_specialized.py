@@ -10,7 +10,7 @@ import os.path
 JSON_FILENAME = 'models.json'
 
 
-def _remove_duplicates_preserve_order(list_in):
+def _remove_duplicates_preserve_order(list_in: list) -> list:
     """
     Removes duplicates form a list and preserve the order.
     http://stackoverflow.com/a/480227
@@ -25,7 +25,7 @@ def _remove_duplicates_preserve_order(list_in):
     return [x for x in list_in if not (x in seen or seen_add(x))]
 
 
-def _get_soup(url):
+def _get_soup(url: str) -> BeautifulSoup:
     """
     Returnes a BeautifulSoup object of the specified url.
 
@@ -66,7 +66,7 @@ def main():
     write_output(models)
 
 
-def read_model(relative_url):
+def read_model(relative_url: str) -> dict:
     """
     Gets info about all versions of a Specialized bike model.
 
@@ -99,7 +99,7 @@ def read_model(relative_url):
     return {'name': model_name, 'versions': versions, 'num_versions': str(len(versions))}
 
 
-def read_version(url, model_name):
+def read_version(url: str, model_name: str) -> dict:
     """
     Gets info about a Specialized bike version.
 
@@ -108,7 +108,7 @@ def read_version(url, model_name):
     :param model_name: name of the model this version is for
     :type model_name: str
     :return: dict containing data about the version
-    :rtype dict
+    :rtype: dict
     """
     soup = _get_soup(url)
 
@@ -131,7 +131,7 @@ def read_version(url, model_name):
     return version_data
 
 
-def _get_spec(soup, spec_name):
+def _get_spec(soup, spec_name: str) -> str:
     """
     Gets a specification about a Specialized bike
 
@@ -148,7 +148,7 @@ def _get_spec(soup, spec_name):
         return "[{} not found]".format(spec_name)
 
 
-def _get_price(soup):
+def _get_price(soup) -> str:
     """
     Gets the price of a Specialized bike version.
 
@@ -175,12 +175,12 @@ def _get_price(soup):
     return '[price not found]'
 
 
-def write_output(models):
+def write_output(models: dict):
     """
     Writes to a file a list of bike models.
     Only writes version names and prices because material and groupset require human classification.
 
-    :param models:
+    :param models: models to print
     :type models: dict
     """
 
