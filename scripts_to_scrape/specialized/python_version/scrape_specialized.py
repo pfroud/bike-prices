@@ -52,7 +52,7 @@ def main() -> None:
             f.close()
     else:
         soup = _get_soup('https://www.specialized.com/us/en/bikes/road')
-        model_a_tags = soup('a', class_ = 'product-tile__anchor')
+        model_a_tags = soup('a', class_='product-tile__anchor')
         model_hrefs = [x['href'] for x in model_a_tags]
 
         for href in model_hrefs:
@@ -60,7 +60,7 @@ def main() -> None:
                 models.append(read_model(href))
 
         with open(JSON_FILENAME, 'w') as f:
-            json.dump(models, f, indent = 4, sort_keys = True)
+            json.dump(models, f, indent=4, sort_keys=True)
             f.close()
 
     write_output(models)
@@ -78,12 +78,12 @@ def read_model(relative_url: str) -> dict:
     model_url = 'https://www.specialized.com' + relative_url
     soup = _get_soup(model_url)
 
-    model_name = soup.find('h1', class_ = 'grid-header__heading').string.strip()
+    model_name = soup.find('h1', class_='grid-header__heading').string.strip()
 
     print(model_name)
 
     # <a> tags
-    version_a_tags = soup('a', class_ = 'colorway-tile__anchor-link')
+    version_a_tags = soup('a', class_='colorway-tile__anchor-link')
 
     # get href of each <a> tag
     version_hrefs = [x['href'] for x in version_a_tags]
@@ -112,7 +112,7 @@ def read_version(url: str, model_name: str) -> dict:
     """
     soup = _get_soup(url)
 
-    version_name = soup.find('h2', class_ = 'pdp-hero__heading').string.replace(model_name + ' ', '')
+    version_name = soup.find('h2', class_='pdp-hero__heading').string.replace(model_name + ' ', '')
 
     print('    ' + version_name)
 
@@ -143,7 +143,7 @@ def _get_spec(soup, spec_name: str) -> str:
     :rtype: str
     """
     try:
-        return soup.find('h2', string = spec_name.upper()).parent.next_sibling.next_sibling.p.string
+        return soup.find('h2', string=spec_name.upper()).parent.next_sibling.next_sibling.p.string
     except AttributeError:
         return "[{} not found]".format(spec_name)
 
@@ -157,7 +157,7 @@ def _get_price(soup) -> str:
     :return: price of the bike version
     :rtype: str
     """
-    escaped_json = soup.find('div', class_ = 'js-select-container')['data-available-params']
+    escaped_json = soup.find('div', class_='js-select-container')['data-available-params']
 
     replace = ['&quot;', '&quoquot;', '&ququot;']
     for target in replace:
