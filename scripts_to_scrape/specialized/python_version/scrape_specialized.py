@@ -39,7 +39,7 @@ def _get_soup(url: str) -> BeautifulSoup:
     return BeautifulSoup(r.text, 'html.parser')
 
 
-def main():
+def main() -> None:
     """
     Writes a file with partial output of Specialized bikes.
     """
@@ -175,7 +175,7 @@ def _get_price(soup) -> str:
     return '[price not found]'
 
 
-def write_output(models: dict):
+def write_output(models: dict) -> None:
     """
     Writes to a file a list of bike models.
     Only writes version names and prices because material and groupset require human classification.
