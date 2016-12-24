@@ -3,7 +3,7 @@
 Visualizes price and performance of road bicycles.
 
 <p align="center" style="text-align: center">
-<img src="sample_output/sample_output.png" alt="Bike price infographic">
+<img src="sample_output/sample_output.png?raw=true" alt="Bike price infographic">
 </p>
 
 **This readme is not done yet.**
