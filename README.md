@@ -21,29 +21,7 @@ A **model** is something. Here are some models from each of the brands I mention
 
 | Cannondale | Giant | Specialized | Trek |
 |-----------------------------------|------------------------------|----------------------------|----------------------------|
-| <ul> <li>CAAD8</li> <li>SuperSix EVO</li> <li>Synapse</li> <li>3 more</li> </ul> | <ul> <li>Defy</li> <li>TCR</li> <li>Propel</li> <li>8 more</li> </ul> | <ul> <li>Allez</li> <li>Tarmac</li> <li>Roubiax</li> <li>5 more</li> </ul> | <ul> <li>Emonda</li> <li>Madone</li> <li>Domane</li> <li>2 more</li> </ul> |
-
-
-**Cannondale**
-
-| CAAD8 | SuperSix EVO | Synape |
-|-----------------------------------|------------------------------|----------------------------|
-| <ul><li>105</li> <li>Claris</li> <li>Sora</li> <li>Tiagra</li></ul> | <ul><li>Tiagra</li> <li>Ultegra 3</li> <li>Ultegra 4</li><li>2 more</li></ul> | <ul><li>Disc Adventure</li> <li>Disc Tiagra</li> <li>Sora</li><li>2 more</li></ul> |
-
-**Giant** has few versions of each model but a lot of models.
-
-**Specialized**
-
-| Allez | Tarmac | Roubiax |
-|-----------------------------------|------------------------------|----------------------------|
-| <ul><li>Sprint X2 Specialized Edition</li> <li>Sprint X1 Specialized Edition</li> <li>DSW Sprint X1 Expert</li><li>6 more</li></ul> | <ul><li>S-Works eTap</li> <li>S-Works Di2</li> <li>S-Works Disc Di2</li><li>10 more</li></ul> | <ul><li>S-Works SL4 Disc Di2</li> <li>SL4 Disc Power Specialized Edition</li> <li>SL4 Pro Disc Race UDi2</li><li>10 more</li></ul> |
-
-**Trek**
-
-| Emonda |  Madone | Domane |
-|-----------------------------------|------------------------------|----------------------------|
-| <ul><li>SLR 6</li> <li>SLR 8</li> <li>SLR 9</li><li>11 more</li></ul> | <ul><li>9.5</li> <li>9.9 / Women's</li> <li>Race Shop Limited</li><li>1 more</li></ul> | <ul><li>SLR 7</li> <li>SLR 7 Disc</li> <li>SLR 9 eTap</li><li>16 more</li></ul> |
-
+| <ul> <li>CAAD8</li> <li>CAAD12</li> <li>SuperSix EVO</li> <li>SuperSix EVO Hi-Mod</li> <li>Synapse</li> <li>Synapse Carbon</li> </ul> | <ul> <li>Defy</li> <li>Defy Disc</li> <li>Defy Advanced</li> <li>Defy Advanced Pro</li> <li>Defy Advanced SL</li> <li>TCR Advanced</li> <li>TCR Advanced Pro</li> <li>TCR Advanced SL</li> <li>Propel Advanced</li> <li>Propel Advanced Pro</li> <li>Propel Advanced SL</li> </ul> | <ul> <li>Allez</li> <li>Amira</li> <li>Diverge</li> <li>Dolce</li> <li>Roubaix</li> <li>Ruby</li> <li>Tarmac</li> <li>Venge</li>  </ul> | <ul> <li>Emonda</li> <li>Emonda ALR</li> <li>Madone</li> <li>1 Series</li> <li>Domane</li> </ul> |
 
 Let's get an idea how many options there are.
 
