@@ -7,6 +7,8 @@ Visualizes price and performance of road bicycles.
 </p>
 
 
+
+
 ## Background
 
 In May 2015, I was interested in buying a road bike but didn't know very much about them.
@@ -19,16 +21,13 @@ A bicycle **brand** is self explanatory. Some brands are Cannondale, Giant, Spec
 
 A **model** is something. Here are some models from each of the brands I mentioned:
 
-<table>
+<table border="0">
 <tr>
-
 <th>Cannondale</th>
 <th>Giant</th>
 <th>Specialized</th>
 <th>Trek</th>
-
 </tr><tr>
-
 <td>
 <table>
   <tr>
@@ -64,51 +63,15 @@ A **model** is something. Here are some models from each of the brands I mention
 <td>
 <table>
   <tr>
-    <td>Model</td>
-    <td>Versions</td>
+  <td>Model</td>
+  <td>Versions</td>
   </tr>
   <tr>
-    <td>Domane</td>
-    <td>19</td>
-  </tr>
-  <tr>
-    <td>Lexa</td>
+  <td>Propel Advanced SL</td>
     <td>4</td>
   </tr>
   <tr>
-    <td>Slique</td>
-    <td>6</td>
-  </tr>
-  <tr>
-    <td>1 Series</td>
-    <td>2</td>
-  </tr>
-    <tr>
-    <td>Emonda ALR</td>
-    <td>3</td>
-  </tr>
-    <tr>
-    <td>Emonda</td>
-    <td>14</td>
-  </tr>
-  <tr>
-    <td>Madone</td>
-    <td>4</td>
-  </tr>
-</table>
-</td>
-<td>
-<table>
-  <tr>
-    <td>Model</td>
-    <td>Versions</td>
-  </tr>
-  <tr>
-    <td>Propel Advanced SL</td>
-    <td>4</td>
-  </tr>
-  <tr>
-    <td>Propel Advanced Pro</td>
+  <td>Propel Advanced Pro</td>
     <td>1</td>
   </tr>
   <tr>
@@ -148,6 +111,7 @@ A **model** is something. Here are some models from each of the brands I mention
     <td>3</td>
   </tr>
 </table>
+
 </td>
 <td>
 <table>
@@ -186,6 +150,43 @@ A **model** is something. Here are some models from each of the brands I mention
     <tr>
     <td>Amira</td>
     <td>7</td>
+  </tr>
+</table>
+
+</td>
+<td>
+<table>
+  <tr>
+    <td>Model</td>
+    <td>Versions</td>
+  </tr>
+  <tr>
+    <td>Domane</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>Lexa</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Slique</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>1 Series</td>
+    <td>2</td>
+  </tr>
+    <tr>
+    <td>Emonda ALR</td>
+    <td>3</td>
+  </tr>
+    <tr>
+    <td>Emonda</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>Madone</td>
+    <td>4</td>
   </tr>
 </table>
 </td>
