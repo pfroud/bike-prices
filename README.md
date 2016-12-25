@@ -194,13 +194,13 @@ There are a lot of road bikes. In this project, I look at four well-known bicycl
 **Material:** whether the frame and/or fork are [carbon-fiber](https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer). Carbon is lightweight and stiff but expensive.
 
 <p align="center" style="text-align: center">
-<img src="img/frame-fork.png?raw=true" alt="Bicycle frame and fork">
+<img src="img/frame-fork.png?raw=true" alt="Bicycle frame and fork" width="400px">
 </p>
 
 **[Groupset](https://en.wikipedia.org/wiki/Groupset).**  Drivetrain components comes in sets
 
 <p align="center" style="text-align: center">
-<img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain">
+<img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain" width="400px">
 </p>
 
 | Shimano | SRAM |
