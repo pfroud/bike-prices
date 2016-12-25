@@ -7,19 +7,11 @@ Visualizes price and performance of road bicycles.
 </p>
 
 
-
-
 ## Background
 
 In May 2015, I was interested in buying a road bike but didn't know very much about them.
 
-Here's the problem:  there are many bicycle brands. Each brand makes many models. Each model has many versions.  That multiplies to a lot of bikes to choose from. There are currently 190 versions in the project.
-
-### Terminology
-
-A bicycle **brand** is self explanatory. Some brands are Cannondale, Giant, Specialized, and Trek.
-
-A **model** is something. Here are some models from each of the brands I mentioned:
+There are a lot of road bikes. In this project, I look at four well-known bicycle brands, each which get a column in the table below. Each brand has several models, and each model has several versions. In total, there are 190 versions to consider.
 
 <table border="0">
 <tr>
@@ -192,53 +184,39 @@ A **model** is something. Here are some models from each of the brands I mention
 </td>
 </tr>
 </table>
-Let's get an idea how many options there are.
+
+### Variables and terminology
+
+ Each version has three variables. 
+
+**Price:** the MSRP price as stated on their website. MSRP isn't what you would actually pay in a bike shop, but hopefully the difference is the same across brands.
+
+**Material:** whether the frame and/or fork are [carbon-fiber](https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer). Carbon is lightweight and stiff but expensive.
+
+**[Groupset](https://en.wikipedia.org/wiki/Groupset).**  Drivetrain components comes in sets
+
+| Shimano | SRAM |
+|:-----:|----------|
+| Dura-Ace Di2 <br> Dura-Ace <br> Ultegra Di2 <br> Ultegra <br> 105 <br> Tiagra <br> Sora <br> Claris | Red <br> Force <br> Rival <br> Apex |
 
 
 ### Preliminary questions
 
-In the first version, I manually entered data from four bike brands (Specialized, Cannondale, Trek, Giant) with only price
+I was overwhelmed with options and wanted to be able to see all options at once and visually compare them.
 
-Specifically, I wanted to learn:
+I created the very first version of this chart to explore one question:
 
-* do brands have different pricing styles?
-* are versions clustered by price or spread out?
-* what is the price range of different models?
+>**Is it better to get an expensive version of a cheap model, or a cheap version of an expensive model?**
 
-**is it better to get an expensive version of a cheap model, or a cheap version of an expensive model?**
+It turns out this question cannot be answered by a chart.
 
+However, I did gain insight into specific questions.
 
-### Early versions
-
-I figured it was easier to make a shitty proof-of-concept program to make the diagram I wanted than it was to find and learn a data viz library. I made the first chart to see if the style I had in mind would be useful. It was, and I have been developing the project since then.
-
-I have still not been able to find a data viz library to this this for me, mostly because I'm not sure what to call this kind of chart. I did do this though: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices [old data!!!]
-
-It turned out I didn't have enough information to come close to answer for the last question. I had thought of adding a variable for groupset (the drivetrain components) but it would be a lot of work.
-
-It also turns out that this question cannot be answered by a diagram.
-
-## Expansion 
-
-I soon expanded to another variable for material to try to answer:
-
-- how does the amount of carbon fiber affects a model/version's price? (it's really expensive)
-- is there an obvious best value? (no)
-
-The holy grail was to determine whether, at a given price point, 
-
-###Expansion to material
-
-I soon expanded to another variable for material to try to answer:
-
-how does the amount of carbon fiber affects a model/version's price? (it's really expensive)
-is there an obvious best value? (no)
-
-
-### Expansion to groupset
-
-I was offered a chance to present at Gunn High School's Engineering Night, and decided to bring the bike diagram to full fruitition ith groupset information. 
-
+* do different brands have different pricing styles?
+* few models with versions spread far apart, or many models spread far apart, each with few versions?
+* is there a bike at almost every price point? jumps? discontinuities? a continuum?
+* what are the price tradeoffs between carbon and groupset?
+* are there any obvious best values?
 
 
 ## Implementation
@@ -247,15 +225,10 @@ I was offered a chance to present at Gunn High School's Engineering Night, and d
 
 ### Drawing diagram
 
+I figured it was easier to make a shitty proof-of-concept program to make the diagram I wanted than it was to find and learn a data viz library. I made the first chart to see if the style I had in mind would be useful. It was, and I have been developing the project since then.
+
+I have still not been able to find a data viz library to this this for me, mostly because I'm not sure what to call this kind of chart. I did do this though: https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices [old data!!!]
+
+
 ## Results
 
-Answers to those questions are still the same, so I'll show results using current bike data and diagram.
-
-**Do brands have different pricing styles?**
-No.
-
-**Are versions clustered by price or spread out?**
-Spread out.
-
-**What is the price range of different models?**
-Mostly very big.
