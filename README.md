@@ -108,7 +108,7 @@ A **model** is something. Here are some models from each of the brands I mention
   </tr>
     <tr>
     <td>Defy</td>
-    <td>3</td>
+    <td>2</td>
   </tr>
 </table>
 
