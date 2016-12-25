@@ -35,9 +35,9 @@ There are a lot of road bikes. In this project, I look at four well-known bicycl
 <img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain" width="400px">
 </p>
 
-| Shimano | SRAM |
-|---------|------|
-| Dura-Ace Di2 <br> Dura-Ace <br> Ultegra Di2 <br> Ultegra <br> 105 <br> Tiagra <br> Sora <br> Claris | Red <br> Force <br> Rival <br> Apex |
+|   | Shimano | SRAM |
+|---|---------|------|
+| race<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>enthusiast<br>&nbsp;<br>&nbsp;<br>entry-level | Dura-Ace Di2 <br> Dura-Ace <br> Ultegra Di2 <br> Ultegra <br> 105 <br> Tiagra <br> Sora <br> Claris | &nbsp;<br>Red<br>&nbsp;<br>Force <br> Rival <br>&nbsp;<br> Apex<br>&nbsp; |
 
 
 ### Preliminary questions
