@@ -19,10 +19,178 @@ A bicycle **brand** is self explanatory. Some brands are Cannondale, Giant, Spec
 
 A **model** is something. Here are some models from each of the brands I mentioned:
 
-| Cannondale | Giant | Specialized | Trek |
-|-----------------------------------|------------------------------|----------------------------|----------------------------|
-| <ul> <li>CAAD8</li> <li>CAAD12</li> <li>SuperSix EVO</li> <li>SuperSix EVO Hi-Mod</li> <li>Synapse</li> <li>Synapse Carbon</li> </ul> | <ul> <li>Defy</li> <li>Defy Disc</li> <li>Defy Advanced</li> <li>Defy Advanced Pro</li> <li>Defy Advanced SL</li> <li>TCR Advanced</li> <li>TCR Advanced Pro</li> <li>TCR Advanced SL</li> <li>Propel Advanced</li> <li>Propel Advanced Pro</li> <li>Propel Advanced SL</li> </ul> | <ul> <li>Allez</li> <li>Amira</li> <li>Diverge</li> <li>Dolce</li> <li>Roubaix</li> <li>Ruby</li> <li>Tarmac</li> <li>Venge</li>  </ul> | <ul> <li>Emonda</li> <li>Emonda ALR</li> <li>Madone</li> <li>1 Series</li> <li>Domane</li> </ul> |
+<table>
+<tr>
 
+<th>Cannondale</th>
+<th>Giant</th>
+<th>Specialized</th>
+<th>Trek</th>
+
+</tr><tr>
+
+<td>
+<table>
+  <tr>
+    <td>Model</td>
+    <td>Versions</td>
+  </tr>
+  <tr>
+    <td>Synapse Carbon</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>Synapse</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>CAAD12</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>CAAD8</td>
+    <td>4</td>
+  </tr>
+    <tr>
+    <td>SuperSix EVO Hi-Mod</td>
+    <td>5</td>
+  </tr>
+    <tr>
+    <td>SuperSix EVO</td>
+    <td>5</td>
+  </tr>
+</table>
+</td>
+<td>
+<table>
+  <tr>
+    <td>Model</td>
+    <td>Versions</td>
+  </tr>
+  <tr>
+    <td>Domane</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>Lexa</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Slique</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>1 Series</td>
+    <td>2</td>
+  </tr>
+    <tr>
+    <td>Emonda ALR</td>
+    <td>3</td>
+  </tr>
+    <tr>
+    <td>Emonda</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>Madone</td>
+    <td>4</td>
+  </tr>
+</table>
+</td>
+<td>
+<table>
+  <tr>
+    <td>Model</td>
+    <td>Versions</td>
+  </tr>
+  <tr>
+    <td>Propel Advanced SL</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>Propel Advanced Pro</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Propel Advanced</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>TCR Advanced SL</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>TCR Advanced Pro</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>TCR Advanced</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>Defy Advanced SL</td>
+    <td>2</td>
+  </tr>
+    <tr>
+    <td>Defy Advanced Pro</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Defy Advanced</td>
+    <td>3</td>
+  </tr>
+    <tr>
+    <td>Defy Disc</td>
+    <td>2</td>
+  </tr>
+    <tr>
+    <td>Defy</td>
+    <td>3</td>
+  </tr>
+</table>
+</td>
+<td>
+<table>
+  <tr>
+    <td>Model</td>
+    <td>Versions</td>
+  </tr>
+  <tr>
+    <td>Tarmac</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>Ruby</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Diverge</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Dolce</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>Roubaix</td>
+    <td>13</td>
+  </tr>
+  <tr>
+    <td>Alez</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>Venge</td>
+    <td>5</td>
+  </tr>
+    <tr>
+    <td>Amira</td>
+    <td>7</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
 Let's get an idea how many options there are.
 
 
