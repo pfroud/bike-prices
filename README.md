@@ -1,3 +1,4 @@
+
 # Bicycle price infographic generator
 
 Visualizes price and performance of road bicycles.
@@ -13,27 +14,40 @@ In May 2015, I was interested in buying a road bike but didn't know very much ab
 
 There are a lot of road bikes. In this project, I look at four well-known bicycle brands, each which get a column in the table below. Each brand has several models, and each model has several versions. In total, there are 190 versions to consider.
 
-| Cannondale | Giant | Specialized | Trek |
+| [Cannondale](http://www.cannondale.com/en/USA) | [Giant](https://www.giant-bicycles.com/us/) | [Specialized](https://www.specialized.com/) | [Trek](http://www.trekbikes.com/us/en_US/) |
 |------------|-------|-------------|------|
-| <table><tr><th>Model</th><th>Versions</th></tr><tr><td>Synapse Carbon</td><td>11</td></tr><tr><td>Synapse</td><td>5</td></tr><tr><td>CAAD12</td><td>7</td></tr><tr><td>CAAD8</td><td>4</td></tr><tr><td>SuperSix EVO Hi-Mod</td><td>5</td></tr><tr><td>SuperSix EVO</td><td>5</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>Propel Advanced SL</td><td>4</td></tr><tr><td>Propel Advanced Pro</td><td>1</td></tr><tr><td>Propel Advanced</td><td>3</td></tr><tr><td>TCR Advanced SL</td><td>3</td></tr><tr><td>TCR Advanced Pro</td><td>2</td></tr><tr><td>TCR Advanced</td><td>3</td></tr><tr><td>Defy Advanced SL</td><td>2</td></tr><tr><td>Defy Advanced Pro</td><td>2</td></tr><tr><td>Defy Advanced</td><td>3</td></tr><tr><td>Defy Disc</td><td>2</td></tr><tr><td>Defy</td><td>2</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>Tarmac</td><td>13</td></tr><tr><td>Ruby</td><td>10</td></tr><tr><td>Diverge</td><td>10</td></tr><tr><td>Dolce</td><td>7</td></tr><tr><td>Roubaix</td><td>13</td></tr><tr><td>Alez</td><td>9</td></tr><tr><td>Venge</td><td>5</td></tr><tr><td>Amira</td><td>7</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>Domane</td><td>19</td></tr><tr><td>Lexa</td><td>4</td></tr><tr><td>Slique</td><td>6</td></tr><tr><td>1 Series</td><td>2</td></tr><tr><td>Emonda ALR</td><td>3</td></tr><tr><td>Emonda</td><td>14</td></tr><tr><td>Madone</td><td>4</td></tr></table> |
+| <table><tr><th>Model</th><th>Versions</th></tr><tr><td>[Synapse Carbon](http://www.cannondale.com/en/USA/Products/ProductCategory.aspx?nid=71fb0b57-8db4-4549-b9eb-b50f7cfd4ed0)</td><td>11</td></tr><tr><td>[Synapse](http://www.cannondale.com/en/USA/Products/ProductCategory.aspx?nid=61013240-d2c5-418d-a97d-a844c8b5e456)</td><td>5</td></tr><tr><td>[CAAD12](http://www.cannondale.com/en/USA/Products/ProductCategory.aspx?nid=185f8303-a384-4816-b3bf-9feb5f067c25)</td><td>7</td></tr><tr><td>CAAD8</td><td>4</td></tr><tr><td>[SuperSix EVO](http://www.cannondale.com/en/USA/Products/ProductCategory.aspx?nid=a31f8962-635b-47e1-adb8-efb64487b587)</td><td>10</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>[Propel Advanced SL](https://www.giant-bicycles.com/us/bikes-propel-advanced-sl)</td><td>4</td></tr><tr><td>[Propel Advanced Pro](https://www.giant-bicycles.com/us/bikes-propel-advanced-pro)</td><td>1</td></tr><tr><td>[Propel Advanced](https://www.giant-bicycles.com/us/bikes-propel-advanced)</td><td>3</td></tr><tr><td>[TCR Advanced SL](https://www.giant-bicycles.com/us/bikes-tcr-advanced-sl)</td><td>3</td></tr><tr><td>[TCR Advanced Pro](https://www.giant-bicycles.com/us/bikes-tcr-advanced-pro)</td><td>2</td></tr><tr><td>[TCR Advanced](https://www.giant-bicycles.com/us/bikes-tcr-advanced)</td><td>3</td></tr><tr><td>[Defy Advanced SL](https://www.giant-bicycles.com/us/bikes-defy-advanced-sl)</td><td>2</td></tr><tr><td>[Defy Advanced Pro](https://www.giant-bicycles.com/us/bikes-defy-advanced-pro)</td><td>2</td></tr><tr><td>[Defy Advanced](https://www.giant-bicycles.com/us/bikes-defy-advanced)</td><td>3</td></tr><tr><td>Defy Disc</td><td>2</td></tr><tr><td>Defy</td><td>2</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>[Tarmac](https://www.specialized.com/us/en/men/bikes/road/performance/tarmac)</td><td>13</td></tr><tr><td>[Ruby](https://www.specialized.com/us/en/women/bikes/road/performance/ruby)</td><td>10</td></tr><tr><td>[Diverge](https://www.specialized.com/us/en/men/bikes/road/adventure/diverge)</td><td>10</td></tr><tr><td>[Dolce](https://www.specialized.com/us/en/women/bikes/road/performance/dolce)</td><td>7</td></tr><tr><td>[Roubaix](https://www.specialized.com/us/en/men/bikes/road/performance/roubaix)</td><td>13</td></tr><tr><td>[Allez](https://www.specialized.com/us/en/men/bikes/road/performance/allez)</td><td>9</td></tr><tr><td>[Venge](https://www.specialized.com/us/en/men/bikes/road/performance/venge)</td><td>5</td></tr><tr><td>[Amira](https://www.specialized.com/us/en/women/bikes/road/performance/amira)</td><td>7</td></tr></table> | <table><tr><th>Model</th><th>Versions</th></tr><tr><td>[Domane](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/domane/c/B221/)</td><td>19</td></tr><tr><td>Lexa</td><td>4</td></tr><tr><td>[Slique](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/silque-womens/c/B222/)</td><td>6</td></tr><tr><td>[1 Series](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/1-series/c/B214/)</td><td>2</td></tr><tr><td>[Emonda ALR](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/%C3%A9monda-alr/c/B212/)</td><td>3</td></tr><tr><td>[Emonda](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/%C3%A9monda/c/B211/) / [women's](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/%C3%A9monda/c/B211/)</td><td>14</td></tr><tr><td>[Madone](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/madone/c/B213/) / [women's](http://www.trekbikes.com/us/en_US/bikes/road-bikes/performance-road/%C3%A9monda/c/B211/)</td><td>4</td></tr></table> |
+
+Models without links have been discontinued or renamed. The number of models in the table is from when I last scraped data and may not be current. I excluded track, cyclocross, and triathalon bicycles.
 
 ### Variables and terminology
 
  Each version has three variables. 
 
-**Price:** the MSRP price as stated on their website. MSRP isn't what you would actually pay in a bike shop, but hopefully the difference is the same across brands.
+(1) **Price:** the MSRP price as stated on their website. Hopefully, the difference between list and street price is the same across brands.
 
-**Material:** whether the frame and/or fork are [carbon-fiber](https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer). Carbon is lightweight and stiff but expensive.
-
+(2) **Material:** which key parts of the bicycle are made from carbon-fiber. Carbon-fiber is lightweight and stiff but difficult to manufacture so expensive. We're only concerned with the *frame*, colored blue below, and  the *fork*, colored green.
+ 
 <p align="center" style="text-align: center">
 <img src="img/frame-fork.png?raw=true" alt="Bicycle frame and fork" width="400px">
 </p>
 
-**[Groupset](https://en.wikipedia.org/wiki/Groupset).**  Drivetrain components comes in sets
+This value of the material is one of:
+
+ * none - neither the frame nor fork are carbon-fiber
+ * fork - the fork is carbon fiber, but the frame isn't
+ * all - both the frame and fork are carbon-fiber
+
+They don't make bikes with carbon frames but not carbon forks.
+If something isn't carbon-fiber, it's probably made of aluminum. 
+
+(3) **[Groupset](https://en.wikipedia.org/wiki/Groupset).**  Drivetrain components comes in sets
 
 <p align="center" style="text-align: center">
 <img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain" width="400px">
 </p>
+
+
 
 |   | Shimano | SRAM |
 |---|---------|------|
