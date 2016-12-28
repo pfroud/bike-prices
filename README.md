@@ -26,10 +26,10 @@ Models without links have been discontinued or renamed. The number of models in 
 
 (1) **Price:** the MSRP price as stated on their website. Hopefully, the difference between list and street price is the same across brands.
 
-(2) **Material:** which key parts of the bicycle are made from [carbon-fiber](https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer). Carbon-fiber is lightweight and stiff but difficult to manufacture so expensive. We're only concerned with the [*frame*](https://en.wikipedia.org/wiki/Bicycle_frame#Carbon_fiber), colored blue below, and  the [*fork*](https://en.wikipedia.org/wiki/Bicycle_fork#Materials), colored green.
+(2) **Material:** which key parts of the bicycle are made from [carbon-fiber](https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer). Carbon-fiber is lightweight and stiff but difficult to manufacture so expensive. We're only concerned with the [*frame*](https://en.wikipedia.org/wiki/Bicycle_frame#Carbon_fiber), colored blue below, and  the [*fork*](https://en.wikipedia.org/wiki/Bicycle_fork#Materials), colored green below:
  
 <p align="center" style="text-align: center">
-<img src="img/frame-fork.png?raw=true" alt="Bicycle frame and fork" width="400px">
+<img src="img/frame-fork.png?raw=true" alt="Bicycle frame and fork" width="500px">
 </p>
 
 This value of the material is one of:
@@ -38,21 +38,26 @@ This value of the material is one of:
  * fork - the fork is carbon fiber, but the frame isn't
  * all - both the frame and fork are carbon-fiber
 
-They don't make bikes with carbon frames but not carbon forks.
-If something isn't carbon-fiber, it's probably made of aluminum. 
+They don't make bikes with carbon frames but without carbon forks. A frame or fork not made of carbon is probably made of aluminum. 
 
-(3) **[Groupset](https://en.wikipedia.org/wiki/Groupset).**  Drivetrain components comes in sets
+(3) **[Groupset](https://en.wikipedia.org/wiki/Groupset):** the bicycle's drivetrain components, which come in a set. The parts shown below are part of the groupset:
 
 <p align="center" style="text-align: center">
-<img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain" width="400px">
+<img src="img/drivetrain.png?raw=true" alt="Bicycle drivetrain" width="500px">
 </p>
 
+Two companies make groupset components at this price level. 
 
+[Campagnolo](http://www.campagnolo.com/US/en/)
 
-|   | Shimano | SRAM |
+|   | [Shimano](http://bike.shimano.com/) | [SRAM](https://www.sram.com/sram/road) |
 |---|---------|------|
-| race<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>enthusiast<br>&nbsp;<br>&nbsp;<br>entry-level | Dura-Ace Di2 <br> Dura-Ace <br> Ultegra Di2 <br> Ultegra <br> 105 <br> Tiagra <br> Sora <br> Claris | &nbsp;<br>Red<br>&nbsp;<br>Force <br> Rival <br>&nbsp;<br> Apex<br>&nbsp; |
+| race<br>&nbsp;<br>enthusiast<br>&nbsp;<br>&nbsp;<br>entry-level | [Dura-Ace](http://bike.shimano.com/content/sac-bike/en/home/components11/road/dura-ace-9100.html) ([Di2](http://bike.shimano.com/content/sac-bike/en/home/components11/road/dura-ace-9170-di2.html)) <br> [Ultegra](http://bike.shimano.com/content/sac-bike/en/home/components11/road/ultegra1.html) ([Di2](http://bike.shimano.com/content/sac-bike/en/home/components11/road/ultegra-di21.html)) <br> [105](http://bike.shimano.com/content/sac-bike/en/home/components11/road/1051.html) <br> [Tiagra](http://bike.shimano.com/content/sac-bike/en/home/components11/road/Tiagra4700.html) <br> [Sora](http://bike.shimano.com/content/sac-bike/en/home/components11/road/sora11.html) <br> [Claris](http://bike.shimano.com/content/sac-bike/en/home/components11/road/claris1.html) | [Red](https://www.sram.com/sram/road/family/sram-red) ([eTAP](https://www.sram.com/sram/road/family/sram-red-etap))<br>&nbsp;<br>[Force](https://www.sram.com/sram/road/family/sram-force) <br> [Rival](https://www.sram.com/sram/road/family/sram-rival) <br>&nbsp;<br> [Apex](https://www.sram.com/sram/road/family/sram-apex) |
 
+
+Di2 and eTAP are electronic groupsets. eTap is wireless, Di2 sends control signals over wires. Batteries and motors 
+
+Di2 stands for Digital Integrated Intelligence.
 
 ### Preliminary questions
 
