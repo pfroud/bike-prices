@@ -25,7 +25,7 @@ class Histogram {
         this.width = width;
         this.height = height;
 
-        System.out.printf("%30s: %d, %d\n", caption, x, y);
+//        System.out.printf("%30s: %d, %d\n", caption, x, y);
 
 //        barWidth = 10;
         barSpacing = 1;
@@ -55,7 +55,6 @@ class Histogram {
         g.setColor(Color.red);
         g.fillOval(x - 5, y - 5, 10, 10);
 */
-
 
 
         g.setColor(Color.black);
