@@ -6,7 +6,7 @@ This folder contains web scrapers to collect data about bikes from their website
 
 Each brand lays out their website differently so each brand has its own scraper. For each website, this pattern is followed:
 
-<!-- rename these files -->
+
 1. go to a page which lists versions of a model
 1. run `[brand]_get_links.js` to print links for that model
 1. open all the links
