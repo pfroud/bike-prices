@@ -8,9 +8,9 @@ Each brand lays out their website differently so each brand has its own scraper.
 
 <!-- rename these files -->
 1. go to a page which lists versions of a model
-1. run `[brand]_models.js` to print links for that model
+1. run `[brand]_get_links.js` to print links for that model
 1. open all the links
-1. on each page with a version, run `[brand]_versions.js` to extract info about the version and write it to [Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+1. on each page with a version, run `[brand]_read_bike.js` to extract info about the version and write it to [Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
 1.  return to the page with the links. all the versions and outputs it in a single comma-separated value table
 
 So, the scraping is far from totally automated. I made one fully automated scraper, at [`specialized/python_version/`](specialized/python_version/). It was more work than I thought it would be.

@@ -15,7 +15,7 @@ To use the Javascript version:
     * [Allez](https://www.specialized.com/bikes/road/allez)  
 Note the  [Shiv](https://www.specialized.com/bikes/triathlon/shiv) is excluded because it's a triathlon bike and the
 [Langster](https://www.specialized.com/bikes/road/langster) is excluded because it's a track bike.
-1. On each page, paste [`specialized_models.js`](specialized_models.js) into the browser's javascript console and run it.
+1. On each page, paste [`specialized_get_links.js`](specialized_get_links.js) into the browser's javascript console and run it.
 1. The page will be replaced with a list of links for each model. Open all of them.
-1. On each page with a bike model, run [`specialized_versions.js`](specialized_versions.js).
-1. After running `specialized_versions.js` each time, the page with the list of links will be updated.
+1. On each page with a bike model, run [`specialized_read_bike.js`](specialized_read_bike.js).
+1. After running `specialized_read_bike.js` each time, the page with the list of links will be updated.
