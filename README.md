@@ -80,7 +80,7 @@ Answers are discussed below.
 ### Scraping data
 
 
-I made JavaScript web scrapers to help gather  bike specs; read about them in folder [`scripts_to_scrape/`]. The resulting data are in  [`bikesInput.txt`](bikesInput.txt).
+I made JavaScript web scrapers to help gather  bike specs; read about them in folder [`scripts_to_scrape/`](scripts_to_scrape). The resulting data are in  [`bikesInput.txt`](bikesInput.txt).
 
 ### Drawing diagram
 
@@ -88,7 +88,7 @@ It would make a lot of sense to have a data visualization program do the drawing
 
 I made the first proof-of-concept chart only to see if this was a good idea. I used Java because it was installed on my computer, I knew how to use it, and it's easy to draw shapes with. The current diagram is drawn using Erich Seifert's [`VectorGraphics2D`](http://trac.erichseifert.de/vectorgraphics2d/) library.
 
-To begin, the program reads a text file containing info about all the bikes, currently [`bikesInput.txt`](bikesInput.txt). Next, each model is represented by an instance of [`Bike`](src/Bike.java), which contains all the versions of the model. Enums for [`Groupset`](src/Groupset.java) and [`Carbon`](src/Carbon.java) are used to describe specs. Then, a [`Diagram`](src/Diagram.java)  draws all the bikes and a [`Legend`](src/Legend.java] shows what the symbols mean.
+To begin, the program reads a text file containing info about all the bikes, currently [`bikesInput.txt`](bikesInput.txt). Next, each model is represented by an instance of [`Bike`](src/Bike.java), which contains all the versions of the model. Enums for [`Groupset`](src/Groupset.java) and [`Carbon`](src/Carbon.java) are used to describe specs. Then, a [`Diagram`](src/Diagram.java)  draws all the bikes and a [`Legend`](src/Legend.java) shows what the symbols mean.
 
 There is an ability to make [`Histogram`](src/Histogram.java)s, which would get added to the `Diagram` by adding an [`Analysis`](src/Analysis.java) object. Currently this is not added to the chart, but you can try it using [`AnalysisTesting`](src/AnalysisTesting.java).
 
@@ -105,7 +105,7 @@ at [The Offramp](http://offrampbikes.com/) in Mountain View.
 
 * is there a bike at almost every price point? jumps? discontinuities? a continuum?
 * what are the price tradeoffs between carbon and groupset?
-* 
+
 **Are there any obvious best values?**
 No.
 
