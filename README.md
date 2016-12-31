@@ -133,13 +133,3 @@ Obviously, a static pdf diagram is really shitty. A dynamic diagram should be ab
 
 classify by brand
 get curret bike data, and compare over time
-
-
------------------------
-
-**Image credits** 
-
-frame - derivative of [Bicycle Frame Diagram-en.svg](https://en.wikipedia.org/wiki/File:Bicycle_Frame_Diagram-en.svg) by [Keithonearth](https://commons.wikimedia.org/wiki/User:Keithonearth) on Wikimedia Commons, licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/deed.en)
-
-drivetrain - [Derailleur Bicycle Drivetrain.svg](https://commons.wikimedia.org/wiki/File:Derailleur_Bicycle_Drivetrain.svg) by [Keithonearth](https://commons.wikimedia.org/wiki/User:Keithonearth) on Wikimedia Commons, licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)
-
