@@ -192,20 +192,23 @@ public class Bike implements Comparable<Bike> {
      */
     void printRange() {
         NumberFormat numFmt = NumberFormat.getNumberInstance();
-        System.out.printf("%s\t$%s\t%.2fx\t%s\t$%s\t%s\t$%s\n",
+        System.out.printf("\"%s\", \"$%s\", \"%.2fx\", \"%s\", \"$%s\", \"%s\", \"$%s\"\n",
                 modelName.replace('_', ' '),
-                numFmt.format(maxPrice - minPrice), (double) (maxPrice) / minPrice,
-                versionNames.firstElement(), numFmt.format(versionPrices.firstElement()),
-                versionNames.lastElement(), numFmt.format(versionPrices.lastElement()));
+                numFmt.format(maxPrice - minPrice),
+                (double) (maxPrice) / minPrice,
+                versionNames.firstElement(),
+                numFmt.format(versionPrices.firstElement()),
+                versionNames.lastElement(),
+                numFmt.format(versionPrices.lastElement()));
     }
 
     /**
      * Prints the header for the CSV populated by printRange().
      */
     static void printHeader() {
-        System.out.println("Model\tAbsolute price range\tRelative price range\t" +
-                "Least expensive version\tLeast expensive version price\t" +
-                "Most expensive version\tMost expensive version price");
+        System.out.println("\"Model\", \"Absolute price range\", \"Relative price range\", \"" +
+                "Least expensive version\", \"Least expensive version price\", \"" +
+                "Most expensive version\", \"Most expensive version price\"");
     }
 
     /**

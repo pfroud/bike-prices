@@ -63,6 +63,7 @@ class Diagram {
         priceMax = Bike.getPriceMin();
 
         priceRange = priceMax - priceMin;
+        printRanges();
     }
 
 
@@ -126,6 +127,7 @@ class Diagram {
      * Prints the range info for every bike.
      */
     void printRanges() {
+        Bike.printHeader();
         allBikes.forEach(Bike::printRange);
     }
 

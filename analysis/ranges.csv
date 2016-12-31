@@ -1,17 +1,33 @@
-Model	Absolute price range	Relative price range	Least expensive version	Least expensive version price	Most expensive version	Most expensive version price
-Specialized Diverge	$7,400	7.73x	A1	$1,100	Carbon Di2	$8,500
-Specialized Secteur	$400	1.47x	Double	$850	Elite Double	$1,250
-Specialized Roubiax	$7,700	5.28x	SL4 Double	$1,800	S-Works SL4 Disc Di2	$9,500
-Specialized Allez	$7,230	10.39x	Allez	$770	S-Works Di2	$8,000
-Specialized Tarmac	$7,400	4.52x	Sport	$2,100	S-works Tarmac Di2 Disc	$9,500
-Trek CrossRip	$770	1.78x	Crosrip	$990	LTD	$1,760
-Trek Domane	$6,870	5.80x	2.0	$1,430	6.9 Disc	$8,300
-Trek 1 Series	$330	1.43x	1.1	$770	1.5	$1,100
-Trek Madone	$10,230	8.75x	2.1	$1,320	7.9 WSD	$11,550
-Trek Emonda ALR	$490	1.28x	5	$1,760	6	$2,250
-Trek Emonda	$14,100	9.55x	S 4	$1,650	SLR 10	$15,750
-Cannondale CAAD10	$2,650	2.58x	105 5	$1,680	Black Inc Disc	$4,330
-Cannondale CAAD8	$540	1.62x	Claris 8	$870	105 5	$1,410
-Cannondale Supersix Evo	$9,650	5.25x	Carbon 105 5	$2,270	Black Inc	$11,920
-Cannondale Synapse	$1,250	2.36x	Claris 8	$920	Sram Rival Disc	$2,170
-Cannondale Synapse Carbon	$7,060	4.43x	105 6	$2,060	Hi-mod Black Inc Disc	$9,120
+"Model", "Absolute price range", "Relative price range", "Least expensive version", "Least expensive version price", "Most expensive version", "Most expensive version price"
+"Giant Defy", "$260", "1.39x", "3", "$920", "5", "$660"
+"Trek Lexa", "$800", "2.04x", "S", "$990", "base", "$770"
+"Trek 1 Series", "$160", "1.21x", "1.1", "$770", "1.2", "$930"
+"Specialized Dolce", "$1,330", "2.73x", "Comp EVO", "$2,100", "base", "$770"
+"Specialized Allez", "$3,230", "5.19x", "Sprint X2 Specialized Edition", "$4,000", "E5", "$770"
+"Cannondale CAAD8", "$595", "1.73x", "105", "$1,410", "Tiagra", "$1,250"
+"Specialized Diverge", "$4,650", "6.47x", "Pro", "$5,500", "Comp DSW X1", "$2,600"
+"Cannondale Synapse", "$1,260", "2.45x", "Claris", "$870", "Sora", "$1,030"
+"Giant Defy Disc", "$300", "1.25x", "1", "$1,500", "2", "$1,200"
+"Trek Emonda ALR", "$590", "1.45x", "4", "$1,310", "6", "$1,900"
+"Trek Domane", "$9,640", "8.09x", "2.0", "$1,360", "SLR 9 eTap", "$11,000"
+"Trek Emonda", "$10,510", "7.69x", "S 4 / Women's", "$1,570", "SLR 9 Women's", "$8,500"
+"Giant TCR Advanced", "$900", "1.56x", "1", "$2,500", "3", "$1,600"
+"Cannondale CAAD12", "$4,180", "3.49x", "105", "$1,680", "Ultegra", "$2,240"
+"Giant Defy Advanced", "$800", "1.44x", "1", "$2,600", "3", "$1,800"
+"Specialized Ruby", "$6,450", "4.58x", "S-Works Di2", "$8,250", "base", "$1,800"
+"Specialized Roubaix", "$6,700", "4.72x", "S-Works SL4 Disc Di2", "$8,500", "SL4", "$1,800"
+"Cannondale Synapse Carbon", "$7,750", "5.21x", "105", "$2,240", "Hi-MOD Dura Ace", "$5,860"
+"Cannondale SuperSix EVO", "$2,100", "2.14x", "105", "$2,240", "Ultegra 4", "$2,660"
+"Specialized Tarmac", "$7,500", "4.75x", "S-Works eTap", "$9,500", "Comp UDi2", "$3,300"
+"Specialized Amira", "$6,000", "4.00x", "S-Works SL4", "$8,000", "SL4 Sport", "$2,000"
+"Trek Silque", "$2,900", "2.38x", "S", "$2,470", "base", "$2,100"
+"Giant Propel Advanced", "$1,900", "1.90x", "0", "$4,000", "2", "$2,100"
+"Specialized Venge", "$10,100", "4.61x", "S-Works ViAS Di2", "$12,900", "Elite", "$2,800"
+"Giant TCR Advanced Pro", "$2,300", "1.72x", "0", "$5,500", "1", "$3,200"
+"Giant Defy Advanced Pro", "$1,900", "1.59x", "0", "$5,100", "2", "$3,200"
+"Giant TCR Advanced SL", "$4,700", "2.15x", "0", "$8,800", "2", "$4,100"
+"Cannondale SuperSix EVO Hi-Mod", "$8,530", "3.00x", "Black Inc.", "$12,790", "Hi-MOD Ultegra", "$4,260"
+"Giant Propel Advanced SL", "$4,600", "2.05x", "0", "$9,000", "2", "$4,400"
+"Giant Defy Advanced SL", "$3,700", "1.80x", "0", "$8,300", "1", "$4,600"
+"Giant Propel Advanced Pro", "$0", "1.00x", "0", "$5,650", "0", "$5,650"
+"Trek Madone", "$7,000", "2.17x", "9.2", "$6,000", "Race Shop Limited", "$13,000"
