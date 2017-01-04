@@ -139,7 +139,11 @@ Otherwise, pricing styles are similar.
 
 > What's price distribution like? Is there a bike at almost every price point? Or, are bike clustered around price points?
 
-Picture here...
+Spread out fairly continuously. Click for bigger:
+
+<p align="center" style="text-align: center">
+<img src="img/price-distribution.png?raw=true" alt="Distribution of bike prices">
+</p>
 
 
 > Are there any obvious best values?
