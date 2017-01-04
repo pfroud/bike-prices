@@ -63,7 +63,6 @@ class Diagram {
         priceMax = Bike.getPriceMin();
 
         priceRange = priceMax - priceMin;
-        printRanges();
     }
 
 
@@ -202,9 +201,9 @@ class Diagram {
 
             // rectangle bar
             g.setColor(BAR_BACKGROUND_COLOR);
-            barXStart = getXPosition(currentBike.minPrice);
+            barXStart = getXPosition(currentBike.minPrice) - MARKER_SIZE/2;
             barYPos = i * verticalSpacing + 20;
-            barXEnd = getXPosition(currentBike.maxPrice);
+            barXEnd = getXPosition(currentBike.maxPrice) - MARKER_SIZE/2;
             barWidth = (int) (barXEnd - barXStart);
             int RECT_RADIUS = 10;
             g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
@@ -235,7 +234,7 @@ class Diagram {
             currentPrice = currentBike.versionPrices.get(i);
 
             // draw dot
-            dotX = getXPosition(currentPrice);
+            dotX = getXPosition(currentPrice) - MARKER_SIZE / 2;
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
             g.setColor(currentBike.versionGroupsets.get(i).getColor());
             g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));

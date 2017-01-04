@@ -29,7 +29,7 @@ public class Main {
 //        d.addAnalysis(new Analysis(3, 30, height - 50, 70));
 
 
-//        d.writePDF("working_output.pdf");
+        d.writePDF("working_output.pdf");
 
     }
 
