@@ -94,14 +94,14 @@ class Diagram {
 
         priceData.sort(null);
 
-        final int DOT_SIZE = 3;
+        final int DOT_SIZE = 4;
         g.setColor(new Color(0, 0, 0, 255 / 4));
 
         int xPos;
         for (int price : priceData) {
             xPos = getXPosition(price);
-//            g.fillOval(xPos - DOT_SIZE / 2, 50, DOT_SIZE, DOT_SIZE);
-            g.drawLine(xPos, 60, xPos, 70);
+            g.fillOval(xPos - DOT_SIZE / 2, 10, DOT_SIZE, DOT_SIZE);
+//            g.drawLine(xPos, 60, xPos, 70);
         }
 
     }

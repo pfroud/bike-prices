@@ -15,8 +15,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         //numbers in inches
-        int width = (int) (INCH_TO_MM * 20);
-        int height = (int) (INCH_TO_MM * 5);
+        int width = (int) (INCH_TO_MM * 30);
+        int height = (int) (INCH_TO_MM * 2);
         int margin = (int) (INCH_TO_MM * 1);
         int gridStep = 1000; //this is in dollars
 
