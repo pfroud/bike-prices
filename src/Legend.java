@@ -6,7 +6,7 @@ import java.awt.*;
 class Legend {
 
     private int x, y, markerSize;
-    private Font theFont = new Font("Arial", Font.PLAIN, 14);
+    private Font fondLegend = new Font("Arial", Font.PLAIN, 14);
 
     Legend(int x, int y) {
         this.x = x;
@@ -20,16 +20,16 @@ class Legend {
     void draw(Graphics2D g) {
         final int WIDTH = 200, HEIGHT = 320;
 
-        //background
-        g.setColor(Color.white); // box background
+        //white background with black box
+        g.setColor(Color.white);
         g.fillRect(x, y, WIDTH, HEIGHT);
-        g.setColor(Color.black); // box border
+        g.setColor(Color.black);
         g.drawRect(x, y, WIDTH, HEIGHT);
 
-        g.setFont(theFont);
+        g.setFont(fondLegend);
 
         // draw carbon legend
-        Carbon[] carbons = Carbon.values();
+        Carbon[] carbons = Carbon.values(); // returns the constants of this enum type, in the order they're declared
         Carbon currCarb;
         Shape shapeToDraw;
         int theY;
@@ -43,12 +43,11 @@ class Legend {
         }
 
         // draw groupset legend
-        Groupset[] gs = Groupset.getRanked();
-//        final int barHeight = 40, barWidth = 60;
+        Groupset[] groupsets = Groupset.getRanked();
         final int barHeight = 25, barWidth = 40;
         Groupset currGroup;
-        for (int i = 0; i < gs.length; i++) {
-            currGroup = gs[i];
+        for (int i = 0; i < groupsets.length; i++) {
+            currGroup = groupsets[i];
             g.setColor(currGroup.getColor());
             theY = y + 100 + i * (barHeight + 2);
             g.fillRect(x + 10, theY, barWidth, barHeight);

@@ -7,81 +7,65 @@ import java.util.Vector;
  */
 class Histogram {
 
-    private Vector<Integer> data; // contents of histogram bins
+    private Vector<Integer> data; // histogram bins
 
-    private int x, y, width, height, barWidth, barSpacing, vertScale, marginToCenter; // height currently not used
+    private int x, y, size, barWidth, barSpacing, verticalScale;
     private String caption;
-    private Font fontDefault = new Font("Arial", Font.PLAIN, 12);
-    private Font fontCaption = fontDefault; // temporarily
+    private Font fontHistogram = new Font("Arial", Font.PLAIN, 12);
 
     Histogram(Vector<Integer> data, String caption) {
         this.data = data;
         this.caption = caption;
     }
 
-    void setSize(int x, int y, int width, int height) {
+    void setSize(int x, int y, int size) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
+        this.size = size;
 
-//        System.out.printf("%30s: %d, %d\n", caption, x, y);
+        //System.out.printf("%30s: %d, %d\n", caption, x, y);
 
-//        barWidth = 10;
         barSpacing = 1;
-        barWidth = (width + barSpacing) / data.size();
-
-//         when the bar width is constant, use this to center them
-//        int totalBarWidth = (barWidth + barSpacing) * data.size() - barSpacing;
-//        marginToCenter = (width - totalBarWidth) / 2;
-        marginToCenter = 0;
-
-        int marginTop = 0;
-//        vertically scales each histogram so the tallest bar reaches the top
-//        int max = Collections.max(data);
-//        vertScale = (height - marginTop) / max;
-        vertScale = (height - marginTop) / 12;
+        barWidth = (size + barSpacing) / data.size();
+        verticalScale = size / 12;
     }
 
     void draw(Graphics g) {
-        // coordinate system: positive is down and right.
+        // Coordinate system: positive is down and right.
 
-/*
-
-        // bounding box
+        // Uncomment to draw bounding box
         g.setColor(Color.lightGray);
-        g.drawRect(x, y - height, width, height);
+        g.drawRect(x, y - size, size, size);
         //dot for origin
         g.setColor(Color.red);
-        g.fillOval(x - 5, y - 5, 10, 10);
-*/
+        int originSize = 10;
+        g.fillOval(x - originSize / 2, y - originSize / 2, originSize, originSize);
 
 
+        // uncomment to draw x axis
+        //g.setColor(Color.black);
+        //g.drawLine(x-2, y, x + size, y);
+
+        g.setFont(fontHistogram);
         g.setColor(Color.black);
-//        g.drawLine(x-2, y, x + width, y); // x-axis
 
-        g.setFont(fontDefault);
-
-        // draw individual bars
+        // draw bars
+        int currentData, xStart, yStart, barHeight;
         for (int i = 0, len = data.size(); i < len; i++) {
-            int currentData = data.get(i);
+            currentData = data.get(i);
 
-            int xStart = x + i * (barWidth + barSpacing) + marginToCenter;
-            int height = currentData * vertScale;
-//            if (height == 0) height = 1;
-            int yStart = y - height;
+            barHeight = currentData * verticalScale;
+            //if (barHeight == 0) barHeight = 1;
+            xStart = x + i * (barWidth + barSpacing);
+            yStart = y - barHeight;
 
-            g.fillRect(xStart, yStart, barWidth, height);
-            g.drawString(Integer.toString(currentData), xStart + barWidth / 2 - 3, yStart - 2);
+            g.fillRect(xStart, yStart, barWidth, barHeight);
+            g.drawString(Integer.toString(currentData), xStart + barWidth / 2 - 3, yStart - 2); // bar label
         }
 
-        g.setFont(fontCaption);
-
         // http://www.java2s.com/Tutorial/Java/0261__2D-Graphics/Centertext.htm
-        FontMetrics fm = g.getFontMetrics();
-        int centerOffset = (width - fm.stringWidth(caption)) / 2;
-
-        g.drawString(caption, x + centerOffset, y + 25);
+        int centerOffset = (size - g.getFontMetrics().stringWidth(caption)) / 2;
+        g.drawString(caption, x + centerOffset, y + 20);
 
     }
 

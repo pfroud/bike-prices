@@ -26,10 +26,11 @@ class Analysis {
     void init(Vector<Bike> bikes) {
         Histogram h;
 
-        final int histsPerRow = 10;
+        final int histsPerRow = 5;
         final int numBikes = bikes.size();
         final int SPACING = 50;
 
+        // draw in rows
         Bike bike;
         int mod;
         for (int start = 0, end = histsPerRow; end <= numBikes; start = end + 1, end += histsPerRow) {
@@ -37,7 +38,7 @@ class Analysis {
             for (int i = start; i < end; i++) {
                 bike = bikes.get(i);
                 h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
-                h.setSize(x + (histSize + SPACING) * (i % histsPerRow), y + mod * (histSize + SPACING), histSize, histSize);
+                h.setSize(x + (histSize + SPACING) * (i % histsPerRow), y + mod * (histSize + SPACING), histSize);
                 hists.add(h);
             }
         }
@@ -46,7 +47,7 @@ class Analysis {
 
     void draw(Graphics g) {
         g.setColor(Color.white);
-        g.fillRect(0, 0, 9999, 999);
+        g.fillRect(0, 0, 1000, 1000);
 
         for (Histogram hist : hists) hist.draw(g);
     }

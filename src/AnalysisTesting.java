@@ -11,15 +11,15 @@ public class AnalysisTesting extends JPanel {
     private static Analysis a;
 
     public static void main(String[] args) {
-        a = new Analysis(4, 50, 150, 50);
+        a = new Analysis(4, 50, 150, 80);
         a.init(Bike.readBikes("bikesInput.txt"));
 
-        // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php since I never remember this stuff
+        // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
         AnalysisTesting panel = new AnalysisTesting();
         JFrame application = new JFrame();
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         application.add(panel);
-        application.setSize(1600, 1900);
+        application.setSize(1000, 1000);
         application.setVisible(true);
     }
 
