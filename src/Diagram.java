@@ -64,41 +64,6 @@ class Diagram {
     }
 
 
-    /// PUBLIC FUNCTIONS
-
-    /**
-     * Override the price (x-axis) range.
-     *
-     * @param newMin custom minimum amount in dollars
-     * @param newMax custom maximum amount in dollars
-     */
-    void addCustomRange(int newMin, int newMax) {
-        priceMin = newMin;
-        priceMax = newMax;
-
-        priceRange = priceMax - priceMin;
-    }
-
-    /**
-     * Adds a Legend to the diagram.
-     *
-     * @param l Legend object
-     */
-    void addLegend(Legend l) {
-        legend = l;
-        legend.setMarkerSize(MARKER_SIZE);
-    }
-
-    /**
-     * Adds an Analysis object to the diagram.
-     *
-     * @param a Analysis object
-     */
-    void addAnalysis(Analysis a) {
-        analysis = a;
-        analysis.init(allBikes);
-    }
-
     /**
      * Writes the diagram to a PDF file.
      *
@@ -106,14 +71,37 @@ class Diagram {
      * @throws IOException if cannot write to the file
      */
     void writePDF(String filename) throws IOException {
-        drawGrid(g);
-        drawBikes(g);
+//        draw_margin(g);
 
+        drawGrid(g);
+        draw_price_distrib();
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
             byte[] bytes = g.getBytes();
-
             file.write(bytes);
+        }
+    }
+
+    private void draw_margin(Graphics g) {
+        g.setColor(Color.red);
+        g.drawRect(margin, margin, width - margin - margin, height - margin - margin);
+    }
+
+    private void draw_price_distrib() {
+        Vector<Integer> priceData = new Vector<>();
+
+        for (Bike b : allBikes) priceData.addAll(b.versionPrices);
+
+        priceData.sort(null);
+
+        final int DOT_SIZE = 3;
+        g.setColor(new Color(0, 0, 0, 255 / 4));
+
+        int xPos;
+        for (int price : priceData) {
+            xPos = getXPosition(price);
+//            g.fillOval(xPos - DOT_SIZE / 2, 50, DOT_SIZE, DOT_SIZE);
+            g.drawLine(xPos, 60, xPos, 70);
         }
 
     }
@@ -129,112 +117,46 @@ class Diagram {
         int rightEdge = width - margin;
         g.setColor(Color.black);
 
-        //          x1   ,  y1            , x2            , y2
-        g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
+
+
 
         //setup for vertical lines
-        Font smallFont = new Font("Arial", Font.PLAIN, 20);
+        Font smallFont = new Font("Arial", Font.PLAIN, 8);
         g.setFont(smallFont); //14pt size
         FontMetrics metrics = g.getFontMetrics(smallFont);
         int textHeght = metrics.getHeight() - 10;
         g.setColor(Color.decode("0x999999"));
         int xPos;
 
-        //draw vertical lines
+
+        //draw intermediate price marks
         for (int price = priceMin + gridStep; price <= priceMax - gridStep; price += gridStep) {
             xPos = getXPosition(price);
-            g.drawLine(xPos, 0, xPos, bottomEdge + 60);
+            g.drawLine(xPos, bottomEdge - 2, xPos, bottomEdge + 2);
 
             // Draw labels for vertical lines. Skip if at min and max because already drawn in bigger font.
             if (priceMin != price && priceMax != price) {
-                g.drawString(numberFormat.format(price), xPos, bottomEdge + textHeght);
+                g.drawString("$" + price / 1000 + "k", xPos-7, bottomEdge + 10);
             }
         }
 
-        g.setColor(Color.white);
-        g.setFont(new Font("Arial", Font.BOLD, 22)); //22pt size
-        g.drawString(numberFormat.format(priceMin), margin, bottomEdge + 20);
-        g.drawString(numberFormat.format(priceMax), rightEdge - 60, bottomEdge + 20);
+        //          x1   ,  y1            , x2            , y2
+        g.drawLine(margin, bottomEdge, rightEdge, bottomEdge); // bottom axis
+
 
         // min and max labels for bottom axis
         g.setColor(Color.black);
-        Font bigFont = new Font("Arial", Font.BOLD, 30);
+        Font bigFont = new Font("Arial", Font.BOLD, 10);
         g.setFont(bigFont);
         metrics = g.getFontMetrics(bigFont);
         textHeght = metrics.getHeight();
-        int marginNudge = 30;
-        g.drawString(numberFormat.format(priceMin), margin - marginNudge, bottomEdge + textHeght / 2);
-        String maxPrice = numberFormat.format(priceMax);
-        g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice) + marginNudge, bottomEdge + textHeght / 2);
+        g.drawString(numberFormat.format(priceMin), margin - 4, bottomEdge + textHeght);
+        String maxPrice = "$" + priceMax / 1000 + "k";
+        g.drawString(maxPrice, rightEdge - metrics.stringWidth(maxPrice) + 12, bottomEdge + textHeght);
 
 
     }
 
-    /**
-     * Draws all the Bike objects.
-     *
-     * @param g graphics context
-     */
-    private void drawBikes(Graphics2D g) {
-        Bike currentBike;
-        int verticalSpacing = RECT_HEIGHT + 11; //spacing between each horizontal bar
-        int barYPos, barWidth;
-        float barXStart, barXEnd; // x positions of start and end of a bar
-
-        // iterate over all the bike models
-        for (int i = 0; i < allBikes.size(); i++) {
-            currentBike = allBikes.get(i);
-
-            barYPos = i * verticalSpacing + 20;
-
-            // rectangle bar
-            g.setColor(BAR_BACKGROUND_COLOR);
-            barXStart = getXPosition(currentBike.minPrice) - MARKER_SIZE/2;
-            barYPos = i * verticalSpacing + 20;
-            barXEnd = getXPosition(currentBike.maxPrice) - MARKER_SIZE/2;
-            barWidth = (int) (barXEnd - barXStart);
-            int RECT_RADIUS = 10;
-            g.fillRoundRect((int) barXStart, barYPos, barWidth + MARKER_SIZE, RECT_HEIGHT, RECT_RADIUS, RECT_RADIUS);
-
-            drawDots(g, currentBike, barYPos);
-
-            // draw model name on the left
-            g.setColor(Color.black);
-            g.setFont(fontRowName);
-//            g.drawString(i+": "+currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
-            g.drawString(currentBike.modelName, 10, barYPos + RECT_HEIGHT - 6);
-
-        }
-    }
-
-
-    /**
-     * Draw the dots showing variants for a model.
-     *
-     * @param g           graphics context
-     * @param currentBike the bike object from the main loop
-     * @param barVertPos  vertical position of that bike's bar
-     */
-    private void drawDots(Graphics2D g, Bike currentBike, int barVertPos) {
-        int currentPrice, dotX, dotY;
-
-        for (int i = 0; i < currentBike.numModels; i++) {
-            currentPrice = currentBike.versionPrices.get(i);
-
-            // draw dot
-            dotX = getXPosition(currentPrice) - MARKER_SIZE / 2;
-            dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-            g.setColor(currentBike.versionGroupsets.get(i).getColor());
-            g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
-
-            // draw price above the dot and model name below the dot
-//            g.setColor(Color.black);
-//            g.setFont(fontDotCaption);
-//            g.drawString("$" + currentPrice, dotX, dotY - 3);
-//            g.drawString(currentBike.versionNames.get(i), dotX, dotY); // for size 8
-
-        }
-    }
 
     /**
      * Given the price of a model version, returns the x position to draw it at.
