@@ -33,9 +33,8 @@ class Diagram {
     private int width, height, margin; //units are millimeters
     private int gridStep; //spacing between vertical grid steps. Units are dollars.
 
-    // price range - these don't need to be fields
-    private int priceMin = 999999;
-    private int priceMax = 0;
+    // price range to display
+    private int priceMin, priceMax;
 
     //    private NumberFormat numFmt = NumberFormat.getInstance();
     private NumberFormat numFmt = new DecimalFormat("$#,###");
@@ -57,10 +56,10 @@ class Diagram {
 
         allBikes = bikes;
 
-        g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
+        g = new PDFGraphics2D(0.0, 0.0, width, height);
 
-        priceMin = Bike.priceMax;
-        priceMax = Bike.priceMin;
+        priceMin = Bike.priceMinGlobal;
+        priceMax = Bike.priceMaxGlobal;
     }
 
 
@@ -178,8 +177,8 @@ class Diagram {
             g.setColor(BAR_BACKGROUND_COLOR);
 
             barYPos = i * verticalSpacing + 20;
-            barXStart = priceToX(currentBike.minPrice) - MARKER_SIZE / 2;
-            barXEnd = priceToX(currentBike.maxPrice) - MARKER_SIZE / 2;
+            barXStart = priceToX(currentBike.minPriceModel) - MARKER_SIZE / 2;
+            barXEnd = priceToX(currentBike.maxPriceModel) - MARKER_SIZE / 2;
             barWidth = barXEnd - barXStart + MARKER_SIZE;
 
             final int RECT_RADIUS = 10;

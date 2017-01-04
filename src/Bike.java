@@ -13,7 +13,7 @@ public class Bike implements Comparable<Bike> {
 
     // region statics
 
-    static int priceMin = 999999, priceMax;
+    static int priceMinGlobal = 888888, priceMaxGlobal; // min and max price of ALL bikes
 
     /**
      * Opens an input file and reads all of it into a vector of Bikes.
@@ -85,15 +85,8 @@ public class Bike implements Comparable<Bike> {
         }
 
         // read version prices
-        int currentPrice;
         for (int i = 0; i < numModels; i++) {
-            currentPrice = sc.nextInt();
-
-            //update min and max price
-            if (currentPrice > priceMin) priceMin = currentPrice;
-            if (currentPrice < priceMax) priceMax = currentPrice;
-
-            newBike.addPrice(currentPrice);
+            newBike.addPrice(sc.nextInt());
         }
 
         // read version materials
@@ -124,10 +117,10 @@ public class Bike implements Comparable<Bike> {
     Vector<Carbon> carbons = new Vector<>();
     Vector<Groupset> groupsets = new Vector<>();
 
-    int minPrice = 999999, maxPrice = 0; // price of most and least expensive version of the model
+    int minPriceModel = 999999, maxPriceModel; // price of most and least expensive version of the model
 
     public int compareTo(Bike other) {
-        return Integer.compare(Collections.min(prices), Collections.min(other.prices));
+        return Integer.compare(minPriceModel, other.minPriceModel);
     }
 
 
@@ -158,13 +151,16 @@ public class Bike implements Comparable<Bike> {
      * Used to add a price to the vector of prices.
      * prices isn't private but you should still use this.
      *
-     * @param c the price of the version to add.
+     * @param p the price of the version to add.
      */
-    private void addPrice(int c) {
-        prices.add(c);
+    private void addPrice(int p) {
+        prices.add(p);
 
-        if (c > maxPrice) maxPrice = c;
-        if (c < minPrice) minPrice = c;
+        if (p < priceMinGlobal) priceMinGlobal = p;
+        if (p > priceMaxGlobal) priceMaxGlobal = p;
+
+        if (p < minPriceModel) minPriceModel = p;
+        if (p > maxPriceModel) maxPriceModel = p;
     }
 
     /**
@@ -186,8 +182,8 @@ public class Bike implements Comparable<Bike> {
         NumberFormat numFmt = NumberFormat.getNumberInstance();
         System.out.printf("\"%s\", \"$%s\", \"%.2fx\", \"%s\", \"$%s\", \"%s\", \"$%s\"\n",
                 modelName,
-                numFmt.format(maxPrice - minPrice),
-                (double) (maxPrice) / minPrice,
+                numFmt.format(maxPriceModel - minPriceModel),
+                (double) (maxPriceModel) / minPriceModel,
                 names.firstElement(),
                 numFmt.format(prices.firstElement()),
                 names.lastElement(),
@@ -204,12 +200,12 @@ public class Bike implements Comparable<Bike> {
         for (int i = 0; i < numBins; i++) bins.add(i, 0);
 
 
-        double binWidth = (double) (maxPrice - minPrice) / numBins; // width in dollars of each bin
+        double binWidth = (double) (maxPriceModel - minPriceModel) / numBins; // width in dollars of each bin
         double priceCutoff; // max price for a version to be in a bin
 
         for (int currentPrice : prices) {
             for (int currentBin = 1; currentBin <= numBins; currentBin++) {
-                priceCutoff = minPrice + (binWidth * currentBin);
+                priceCutoff = minPriceModel + (binWidth * currentBin);
 
                 if (currentPrice <= priceCutoff) {
                     // this is gross, mixing zero-based and one-based
