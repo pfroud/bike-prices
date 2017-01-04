@@ -59,8 +59,8 @@ class Diagram {
 
         g = new PDFGraphics2D(0.0, 0.0, this.width, this.height);
 
-        priceMin = Bike.getPriceMax();
-        priceMax = Bike.getPriceMin();
+        priceMin = Bike.priceMax;
+        priceMax = Bike.priceMin;
 
         priceRange = priceMax - priceMin;
     }
@@ -126,8 +126,8 @@ class Diagram {
      * Prints the range info for every bike.
      */
     void printRanges() {
-        Bike.printHeader();
-        allBikes.forEach(Bike::printRange);
+        Bike.CSV_printHeader();
+        allBikes.forEach(Bike::CSV_printRow);
     }
 
     /**
@@ -231,13 +231,13 @@ class Diagram {
         int currentPrice, dotX, dotY;
 
         for (int i = 0; i < currentBike.numModels; i++) {
-            currentPrice = currentBike.versionPrices.get(i);
+            currentPrice = currentBike.prices.get(i);
 
             // draw dot
             dotX = getXPosition(currentPrice) - MARKER_SIZE / 2;
             dotY = barVertPos + RECT_HEIGHT / 2 - MARKER_SIZE / 2;
-            g.setColor(currentBike.versionGroupsets.get(i).getColor());
-            g.fill(currentBike.versionCarbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
+            g.setColor(currentBike.groupsets.get(i).getColor());
+            g.fill(currentBike.carbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
 //            g.setColor(Color.black);

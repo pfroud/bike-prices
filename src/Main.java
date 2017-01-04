@@ -89,10 +89,10 @@ public class Main {
 
             for (Bike bike : bikes) {
                 for (int i = 0; i < bike.numModels; i++) {
-                    currPrice = bike.versionPrices.get(i);
+                    currPrice = bike.prices.get(i);
                     if (currPrice < price) continue;
                     versionsTotal++;
-                    if (bike.versionCarbons.get(i) == Carbon.ALL) versionsFullCarbon++;
+                    if (bike.carbons.get(i) == Carbon.ALL) versionsFullCarbon++;
                 }
             }
 

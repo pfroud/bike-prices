@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.NumberFormat;
 import java.util.Collections;
-import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -14,17 +13,17 @@ public class Bike implements Comparable<Bike> {
 
     // region statics
 
-    private static int priceMin, priceMax; // maximum and minimum prices of versions of this model
+    static int priceMin, priceMax;
 
     /**
-     * Opens the input file and reads all bikes in the file.
+     * Opens an input file and reads all of it into a vector of Bikes.
      *
      * @param filename name of text file with bike info
+     * @return a vector of bikes built from the input file
      */
     static Vector<Bike> readBikes(String filename) {
         Scanner fileScan = null;
 
-        // open file
         try {
             fileScan = new Scanner(new File(filename));
         } catch (FileNotFoundException e) {
@@ -50,16 +49,17 @@ public class Bike implements Comparable<Bike> {
 
     //@formatter:off (formatter kills indentation in this doc comment)
     /**
-     * Reads and returns a single bike model and its versions.
+     * Reads and returns a single bike model.
      * Steps:
      *
      * (1) Reads the header, which contains the model name and the number of versions.
-     *     Example: "Specialized_Diverge 7"
+     *     Example: "Trek Domane: 19"
      *
-     * (2) Does three for loops to read:
+     * (2) Does four for loops to read:
      *     (a) version names
      *     (b) version prices
      *     (c) version materials
+     *     (d) version groupsets
      *
      * @param sc scanner on the input text file
      * @return a Bike object containing all of the version names, prices, and materials
@@ -71,17 +71,17 @@ public class Bike implements Comparable<Bike> {
         //read model name
         String name = sc.next();
         if (name.equals("end")) return null;
-        Bike bike = new Bike(name);
+        Bike newBike = new Bike(name);
 
         // read number of versions
         int numModels = sc.nextInt();
-        bike.numModels = numModels;
+        newBike.numModels = numModels;
 
         sc.useDelimiter(", |\r?\n|\r"); // only use newline as delimiter
 
         // read version names
         for (int i = 0; i < numModels; i++) {
-            bike.versionNames.add(sc.next());
+            newBike.names.add(sc.next());
         }
 
         // read version prices
@@ -93,47 +93,41 @@ public class Bike implements Comparable<Bike> {
             if (currentPrice > priceMin) priceMin = currentPrice;
             if (currentPrice < priceMax) priceMax = currentPrice;
 
-            bike.addPrice(currentPrice);
+            newBike.addPrice(currentPrice);
         }
 
         // read version materials
         for (int i = 0; i < numModels; i++) {
-            bike.versionCarbons.add(Carbon.parseString(sc.next()));
+            newBike.carbons.add(Carbon.parseString(sc.next()));
         }
 
         // read version groupsets
         for (int i = 0; i < numModels; i++) {
-            bike.versionGroupsets.add(Groupset.parseString(sc.next()));
+            newBike.groupsets.add(Groupset.parseString(sc.next()));
         }
 
-        return bike;
+        return newBike;
     }
 
-    static int getPriceMin() {
-        return priceMin;
-    }
-
-    static int getPriceMax() {
-        return priceMax;
-    }
 
     // endregion statics
 
     // region instance stuff
 
+    // I have decided everything can be default privacy
+
     String modelName;
     int numModels;
 
-    // these should maybe be all private
-    private Vector<String> versionNames = new Vector<>();
-    Vector<Integer> versionPrices = new Vector<>();
-    Vector<Carbon> versionCarbons = new Vector<>();
-    Vector<Groupset> versionGroupsets = new Vector<>();
+    Vector<String> names = new Vector<>();
+    Vector<Integer> prices = new Vector<>();
+    Vector<Carbon> carbons = new Vector<>();
+    Vector<Groupset> groupsets = new Vector<>();
 
     int minPrice = 999999, maxPrice = 0; // price of most and least expensive version of the model
 
     public int compareTo(Bike other) {
-        return Integer.compare(Collections.min(versionPrices), Collections.min(other.versionPrices));
+        return Integer.compare(Collections.min(prices), Collections.min(other.prices));
     }
 
 
@@ -144,14 +138,6 @@ public class Bike implements Comparable<Bike> {
      */
     public Bike(String name) {
         this.modelName = name;
-
-        /*
-//        sometimes nice to shorten long words
-        modelName = modelName.replace("Specialized", "Spec.");
-        modelName = modelName.replace("Cannondale", "Can.");
-        modelName = modelName.replace("Advanced", "Adv.");
-        */
-
     }
 
     /**
@@ -160,13 +146,10 @@ public class Bike implements Comparable<Bike> {
      * @return a human-readable representation of the bike model.
      */
     public String toString() {
-        NumberFormat format = NumberFormat.getInstance();
-        ListIterator<String> names = versionNames.listIterator();
-        ListIterator<Integer> prices = versionPrices.listIterator();
+        NumberFormat numFmt = NumberFormat.getInstance();
         String out = modelName + "\n-----------------------\n";
-
-        while (names.hasNext()) {
-            out += names.next() + ": $" + format.format(prices.next()) + "\n";
+        for (int i = 0; i < names.size(); i++) {
+            out += String.format("%s: $%s\n", names.get(i), numFmt.format(prices.get(i)));
         }
         return out;
     }
@@ -178,63 +161,59 @@ public class Bike implements Comparable<Bike> {
      * @param c the price of the version to add.
      */
     private void addPrice(int c) {
-        versionPrices.add(c);
+        prices.add(c);
 
         if (c > maxPrice) maxPrice = c;
         if (c < minPrice) minPrice = c;
     }
 
     /**
-     * Prints a CSV row of: model name, absolute price range, relative price range, name of least expensive version,
-     * price of least expensive version, name of most expensive version, price of most expensive version.
-     *
-     * When writing CSV files, use printHeader() first.
+     * Prints the header for the CSV populated by CSV_printRow().
      */
-    void printRange() {
-        NumberFormat numFmt = NumberFormat.getNumberInstance();
-        System.out.printf("\"%s\", \"$%s\", \"%.2fx\", \"%s\", \"$%s\", \"%s\", \"$%s\"\n",
-                modelName.replace('_', ' '),
-                numFmt.format(maxPrice - minPrice),
-                (double) (maxPrice) / minPrice,
-                versionNames.firstElement(),
-                numFmt.format(versionPrices.firstElement()),
-                versionNames.lastElement(),
-                numFmt.format(versionPrices.lastElement()));
-    }
-
-    /**
-     * Prints the header for the CSV populated by printRange().
-     */
-    static void printHeader() {
+    static void CSV_printHeader() {
         System.out.println("\"Model\", \"Absolute price range\", \"Relative price range\", \"" +
                 "Least expensive version\", \"Least expensive version price\", \"" +
                 "Most expensive version\", \"Most expensive version price\"");
     }
 
     /**
+     * Prints a CSV row of: model name, absolute price range, relative price range, name of least expensive version,
+     * price of least expensive version, name of most expensive version, price of most expensive version.
+     *
+     * When writing CSV files, use CSV_printHeader() first.
+     */
+    void CSV_printRow() {
+        NumberFormat numFmt = NumberFormat.getNumberInstance();
+        System.out.printf("\"%s\", \"$%s\", \"%.2fx\", \"%s\", \"$%s\", \"%s\", \"$%s\"\n",
+                modelName,
+                numFmt.format(maxPrice - minPrice),
+                (double) (maxPrice) / minPrice,
+                names.firstElement(),
+                numFmt.format(prices.firstElement()),
+                names.lastElement(),
+                numFmt.format(prices.lastElement()));
+    }
+
+    /**
      * Returns data for input to a histogram.
-     * Partitions the bikes by price into numHistogramBins bins. Each element of the vector
+     * Partitions the bikes by price into numBins bins. Each element of the vector
      * is the number of versions in that price range.
      */
-    Vector<Integer> getHistogramData(int numHistogramBins) {
-        Vector<Integer> bins = new Vector<>(numHistogramBins);
-        for (int i = 0; i < numHistogramBins; i++) {
-            bins.add(i, 0);
-        }
+    Vector<Integer> getHistogramData(int numBins) {
+        Vector<Integer> bins = new Vector<>(numBins);
+        for (int i = 0; i < numBins; i++) bins.add(i, 0);
 
-        double binWidth = (double) (maxPrice - minPrice) / numHistogramBins; // width, in dollars, of each bin
-        double priceCutoff; //max price for a version to be in a bin
 
-        //iterate over versions
-        for (Integer currentPrice : versionPrices) {
+        double binWidth = (double) (maxPrice - minPrice) / numBins; // width in dollars of each bin
+        double priceCutoff; // max price for a version to be in a bin
 
-            //iterate over bins
-            for (int currentBin = 1; currentBin <= numHistogramBins; currentBin++) {
+        for (int currentPrice : prices) {
+            for (int currentBin = 1; currentBin <= numBins; currentBin++) {
                 priceCutoff = minPrice + (binWidth * currentBin);
 
                 if (currentPrice <= priceCutoff) {
-                    // there is probably a better way to do this
-                    bins.set(currentBin - 1, bins.get(currentBin - 1) + 1); // need currentBin-1 bc index starts at 0
+                    // this is gross, mixing zero-based and one-based
+                    bins.set(currentBin - 1, bins.get(currentBin - 1) + 1);
                     break;
                 }
             }
