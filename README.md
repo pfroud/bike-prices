@@ -33,7 +33,7 @@ I use three specifications to give an idea of the bike's performance.
 <img src="img/frame-fork.png?raw=true" alt="Diagram showing bicycle frame and fork" width="500px">
 </p>
 
-Carbon-fiber is lightweight, strong, corrosion-resistant, and can be molded into almost any shape, but is difficult to manufacture so expensive. Parts not made of carbon are most likely aluminum, which is still a very good material but not as cool.
+Carbon-fiber is lightweight, strong, corrosion-resistant, and can be molded into almost any shape, but is difficult to manufacture so expensive. On these bikes, parts not made of carbon are made of aluminum.
 
 A carbon frame is probably, but not necessarily, better than an aluminum frame. See [Results &sect; Useful scope](#useful-scope) for more.
 
@@ -53,7 +53,7 @@ Almost every bike I sampled has at least a carbon fork. They don't make bikes wi
 
 Importantly, a groupset also includes the brake/shift levers. More expensive groupsets are lightweight and have faster/smoother/nicer mechanisms.
 
-Two companies make groupsets at this price level, and each company has multiple lines:
+Two companies make groupsets at this price level, and each company makes multiple lines:
 
 |[Shimano](http://bike.shimano.com/) | [SRAM](https://www.sram.com/sram/road) |
 |---------|------|
@@ -66,7 +66,7 @@ Notes - Di2 and eTAP versions are electronic, which shift using batteries, motor
 
 ### Preliminary questions
 
-The main idea for making the first chart was to get a feel for what was out there: see all my options and visually compare everything.
+The idea for making the first chart was to get a feel for what was out there: see all my options and visually compare everything.
 
 Soon, I hoped to answer some specific questions:
 
@@ -76,7 +76,7 @@ Soon, I hoped to answer some specific questions:
 
 Answers are discussed in [Results &sect; Questions answered](#questions-answered).
 
-I also was interested to learn if, in general, it is better to buy a cheap version of an expensive model or an expensive model of a cheap version. I learned this question doesn't really have an answer, so this diagram couldn't be useful.
+I also was interested to learn if, in general, it is better to buy a cheap version of an expensive model or an expensive model of a cheap version. It turns out this question doesn't have an answer.
 
 ## Implementation
 
@@ -87,14 +87,15 @@ I made JavaScript web scrapers to help gather  bike specs; read about them in fo
 
 ### Drawing the diagram
 
-It would make a lot of sense to have a visualization program do all the work for me. But, I haven't found anything that can replicate this kind of chart. I made a version using Tableau Public, published [here](https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices), but it's pretty shitty and Tableau is pretty shitty.
+It would make a lot of sense to have a visualization program do all the work for me. But, I haven't found anything that can replicate this kind of chart. I made a version using Tableau Public, published [here](https://public.tableau.com/profile/peter.froud#!/vizhome/roadBikes/prices), but it's pretty shitty.
 
-Instead, I made the first proof-of-concept chart the hard way, just to see if this was a good idea. I used Java because it was installed on my computer, I knew how to use it, and it's easy to draw shapes with. The current diagram is drawn using Erich Seifert's [`VectorGraphics2D`](http://trac.erichseifert.de/vectorgraphics2d/) library. Since then, the project has expanded and I'm still using Java.
+Instead, I made the first proof-of-concept chart the hard way, just to see if this was a good idea. I used Java because it was installed on my computer, I knew how to use it, and it's easy to draw shapes with. Since then, the project has expanded and I'm still using Java. The current diagram is drawn using Erich Seifert's [`VectorGraphics2D`](http://trac.erichseifert.de/vectorgraphics2d/) library.
 
 To draw a diagram:
+
 1. Read a text file of bike data. The current file is [`bikesInput.txt`](bikesInput.txt).
-1. Each entry becomes a [`Bike`](src/Bike.java) instance. Enums for [`Groupset`](src/Groupset.java) and [`Carbon`](src/Carbon.java) are used to describe specs.
-1. a [`Diagram`](src/Diagram.java) each bike, and a [`Legend`](src/Legend.java) shows what the shapes and colors used mean.
+1. Each entry becomes a [`Bike`](src/Bike.java) instance. Enums for [`Groupset`](src/Groupset.java) and [`Carbon`](src/Carbon.java) describe specs.
+1. A [`Diagram`](src/Diagram.java) draws each bike and a [`Legend`](src/Legend.java) shows what the shapes and colors used mean.
 
 You can add [`Histogram`](src/Histogram.java)s to the `Diagram` using an [`Analysis`](src/Analysis.java) object. Currently this is not added to the chart, but you can try it using [`AnalysisTesting`](src/AnalysisTesting.java).
 
@@ -104,17 +105,15 @@ You can add [`Histogram`](src/Histogram.java)s to the `Diagram` using an [`Analy
 
 In September 2015 I got a [2015 Giant Defy 1](https://www.giant-bicycles.com/us/defy-1-2015) with a 105 groupset, carbon fork, and aluminum frame.
 
-The MSRP is $1,425 which is comparable to bikes with the same specs. The price at [The Off Ramp](http://offrampbikes.com/) in Mountain View was $1,325 *and* it was on sale for $1,000, which was a great deal.
+The MSRP is $1,425 which is comparable to bikes with the same specs. The price at [The Off Ramp](http://offrampbikes.com/) in Mountain View was $1,325 *and* it was on sale for $1,000, which was a great deal. But, I didn't use my chart to help choose bicycles. I just compared bikes in stores around me.
 
 (The bike I got isn't show on the diagram because data is from the previous model year.)
 
-I didn't use my chart to help choose bicycles. I just compared bikes in stores around me.
-
-http://www.performancebike.com/bikes/mProduct4_10551_10052_1163338_-1
-
 ### Useful scope
 
-The three variables described in [Background &sect; Variables and terminology](#variables-and-terminology) do not fully describe how good a bike is. In particular, frame material is less useful than I first thought, because a carbon frame can be heavier and less comfortable than an aluminum frame. And, features like wheel weight, internal cable routing, disc brakes, and others are not captured.
+The three variables described in [Background &sect; Variables and terminology](#variables-and-terminology) do not fully describe how good a bike is.
+
+In particular, frame material is less useful than I first thought, because a carbon frame can be heavier and less comfortable than an aluminum frame. And, features like wheel weight, internal cable routing, disc brakes, and others are not captured.
 
 Here's a concrete example about frame type. The two most expensive aluminum-frame bikes are from the same model:
 
@@ -125,7 +124,7 @@ CAAD stands for Cannondale Advanced Aluminum Design, so in fact [every Cannondal
 
 Does that mean Cannondale skimped on components? No. The [CAAD12 Red](http://www.cannondale.com/en/USA/Bike/ProductDetail?Id=e8b007ea-76a6-480c-b8e3-61589e0d69f9) ($3,200) is the cheapest bike to have a Dura-Ace/Red level groupset, *and* is the only aluminum-frame bike to have that level of groupset.
 
-So, costs saved from manufacturing with aluminum instead of carbon-fiber can be transferred to high-grade components. Fixating on frame type would be foolish.
+So, costs saved from manufacturing with aluminum instead of carbon-fiber can be transferred to high-grade components. Fixating on frame type when choosing a bike would be foolish.
 
 ### Questions answered
 
@@ -140,7 +139,7 @@ Otherwise, pricing styles are similar.
 
 > What's price distribution like? Is there a bike at almost every price point? Or, are bike clustered around price points?
 
-Picture here..
+Picture here...
 
 
 > Are there any obvious best values?
@@ -151,7 +150,7 @@ The most expensive bike with a Sora groupset is the [Trek Domane 4.0 Disc](http:
 
 Furthermore, the Domane version one cheaper than the 4.0 Disc is the [2.3](http://archive.trekbikes.com/us/en/2015/Trek/domane_2_3_compact) ($1,680), which has a 105 groupset. That means if you spend $420 to upgrade from the Domane 2.3 to the Domane 4.0 Disc, you downgrade from 105, *skipping Tiagra,* and get Sora.
 
-The Domane 4.0 Disc has a carbon-fiber frame,  which the bikes I compared it to don't. But you can choose from *at least five other* bikes cheaper than the Domane 4.0 Disc which still have a 105 groupset and a full-carbon frame.
+The Domane 4.0 Disc has a carbon-fiber frame,  which the Dolce and other Domane I just compared it to don't. But you can choose from *at least five other* bikes cheaper than the Domane 4.0 Disc which still have a 105 groupset and a full-carbon frame.
 
 ## Issues & future work
 
@@ -159,10 +158,9 @@ If or when I put more time into this, here's what I'll work on:
 
 ### Fixes
 
-- Distinguish between Shimano and Sram groupsets, and represent groupsets better.
-	- Currently, [`Groupset.java`](src/Groupset.java) is pretty stupid.
+- Distinguish between Shimano and Sram groupsets, and represent groupsets better. Currently, [`Groupset.java`](src/Groupset.java) is pretty stupid.
 
-- Instead of showing Di2 / eTAP groupsets as their own groupset, show them as variants of the non-electronic version. Maybe with a little lightning bolt icon.
+- Instead of showing Di2 groupsets as their own groupset, show them as variants of the non-electronic version. Maybe with a little lightning bolt icon.
 
 - Use a [better colormap](http://matplotlib.org/users/colormaps.html) for groupsets.
 	- [How Bad Is Your Colormap? (Or, Why People Hate Jet – and You Should Too)](https://jakevdp.github.io/blog/2014/10/16/how-bad-is-your-colormap/) by Jake Vanderplas
