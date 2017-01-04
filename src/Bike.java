@@ -13,7 +13,7 @@ public class Bike implements Comparable<Bike> {
 
     // region statics
 
-    static int priceMin, priceMax;
+    static int priceMin = 999999, priceMax;
 
     /**
      * Opens an input file and reads all of it into a vector of Bikes.
