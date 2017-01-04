@@ -136,6 +136,7 @@ Some Trek bikes have enormous range within the model. The Domane goes from $1,36
 
 Otherwise, pricing styles are similar. 
 
+&nbsp;
 
 > What's price distribution like? Is there a bike at almost every price point? Or, are bike clustered around price points?
 
@@ -145,6 +146,7 @@ Spread out fairly continuously. Click for bigger:
 <img src="img/price-distribution.png?raw=true" alt="Distribution of bike prices">
 </p>
 
+&nbsp;
 
 > Are there any obvious best values?
 
