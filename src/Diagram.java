@@ -16,8 +16,6 @@ class Diagram {
     // core
     private Vector<Bike> allBikes; // holds every bike model
     private PDFGraphics2D g; //graphics context
-    private Legend legend;
-    private Analysis analysis;
 
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
@@ -111,8 +109,6 @@ class Diagram {
         drawGrid(g);
         drawBikes(g);
 
-        if (legend != null) legend.draw(g);
-        if (analysis != null) analysis.draw(g);
 
         try (FileOutputStream file = new FileOutputStream(filename)) {
             byte[] bytes = g.getBytes();
@@ -120,14 +116,6 @@ class Diagram {
             file.write(bytes);
         }
 
-    }
-
-    /**
-     * Prints the range info for every bike.
-     */
-    void printRanges() {
-        Bike.printHeader();
-        allBikes.forEach(Bike::printRange);
     }
 
     /**
