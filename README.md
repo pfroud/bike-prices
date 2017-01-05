@@ -97,6 +97,7 @@ To draw a diagram:
 1. Each entry becomes a [`Bike`](src/Bike.java) instance. Enums for [`Groupset`](src/Groupset.java) and [`Carbon`](src/Carbon.java) describe specs.
 1. A [`Diagram`](src/Diagram.java) draws each bike and a [`Legend`](src/Legend.java) shows what the shapes and colors used mean.
 
+
 You can add [`Histogram`](src/Histogram.java)s to the `Diagram` using an [`Analysis`](src/Analysis.java) object. Currently this is not added to the chart, but you can try it using [`AnalysisTesting`](src/AnalysisTesting.java).
 
 ## Results
@@ -145,6 +146,13 @@ Spread out fairly continuously. Click for bigger:
 <p align="center" style="text-align: center">
 <img src="img/price-distribution.png?raw=true" alt="Distribution of bike prices">
 </p>
+
+The histograms below show distributions of versions within each model:
+
+<p align="center" style="text-align: center">
+<img src="img/histograms-3-bins.png?raw=true" alt="Histograms for each bike model">
+</p>
+
 
 &nbsp;
 
