@@ -18,12 +18,12 @@ class Histogram {
         this.caption = caption;
     }
 
-    void setSize(int x, int y, int size) {
+    void init(int x, int y, int size) {
         this.x = x;
         this.y = y;
         this.size = size;
 
-        //System.out.printf("%30s: %d, %d\n", caption, x, y);
+        //System.out.printf("%s: %d, %d\n", caption, x, y);
 
         barSpacing = 1;
         barWidth = (size + barSpacing) / data.size();
@@ -40,7 +40,8 @@ class Histogram {
         g.setColor(Color.red);
         int originSize = 10;
         g.fillOval(x - originSize / 2, y - originSize / 2, originSize, originSize);
-
+        //g.setColor(Color.black);
+        //g.drawString(String.format("(%d,%d)", x, y), x - 20, y + 12);
 
         // uncomment to draw x axis
         //g.setColor(Color.black);
@@ -60,7 +61,7 @@ class Histogram {
             yStart = y - barHeight;
 
             g.fillRect(xStart, yStart, barWidth, barHeight);
-            g.drawString(Integer.toString(currentData), xStart + barWidth / 2 - 3, yStart - 2); // bar label
+            g.drawString(currentData + "", xStart + barWidth / 2 - 3, yStart - 2); // bar label
         }
 
         // http://www.java2s.com/Tutorial/Java/0261__2D-Graphics/Centertext.htm

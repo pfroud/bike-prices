@@ -26,19 +26,40 @@ class Analysis {
     void init(Vector<Bike> bikes) {
         Histogram h;
 
-        final int histsPerRow = 5;
-        final int numBikes = bikes.size();
+        final int HISTS_PER_ROW = 5;
+        final int NUM_BIKES = bikes.size();
         final int SPACING = 50;
 
-        // draw in rows
+        // NUM_BIKES might not be a multiple of HISTS_PER_ROW. We need to find out how many complete rows to draw:
+        int numRowsToDraw = NUM_BIKES / HISTS_PER_ROW; //integer division important here
+        int numHistsToDraw = numRowsToDraw * HISTS_PER_ROW; // guaranteed to be a multiple of HISTS_PER_ROW
+
+        // draw complete rows
         Bike bike;
-        int mod;
-        for (int start = 0, end = histsPerRow; end <= numBikes; start = end + 1, end += histsPerRow) {
-            mod = start / histsPerRow;
-            for (int i = start; i < end; i++) {
+        int rowNumber;
+        for (int start = 0, end = HISTS_PER_ROW - 1; end <= numHistsToDraw; start = end + 1, end += HISTS_PER_ROW) {
+            rowNumber = start / HISTS_PER_ROW;
+            for (int i = start; i <= end; i++) {
                 bike = bikes.get(i);
                 h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
-                h.setSize(x + (histSize + SPACING) * (i % histsPerRow), y + mod * (histSize + SPACING), histSize);
+                h.init(x + (histSize + SPACING) * (i % HISTS_PER_ROW),
+                        y + rowNumber * (histSize + SPACING),
+                        histSize);
+                hists.add(h);
+            }
+        }
+
+        // draw a partial row if needed
+        if (numHistsToDraw != NUM_BIKES) {
+
+            rowNumber = numHistsToDraw / HISTS_PER_ROW;
+
+            for (int i = numHistsToDraw; i < NUM_BIKES; i++) {
+                bike = bikes.get(i);
+                h = new Histogram(bike.getHistogramData(numBins), bike.modelName);
+                h.init(x + (histSize + SPACING) * (i % HISTS_PER_ROW),
+                        y + rowNumber * (histSize + SPACING),
+                        histSize);
                 hists.add(h);
             }
         }
@@ -47,7 +68,7 @@ class Analysis {
 
     void draw(Graphics g) {
         g.setColor(Color.white);
-        g.fillRect(0, 0, 1000, 1000);
+        g.fillRect(0, 0, 1000, 1200);
 
         for (Histogram hist : hists) hist.draw(g);
     }
