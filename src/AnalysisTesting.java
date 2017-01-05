@@ -11,7 +11,7 @@ public class AnalysisTesting extends JPanel {
     private static Analysis a;
 
     public static void main(String[] args) {
-        a = new Analysis(4, 10, 110, 100);
+        a = new Analysis(4, 50, 200, 150, 8);
         a.init(Bike.readBikes("bikesInput.txt"));
 
         // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
@@ -19,7 +19,7 @@ public class AnalysisTesting extends JPanel {
         JFrame          application = new JFrame();
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         application.add(panel);
-        application.setSize(1000, 1200);
+        application.setSize(1700, 1050);
         application.setVisible(true);
     }
 

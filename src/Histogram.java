@@ -23,8 +23,6 @@ class Histogram {
         this.y = y;
         this.size = size;
 
-        //System.out.printf("%s: %d, %d\n", caption, x, y);
-
         barSpacing = 1;
         barWidth = (size + barSpacing) / data.size();
         verticalScale = size / 12;
@@ -33,15 +31,7 @@ class Histogram {
     void draw(Graphics g) {
         // Coordinate system: positive is down and right.
 
-        // Uncomment to draw bounding box
-        g.setColor(Color.lightGray);
-        g.drawRect(x, y - size, size, size);
-        //dot for origin
-        g.setColor(Color.red);
-        int originSize = 10;
-        g.fillOval(x - originSize / 2, y - originSize / 2, originSize, originSize);
-        //g.setColor(Color.black);
-        //g.drawString(String.format("(%d,%d)", x, y), x - 20, y + 12);
+        drawBoundingBox(g);
 
         // uncomment to draw x axis
         //g.setColor(Color.black);
@@ -68,6 +58,16 @@ class Histogram {
         int centerOffset = (size - g.getFontMetrics().stringWidth(caption)) / 2;
         g.drawString(caption, x + centerOffset, y + 20);
 
+    }
+
+    private void drawBoundingBox(Graphics g) {
+        g.setColor(Color.lightGray);
+        g.drawRect(x, y - size, size, size);
+
+        //dot for origin
+        //g.setColor(Color.red);
+        //final int originSize = 10;
+        //g.fillOval(x - originSize / 2, y - originSize / 2, originSize, originSize);
     }
 
 
