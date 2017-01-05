@@ -110,11 +110,11 @@ public class Bike implements Comparable<Bike> {
     // I have decided everything can be default privacy
 
     String modelName;
-    int numModels;
+    int    numModels;
 
-    Vector<String> names = new Vector<>();
-    Vector<Integer> prices = new Vector<>();
-    Vector<Carbon> carbons = new Vector<>();
+    Vector<String>   names     = new Vector<>();
+    Vector<Integer>  prices    = new Vector<>();
+    Vector<Carbon>   carbons   = new Vector<>();
     Vector<Groupset> groupsets = new Vector<>();
 
     int minPriceModel = 999999, maxPriceModel; // price of most and least expensive version of the model
@@ -140,7 +140,7 @@ public class Bike implements Comparable<Bike> {
      */
     public String toString() {
         NumberFormat numFmt = NumberFormat.getInstance();
-        String out = modelName + "\n-----------------------\n";
+        String       out    = modelName + "\n-----------------------\n";
         for (int i = 0; i < names.size(); i++) {
             out += String.format("%s: $%s\n", names.get(i), numFmt.format(prices.get(i)));
         }

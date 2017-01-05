@@ -14,20 +14,20 @@ class Diagram {
 
     // region fields
     // core
-    private Vector<Bike> allBikes;
+    private Vector<Bike>  allBikes;
     private PDFGraphics2D g;
-    private Legend legend;
-    private Analysis analysis;
+    private Legend        legend;
+    private Analysis      analysis;
 
     // appearance
     private final Color BAR_BACKGROUND_COLOR = Color.decode("#999999");
-    private final int BAR_HEIGHT = 20; //height of each horizontal bar
-    private final int MARKER_SIZE = BAR_HEIGHT - 5; //diameter of circle to mark a model version
+    private final int   BAR_HEIGHT           = 20; //height of each horizontal bar
+    private final int   MARKER_SIZE          = BAR_HEIGHT - 5; //diameter of circle to mark a model version
 
     // fonts
-    private final Font fontXAxis = new Font("Arial", Font.PLAIN, 20);
+    private final Font fontXAxis     = new Font("Arial", Font.PLAIN, 20);
     private final Font fontXAxisEnds = new Font("Arial", Font.BOLD, 30);
-    private final Font fontRowName = new Font("Arial", Font.PLAIN, 14);
+    private final Font fontRowName   = new Font("Arial", Font.PLAIN, 14);
 
     // page properties
     private int width, height, margin; //units are millimeters
@@ -125,7 +125,7 @@ class Diagram {
      */
     private void drawGrid() {
         int edgeBottom = height - margin;
-        int edgeRight = width - margin;
+        int edgeRight  = width - margin;
 
         // x axis line
         g.setColor(Color.black);
@@ -134,8 +134,8 @@ class Diagram {
         g.setColor(Color.decode("0x999999"));
 
         g.setFont(fontXAxis);
-        FontMetrics metrics = g.getFontMetrics(fontXAxis);
-        int textHeight = metrics.getHeight() - 10;
+        FontMetrics metrics    = g.getFontMetrics(fontXAxis);
+        int         textHeight = metrics.getHeight() - 10;
 
         // vertical lines and labels for vertical lines
         int xPos;
@@ -166,8 +166,8 @@ class Diagram {
      */
     private void drawBikes() {
         Bike currentBike;
-        int verticalSpacing = BAR_HEIGHT + 11; // spacing between each horizontal bar
-        int barYPos, barWidth, barXStart, barXEnd;
+        int  verticalSpacing = BAR_HEIGHT + 11; // spacing between each horizontal bar
+        int  barYPos, barWidth, barXStart, barXEnd;
 
         for (int i = 0; i < allBikes.size(); i++) {
             currentBike = allBikes.get(i);
@@ -211,10 +211,10 @@ class Diagram {
             g.fill(currentBike.carbons.get(i).getShape(dotX, dotY, MARKER_SIZE));
 
             // draw price above the dot and model name below the dot
-//            g.setColor(Color.black);
-//            g.setFont(fontDotCaption);
-//            g.drawString("$" + currentPrice, dotX, dotY - 3);
-//            g.drawString(currentBike.versionNames.get(i), dotX, dotY); // for size 8
+            //            g.setColor(Color.black);
+            //            g.setFont(fontDotCaption);
+            //            g.drawString("$" + currentPrice, dotX, dotY - 3);
+            //            g.drawString(currentBike.versionNames.get(i), dotX, dotY); // for size 8
 
         }
     }
@@ -226,9 +226,9 @@ class Diagram {
      * @return x position for that price
      */
     private int priceToX(float price) {
-        int priceRange = priceMax - priceMin;
-        float percent = (price - priceMin) / priceRange;
-        int usableWidth = width - margin * 2;
+        int   priceRange  = priceMax - priceMin;
+        float percent     = (price - priceMin) / priceRange;
+        int   usableWidth = width - margin * 2;
         return (int) (percent * usableWidth) + margin;
     }
 

@@ -13,7 +13,7 @@ enum Groupset {
 
     RIVAL(5, "Rival"), FORCE(4, "Force"), RED(2, "Red"), RED_ETAP(1, "Red eTap"); // Sram groupsets
 
-    int rank;
+    int    rank;
     String name;
 
     // indexed by rank

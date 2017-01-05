@@ -8,7 +8,7 @@ public enum Carbon {
     ALL, FORK, NONE;
 
     //static(?) variables - http://stackoverflow.com/a/18883717
-    Color color;
+    Color  color;
     String description;
 
     static {

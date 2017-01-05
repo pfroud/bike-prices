@@ -30,9 +30,9 @@ class Legend {
 
         // draw carbon legend
         Carbon[] carbons = Carbon.values(); // returns the constants of this enum type, in the order they're declared
-        Carbon currCarb;
-        Shape shapeToDraw;
-        int theY;
+        Carbon   currCarb;
+        Shape    shapeToDraw;
+        int      theY;
         for (int i = 0; i < carbons.length; i++) {
             currCarb = carbons[i];
             theY = y + (i * 30) + 10;
@@ -44,8 +44,8 @@ class Legend {
 
         // draw groupset legend
         Groupset[] groupsets = Groupset.getRanked();
-        final int barHeight = 25, barWidth = 40;
-        Groupset currGroup;
+        final int  barHeight = 25, barWidth = 40;
+        Groupset   currGroup;
         for (int i = 0; i < groupsets.length; i++) {
             currGroup = groupsets[i];
             g.setColor(currGroup.getColor());

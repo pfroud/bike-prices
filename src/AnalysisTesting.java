@@ -15,8 +15,8 @@ public class AnalysisTesting extends JPanel {
         a.init(Bike.readBikes("bikesInput.txt"));
 
         // http://php.scripts.psu.edu/djh300/cmpsc221/notes-graphics-intro.php
-        AnalysisTesting panel = new AnalysisTesting();
-        JFrame application = new JFrame();
+        AnalysisTesting panel       = new AnalysisTesting();
+        JFrame          application = new JFrame();
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         application.add(panel);
         application.setSize(1000, 1200);
@@ -67,15 +67,16 @@ public class AnalysisTesting extends JPanel {
 
     /**
      * At multuple price points, pritns what percentage of bikes have a carbon-fiber frame.
+     *
      * @param bikes vector of bikes to look at
      */
     static private void findCarbonPercents(Vector<Bike> bikes) {
         double versionsTotal, versionsFullCarbon;
-        int currPrice;
+        int    currPrice;
 
 
-        Vector<Integer> priceData = new Vector<>(32);
-        Vector<Double> percentData = new Vector<>(32);
+        Vector<Integer> priceData   = new Vector<>(32);
+        Vector<Double>  percentData = new Vector<>(32);
 
         for (int price = 0; price < 16000; price += 500) {
             priceData.add(price);
