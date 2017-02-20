@@ -162,7 +162,7 @@ No, but there is a worst value.
 
 The most expensive bike with a Sora groupset is the [Trek Domane 4.0 Disc](http://archive.trekbikes.com/us/en/2015/Trek/domane_4_0_disc_compact), $2,100. The second most expensive bike with Sora is the [Specialized Dolce Sport Disc](https://www.specialized.com/us/en/dolce-sport-disc/107326), $1,150. That Domane is nearly twice as much as that Dolce, with the same (entry-level) groupset.
 
-Furthermore, the Domane version one cheaper than the 4.0 Disc is the [2.3](http://archive.trekbikes.com/us/en/2015/Trek/domane_2_3_compact) ($1,680), which has a 105 groupset. That means if you spend $420 to upgrade from the Domane 2.3 to the Domane 4.0 Disc, you downgrade from 105, *skipping Tiagra,* and get Sora.
+Furthermore, the Domane one version cheaper than the 4.0 Disc is the [2.3](http://archive.trekbikes.com/us/en/2015/Trek/domane_2_3_compact) ($1,680), which has a 105 groupset. That means if you spend $420 to upgrade from the Domane 2.3 to the Domane 4.0 Disc, you downgrade from 105, *skipping Tiagra,* and get Sora.
 
 The Domane 4.0 Disc has a carbon-fiber frame,  which the Dolce and other Domane I just compared it to don't. But you can choose from *at least five other* bikes cheaper than the Domane 4.0 Disc which still have a 105 groupset and a full-carbon frame.
 
